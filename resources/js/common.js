@@ -13,7 +13,7 @@ function init() {
 
 function gnbControl() {
 	$('.btn_gnb_ctrl').bind('click', function(){
-		$(this).parents('#wrap').toggleClass('gnb_on');
+		$(this).parents('body').toggleClass('gnb_on');
 	})
 }
 
