@@ -5,56 +5,62 @@ $(function(){
 function init() {
     btnControl();
     tabControl();
-    //gnbControl();
+    gnbControl();
     // controlLayer();
     progControl();
     btnPosAware();
 }
 
 function gnbControl() {
-	// 1Depth
-	var btnGnb = $('.btn_gnb');
-	var subGnb = $(this).next('ul');
-
-	btnGnb.each(function(){
-		$(this).on('mouseenter focusin',function(){
-			btnGnb.next('ul').removeClass('active')
-			$(this).next('ul').addClass('active');
-		});
-		subGnb.on('mouseleave focusout', function(){
-			 $(this).removeClass('active');
-		});
-	});
-
-	// 2Depth
-	var btnGnb2dpt = $('.list_gnb_2dpt > li > a');
-	var subGnb2dpt = $(this).next('ul');
-
-	btnGnb2dpt.each(function(){
-		$(this).on('mouseenter focusin',function(){
-			btnGnb2dpt.next('ul').removeClass('active')
-			$(this).next('ul').addClass('active');
-		});
-		subGnb2dpt.on('mouseleave focusout', function(){
-			 $(this).removeClass('active');
-		});
-	});
-
-	// 3Depth
-	var btnGnb3dpt = $('.list_gnb_3dpt a');
-	var subGnb3dpt = $(this).next('ul');
-
-	btnGnb3dpt.each(function(){
-		$(this).on('mouseenter focusin',function(){
-			btnGnb3dpt.next('ul').removeClass('active')
-			$(this).next('ul').addClass('active');
-		});
-		subGnb3dpt.on('mouseleave focusout', function(){
-			 $(this).removeClass('active');
-		});
-	});
-
+	$('.btn_gnb_ctrl').bind('click', function(){
+		$(this).parents('#wrap').toggleClass('gnb_on');
+	})
 }
+
+// function gnbControl() {
+// 	// 1Depth
+// 	var btnGnb = $('.btn_gnb');
+// 	var subGnb = $(this).next('ul');
+
+// 	btnGnb.each(function(){
+// 		$(this).on('mouseenter focusin',function(){
+// 			btnGnb.next('ul').removeClass('active')
+// 			$(this).next('ul').addClass('active');
+// 		});
+// 		subGnb.on('mouseleave focusout', function(){
+// 			 $(this).removeClass('active');
+// 		});
+// 	});
+
+// 	// 2Depth
+// 	var btnGnb2dpt = $('.list_gnb_2dpt > li > a');
+// 	var subGnb2dpt = $(this).next('ul');
+
+// 	btnGnb2dpt.each(function(){
+// 		$(this).on('mouseenter focusin',function(){
+// 			btnGnb2dpt.next('ul').removeClass('active')
+// 			$(this).next('ul').addClass('active');
+// 		});
+// 		subGnb2dpt.on('mouseleave focusout', function(){
+// 			 $(this).removeClass('active');
+// 		});
+// 	});
+
+// 	// 3Depth
+// 	var btnGnb3dpt = $('.list_gnb_3dpt a');
+// 	var subGnb3dpt = $(this).next('ul');
+
+// 	btnGnb3dpt.each(function(){
+// 		$(this).on('mouseenter focusin',function(){
+// 			btnGnb3dpt.next('ul').removeClass('active')
+// 			$(this).next('ul').addClass('active');
+// 		});
+// 		subGnb3dpt.on('mouseleave focusout', function(){
+// 			 $(this).removeClass('active');
+// 		});
+// 	});
+
+// }
 
 function btnControl() {
     $('*[role=button').on('click', function(){
