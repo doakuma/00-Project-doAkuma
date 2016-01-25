@@ -785,7 +785,11 @@ body.gnb_on #wrap  .ctrl_bar {
 }
 .list_main01 li {
 	margin: 0 1rem;
-	width: 33.33%;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	-o-flex: 1;
+	flex: 1;
 }
 .list_main01 li a {
 	display: block;
@@ -799,6 +803,40 @@ body.gnb_on #wrap  .ctrl_bar {
 }
 .list_main01 li figcaption {
 	margin: 2rem 0 0;
+}
+.list_skill li {
+	text-align: center;
+	font-weight: bold;
+	border-radius: 50%;
+	height: 14rem;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px #333;
+	overflow: hidden;
+	position: relative;
+}
+.list_skill li span {
+	position: absolute;
+	width: 100%;
+	height: 0;
+	left: 0;
+	bottom: 0;
+	display: block;
+	background-color: rgba(234,61,239,0.15);
+	text-indent: -9999px;
+	color: #fff;	
+	-webkit-transition: all 0.5s ease-out 0.35s;
+	-o-transition: all 0.5s ease-out 0.35s;
+	transition: all 0.5s ease-out 0.35s;
+}
+.list_skill li span:after {
+	content: '%';
+}
+.list_skill li a:hover span {
+	text-indent: 0;
+	background-color: rgba(0,0,0,0.85);	
+	-webkit-transition: all 0.5s ease-out 0.35s;
+	-o-transition: all 0.5s ease-out 0.35s;
+	transition: all 0.5s ease-out 0.35s;
 }
 .main .btn_more {
 	float: right;

@@ -79,6 +79,13 @@
             </div>
             <div class="box section">
                 <h2 class="tit_sub">Skills</h2>
+                <ul class="list_main01 list_skill">
+                    <li><a href="#none">HTML <span class="value">94</span></a></li>
+                    <li><a href="#none">CSS <span class="value">96</span></a></li>
+                    <li><a href="#none">jQuery <span class="value">88</span></a></li>
+                    <li><a href="#none">日本語 <span class="value">98</span></a></li>
+                    <li><a href="#none">Drum <span class="value">80</span></a></li>
+                </ul>
                 <a href="#none" class="btn_more">View More</a>
             </div>
         </div>
@@ -86,5 +93,13 @@
     </div>
 <script src="resources/js/jquery-1.11.3.min.js"></script>
 <script src="resources/js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.list_skill span').each(function(){
+            var _hSkill = parseInt($(this).text());
+            $(this).css({height: _hSkill+'%'})
+        })
+    })
+</script>
 </body>
 </html>
