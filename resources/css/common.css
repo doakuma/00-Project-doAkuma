@@ -169,6 +169,15 @@ body.gnb_on #wrap  #content {
 	-o-filter: blur(0.5rem);
 	filter: blur(0.5rem);
 }
+#footer {
+	width: 100%;
+	-webkit-order: 3;
+	-moz-order: 3;
+	-ms-order: 3;
+	-o-order: 3;
+	order: 3;
+	padding: 3rem 6rem;
+}
 .box.section {
 	padding: 3rem 6rem;
 	font-size: 1.8rem;
