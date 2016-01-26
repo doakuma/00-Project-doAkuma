@@ -7,8 +7,18 @@ function init() {
     tabControl();
     gnbControl();
     progControl();
+    ipTxtControl();
 }
-
+function ipTxtControl() {
+	$('.text').each(function(){
+		$(this).on('focusout', function(){
+			if($(this).val() !== '') {
+				$(this).addClass('active')
+			}
+			console.log($(this).val())
+		})
+	})
+}
 function gnbControl() {
 	$('.btn_gnb_ctrl').bind('click', function(){
 		$(this).parents('body').toggleClass('gnb_on');

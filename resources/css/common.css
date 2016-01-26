@@ -4,7 +4,10 @@
 
 html { font-size: 10px; }
 body { font-size: 1.4rem; font-family: "Nanum Gothic", "나눔 고딕", "Malgun Gothic", "맑은 고딕", "Apple Gothic", "애플 고딕", "Sans serif", "Dotum"; color: #333; }
-
+legend {
+	position: absolute;
+	visibility: hidden;
+}
 /* Common */
 a { color: #333; text-decoration: none; }
 .dummy_img {
@@ -1041,15 +1044,19 @@ body.gnb_on #wrap  .ctrl_bar {
 	width: 75%;
 }
 .line_regist {
-	margin: 0 0 2rem;
+	overflow: hidden;
+	margin: 0 0 1rem;
+	padding: 0 0 2rem;
 	position: relative;
-	
+	max-width: 40rem;
 }
 .line_regist label {
 	position: absolute;
-	display: inline-block;
+	display: block;
+	width: 100%;
+	padding: 1rem 0;
+	top: 0;
 	left: 0;
-	top: 1rem;
 	font-size: 1.6rem;
 	line-height: 1.6rem;
 	font-weight: bold;
@@ -1057,11 +1064,48 @@ body.gnb_on #wrap  .ctrl_bar {
 	-o-transition: all 0.25s ease-in 0.15s;
 	transition: all 0.25s ease-in 0.15s;
 }
+.line_regist label::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: #a8a8a8;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: all 0.25s ease-in 0.15s;
+	-o-transition: all 0.25s ease-in 0.15s;
+	transition: all 0.25s ease-in 0.15s;
+	z-index: -1;
+}
+.line_regist label::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 0.3rem;
+	bottom: 0;
+	background: #a8a8a8;
+}
+.line_regist label > span {
+	display: block;
+	-webkit-transition: all 0.35s ease-in 0.15s;
+	-moz-transition: all 0.35s ease-in 0.15s;
+	-ms-transition: all 0.35s ease-in 0.15s;
+	-o-transition: all 0.35s ease-in 0.15s;
+	transition: all 0.35s ease-in 0.15s;
+}
 .line_regist .text {
+	position: relative;
 	padding: 1rem;
 	font-size: 1.6rem;
+	width: 100%;
 	border: none;
-	border-bottom: 3px solid #f2f2f2;
+	color: #fff;
+	font-weight: bold;
 	-webkit-transition: all 0.25s ease-in 0.15s;
 	-o-transition: all 0.25s ease-in 0.15s;
 	transition: all 0.25s ease-in 0.15s;
@@ -1070,9 +1114,22 @@ body.gnb_on #wrap  .ctrl_bar {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.line_regist .text:focus {
-	border: 3px solid #1B76BA;
-}
 .box_regist_cmt .box_btnset {
 	margin-left: 0;
+}
+.line_regist .text.active + label::before,
+.line_regist .text:focus + label::before {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+.line_regist .text.active + label > span,
+.line_regist .text:focus + label > span {
+	-webkit-transform: translateY(180%);
+	-ms-transform: translateY(180%);
+	-o-transform: translateY(180%);
+	transform: translateY(180%);
+	font-size: 1.2rem;
+	color: #a8a8a8;
 }
