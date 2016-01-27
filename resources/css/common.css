@@ -346,6 +346,7 @@ body.gnb_on #wrap  .ctrl_bar {
 .box_search_gnb .text {
 	border: none;
 	padding: 10px 5px;
+	width: auto;
 }
 .box_search_gnb .btn_search {
 	width: 35px;
@@ -994,6 +995,7 @@ body.gnb_on #wrap  .ctrl_bar {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	cursor: pointer;
+	color: #fff;
 	box-shadow: -2px -2px 0 #C6C8CA inset,
 				2px 2px 0 #C6C8CA inset;
 	-webkit-transition: all 0.25s ease-out 0.05s;
@@ -1057,9 +1059,11 @@ body.gnb_on #wrap  .ctrl_bar {
 	margin: 0 0 1rem;
 	padding: 0 0 2rem;
 	position: relative;
+}
+.box_regist_cmt .line_regist {
 	max-width: 40rem;
 }
-.line_regist label {
+.text + label {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -1073,7 +1077,7 @@ body.gnb_on #wrap  .ctrl_bar {
 	-o-transition: all 0.25s ease-in 0.15s;
 	transition: all 0.25s ease-in 0.15s;
 }
-.line_regist label::before {
+.text + label::before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -1085,12 +1089,14 @@ body.gnb_on #wrap  .ctrl_bar {
 	-ms-transform: translateY(-100%);
 	-o-transform: translateY(-100%);
 	transform: translateY(-100%);
-	-webkit-transition: all 0.25s ease-in 0.15s;
-	-o-transition: all 0.25s ease-in 0.15s;
-	transition: all 0.25s ease-in 0.15s;
+	-webkit-transition: all 0.15s ease-in 0.15s;
+	-moz-transition: all 0.15s ease-in 0.15s;
+	-ms-transition: all 0.15s ease-in 0.15s;
+	-o-transition: all 0.15s ease-in 0.15s;
+	transition: all 0.15s ease-in 0.15s;
 	z-index: -1;
 }
-.line_regist label::after {
+.text + label::after {
 	content: "";
 	position: absolute;
 	display: block;
@@ -1099,15 +1105,16 @@ body.gnb_on #wrap  .ctrl_bar {
 	bottom: 0;
 	background: #a8a8a8;
 }
-.line_regist label > span {
+.text + label > span {
 	display: block;
-	-webkit-transition: all 0.35s ease-in 0.15s;
-	-moz-transition: all 0.35s ease-in 0.15s;
-	-ms-transition: all 0.35s ease-in 0.15s;
-	-o-transition: all 0.35s ease-in 0.15s;
-	transition: all 0.35s ease-in 0.15s;
+	cursor: text;
+	-webkit-transition: all 0.15s ease-in 0.15s;
+	-moz-transition: all 0.15s ease-in 0.15s;
+	-ms-transition: all 0.15s ease-in 0.15s;
+	-o-transition: all 0.15s ease-in 0.15s;
+	transition: all 0.15s ease-in 0.15s;
 }
-.line_regist .text {
+.text {
 	position: relative;
 	padding: 1rem;
 	font-size: 1.6rem;
@@ -1115,9 +1122,11 @@ body.gnb_on #wrap  .ctrl_bar {
 	border: none;
 	color: #fff;
 	font-weight: bold;
-	-webkit-transition: all 0.25s ease-in 0.15s;
-	-o-transition: all 0.25s ease-in 0.15s;
-	transition: all 0.25s ease-in 0.15s;
+	-webkit-transition: all 0.15s ease-in 0.15s;
+	-moz-transition: all 0.15s ease-in 0.15s;
+	-ms-transition: all 0.15s ease-in 0.15s;
+	-o-transition: all 0.15s ease-in 0.15s;
+	transition: all 0.15s ease-in 0.15s;
 	background: transparent;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1126,19 +1135,217 @@ body.gnb_on #wrap  .ctrl_bar {
 .box_regist_cmt .box_btnset {
 	margin-left: 0;
 }
-.line_regist .text.active + label::before,
-.line_regist .text:focus + label::before {
+.text.active + label::before,
+.text:focus + label::before {
 	-webkit-transform: translateY(0);
 	-ms-transform: translateY(0);
 	-o-transform: translateY(0);
 	transform: translateY(0);
 }
-.line_regist .text.active + label > span,
-.line_regist .text:focus + label > span {
+.text.active + label > span,
+.text:focus + label > span {
 	-webkit-transform: translateY(180%);
 	-ms-transform: translateY(180%);
 	-o-transform: translateY(180%);
 	transform: translateY(180%);
 	font-size: 1.2rem;
 	color: #a8a8a8;
+}
+
+.radio,
+.check {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font: 0/0 Dotum;
+	opacity: 0;
+}
+.radio + label,
+.check + label {
+	display: inline-block;
+	position: relative;
+	padding: 0.5rem 0 0.5rem 2.5rem;
+	margin: 0 0 0 2rem;
+}
+.radio + label::before,
+.check + label::before{
+	content: "";
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+	-webkit-transition: all 0.15s ease-in 0.05s;
+	-o-transition: all 0.15s ease-in 0.05s;
+	transition: all 0.15s ease-in 0.05s;
+}
+.check + label::before {
+	border-radius: 0;
+}
+.radio + label::before,
+.check + label::before{
+	width: 1rem;
+	height: 1rem;
+	border: 0.4rem solid #fafafa;
+	background: #bababa;
+	box-shadow: 0 0 1px #5D6061, 0 0 3px #5D6061;
+}
+.radio:checked + label::before,
+.check:checked + label::before {
+	background: #2C93D8;
+}
+
+.sel_group {
+	position: relative;
+	display: block;
+	width: 40rem;
+	border: 3px solid #0A5486;
+}
+.select {
+	position: relative;
+	display: block;
+	padding: 1rem 2rem;
+	width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-family: "Nanum Gothic", "나눔 고딕", "Malgun Gothic", "맑은 고딕", "Apple Gothic", "애플 고딕", "Sans serif", "Dotum";
+	font-size: 1.6rem;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.sel_group::after {
+	content: "";
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	display: block;
+	border-style: solid;
+	border-color: #0A5486 transparent transparent transparent;
+	border-width: 1.5rem 1rem 0 1rem;
+}
+.select::-ms-expand {
+	display: none;
+}
+
+.btn_toggle,
+.btn_toggle2 {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font: 0/0 Dotum;
+	opacity: 0;
+}
+.btn_toggle + label {
+	overflow: hidden;	
+	position: relative;
+	display: inline-block;
+	padding: 1rem 6rem 1rem 2rem;
+	color: #fff;
+	font-weight: bold;
+	background: #898B83;
+	text-shadow: 1px 1px 0 #5D6061;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-transition: all 0.15s ease-in 0.05s;
+	-o-transition: all 0.15s ease-in 0.05s;
+	transition: all 0.15s ease-in 0.05s;
+}
+.btn_toggle + label::after {
+	content: "Off";
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	line-height: 4rem;
+	width: 3rem;
+	height: 100%;
+	padding: 0 0 0 1rem;
+	font-size: 1.2rem;
+	border-left: 1px solid #a0a0a0;
+	box-shadow: -1px 0 0 #2C2D2D;
+	-webkit-transition: all 0.15s ease-in 0.15s;
+	-o-transition: all 0.15s ease-in 0.15s;
+	transition: all 0.15s ease-in 0.15s;
+}
+.btn_toggle:checked + label {
+	padding: 1rem 2rem 1rem 6rem;
+	background: #2e96db;
+}
+.btn_toggle:checked + label::after {
+	right: 100%;
+	left: 0;
+	border-right: 1px solid #2C2D2D;
+	box-shadow: 1px 0 0 #a0a0a0;
+}
+
+.btn_toggle2 + label {
+	overflow: hidden;	
+	position: relative;
+	display: inline-block;
+	width: 8rem;
+	height: 4rem;
+	color: #fff;
+	font-weight: bold;
+	background: #a8a8a8;
+	text-shadow: 1px 1px 0 #5D6061;
+	border-radius: 4rem;
+	cursor: pointer;
+	font-size: 0;
+	text-indent: -9999px;
+	-webkit-transition: all 0.15s ease-in 0.05s;
+	-o-transition: all 0.15s ease-in 0.05s;
+	transition: all 0.15s ease-in 0.05s;
+}
+.btn_toggle2 + label::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	left: 4.5rem;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 0.5rem solid #fff;
+	background: #a8a8a8;
+	border-radius: 50%;
+	box-shadow: 0 0 1px #2C2D2D;
+	-webkit-transition: all 0.15s ease-in 0.15s;
+	-o-transition: all 0.15s ease-in 0.15s;
+	transition: all 0.15s ease-in 0.15s;
+}
+.btn_toggle2:checked + label {
+	background: #2e96db; 
+}
+.btn_toggle2:checked + label::after {
+	right: 100%;
+	left: 0.5rem;
+	background: #1B76BA;
+	box-shadow: 1px 0 0 #2e96db;
+}
+.file {
+
+}
+.file + label {
+	display: inline-block;
+	padding: 1rem 2rem;
+	border: 3px solid #0A5486;
+	width: 40rem;
+}
+.file + label::before {
+	content: "\f15b";
+	display: inline-block;
+	margin: 0 1rem 0 0;
+	font-family: 'FontAwesome';
+	color: #0A5486;
+}
+.file + label span {
+	font-weight: bold;
+	color: #0A5486;
 }

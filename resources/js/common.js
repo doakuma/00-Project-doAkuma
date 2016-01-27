@@ -8,7 +8,19 @@ function init() {
     gnbControl();
     progControl();
     ipTxtControl();
+    iptFilecontrol();
 }
+
+function iptFilecontrol() {
+	$('.file').each(function(){
+		$(this).on('change', function(){
+			var fileName = $(this).prop('value').split('\\')[2];
+			console.log(fileName)
+			$(this).next().find('span').html(fileName)
+		})
+	})
+}
+
 function ipTxtControl() {
 	$('.text').each(function(){
 		$(this).on('focusout', function(){
