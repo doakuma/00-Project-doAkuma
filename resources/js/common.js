@@ -9,6 +9,39 @@ function init() {
     progControl();
     ipTxtControl();
     iptFilecontrol();
+    timeLineControl();
+}
+
+function timeLineControl() {
+	var _containerTime = $('.wrap_time'),
+		_contentTime = _containerTime.find('.inner_time'),
+		_navTime = _containerTime.find('.nav_time > a'),
+		_boxTime = _containerTime.find('.box_timeline'),
+		_boxTimeSize = _boxTime.size(),
+		_boxTimeWidth = _boxTime.width(),
+		_contentTimeWidth = _boxTimeWidth * _boxTimeSize;
+
+	_contentTime.width(_contentTimeWidth);
+	_navTime.first().addClass('active');
+
+	
+	_navTime.each(function(){
+		$(this).on('click', function(){
+			var chkInd = $(this).index(),
+				_moveTime = -(_boxTimeWidth * chkInd) + 'px';
+			_navTime.removeClass('active');
+			$(this).addClass('active');
+
+			$(this).parent().next('.inner_time').css({
+				'-webkit-transform': 'translateX('+_moveTime+')',
+				'-ms-transform': 'translateX('+_moveTime+')',
+				'-o-transform': 'translateX('+_moveTime+')',
+				transform: 'translateX('+_moveTime+')'
+			})
+			return false;
+		})
+	})
+	
 }
 
 function iptFilecontrol() {
