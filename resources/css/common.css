@@ -1536,13 +1536,28 @@ table caption {
 	-ms-flex-wrap: wrap;
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
-	max-height: 60rem;
+	max-height: 80rem;
+	height: 60rem;
 }
 .list_panel {
+	display: block;
+	overflow: hidden;
+	position: relative;	
 	width: 30%;
 	background: #a8a8a8;
-	margin: 0 0.5rem;
+	margin: 1rem;
 }
 .list_panel img {
 	max-width: 100%;
+	width: 100%;
+}
+.list_panel:nth-child(2n) {
+	height: 20rem;
+}
+.list_panel:nth-child(3n) {
+	height: 15rem;
+}
+.list_panel .info_board {
+	display: block;
+	color: #f8f8f8;
 }
