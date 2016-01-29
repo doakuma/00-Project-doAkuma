@@ -10,6 +10,15 @@ function init() {
     ipTxtControl();
     iptFilecontrol();
     timeLineControl();
+    panelControl();
+}
+
+function panelControl() {
+	$('.list_panel').each(function(){
+		$(this).click(function(){
+			$(this).toggleClass('active');
+		})
+	})
 }
 
 function timeLineControl() {
