@@ -10,13 +10,14 @@ function init() {
     ipTxtControl();
     iptFilecontrol();
     timeLineControl();
-    panelControl();
+    // panelControl();
 }
 
 function panelControl() {
 	$('.list_panel').each(function(){
 		$(this).click(function(){
-			$(this).toggleClass('active');
+			$('.list_panel').removeClass('active');
+			$(this).addClass('active');
 		})
 	})
 }
