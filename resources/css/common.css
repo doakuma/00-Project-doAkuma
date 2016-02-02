@@ -309,6 +309,18 @@ body.gnb_on #wrap  .ctrl_bar {
 	text-align: center;
 	text-shadow: 1px 1px 0 #16181B;
 	box-shadow: 1px 1px 1px rgba(13,38,56,0.5);
+	-webkit-transition: all 0.135s ease-in 0.15s;
+	-moz-transition: all 0.135s ease-in 0.15s;
+	-ms-transition: all 0.135s ease-in 0.15s;
+	-o-transition: all 0.135s ease-in 0.15s;
+	transition: all 0.135s ease-in 0.15s;
+	
+}
+.btn_sns:hover {
+	-webkit-transform: scale(1.25, 1.25);
+	-ms-transform: scale(1.25, 1.25);
+	-o-transform: scale(1.25, 1.25);
+	transform: scale(1.25, 1.25);
 }
 
 /* Gnb */

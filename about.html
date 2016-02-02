@@ -58,7 +58,7 @@
                                 <dd>doakuma@gmail.com</dd>
                             </dl>
                         </a>
-                        <ul>
+                        <ul class="list_sns">
                             <li><a href="#none" class="btn_sns fa fa-facebook"></a></li>
                             <li><a href="#none" class="btn_sns fa fa-twitter"></a></li>
                             <li><a href="#none" class="btn_sns fa fa-github"></a></li>
@@ -79,11 +79,11 @@
                             <dt>How</dt>
                             <dd>
                                 <ul class="list_main01 list_skill">
-                                    <li><strong>HTML</strong><a href="#none"><span class="value" style="width: 94%;">94</span></a></li>
-                                    <li><strong>CSS</strong> <a href="#none"><span class="value" style="width: 96%;">96</span></a></li>
-                                    <li><strong>jQuery</strong> <a href="#none"><span class="value" style="width: 88%;">88</span></a></li>
-                                    <li><strong>日本語</strong> <a href="#none"><span class="value" style="width: 98%;">98</span></a></li>
-                                    <li><strong>Drum</strong> <a href="#none"><span class="value" style="width: 80%;">80</span></a></li>
+                                    <li><strong>HTML</strong><a href="#none"><span class="value">94</span></a></li>
+                                    <li><strong>CSS</strong> <a href="#none"><span class="value">96</span></a></li>
+                                    <li><strong>jQuery</strong> <a href="#none"><span class="value">88</span></a></li>
+                                    <li><strong>日本語</strong> <a href="#none"><span class="value">98</span></a></li>
+                                    <li><strong>Drum</strong> <a href="#none"><span class="value">80</span></a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -92,9 +92,33 @@
             </div>
         <!-- <a href="#wrap" class="btn_gotop"></a> -->
         </div>
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <h2 class="tit_sub">Contact</h2>
+            <fieldset class="box_field">
+                <legend>Contact</legend>
+                <h3 class="stit_sub">Contact</h3>
+                <div class="box_regist_cmt">
+                    <p class="line_regist"><input type="text" id="regCmt1" class="text"><label for="regCmt1"><span>Name</span></label></p>
+                    <p class="line_regist"><input type="email" id="regCmt2" class="text"><label for="regCmt2"><span>Email</span></label></p>
+                    <p class="line_regist"><input type="password" id="regCmt3" class="text"><label for="regCmt3"><span>Password</span></label></p>
+                    <textarea name="" id="" cols="90" rows="5" class="textarea"></textarea>
+                    <span class="box_btnset">
+                        <button type="button" role="button">Commit</button>
+                    </span>
+                </div>
+            </fieldset>
+        </footer>
     </div>
 <script src="resources/js/jquery-1.11.3.min.js"></script>
 <script src="resources/js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.list_skill span').each(function(){
+            var _hSkill = parseInt($(this).text());
+            $(this).css({height: _hSkill+'%'})
+            console.log(_hSkill)
+        })
+    })
+</script>
 </body>
 </html>
