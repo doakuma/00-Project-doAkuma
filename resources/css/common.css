@@ -18,7 +18,7 @@ legend {
 }
  
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.2);
   outline: 1px solid rgba(1,1,1,0.8);
 }
 /* Common */
@@ -977,6 +977,11 @@ body.gnb_on #wrap  .ctrl_bar {
 .box_cmt_cont {
 	padding: 0 0 0 12rem;
 }
+.box_cmt_info a,
+.box_cmt_info span {
+	display: inline-block;
+	padding: 0 1rem 0 0;
+}
 .box_cmt_info a {
 	font-weight: bold;
 	font-size: 1.6rem;
@@ -1572,9 +1577,11 @@ table caption {
 	width: 100%;
 }
 .list_panel .cont_panel {
+	overflow: hidden;
+	
 	position: absolute;
 	left: 0;
-	top: 0;
+	bottom: 0;
 	-webkit-transform: translateY(100%);
 	-ms-transform: translateY(100%);
 	-o-transform: translateY(100%);
@@ -1584,10 +1591,11 @@ table caption {
 	-ms-transition: all 0.15s ease-out 0.05s;
 	-o-transition: all 0.15s ease-out 0.05s;
 	transition: all 0.15s ease-out 0.05s;
-	background: rgba(0,0,0,0.35);
+	background: rgba(0,0,0,0.75);
 	font-size: 1.4rem;
-	height: 100%;
+	height: 70%;
 	padding: 1rem;
+	color: #f8f8f8;
 }
 .list_panel .info_board {
 	-webkit-flex-wrap: wrap;
@@ -1596,7 +1604,6 @@ table caption {
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	color: #f8f8f8;
 }
 .list_panel .info_board dt {
 	margin-left: 0;
@@ -1608,9 +1615,167 @@ table caption {
 	display: none;
 }
 
-.list_panel:hover .cont_panel {
+.list_panel:hover .cont_panel,
+.list_panel.active .cont_panel {
 	-webkit-transform: translateY(0);
 	-ms-transform: translateY(0);
 	-o-transform: translateY(0);
 	transform: translateY(0);
+}
+.list_panel .txt_info_board {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 70%;
+	margin: 1rem;
+	line-height: 1.3;
+}
+
+#maskLayer {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: -10;
+	opacity: 0;
+	-webkit-transition: all 0.35s ease-out 0.15s;
+	-o-transition: all 0.35s ease-out 0.15s;
+	transition: all 0.35s ease-out 0.15s;
+}
+.wrap_layer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 2rem;
+	width: 80%;
+	height: 80%;
+	background: #f8f8f8;
+	z-index: -20;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 1rem rgba(0,0,0,0.9);
+	box-shadow: 0 0 1rem rgba(0,0,0,0.9);
+	-webkit-transition: all 0.35s ease-out 0.5s;
+	-o-transition: all 0.35s ease-out 0.5s;
+	transition: all 0.35s ease-out 0.5s;
+	-webkit-transform: scale(0,0);
+	-ms-transform: scale(0,0);
+	-o-transform: scale(0,0);
+	transform: scale(0,0);
+}
+.wrap_layer.active {
+	z-index: 20;
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	-o-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+.wrap_layer.active + #maskLayer {
+	opacity: 1;
+	z-index: 10;
+}
+.btn_close_layer {
+	position: absolute;
+	right: -3rem;
+	top: -3rem;
+	display: block;
+	padding: 0;
+	width: 3rem;
+	height: 3rem;
+	background: none;
+	border: none;
+	font-size: 0;
+	text-indent: -9999px;
+	cursor: pointer;
+	-webkit-transition: all 0.35s ease-out 0.15s;
+	-o-transition: all 0.35s ease-out 0.15s;
+	transition: all 0.35s ease-out 0.15s;
+}
+.btn_close_layer:hover {
+	-webkit-transform: rotate(720deg);
+	-ms-transform: rotate(720deg);
+	-o-transform: rotate(720deg);
+	transform: rotate(720deg);
+}
+.btn_close_layer::before,
+.btn_close_layer::after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -0.5rem;
+	width: 4.24rem;
+	height: 0.5rem;
+	background: #fff;
+	border-radius: 5px;
+}
+.btn_close_layer::before {
+	top: 1.3rem;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.btn_close_layer::after {
+	bottom: 1.3rem;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.tit_layer {
+	padding: 0 0 1rem;
+	font-size: 4rem;
+	border-bottom: 3px solid #a8a8a8;
+}
+.inner_layer {
+	overflow: hidden;
+	overflow-y: auto;
+	margin: 1rem 0 0;
+	padding: 1rem 2rem;
+	height: 90%;
+}
+.info_portfolio {
+	display: table;
+	width: 100%;
+}
+.info_portfolio dt,
+.info_portfolio dd {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 2rem 1rem;
+}
+.info_portfolio dt {
+	width: 20%;
+}
+.info_portfolio dd {
+	width: 30%;
+}
+.box_text_layer {
+	padding: 2rem 1rem;
+	border-top: 1px solid #a8a8a8;
+}
+.box_text_layer:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.box_text_layer .fig_type01 {
+	width: 50%;
+	float: left;
+	margin: 0 1rem 1rem 0;
+}
+.box_text_layer p {
+	margin: 1rem 0 2rem;
+	font-size: 1.6rem;
+	line-height: 1.2;
+}
+.box_text_layer .fig_type01 + p {
+	margin-top: 0;
+}
+.box_text_layer:nth-child(odd) .fig_type01 {
+	float: right;
+	margin: 0 0 1rem 1rem;
 }

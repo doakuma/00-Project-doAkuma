@@ -1,0 +1,87 @@
+@charset "utf-8";
+.box_about {
+	/*display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;*/
+	background: #f8f8f8;
+}
+.area_profile {
+	width: 30rem;
+	padding: 2rem;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
+	overflow: hidden;
+	
+}
+.area_profile .card {
+	display: block;
+	height: 30rem;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.15s ease-out 0.15s;
+	-o-transition: all 0.15s ease-out 0.15s;
+	transition: all 0.15s ease-out 0.15s;
+}
+.area_profile .card img,
+.area_profile .card dl {
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	-ms-backface-visibility: visible;
+	backface-visibility: visible;
+	border-radius: 50%;
+}
+
+.area_profile .card dl {
+	height: 100%;
+	width: 100%;
+	display: block;
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 1rem;
+	background: rgba(0,0,0,0.5);
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	font-size: 2.4rem;
+}
+.area_profile .card dl dt {
+	margin: 10rem 0 0;
+}
+.area_profile .card dl dt,
+.area_profile .card dl dd {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-in 0.3s;
+	-o-transition: all 0.15s ease-in 0.3s;
+	transition: all 0.15s ease-in 0.3s;
+}
+.area_profile .card:hover {
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.area_profile .card:hover dl dt,
+.area_profile .card:hover dl dd {
+	opacity: 1;
+}
+.area_profile .card:hover img {
+	-webkit-filter: blur(0.5rem);
+	-o-filter: blur(0.5rem);
+	filter: blur(0.5rem);
+}

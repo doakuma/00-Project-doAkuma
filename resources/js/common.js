@@ -70,7 +70,6 @@ function ipTxtControl() {
 			if($(this).val() !== '') {
 				$(this).addClass('active')
 			}
-			console.log($(this).val())
 		})
 	})
 }
