@@ -11,6 +11,38 @@ function init() {
     iptFilecontrol();
     timeLineControl();
     // panelControl();
+    radProgControl();
+}
+
+function radProgControl() {
+	$('.prog_rad').each(function(){
+		var proAmount = $(this).attr('data-percent');
+		var proRadial = parseInt(360*proAmount/100);
+		var minVal = 0,
+			time = (1000)*2;
+
+		if(proAmount > 50) {
+			$(this).addClass('gt-50');
+		};
+		$(this).find('.fill').css({
+			'transform': 'rotate('+proRadial+'deg)'
+		})
+		var loading = function(){
+			// value += 1;
+			minVal +=1;
+			// addVal = progBar.val(minVal);
+			$(this).find('.prog_cont').text(minVal + '%');
+			if(minVal == proAmount) {
+				clearInterval(animate);
+			}		
+		};
+		loading();
+		var animate = setInterval(function(){
+			 loading();
+		}, time);
+
+		console.log(minVal)
+	})
 }
 
 function panelControl() {
