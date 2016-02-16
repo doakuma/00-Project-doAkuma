@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url(reset.css);
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+/*@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');*/
 
 html { font-size: 10px; }
 body { font-size: 1.4rem; font-family: "Nanum Gothic", "나눔 고딕", "Malgun Gothic", "맑은 고딕", "Apple Gothic", "애플 고딕", "Sans serif", "Dotum"; color: #333; }
@@ -1790,4 +1790,93 @@ table caption {
 .box_text_layer:nth-child(odd) .fig_type01 {
 	float: right;
 	margin: 0 0 1rem 1rem;
+}
+
+.prog_rad {
+	position: relative;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #F3F4F5;
+}
+.prog_rad .overlay {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: auto;
+	text-align: center;
+	line-height: 100px;
+	font-weight: bold;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	margin: auto;
+	/*border: 1rem solid #F3F4F5;*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 2;
+	clip: rect(0,100px, 100px, 50px);
+}
+.prog_rad .overlay:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	background: #2e96db;
+	clip: rect(0, 50px, 100px, 0px);
+	-webkit-transition: all 0.35s ease-in 0.15s;
+	-o-transition: all 0.35s ease-in 0.15s;
+	transition: all 0.35s ease-in 0.15s;
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+/*.prog_rad .overlay:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	background: #F3F4F5;
+	clip: rect(0, 50px, 100px, 0px);
+}*/
+
+.prog_rad .overlay.gt-50 {
+
+}
+.prog_rad .overlay.gt-50:after {
+	clip: rect(0, 50px, 100px, 0);
+}
+.prog_rad .prog_cont {
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+	line-height: 80px;
+	background: #D5D9DE;
+	text-align: center;
+	font-weight: bold;
 }

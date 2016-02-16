@@ -11,6 +11,11 @@ function init() {
     iptFilecontrol();
     timeLineControl();
     // panelControl();
+    radProgControl();
+}
+
+function radProgControl() {
+	
 }
 
 function panelControl() {
