@@ -1,0 +1,7 @@
+/* Smart IVR */
+#wrapIvr .img_ivr { margin: 0; position: relative; }
+#wrapIvr .img_ivr figcaption { position: absolute; visibility: hidden; }
+#wrapIvr img { max-width: 100%; width: 100%; }
+#wrapIvr .btnarea { position: relative; }
+#wrapIvr .btn_ivr { position: absolute; display: block; width: 82%; height: 11.4%; margin: 0 auto; left: 0; right: 0; top: 65.3%; text-indent: -9999em; }
+#wrapIvr .btn_ivr:last-child { top: 78.4%; }

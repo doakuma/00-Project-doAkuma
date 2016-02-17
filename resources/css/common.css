@@ -1860,7 +1860,7 @@ table caption {
 }
 .prog_rad.gt-50 .overlay .fill {
 	background: #F3F4F5;
-	clip: rect(0, 100px, 50px, 0px);
+	clip: rect(0, 100px, 100px, 50px);
 }
 .prog_rad .prog_cont {
 	position: absolute;

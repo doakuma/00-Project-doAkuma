@@ -16,22 +16,26 @@ function init() {
 
 function radProgControl() {
 	$('.prog_rad').each(function(){
-		var proAmount = $(this).attr('data-percent');
-		var proRadial = parseInt(360*proAmount/100);
+		var proRad = $(this),
+			proAmount = proRad.attr('data-percent'),
+			porCont = proRad.find('.prog_cont');
+
+		var proRadial = 360*proAmount/100;
 		var minVal = 0,
-			time = (1000)*2;
+			time = (1000/proAmount)*2;
 
 		if(proAmount > 50) {
 			$(this).addClass('gt-50');
 		};
 		$(this).find('.fill').css({
-			'transform': 'rotate('+proRadial+'deg)'
+			'transform': 'rotate('+proRadial+'deg)',
+			'transition-duration': (time/50)+'s' 
 		})
 		var loading = function(){
 			// value += 1;
 			minVal +=1;
 			// addVal = progBar.val(minVal);
-			$(this).find('.prog_cont').text(minVal + '%');
+			porCont.text(minVal + '%');
 			if(minVal == proAmount) {
 				clearInterval(animate);
 			}		
@@ -41,7 +45,6 @@ function radProgControl() {
 			 loading();
 		}, time);
 
-		console.log(minVal)
 	})
 }
 
