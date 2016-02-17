@@ -21,29 +21,14 @@ function radProgControl() {
 			porCont = proRad.find('.prog_cont');
 
 		var proRadial = 360*proAmount/100;
-		var minVal = 0,
-			time = (1000/proAmount)*2;
 
 		if(proAmount > 50) {
 			$(this).addClass('gt-50');
 		};
 		$(this).find('.fill').css({
-			'transform': 'rotate('+proRadial+'deg)',
-			'transition-duration': (time/50)+'s' 
+			'transform': 'rotate('+proRadial+'deg)'
 		})
-		var loading = function(){
-			// value += 1;
-			minVal +=1;
-			// addVal = progBar.val(minVal);
-			porCont.text(minVal + '%');
-			if(minVal == proAmount) {
-				clearInterval(animate);
-			}		
-		};
-		loading();
-		var animate = setInterval(function(){
-			 loading();
-		}, time);
+			porCont.text(proAmount + '%');
 
 	})
 }
