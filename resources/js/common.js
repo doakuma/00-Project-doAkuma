@@ -18,17 +18,35 @@ function radProgControl() {
 	$('.prog_rad').each(function(){
 		var proRad = $(this),
 			proAmount = proRad.attr('data-percent'),
-			porCont = proRad.find('.prog_cont');
+			porCont = proRad.find('.prog_cont'),
+			time = parseInt((1000/proAmount)),
+			trTime = time/10,
+			minVal = 0;
 
 		var proRadial = 360*proAmount/100;
 
-		if(proAmount > 50) {
-			$(this).addClass('gt-50');
-		};
 		$(this).find('.fill').css({
-			'transform': 'rotate('+proRadial+'deg)'
+			'transform': 'rotate('+proRadial+'deg)',
+			'transition-duration': trTime +'s'
 		})
-			porCont.text(proAmount + '%');
+		console.log(time)
+
+		var loading = function(){
+			// value += 1;
+			minVal +=1;
+			porCont.text(minVal + '%');
+			if(minVal == proAmount) {
+				clearInterval(animate);
+			}
+
+			if(minVal >= 50) {
+				proRad.addClass('gt-50');
+			};
+		};
+		loading(this);
+		var animate = setInterval(function(){
+			 loading(this);
+		}, time);
 
 	})
 }
