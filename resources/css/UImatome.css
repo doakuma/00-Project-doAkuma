@@ -3,14 +3,12 @@
 	display: inline-block;
 	border: 5px solid #ccc;
 	font: 0/0 Dotum;
-	width: 100px;
+	width: 90px;
 }
 .icon img {
 	display: block;
 	font: 0/0 Dotum;
 	max-width: 100%;
-	max-height: 100%;
-	margin: auto;
 	box-shadow: 0 0 20px rgba(0,0,0,0.15) inset
 }
 .icon.ic_circle {
@@ -19,12 +17,11 @@
 .icon.ic_hexagon {
 	position: relative;
 	overflow: visible;
-	margin: 10px 0 0;
-	height: 100px;
-	width: 57px;
-	background: #ccc;
-	box-shadow: none;
+	background: #fff;
+	border: none;
 	
+	box-shadow: 0 5px 0 #ccc inset,
+				0 -5px 0 #ccc inset;
 }
 .icon.ic_hexagon:before,
 .icon.ic_hexagon:after {
@@ -32,14 +29,15 @@
 	display: block;
 	position: absolute;
 	top: 0;
-	height: inherit;
-	width: inherit;
-	background: inherit;
-	right: calc((100% / 2) - ((100% * 0.57735) / 2));;
+	border-top: 45px solid #fff;
+	border-bottom: 45px solid #fff;
+	background: #ccc;
 }
 .icon.ic_hexagon:before {
-  transform: rotateZ(60deg);
+	left: -7px;
+	border-right: 25px solid transparent;
 }
 .icon.ic_hexagon:after {
-  transform: rotateZ(-60deg);
+	right: -7px;
+	border-left: 25px solid transparent;
 }
