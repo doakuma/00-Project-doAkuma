@@ -1,0 +1,581 @@
+@charset "euc-kr";
+html,
+body { height: 100%; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.subheader { font-family: 'NanumGothic', '돋움', dotum, sans-serif; font-weight: normal; }
+#wrap.digitalTariff { position: relative; background: #8d9099; z-index: 0; padding: 30px 0; min-height: 100%; }
+.digitalTariff #container { position: relative; width: 1024px; background: url(../../images/internet/shai/cal/bg_container.png) repeat-y left top; border-left: 1px solid rgba(0, 0, 0, 0.15); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+.digitalTariff #container  #lnbarea { position: relative; width: 246px; min-height: 697px; left: 0; top: 0; overflow: hidden; padding: 0 0 3px; }
+.digitalTariff #container.wide #lnbarea {	/* position: absolute; */
+
+	/* width: 370px; */
+background: #fff; overflow: visible; }
+.digitalTariff #container  #lnbarea .lnb { position: relative; padding: 0 0 0 40px; width: 0; margin: 0; z-index: 10; background: #cdd3eb; -webkit-transition: all 0.35s ease-in 0.35s; -o-transition: all 0.35s ease-in 0.35s; transition: all 0.35s ease-in 0.35s; z-index: 1; }
+.digitalTariff #container  #lnbarea .lnb:after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #ccd3eb; z-index: 1; }
+.digitalTariff #container  #lnbarea .lnb.active { overflow: visible; }
+.digitalTariff  #container.deactive_lnb { background: #fff; }
+.digitalTariff  #container.deactive_lnb .lnb { display: none; }
+.digitalTariff .banner450 { overflow: visible; margin: 50px 0 0 40px; left: 0; }
+.digitalTariff #container .cont { padding: 20px 40px 25px 0px; margin: 0 0 0 -36px; width: 884px; }
+.digitalTariff #container.wide .cont { width: 580px; margin: 0; }
+.digitalTariff #container #content { margin-left: -120px; width: 888px; }
+.digitalTariff .h1_titbox { height: 40px; background: #0f2b75  url(../../images/internet/shai/cal/bg_top_header.png) no-repeat -8px top; }
+.digitalTariff .h1_titbox h1 { display: none; padding: 0; margin: 20px 0 0 95px; color: #fff; background: none; }
+.digitalTariff .h1_titbox .contact li { background-image: url(../../images/internet/shai/cal/contact_btn_vline_df.gif); }
+.digitalTariff .h1_titbox .contact li a { display: block; overflow: hidden; height: 40px; }
+.digitalTariff .h1_titbox .contact li a img { display: block; margin-top: -40px; -webkit-transition: all 0.15s ease-out 0.15s; -moz-transition: all 0.15s ease-out 0.15s; -ms-transition: all 0.15s ease-out 0.15s; -o-transition: all 0.15s ease-out 0.15s; transition: all 0.15s ease-out 0.15s; }
+.digitalTariff .h1_titbox .contact li a:hover img,
+.digitalTariff .h1_titbox .contact li a.active img { margin-top: 0; }
+.digitalTariff .btn_quit { position: absolute; right: -60px; -webkit-box-shadow: 1px 1px 3px #787b82; box-shadow: 1px 1px 3px #787b82; }
+.digitalTariff .btn_cal_quit { background: transparent; padding: 0; margin: 0; border: 0; cursor: pointer; }
+.digitalTariff .quit-layer { overflow: hidden; bottom: -99em; top: auto; position: fixed; left: 0; right: 0; margin: auto; width: 478px; z-index: 110; -webkit-transition: all 0.35s ease-in 0.135s; -moz-transition: all 0.35s ease-in 0.135s; -ms-transition: all 0.35s ease-in 0.135s; -o-transition: all 0.35s ease-in 0.135s; transition: all 0.35s ease-in 0.135s; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+.digitalTariff .alertpop { overflow: hidden; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+.digitalTariff .alertpop .alertpop_hd,
+.digitalTariff .alertpop .alertpop_bd,
+.digitalTariff .alertpop .alertpop_ft { background: #fff; }
+.digitalTariff .quit-layer .alertpop_bd { padding: 33px 20px 20px; background: #fff; }
+.digitalTariff .quit-layer .alertpop_bd .alert_txt1 { margin: -33px 0 24px; padding: 110px 0 32px; color: #666; font-weight: normal; font-size: 18px; border-bottom: 1px solid #dedede; background: #fff url(../../images/internet/shai/cal/bg_quit_layer.png) no-repeat center top; }
+.digitalTariff .quit-layer .alertpop_bd .alert_txt1 strong { font-weight: bold; }
+.digitalTariff .quit-layer .alertpop_bd .txt_quit { text-align: center; font-size: 23px; color: #ff6474; }
+.digitalTariff .quit-layer .alertpop_bd .btn { border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
+.digitalTariff #container .agreebox .ag_li .h3_title { font-size: 13px; margin: 0 0 15px; }
+.digitalTariff .quit-layer.active { bottom: 45%; top: auto; }
+.digitalTariff #maskLayer { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: -1; }
+.digitalTariff #maskLayer.active { display: block; z-index: 110; }
+.digitalTariff .agreebox,
+.digitalTariff .tab_chkbox,
+.digitalTariff .doorbox { margin-top: 20px; }
+.digitalTariff .agreebox .smallscrollbox { font-size: 11px; }
+.digitalTariff #container .agreebox .ag_li:first-child .agreebox .smallscrollbox { height: 30px; }
+.digitalTariff #container .logo { margin: 0; background: #fff; border-bottom: 1px solid #0f2b75; }
+.digitalTariff #container .logo a { padding: 0 0 0 25px; text-align: left; height: 39px; }
+.digitalTariff #container .logo a img { margin: 0; }
+.digitalTariff #container .h1_titbox .contact { margin: 0 12px 0 0; }
+.digitalTariff #container + #footer,
+.digitalTariff #container .event { display: none; }
+.digitalTariff .agreebox .ag_li { padding: 10px 30px; }
+.digitalTariff .agreebox .ag_li .h3_title { margin: 0 0 10px; font-size: 14px; }
+.digitalTariff .agreebox .ag_li .sbj { margin: 0 0 5px; font-size: 12px; }
+.digitalTariff .rdobox label { font-size: 12px; background-image: url(../../images/internet/shai/cal/icon_radio_df.png); }
+.digitalTariff .agreebox .scrollbox { padding: 8px; height: 24px; font-size: 11px; }
+.digitalTariff .h2_titbox { margin: 10px 0px 15px; }
+.digitalTariff .h2_titbox:first-child { margin-top: 0; }
+.digitalTariff .h2_titbox h2 { font-size: 18px; }
+.digitalTariff .box_agree { color: #333; font-size: 14px; }
+.digitalTariff .box_agree dt { }
+.digitalTariff .box_agree dd { margin: 15px 0 0; }
+.digitalTariff .box_agree dd .rdobox label { font-size: 14px; }
+.digitalTariff .box_agree dd.btn_agree { margin-top: 25px; text-align: right; }
+.digitalTariff .box_agree + .dash_list { margin-top: 25px; }
+.digitalTariff .btn.type_m8 { position: relative; display: inline-block; *display: inline; *zoom: 1; }
+.digitalTariff .btn.type_m8::after { content: '\003e'; position: absolute; display: block; padding: 0 0 0 3px; width: 21px; height: 24px; line-height: 23px; text-align: center; font-weight: bold; color: #e76571; border-radius: 50%; background: #fff; top: 0; bottom: 0; margin: auto; left: 75%; -webkit-box-shadow: 1px 1px 0 #b84c59; box-shadow: 1px 1px 0 #b84c59; }
+.digitalTariff .btn.type_m8 input { padding: 14px 30px 13px 0; width: 250px; text-align: center; font-size: 20px; color: #fff; font-weight: bold; background: #e7606e; text-shadow: 1px 1px 0 #b84c59; }
+.digitalTariff #container  #lnbarea .lnb .dep1 { width: 180px; background: #e3e6f5; -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); margin: 0 0 0 -250px; padding: 14px 10px 0px; z-index: 10; -webkit-transition: all 0.35s ease-in 0.35s; -o-transition: all 0.35s ease-in 0.35s; transition: all 0.35s ease-in 0.35s; }
+.digitalTariff #container  #lnbarea .lnb.active .dep1 { margin: 0; }
+.digitalTariff .lnb .dep1_li { border-top: 1px solid #cfd2df; background: none; position: relative; }
+.digitalTariff .lnb .dep1_li:first-child { border: none; }
+.digitalTariff .lnb .dep1_li .tit { overflow: visible; z-index: 1; margin: 0 -60px 0 0; padding: 22px 60px 20px 0; background-position: right center; background-repeat: no-repeat; -webkit-transition: all 0.35s ease-in 0.35s; -o-transition: all 0.35s ease-in 0.35s; transition: all 0.35s ease-in 0.35s; font-weight: bold; *zoom: 1; }
+.digitalTariff .lnb .dep1_li .tit span { overflow: visible; background: none; text-indent: 0; width: auto; font-size: 14px; color: #333; -webkit-transition: all 0.35s ease-in 0.35s; -o-transition: all 0.35s ease-in 0.35s; transition: all 0.35s ease-in 0.35s; }
+.digitalTariff .lnb .dep1_li.ing .tit { left: auto; top: auto; width: auto; background-image: none; position: static; }
+.digitalTariff .lnb .dep1_li .tit:after,
+.digitalTariff .lnb .dep1_li .tit:before { display: block; clear: both; content: ''; }
+.digitalTariff .lnb .dep1_li .tit:before { position: absolute; right: -60px; top: 0; width: 40px; height: 40px; z-index: 5; -webkit-transition: all 0.35s ease-in 0.35s; -o-transition: all 0.35s ease-in 0.35s; transition: all 0.35s ease-in 0.35s; }
+.digitalTariff .lnb.active .dep1_li .tit:before { right: 190px; }
+.digitalTariff .lnb .dep1_li .tit.step1:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step01.png); }
+.digitalTariff .lnb .dep1_li .tit.step2:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step02.png); }
+.digitalTariff .lnb .dep1_li .tit.step3:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step03.png); }
+.digitalTariff .lnb .dep1_li .tit.step4:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step04.png); }
+.digitalTariff .lnb .dep1_li .tit.step5:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step05.png); }
+.digitalTariff .lnb .dep1_li.ing .tit.step1:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step01_on.png); }
+.digitalTariff .lnb .dep1_li.ing .tit.step2:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step02_on.png); }
+.digitalTariff .lnb .dep1_li.ing .tit.step3:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step03_on.png); }
+.digitalTariff .lnb .dep1_li.ing .tit.step4:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step04_on.png); }
+.digitalTariff .lnb .dep1_li.ing .tit.step5:before { background-image: url(../../images/internet/shai/cal/icon_lnb_step05_on.png); }
+.digitalTariff .lnb .dep1_li .inf_txt,
+.digitalTariff .lnb .dep1_li ul.info,
+.digitalTariff .lnb .dep1_li .dep2 { max-height: 0; padding: 0; -webkit-transition: all 0.35s ease-in .35s; -o-transition: all 0.35s ease-in .35s; transition: all 0.35s ease-in .35s; }
+.digitalTariff .lnb.active .dep1_li .tit { margin: 0 0 0 -50px; padding: 12px 0 10px 50px; background-position: left center; }
+.digitalTariff .lnb.active .inf_txt,
+.digitalTariff .lnb.active ul.info,
+.digitalTariff .lnb.active .dep2 { max-height: 500px; height: auto; padding: 0 0 15px; }
+.digitalTariff .lnb .dep1_li .tit .btn.type_modify { background: none !important; height: auto !important; }
+.digitalTariff .lnb .btn.type_modify input,
+.digitalTariff .lnb .btn.type_modify span { width: 17px; height: 17px; line-height: 0; font-size: 0; background: url(../../images/internet/shai/cal/btn_lnb_modify.png) no-repeat left top !important; }
+.digitalTariff .btn.type_m4 { padding: 0 0 0 62px; height: auto; background: url(../../images/internet/shai/cal/bg_type_m4_df.png) no-repeat left top; }
+.digitalTariff .btn.type_m4 input,
+.digitalTariff .btn.type_m4 span { padding: 16px 67px 16px 0; height: auto; line-height: 1; background: url(../../images/internet/shai/cal/bg_type_m4_df.png) no-repeat right bottom; }
+.digitalTariff .btn.type_m4_prev { height: 50px; background: url(../../images/internet/shai/cal/bg_type_m5_df.png) no-repeat left top; }
+.digitalTariff .btn.type_m4_prev input,
+.digitalTariff .btn.type_m4_prev span { height: 50px; line-height: 50px; padding: 0px 60px 0px 70px; color: #fff; background: url(../../images/internet/shai/cal/bg_type_m5_df.png) no-repeat right bottom; }
+.digitalTariff .btn.type_m4_prev.nonearrow { background: #717F8E; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .confirmbox .cfm_choice > .btn input,
+.digitalTariff .confirmbox .cfm_choice > .btn span { width: 284px; }
+.digitalTariff .tb_list th,
+.digitalTariff .tb_list td { padding: 10px 20px; font-size: 12px; }
+.digitalTariff .tb_list td p.price { font-size: 14px; text-align: center !important; }
+.digitalTariff .confirmbox .cfm_con .tb_list { padding: 10px 0px 0px; }
+.digitalTariff .confirmbox .cfm_con .tb_list th,
+.digitalTariff .confirmbox .cfm_con .tb_list td { padding: 6px 0; font-size: 12px; }
+.digitalTariff .confirmbox .cfm_con .tb_list td .sinfobox { padding: 5px 0 0; }
+.digitalTariff .confirmbox .cfm_con .agree_list { padding: 5px 0; }
+.digitalTariff  .chkbox label { height: 18px; font-size: 12px; padding: 12px 0px 0px 27px; }
+.digitalTariff .confirmbox .cfm_con .btn_area { padding: 20px 0 7px; border: none; }
+.digitalTariff .tb_list td .inp_text,
+.digitalTariff .tb_list td .inp_pw,
+.digitalTariff .tb_list td .selbox { margin: -5px 0; }
+.digitalTariff .confirmbox .cfm_con .tb_list td .inp_text,
+.digitalTariff .confirmbox .cfm_con .tb_list td .inp_pw,
+.digitalTariff .confirmbox .cfm_con .tb_list td .selbox { margin: 0; }
+.digitalTariff .tabbox .tab_con { top: 75px; }
+.digitalTariff .tb_titbox { margin-top: 10px; margin-bottom: 10px; }
+.digitalTariff .tb_titbox .tit { font-weight: normal; }
+.digitalTariff .tb_msgbox { padding: 15px; }
+.digitalTariff .tb_msgbox .msgtit { font-size: 12px; }
+.digitalTariff .tabbox.type2 .tabmenu { position: relative; height: 57px; background: #a1cbdb; color: #fff; }
+.digitalTariff .tabbox.type2 .tabmenu.on { background: #E6616E; }
+.digitalTariff .tabbox.type2 .tabmenu.on:after { content: url(../../images/internet/shai/cal/tab_btn_arrow.gif); position: absolute; left: 0; right: 0; bottom: -6px; margin: auto; width: 12px; height: 6px; }
+.digitalTariff .tabbox.type2 .tabmenu > span { display: inline-block; position: relative; }
+.digitalTariff .tabbox.type2 .tabmenu > span:last-child:after { content: url(../../images/internet/shai/cal/ico_btn_cfmchoice.png); position: absolute; display: block; top: 0; bottom: 0; right: -33px; margin: auto; }
+.digitalTariff .tabbox.type1of2 { background: none; }
+.digitalTariff .tabbox.type2of2 { background: none; }
+.digitalTariff .tabbox .tabmenu.on .tab_check { background: none; padding: 0; }
+.digitalTariff .tabbox .tab_con .tb_list th,
+.digitalTariff .tabbox .tab_con .tb_list td { padding: 5px 0; font-size: 12px; }
+.digitalTariff .tb_list.style01 thead th { padding: 10px 0; }
+.digitalTariff .tb_list td .btn.type_xs1,
+.digitalTariff .tb_list td .btn.type_xs2 { margin: 0; }
+.digitalTariff .tabbox .tab_con .paging,
+.digitalTariff .tabbox .tab_con .btn_area { padding: 10px 0px; }
+.digitalTariff .doorlist .door_li .sbj a { padding: 10px 10px 10px 50px; background-position: 20px 10px; }
+.digitalTariff .doorlist .door_li.on .sbj a { background-position: 20px -30px; }
+.digitalTariff .addbox .sbj .tit { padding: 10px 20px 11px; font-size: 14px; }
+.digitalTariff .addbox .add_con .add_con_inner { padding: 10px 15px; }
+.digitalTariff .addbox .add_con .cho_list li { margin: 8px 0 0; }
+.digitalTariff .addbox .add_con .cho_list li:first-child { margin: 0; }
+.digitalTariff .tab_chkbox .tc_list li { padding: 5px 0 8px; }
+.digitalTariff .tab_chkbox .tc_conbox { padding: 10px 20px 0; }
+.digitalTariff .tb_list.finish { padding: 17px 0; }
+.digitalTariff .finish .fnsh_txt { margin-bottom: 8px; font-size: 16px; }
+.digitalTariff  .finish .fnsh_txt2 { font-size: 12px; line-height: 1.2; }
+.digitalTariff .finish .fnsh_txt3 { font-size: 14px; }
+.digitalTariff .driverBox { overflow: hidden; padding: 0; border-radius: 5px; border: 1px solid #cccccc; background: #f7f7f7; }
+.digitalTariff .driverInfo { width: 625px; background: none; }
+.digitalTariff .driverInfo .type { padding: 15px 0 0; }
+.digitalTariff .driverInfo .type.on { display: table; }
+.digitalTariff .driverInfo .type img,
+.digitalTariff .driverInfo .type ul { display: table-cell; vertical-align: top; }
+.digitalTariff .driverInfo .type ul { padding: 0 10px; margin: 0; border: none; }
+.digitalTariff .driverInfo .type ul li { padding-left: 0; background: none; color: #888; }
+.digitalTariff .driverInfo .type ul li:first-child { font-weight: bold; color: #333; }
+.digitalTariff .driverInfo .type img { padding: 0px 22px; border-right: 1px solid #ddd; }
+.digitalTariff .driverList { padding: 11px 0px 4px; background: #e7e7e7; border-right: 1px solid #ccc; }
+.digitalTariff .driverList li a { height: 47px; line-height: 1; text-align: left; background-image: url(../../images/internet/shai/cal/df_btn_driver.png); background-position: 0 0; font-weight: normal; letter-spacing: -1px; }
+.digitalTariff .driverList li a.on { background-position: 0 bottom; }
+.digitalTariff .driverList li a .t1,
+.digitalTariff .driverList li a .t2,
+.digitalTariff .driverList li a .t3,
+.digitalTariff .driverList li a .t4,
+.digitalTariff .driverList li a .t5,
+.digitalTariff .driverList li a .t6 { height: auto; padding: 16px 0 0 40px; }
+.digitalTariff .driverList li a .t1,
+.digitalTariff .driverList li a .t2,
+.digitalTariff .driverList li a .t3,
+.digitalTariff .driverList li a .t4,
+.digitalTariff .driverList li a .t5,
+.digitalTariff .driverList li a .t6,
+.digitalTariff .driverList li a.on .t1,
+.digitalTariff .driverList li a.on .t2,
+.digitalTariff .driverList li a.on .t3,
+.digitalTariff .driverList li a.on .t4,
+.digitalTariff .driverList li a.on .t5,
+.digitalTariff .driverList li a.on .t6 { background: none; }
+.digitalTariff .driverList li a span span { display: inline-block; margin: 0; vertical-align: bottom; }
+.digitalTariff .driverForm { overflow: hidden; padding: 0; border-radius: 5px; border: 1px solid #ccc; background: #fcfcfc; }
+.digitalTariff .driverForm .driFmHd { width: auto; height: 40px; line-height: 40px; background: #fff; border-bottom: 1px solid #ccc; font-weight: normal; }
+.digitalTariff .driverForm .driFmHd .name,
+.digitalTariff .driverForm .driFmCont .driAgree .driAgrBox .sbj .name { color: #5ea8d7; }
+.digitalTariff .driverForm .driFmCont { border: none; }
+.digitalTariff .driverForm .driFmCont .relationBox { padding: 0px 0px 10px; border-bottom: none; margin-bottom: 0; }
+.digitalTariff .driverForm .driFmCont .relationBox label { margin-top: 6px; font-weight: normal; font-size: 14px; }
+.digitalTariff .driverForm .driFmCont .relationBox label .name { color: #5ea8d7; }
+.digitalTariff .driverForm .driFmCont .relationBox .selbox { float: none; margin: 0 0 0 20px; }
+.digitalTariff .driverForm .driFmCont table th,
+.digitalTariff .driverForm .driFmCont table td { padding: 4px 0; }
+.digitalTariff .driverForm .driFmCont table td .age { color: #5ea8d7; }
+.digitalTariff .driverForm .driFmCont .driAgree { padding: 0; }
+.digitalTariff .driverForm .driFmCont .driAgree li { line-height: 1.4; }
+.digitalTariff .carton .cartonHd { width: auto; height: 40px; line-height: 40px; }
+.digitalTariff .carton .cartonCont { padding: 13px 30px 15px; }
+.digitalTariff .carton .cartonCont .list li { background-position: 0 5px; font-size: 11px; }
+.digitalTariff .extraChgBox { overflow: hidden; margin-top: 10px; background: #fcfcfc; border-radius: 5px; border: 1px solid #ddd; }
+.digitalTariff .extraChgBox .extraChgTit { width: auto; height: 40px; line-height: 40px; background: #fff; border-bottom: 1px solid #ccc; }
+.digitalTariff .extraChgBox .extraChgCt { padding: 8px 30px 4px; background: none; border: none; }
+.digitalTariff .extraChgBox .extraChgCt .extraChgSub { font-size: 12px; margin-bottom: 10px; }
+.digitalTariff .mileageBox { overflow: hidden; border-radius: 5px; background: #fcfcfc; border: 1px solid #ddd; }
+.digitalTariff .mileageBox .mileageTit { width: auto; height: 40px; line-height: 40px; background: #fff; border-bottom: 1px solid #ccc; }
+.digitalTariff .mileageBox .mileageCt { padding: 15px 0px 7px; background: none; border: none; }
+.digitalTariff .mileageBox .mileageCt .mileageLink { width: 25%; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin { width: 65%; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .t1 { font-size: 14px; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .radioGrp { margin-top: 10px; padding-top: 5px; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .radioGrp .rdobox { padding-top: 4px; margin-bottom: 4px; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .radioGrp .t3 { font-size: 14px; margin-bottom: 7px; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .radioGrp ul.item { font-size: 12px; }
+.digitalTariff .mileageBox .mileageCt .mileageJoin .radioGrp ul.item li { margin-top: 7px; }
+.digitalTariff .stepbox { width: auto; }
+.digitalTariff .srch_car { padding: 0 5px 0 0; margin-top: -25px; overflow: visible; }
+.digitalTariff .srch_car label { display: block; padding: 0 48px 6px 0; }
+.digitalTariff .doorlist.sett_type .door_li,
+.digitalTariff .doorlist.sett_type .sbj { position: static; }
+.digitalTariff .doorlist.sett_type .door_li { float: left; width: 33.333%; }
+.digitalTariff .doorlist .door_li.on .sbj .tit { padding: 10px 20px; }
+.digitalTariff .sett_type_new.doorlist .door_li .sbj a { float: none; width: auto; padding: 0; line-height: 50px; background: #a1cbdb; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; height: 50px; color: #fff; }
+.digitalTariff .sett_type_new.doorlist .door_li.on .sbj a { position: relative; background: #E6616E; }
+.digitalTariff .sett_type_new.doorlist .door_li.on .sbj a:before { content: url(../../images/internet/shai/cal/tab_btn_arrow.gif); position: absolute; left: 0; right: 0; bottom: -5px; margin: auto; }
+.digitalTariff .doorlist.sett_type .door_con { position: absolute; left: 0; top: 70px; width: 100% !important; }
+.digitalTariff .sett_type_new.doorlist .sett_t1 .sbj a span { background-image: url(../../images/internet/shai/cal/ico_cal_certif4.png); }
+.digitalTariff .sett_type_new.doorlist .sett_t2 .sbj a span { background-image: url(../../images/internet/shai/cal/ico_cal_certif5.png); }
+.digitalTariff .sett_type_new.doorlist .sett_t3 .sbj a span { background-image: url(../../images/internet/shai/cal/ico_cal_certif6.png); }
+.digitalTariff .doorbox .door_con .tb_list th,
+.digitalTariff .doorbox .door_con .tb_list td { padding: 10px 0; font-size: 12px; }
+.digitalTariff .layer_balloon { left: 237px; top: 40px; }
+.digitalTariff .minfobox.agreeBox { margin: 8px 10px 0px 7px; }
+.digitalTariff .stepbox.mgb50 { margin: 0 !important; }
+.digitalTariff .rep_list .rep_con { width: 520px; }
+.digitalTariff .rep_list .rep_dep1_li { height: 45px; }
+.digitalTariff .rep_list .sbjbox { float: none; padding: 10px 0 0; margin: 0 0 0 20px; width: 330px; height: 35px; position: relative; }
+.digitalTariff .rep_list .sbjbox .sbj { display: inline-block; vertical-align: middle; float: none; }
+.digitalTariff .rep_list .sbjbox .sbj .btn.type_xs2 { position: absolute; top: 0; bottom: 0; right: 10px; margin: auto; }
+.rep_list .sbjbox .btn_help { float: none; display: inline-block; vertical-align: middle; }
+.digitalTariff .rep_list .rep_dep1_li.on .subtxt { padding: 0px 0px 0px 4px; display: inline-block; vertical-align: middle; }
+.digitalTariff .rep_list .sbjbox .subtxt .elsbox { display: none; }
+.digitalTariff .rep_list .sbjbox .subtxt em { margin: 0; }
+.digitalTariff .rep_list .rep_dep1_li .sel_brandimg,
+.digitalTariff .rep_list .rep_dep1_li .sel_brandimg img,
+.digitalTariff .rep_list .rep_dep1_li .sel_carimg,
+.digitalTariff .rep_list .rep_dep1_li .sel_carimg img { height: 65px; width: auto; display: none; }
+.digitalTariff .rep_list .rep_con .rep_dep2_li .brandimg,
+.digitalTariff .rep_list .rep_step2 .rep_dep2_li .brandimg img { margin: 0; height: 65px; width: auto; position: relative; display: none; }
+.digitalTariff .rep_list .rep_con #dep2_1 .rep_dep2_li .brandimg img { display: block; max-width: 40%; margin: auto; height: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+.digitalTariff .rep_list .rep_dep2_li a { display: table; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.digitalTariff .rep_list .rep_dep2_li a:hover { }
+.digitalTariff .rep_list  .rep_dep2_li .dep2_tit { margin-top: 5px; height: 45px; vertical-align: middle; display: table-cell; padding: 0px 5px; }
+.digitalTariff .rep_list .rep_con .rep_dep2_li a { height: 45px; background-position: 100% 15px; }
+.digitalTariff .rep_list .rep_con .rep_dep2_li.sel a { background-position: 570px -388px; }
+.digitalTariff .rep_list .rep_step3 .rep_dep2_li .dep2_tit,
+.digitalTariff .rep_list .rep_step3 .rep_dep2_li .dep2_tit.onlyone { margin-top: 13px; }
+.digitalTariff .rep_list .rep_step3 .rep_dep2_li .dep2_tit .year,
+.digitalTariff .rep_list .rep_step4 .rep_dep2_li .dep2_tit strong { font-size: 18px; }
+.digitalTariff .rep_list .rep_step4 .rep_dep2_li .dep2_tit { margin-top: 23px; }
+.rep_list .rep_con .rep_dep2_li .dep2_tit .dep2_stxt { display: none; }
+.digitalTariff .rep_list .rep_step5 .rep_dep2_li .dep2_tit strong { display: inline-block; }
+.digitalTariff .rep_list .rep_step5 .rep_dep2_li .dep2_tit .dep2_stxt { display: inline-block; font-size: 14px; }
+.digitalTariff .rep_list .rep_con .arrow { top: 9px; }
+.digitalTariff .rep_list .rep_step2 .arrow { top: 54px; }
+.digitalTariff .rep_list .rep_step3 .arrow { top: 101px; }
+.digitalTariff .rep_list .rep_step4 .arrow { top: 146px; }
+.digitalTariff .rep_list .rep_step5 .arrow { top: 190px; }
+.digitalTariff .bannerbox { padding-top: 7px; }
+.digitalTariff .bannerbox .bannerimg { }
+.bannerbox .infoarea { width: 620px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.digitalTariff  .infoarea .tit { margin-bottom: 5px; font-size: 14px; font-weight: normal; }
+.digitalTariff .bannerbox .infoarea table th,
+.digitalTariff .bannerbox .infoarea table tbody td { font-size: 12px; padding: 5px 0; }
+.digitalTariff .infoarea table  td .between { font-size: 12px; }
+.digitalTariff .bannerbox .infoarea .sinfobox { margin: 5px 0 7px; }
+.digitalTariff .bannerbox .infoarea .sinfo_list { margin: 0; }
+.digitalTariff .bannerbox .infoarea .sinfo_list li { margin-top: 4px; }
+.digitalTariff .bannerbox .infoarea .sinfo_list li .btn { margin: 0px 0px 0px 4px !important; }
+.digitalTariff .door_con .btn_area,
+.digitalTariff .tb_list .btn_area { padding: 7px 0px 5px; }
+.digitalTariff .doorbox.type2 .doorlist .door_li .sbj a { margin: 7px 0px 0px; }
+.digitalTariff .doorlist .door_li .sbj .subbox { padding: 10px 0; }
+.digitalTariff .doorbox.type2 .myitem .btn.type_xs2,
+.digitalTariff .doorbox.type2 .myitem .btn.type_modify { top: -32px; }
+.digitalTariff #container.addside #content .cont { width: 884px; margin-left: -56px; }
+.digitalTariff .box_cpc_offer { text-align: center; background: #e3edf6; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin-bottom: 20px; padding-bottom: 0; overflow: hidden; margin-top: -2px; height: auto; }
+.digitalTariff .box_cpc_offer img { margin: -3px 0; }
+.digitalTariff #container #side { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 0 0; margin: auto !important; width: 1025px; z-index: 100; background: url(../../images/internet/shai/cal/bg_side_shadow.png) repeat-x left top; }
+.digitalTariff #side .sidebox { position: relative; margin: 0; padding: 0 0 18px; width: 100%; color: #212121; background: #fff url(../../images/internet/shai/cal/bg_cal_sidebar_df.png) no-repeat left top; }
+.digitalTariff #side .sidebox:after { content: ''; display: block; clear: both; }
+.digitalTariff #side .sidebox .sidebox_hd,
+.digitalTariff #side .sidebox .sidebox_bd { float: left; height: auto; padding: 0; background: none; }
+.digitalTariff #side .sidebox .sidebox_hd { padding-top: 16px; width: 424px; }
+.digitalTariff #side .sidebox .sidebox_bd { padding-top: 16px; width: 400px; }
+.digitalTariff #side .sidebox .discountbox,
+.digitalTariff #side .info_discount,
+.digitalTariff #side .sidebox .discountbox ul { padding: 0; background: none; border: none; border-radius: 0; }
+.digitalTariff #side .sidebox .totalpricebox .pricebox .isnot { display: none; }
+.digitalTariff #side .sidebox .sidebox_hd > * { display: table; margin: 0 75px 0 42px; padding: 7px 15px 0; width: 276px; border-top: 1px solid #c5bcbd; }
+.digitalTariff #side .sidebox .sidebox_hd > *:first-child { padding-top: 0; padding-bottom: 4px; border-top: none; }
+.digitalTariff #side .sidebox  .tit { display: table-cell; margin: 0; width: 100px; font-size: 14px; font-weight: bold; vertical-align: top; text-align: left; float: none; }
+.digitalTariff #side .sidebox .totalpricebox .pricebox { font-size: 12px; color: #8c8c8c; float: none; }
+.digitalTariff #side .sidebox .totalpricebox .pricebox .price { padding: 0; font-size: 16px; font-weight: bold; color: #1e0000; }
+.digitalTariff #side .sidebox .totalpricebox.total_payment { padding-top: 3px; }
+.digitalTariff #side .sidebox .totalpricebox.total_payment > * { vertical-align: middle; }
+.digitalTariff #side .sidebox .totalpricebox.total_payment .pricebox .price { font-size: 28px; color: #e30102; }
+.digitalTariff #side .sidebox .discountbox ul { padding: 0 0 8px; display: table-cell; height: 72px; vertical-align: top; }
+.digitalTariff #side .sidebox .discountbox ul li { overflow: visible; display: table; padding: 5px 0 0; width: 100%; }
+.digitalTariff #side .sidebox .discountbox ul li:first-child { padding: 0; }
+.digitalTariff #side .sidebox .discountbox ul li > * { display: table-cell; float: none; margin: 0; font-size: 12px; }
+.digitalTariff #side .sidebox .discountbox ul li .stit { float: none; margin: 0; padding: 0; height: auto; width: 110px; background: none; color: #8c8c8c; }
+.digitalTariff #side .sidebox .discountbox ul li .pricebox { text-align: right; color: #8c8c8c; }
+.digitalTariff #side .sidebox .discountbox ul li .pricebox .price { color: #000; font-size: 12px; }
+.digitalTariff #side .sidebox .sidebox_bd > * { margin: 0 36px 0 29px; }
+.digitalTariff #side .sidebox .sidebox_bd .id_con .discountprogram { margin: 0; border: 0; }
+.digitalTariff .discountprogram .tit_prgm { padding: 0 0 8px 13px; border-bottom: 1px solid #cccccc; }
+.digitalTariff .txt_prgm { display: table; padding: 7px 14px; width: 100%; border: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.digitalTariff .txt_prgm .price { width: 73px; font-size: 11px; text-align: right; color: #8c8c8c; }
+.digitalTariff #side .sidebox  .txt_prgm .tit { padding: 0; width: 235px; font-size: 12px; font-weight: normal; color: #8c8c8c; background: none; }
+.digitalTariff #side .info_discount .cards { padding: 0; margin: 0 0 4px; border: 0; }
+.digitalTariff #side .info_discount .cards dt { display: none; }
+.digitalTariff #side .info_discount .cards dd { padding: 0 14px; }
+.digitalTariff #side .info_discount .cards dd .txt,
+.digitalTariff #side .info_discount .cards dd .txtGrp span { color: #8c8c8c; font-size: 11px; }
+.digitalTariff #side .info_discount .cards dd .txtGrp { display: table; width: 100%; }
+.digitalTariff #side .info_discount .cards dd .txtGrp > * { display: table-cell; }
+.digitalTariff #side .info_discount .cards dd .txtGrp .fl { width: 225px; }
+.digitalTariff #side .info_discount .cards dd .txtGrp .fr { width: 73px; text-align: right; }
+.digitalTariff .txt_prgm .price strong,
+.digitalTariff #side .info_discount .cards dd .txtGrp .fr strong { font-weight: bold; font-size: 12px; color: #000; letter-spacing: -0.5px; }
+.digitalTariff #side .info_discount .selbox { margin-left: 12px; }
+.digitalTariff #side .info_discount .selbox span.customStyleSelectBox { padding: 8px 15px 7px 10px; font-size: 11px; }
+.digitalTariff #side .info_discount .selbox .customStyleSelectBoxInner { padding: 0; width: 145px !important; background: none; }
+.digitalTariff #side .info_discount .linkbtn { display: inline-block; }
+.digitalTariff #side .info_discount .discountprice { margin-top: 8px; padding: 8px 0 0 14px; border-top: 1px solid #ccc; }
+.digitalTariff #side .info_discount .discountprice .tit { width: 150px; vertical-align: middle; }
+.digitalTariff #side .info_discount .discountprice .pricebox { display: table-cell; float: none; padding-right: 15px; width: 220px; text-align: right; vertical-align: bottom; font-size: 12px; color: #8c8c8c; }
+.digitalTariff #side .info_discount .discountprice .pricebox .price { font-size: 22px; color: #000; }
+.digitalTariff #side .sidebox .btn_area { position: absolute; top: 0; right: 0; padding: 0; height: 100%; width: 200px; }
+.digitalTariff #side .sidebox .btn.type_b1_chk,
+.digitalTariff #side .sidebox .btn.type_b1_chk input,
+.digitalTariff #side .sidebox .btn.type_b1_chk span { display: block; height: 100%; line-height: 1; font-size: 28px; padding: 0; letter-spacing: -3px; }
+.digitalTariff #side .sidebox .btn.type_b1_chk { display: block; padding: 97px 0 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+.digitalTariff #side .sidebox  .btn.type_b1_chk span:after { width: 100%; top: -46px; -webkit-animation: slideDown 0.65s ease-in-out infinite; -o-animation: slideDown 0.65s ease-in-out infinite; animation: slideDown 0.65s ease-in-out infinite; content: url(../../images/internet/shai/cal/ico_btn_cfmchoice_result.png); }
+@keyframes slideDown {
+	0% { top: -46px; }
+	50% { top: -56px; }
+	100% { top: -46px; }
+}
+@-webkit-keyframes slideDown {
+	0% { top: -46px; }
+	50% { top: -56px; }
+	100% { top: -46px; }
+}
+@-moz-keyframes slideDown {
+	0% { top: -46px; }
+	50% { top: -56px; }
+	100% { top: -46px; }
+}
+.digitalTariff .doorlist .door_li .sbj2 { overflow: hidden; padding: 13px 52px 13px 16px; }
+.digitalTariff .doorlist .door_li .sbj2 .number { display: none; }
+.digitalTariff .doorlist .door_li .sbj2 .titBox { display: table; width: 570px; }
+.digitalTariff .doorlist .door_li .sbj2 .titBox > * { display: table-cell; vertical-align: middle; }
+.digitalTariff .doorlist .door_li .sbj2 .titBox .tt { position: relative; padding: 0 0 0 25px; font-size: 14px; width: 165px; color: #212121; }
+.doorlist .door_li .sbj2 .titBox .subTt { padding: 0 0 0 25px; width: 360px; font-size: 11px; color: #fff; }
+.digitalTariff .doorlist .door_li .sbj2 .titBox .subTt .point3 { font-size: 12px; color: #666 !important; }
+.digitalTariff .doorlist .door_li .sbj2 .titBox .tt .help { position: absolute; top: 0; bottom: 0; right: 0; margin: auto; vertical-align: text-bottom; width: 20px; height: 20px; background: url(../../images/internet/shai/cal/bg_btn_help_cal.png) no-repeat left top; }
+.digitalTariff .doorlist .door_li .sbj2 .priceBox { padding-right: 140px; width: 97px; font-size: 14px; }
+.digitalTariff .doorlist .door_li .sbj2 .priceBox .price { font-size: 16px; font-weight: bold; }
+.digitalTariff .doorlist .door_li .btn.type_modify { overflow: hidden; width: 25px; height: 25px !important; top: 0; bottom: 0; right: 0; margin: auto; background: url(../../images/internet/shai/cal/btn_modify_txt3.png) no-repeat left top !important; }
+.digitalTariff .doorlist .door_li .btn.type_modify input,
+.digitalTariff .doorlist .door_li .btn.type_modify span { display: none; }
+.digitalTariff .addside .doorbox { border-radius: 0; }
+.digitalTariff .addside .doorbox + .doorbox.mgt20 { margin-top: 0 !important; border-top: none; }
+.digitalTariff .doorlist .door_li.on .sbj2 { background: #8a8e99; }
+.digitalTariff .doorlist .door_li.on .sbj2 .titBox .tt,
+.digitalTariff .doorlist .door_li.on .sbj2 .priceBox,
+.doorlist .door_li.on .sbj2 .priceBox .price,
+.digitalTariff .doorlist .door_li.on .sbj2 .titBox .subTt .point3 { color: #fff !important; }
+.digitalTariff .doorlist .door_li.on .sbj2 .titBox .tt .help,
+.digitalTariff .doorlist .door_li.on .btn.type_modify { background-position: left bottom !important; }
+.doorlist .door_li.on .door_con .arrow2 { display: none; }
+.digitalTariff .calBox { padding: 10px 40px 10px; width: 882px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.digitalTariff .calBox .dragarea { margin: 0 auto; width: 560px; }
+.digitalTariff .calBox .calTit { margin-bottom: -15px; font-size: 12px; color: #333; }
+.digitalTariff .calBox .rdogroup .rdobox .point3 { font-size: 12px; }
+.digitalTariff .calBox_li { padding-bottom: 5px; }
+.digitalTariff .calBox_li .rdogroup { margin-top: 24px; }
+.digitalTariff .calBox .btn.type_ms2 input,
+.digitalTariff .calBox .btn.type_ms2 span { width: auto; }
+.digitalTariff .doorbox .door_con .agreechk { margin-bottom: 7px; }
+.digitalTariff .doorbox .door_con .agreechk.noFloat .txtbox { padding: 5px 0px 0px; font-size: 12px; }
+.digitalTariff .doorbox .door_con .agreechk .rbox .chkbox { margin-top: -10px; }
+.digitalTariff .calTabBox { height: 188px; background: none; }
+.digitalTariff .calTabBox .tab.t1 { width: 435px; background: #a1cbdb; color: #fff; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.digitalTariff .calTabBox .tab.t2 { width: 435px; left: 440px; background: #a1cbdb; color: #fff; border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+.digitalTariff .calTabBox li.on .tab { background: #E6616E; }
+.digitalTariff .dragbox { padding: 45px 0px 20px; }
+.digitalTariff .dragbox ul li { font-size: 11px; }
+.digitalTariff .dragbox ul li .price { margin-top: 30px; }
+.digitalTariff .dragbox ul li .flag { height: 24px; }
+.digitalTariff .dragbox ul li .flag label { height: 20px; }
+.digitalTariff .dragbox ul li .flag span { font-size: 11px; }
+.digitalTariff .dragbox ul li .flag.notype label { padding-top: 5px; }
+.dragarea .ui-state-default,
+.dragarea .ui-widget-content .ui-state-default,
+.dragarea .ui-widget-header .ui-state-default { background-size: 100%; }
+.digitalTariff .dragarea .ui-slider .ui-slider-handle { width: 2.2em; height: 2.2em; }
+.digitalTariff .limitBox .dragbox .dragbar { height: 17px; }
+.digitalTariff .calBox .sc_list { margin-top: 0; }
+.digitalTariff .calBox .sc_list li { margin-top: 5px; font-size: 12px; }
+.digitalTariff .calBox .sc_list li:first-child { margin-top: 0; }
+.digitalTariff .calBox .btnBox { margin-top: 10px; padding-top: 10px; }
+.digitalTariff .mscbox .msc_hd,
+.digitalTariff .mscbox .msc_con { padding: 8px 18px; }
+.digitalTariff .mscbox .msc_con .sinfobox { margin: 5px 0; }
+.digitalTariff .mscbox .h3_titbox h3,
+.digitalTariff .ctr_optbox .ctr_optcont .h3_titbox h3 { font-size: 14px; padding-bottom: 8px; }
+.digitalTariff .ctr_optbox .ctr_optcont .h3_titbox h3 { padding: 8px 0; }
+.digitalTariff .mscbox .msc_hd .radioGrp { padding: 10px 0; }
+.digitalTariff .mscbox .msc_hd .radioGrp .rdobox { margin-bottom: 5px; }
+.digitalTariff .ctr_tb table th,
+.digitalTariff .ctr_tb table tr:first-child th { padding: 8px 0 0 !important; }
+.digitalTariff .ctr_tb table td,
+.digitalTariff .ctr_tb table tr:first-child td { padding: 8px 0 !important; font-size: 12px; }
+.digitalTariff .ctr_optlist li { margin-top: 4px; }
+.digitalTariff .tbl_realtime .ctr_optlist .withchk,
+.digitalTariff .tbl_realtime .ctr_optlist .selbox { margin-bottom: 0; }
+.digitalTariff .ctr_optlist .chkbox label,
+.digitalTariff .ctr_optlist .rdobox label { height: 16px; }
+.digitalTariff .contract .ctr_ft { padding: 7px 20px; }
+.digitalTariff .minfobox .minfo { font-size: 12px; background-position: 0 7px; }
+.digitalTariff .box_banner_cpcnew { overflow: hidden; background: #f7f7f7; border: 1px solid #ddd; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; text-align: center; }
+.digitalTariff .tb_list.finish.thanksBox { padding: 0px 0px 8px; }
+.digitalTariff .tb_list.finish.thanksBox .fnsh_txt { margin-bottom: 8px; font-size: 14px; line-height: 1.4; }
+.digitalTariff .tb_list.finish.thanksBox .fnsh_txt2 { font-size: 14px; }
+.digitalTariff .img_infobox.type2 { margin-top: 10px; padding: 10px 0 8px 214px; background-position: 0 -12px; }
+.digitalTariff .img_infobox .txtcon { font-size: 12px; }
+.digitalTariff .img_infobox .tit { font-size: 18px; }
+.digitalTariff .img_infobox .txtcon .txt { margin-bottom: 5px !important; }
+.digitalTariff .extraChgBox .extraChgCt .extraChgBtn .btn { width: 199px; }
+.digitalTariff .stepbox .step { overflow: hidden; height: auto; background: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #ccc; }
+.digitalTariff .stepbox .step li { }
+.digitalTariff .stepbox .step li .inner1,
+.digitalTariff .stepbox .step li .inner2 { background: none; padding: 0; }
+.digitalTariff .stepbox .step li .inner1 { position: relative; }
+.digitalTariff .stepbox .step li .inner1:after { position: absolute; z-index: 2; content: ''; top: 0; bottom: 0; right: -14px; margin: auto; width: 60px; height: 60px; background: #fff; -webkit-box-shadow: -1px -1px 0 #ccc; -moz-box-shadow: -1px -1px 0 #ccc; box-shadow: -1px -1px 0 #ccc; -webkit-transform: rotate(135deg) skew(-10deg, -10deg); -moz-transform: rotate(135deg) skew(-10deg, -10deg)); -ms-transform: rotate(135deg) skew(-10deg, -10deg); -o-transform: rotate(135deg) skew(-10deg, -10deg); transform: rotate(135deg) skew(-10deg, -10deg); }
+.digitalTariff .stepbox .step li:last-child .inner1:after { border: none; display: none; }
+.digitalTariff .stepbox .step li .inner1 { background: #fff; }
+.digitalTariff .stepbox .step li.on .inner1 { background: #CCD3EB; margin: 0; }
+.digitalTariff .stepbox .step li.on .inner1:after { background: #CCD3EB; }
+.digitalTariff .stepbox .step li.on .inner1 .inner2 { color: #0E2B77; font-weight: bold; }
+.digitalTariff  .stepbox .step li.last.on .inner2 { background: none; }
+.digitalTariff  .stepbox .step li.last:after { }
+
+/* Button Styles */
+.digitalTariff .confirmbox .cfm_choice > .btn { height: 50px; background: #a1cbdb; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .confirmbox .cfm_choice > .btn.on { background: #E6616E; }
+.digitalTariff .confirmbox .cfm_choice > .btn.on  .arrow { top: 50px; }
+.digitalTariff .confirmbox .cfm_choice > .btn input,
+.digitalTariff .confirmbox .cfm_choice > .btn span { padding-bottom: 0; background: none; }
+.digitalTariff .confirmbox .cfm_choice > .btn span em { background: none; }
+.digitalTariff .confirmbox .cfm_choice > .btn span em:after { content: ''; display: inline-block; width: 24px; height: 49px; margin: -10px 0 0 4px; vertical-align: middle; background: url(../../images/internet/shai/cal/ico_btn_cfmchoice.png); }
+.digitalTariff .btn.type_t3 { height: 50px; background: #a1cbdb; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_t3 input,
+.digitalTariff .btn.type_t3 span { background: none; color: #fff; }
+.digitalTariff .btn.type_t3.on { background: #E6616E; }
+.digitalTariff .btn.type_b1_chk { background: #E6616E; height: 56px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; text-align: center; }
+.digitalTariff .btn.type_b1_chk input,
+.digitalTariff .btn.type_b1_chk span { position: relative; display: inline-block; padding: 0px 29px; height: 56px; font-size: 20px; background: none; }
+.digitalTariff .btn.type_b1_chk input:after,
+.digitalTariff .btn.type_b1_chk span:after { content: url(../../images/internet/shai/cal/ico_btn_cfmchoice.png); position: absolute; top: 0; bottom: 0; left: 0; margin: auto; }
+.digitalTariff .btn.type_m1_chk { overflow: hidden; padding: 0px 26px; height: 50px; background: #E6616E; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_m1_chk input,
+.digitalTariff .btn.type_m1_chk span { padding: 0px 0px 0px 23px; background: url(../../images/internet/shai/cal/icon_btn_chk.png) no-repeat left center; height: 50px; line-height: 50px; }
+.digitalTariff .btn.type_n1 { height: 34px; background: #d0e6fb; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.digitalTariff  .btn.type_n1 input,
+.btn.type_n1 span { background: none; height: 34px; line-height: 34px; }
+.digitalTariff .btn.type_xs2 input,
+.digitalTariff  .btn.type_xs2 span { background: #415995; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_xs8 { overflow: hidden; background: #E6616E; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; height: 34px; }
+.digitalTariff .btn.type_xs8 input,
+.digitalTariff .btn.type_xs8 span { padding: 5px 10px 7px; background: #E6616E; height: auto; }
+.digitalTariff .btn.type_m2 { background: #415995; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_m2 input,
+.digitalTariff .btn.type_m2 span { display: block; background: none; width: 136px; }
+.digitalTariff .btn.type_xs8.ico_chk,
+.digitalTariff .btn.type_xs8.ico_chk { position: relative; }
+.digitalTariff .btn.type_xs8.ico_chk:after,
+.digitalTariff .btn.type_xs8.ico_chk:after { position: absolute; left: 6px; top: 10px; width: 14px; height: 100%; content: url(../../images/internet/shai/cal/ico_btn_cfmchoice2.png); -webkit-animation: slideDown02 0.65s ease-in-out infinite; -o-animation: slideDown02 0.65s ease-in-out infinite; animation: slideDown02 0.65s ease-in-out infinite; }
+.digitalTariff .btn.type_xs8.ico_chk input,
+.digitalTariff .btn.type_xs8.ico_chk span { padding-left: 25px; }
+@keyframes slideDown02 {
+	0% { top: 10px; }
+	50% { top: 7px; }
+	100% { top: 10px; }
+}
+@-webkit-keyframes slideDown02 {
+	0% { top: 10px; }
+	50% { top: 7px; }
+	100% { top: 10px; }
+}
+@-moz-keyframes slideDown02 {
+	0% { top: 10px; }
+	50% { top: 7px; }
+	100% { top: 10px; }
+}
+.digitalTariff .btn.type_ms2 { background: #415995; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_ms2 input,
+.digitalTariff .btn.type_ms2 span { display: block; background: none; width: 136px; }
+.digitalTariff .btn.type_ms3 { background: #727f8f; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_ms3 input,
+.digitalTariff .btn.type_ms3 span { display: block; background: none; width: 136px; }
+.digitalTariff .btn.type_m1 { background: #E6616E; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.digitalTariff .btn.type_m1 input,
+.digitalTariff .btn.type_m1 span { background: none; }
+.digitalTariff .box_chk_info { overflow: hidden; margin-bottom: 20px; padding: 0 0 0 52px; min-height: 35px; background: url(../../images/internet/shai/cal/icon_chk_info.png) no-repeat 0 0; font-size: 17px; color: #666; }
+.digitalTariff .box_chk_info.withCpc { padding: 10px 0 10px 52px; -webkit-border-top-left-radius: 5px; -moz-border-top-left-radius: 5px; border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; border-top-right-radius: 5px; margin-bottom: -5px; background-color: #E2EDF5; background-image: url(../../images/internet/shai/cal/icon_chk_info_cpc.png); background-position: 5px 10px; }
+.digitalTariff .box_chk_info strong { color: #5ea8d7; }
+.digitalTariff .box_chk_info ~ .h2_titbox,
+.digitalTariff .box_chk_info ~ .h2_titbox h2 { display: none; }
+.digitalTariff .proInfo_face,
+.digitalTariff .cont .util li.tosms,
+.digitalTariff .cont .util li.toemail { display: none; }
+.digitalTariff .stock { position: relative; min-height: 157px; margin: 20px 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+.digitalTariff .stock .stockList { position: absolute; background: #e7e7e7; }
+.digitalTariff .stock .stockInfo { width: 566px; background: none; }
+.digitalTariff .stockBox .dragbox { padding: 20px 0 0; }
+.digitalTariff .img_infobox .btn.type_ms2 input,
+.digitalTariff .img_infobox .btn.type_ms2 span { width: auto; }
+.digitalTariff .stock .stockList li a { background: #fdfdfd; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #6c777c; }
+.digitalTariff .stock .stockList li a.on { background: #84bde1; color: #fff; }
+.digitalTariff .dragbox .dragbar .dragbar_inner { background: #5c74af; }
+.digitalTariff .stockBox.type2 .dragbox .dragbar .dragbar_inner { background: #e6616e; }
+.digitalTariff .laypop2 { overflow: hidden; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #d6d6d6; background: #fff; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+.digitalTariff .laypop2.type600 { width: 700px; }
+.digitalTariff .laypop2 .laypop_hd,
+.digitalTariff .laypop2 .laypop_bd,
+.digitalTariff .laypop2 .laypop_ft { background: none; }
+.digitalTariff .laypop2 .laypop_hd { height: 46px; background: #85bce2; }
+.digitalTariff .laypop2 .laypop_hd h1 { margin: 8px 0 4px 20px; }
+.digitalTariff .laypop2 .laypop_hd .btn_close2 { margin: 12px 12px 0 0; width: 23px; height: 23px; background: url(../../images/internet/shai/cal/btn_close_popdf.png) no-repeat left top; }
+.digitalTariff .laypop2 .laypop_bd { padding: 20px 20px 0; }
+.digitalTariff .laypop2 .laypop_bd h3 { margin-top: 0; }
+.digitalTariff .laypop2 .laypop_bd .smallscrollbox { height: 30px; }
+.digitalTariff .laypop_bd .agreebox .ag_li { padding: 10px 20px; }
+.digitalTariff .laypop2 .laypop_bd .chkAgreeInfo { }
+.agreebox .chkgroup.all { top: -45px; }
+.digitalTariff .laypop2 .laypop_bd .chkAgreeInfo > * { display: inline-block; }
+.digitalTariff .chkAgreeInfo .chkbox label { padding-top: 7px; font-size: 16px; background-image: url(../../images/internet/shai/cal/radio_check_agreeinfo.png); background-position: 0 8px; }
+.digitalTariff .chkAgreeInfo .chkbox.on label { background-position: 0 -35px; }
+.digitalTariff .chkAgreeInfo .btn { overflow: hidden; position: relative; margin: 0 0 0 20px; padding: 0 0 0 10px; background: #e6616e; font-size: 16px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.digitalTariff .chkAgreeInfo .btn:after { content: ''; background: url(../../images/internet/shai/cal/ico_btn_cfmchoice.png) no-repeat left top; background-size: cover; position: absolute; top: -7px; bottom: 0; left: 15px; margin: auto; width: 20px; height: 100%; }
+.digitalTariff .laypop2 .laypop_bd .btn_area.chkAgreeInfo .btn input,
+.digitalTariff .laypop2 .laypop_bd .btn_area.chkAgreeInfo .btn span { width: 120px; }
+.digitalTariff .laypop2 .laypop_bd h3.tit_pop_df01 { padding: 0; font-size: 12px; color: #676767; background: none; }
+.tit_pop_df01 strong { display: block; padding: 7px 0 15px 46px; font-size: 18px; color: #e4626c; background: url(../../images/internet/shai/cal/icon_tit_pop_df01.png) no-repeat left top; }
+.digitalTariff .laypop2 .laypop_bd .btn_area .btn input,
+.digitalTariff .laypop2 .laypop_bd .btn_area .btn span { width: 140px; }
+.btnAgreeAll { margin: 0; padding: 0; background: none; border: none; cursor: pointer; }
+.digitalTariff .fz14 { font-size: 14px; }
+.digitalTariff .minfobox .minfo .chkgroup { position: static; }
+.digitalTariff #helplayer .arrow { display: none; }
+.digitalTariff .insure_txt { background: url(../../images/internet/shai/cal/bg_insurmme_txt_df.gif) no-repeat left top; }
+.digitalTariff .caution .cau_titbox { background-image: url(../../images/internet/shai/cal/bg_cau_titbox_dt.gif); }

@@ -23,7 +23,7 @@ legend {
   outline: 1px solid rgba(1,1,1,0.8);
 }
 /* Common */
-a { color: #333; text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 .dummy_img {
 	display: table;
 	width: 100%;
