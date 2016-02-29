@@ -1,0 +1,2875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head> 
+<meta charset="utf-8" /> 
+<title>도로교통공단 TAAS </title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<link rel="stylesheet" type="text/css" href="../../css/gis3.css"></link>
+<script src="../../js/jquery-1.9.1.min.js"></script>
+<script src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="../../js/layer_pop.js"></script>
+<!-- 탭스크립트 -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$( '#poptab,#lefttab,#tab01,#tab0101,#tab02,#tab03,#tab04,#tab06,#tab07,#tool-tab,#tab0301-sub,#tab0302-sub,#tab0303-sub,#tab0601,#tab002').tabs();
+	});
+</script>
+<!-- treeview.js -->
+<script src="../../js/jquery.treeview.js"></script>
+<script src="../../js/jquery.cookie.js"></script>
+<link rel="stylesheet" href="../../css/jquery.treeview.css" />
+<script type="text/javascript">
+		$(document).ready(function(){
+			$("#browser,#browser2,#browser3,#browser4").treeview();
+		});
+</script>
+
+<!-- 인덱스맵 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+			$(".map-on").click(function(){
+					$(".index-map-wrap").toggle();
+					$(".map-on").toggleClass("map-off");
+			});
+			$("#icon04").click(function(){
+				$(".side-btn1").toggle();
+			});
+			$("#icon09").click(function(){
+				$(".side-btn2").toggle();
+			});
+			
+			jQuery("ul.side-btn1 li").on("click", function(){
+				jQuery("#icon04").removeClass(
+					function (index, css) {
+						return (css.match (/(^|\s)icon04\S+/g) || []).join(' ');
+					}
+				).addClass(jQuery(this).attr('class'));
+				jQuery(this).parent('ul.side-btn1').hide();
+			});
+			jQuery("ul.side-btn2 li").on("click", function(){
+				jQuery("#icon09").removeClass(
+					function (index, css) {
+						return (css.match (/(^|\s)icon09\S+/g) || []).join(' ');
+					}
+				).addClass(jQuery(this).attr('class'));
+				jQuery(this).parent('ul.side-btn2').hide();
+			});
+			
+	});
+</script>
+
+
+<!-- 조건설정 하위메뉴 -->
+<script type="text/javascript">
+	jQuery(function(){
+		jQuery("ul.condition li").on("click", function(){
+			var _this = jQuery(this);
+			jQuery("div.condition-sub").hide().eq(_this.index()).show();
+			_this.children("a").addClass("active");
+		});
+		
+		jQuery("a.sub-close").on("click", function(){
+			jQuery(this).closest("div.condition-sub").hide();
+			jQuery("ul.condition li a").removeClass("active");
+		});
+		
+		jQuery("ul.item-list li").on("click", function(){
+			var _this = jQuery(this);
+			jQuery("div.db-div").hide().eq(_this.index()).show();
+			_this.children("input[type='button'].item-option").addClass("active");
+		});
+		
+		/*
+		jQuery("#btn-enter,#btn-cancle").on("click", function(){
+			jQuery(this).closest("div.db-div").hide();
+			jQuery("input[type='button'].item-option").removeClass("active");
+		});
+		*/
+		jQuery("a.btn-enter").on("click", function(){
+			jQuery(this).closest("div.db-div, div.condition-sub").find("ul input[type='checkbox']:enabled").prop("checked", true);
+			
+		});
+		
+		jQuery("a.btn-cancle").on("click", function(){
+			jQuery(this).closest("div.db-div, div.condition-sub").find("ul input[type='checkbox']:enabled").prop("checked", false);
+		});
+		
+		jQuery(".collapsable-hitarea + span.folder > input").on("click", function() {
+			jQuery(this).closest("span.folder").next("ul").find("input[type='checkbox']:enabled").prop("checked", this.checked);
+		});
+		
+		jQuery(document).on("mousedown", function(e){
+			var container = jQuery("div.condition-sub");
+			var container2 = jQuery("div.db-div");
+
+			if (!container.is(e.target)
+				&& container.has(e.target).length === 0) {
+				container.hide();
+				jQuery("ul.condition li a").removeClass("active");
+			}
+			
+			if (!container2.is(e.target)
+				&& container2.has(e.target).length === 0) {
+				container2.hide();
+				jQuery("input[type='button'].item-option").removeClass("active");
+			}
+		}); 
+	});
+	
+	
+	
+	
+</script>
+<!-- //조건설정 하위메뉴 -->
+
+</head>
+<body>
+
+<div id="mapWrap"> 
+	<div class="subBg"></div>
+	
+	<div id="mapContainer"> 		
+		<div id="Navside"> 
+			<div class="sidecont">	
+				<!-- left side start -->
+				<div class="left_inside">
+					<div class="statistics-logo">
+						<a href="#" target="_blank" title="도로교통공단 새창열림"><img src="../../images/gis/logo.gif" class="top_img1 " alt="도로교통공단"/></a>
+					</div>
+					<div class="inside-left">
+						<div id="lefttab">
+							<div class="tmenu-box">
+								<ul  class="tmenu clear">
+									<li><a href="#tb01" class=" left-icon01">지도검색</a></li>
+									<li><a href="#tb02" class=" left-icon02">부분별검색</a></li>
+									<li><a href="#tb03" class=" left-icon03">사고다발지<br />검색</a></li>
+									<li ><a href="#tb04"class=" left-icon04">교통사고<br />일반검색</a></li>
+									<li class="mt-75"><a href="#tb05" class=" left-icon06">교통사고<br />GIS통계</a></li>
+									<li ><a href="#tb06" class=" left-icon07">심층분석</a></li>								
+								</ul>
+								<div class="t-menu05"><a href="#" class="left-icon05"  onclick="view_show(1);return false;">교통사고<br />상세검색</a></div>
+							</div>
+							
+							<!-- 지도검색 탭 시작 -->
+							<div id="tb01" class="tab-rightbox">
+								<p class="right-title">지도검색</p>
+								<div  id="tab01">
+									<ul class="mapsearch">
+										<li><a href="#ttb01" >통합</a></li>
+										<li><a href="#ttb02" >장소</a></li>
+										<li><a href="#ttb03" class="last">주소</a></li>
+									</ul>
+									<!-- 통합 검색 탭 -->
+									<div id="ttb01" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<p class="clear2">
+													<span class="search-tit"><label for="sa">검색어</label></span>
+													<input type="text" class="search-allbox" id="sa" />
+												</p>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div  id="tab0101">
+											<ul class="map-seach-result clear">
+												<li><a href="#ttc01" >장소</a></li>
+												<li><a href="#ttc03">주소</a></li>
+											</ul>	
+											<!-- 검색결과 탭 -->
+											<!-- 장소 탭 -->
+											<div id="ttc01" >
+												<div class="searc-total">
+													<div class="total-count">총 <span>319</span>건</div>
+													<div class="btn">
+														<a href="#" class="btn-minibox">목록보기</a>
+														<a href="#" class="btn-minibox">엑셀출력</a>
+													</div>
+												</div>
+												<div class="search-result-scroll">
+													<ul class="search-result-list">
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name"></p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name"></p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+														<li>
+															<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+															<p class="add">서울특별시 강남구 도산대로 336</p>
+															<p class="buld-name">디지털프라자 강남본점 4층</p>
+														</li>
+													</ul>
+												</div>
+												
+												<div class="pagination">
+													<ul>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+														<li class="active"><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+													</ul>
+												</div>
+												<br /><br /><br /><br /><br /><br />
+											</div>
+											<!-- //장소 탭 -->
+											<!-- 주소 탭 -->
+											<div id="ttc02" >
+											
+											</div>
+										</div>
+											<!-- //주소 탭 -->
+
+										<!-- //검색결과 탭 -->
+									</div>
+									<!-- //통합 검색 탭 -->
+									<!-- 장소 검색 탭 -->
+									<div id="ttb02" class="tab-area">
+										<div class="searchbox">
+											<div class="radiobox">
+												<label for="" class="radio01"><input type="radio" class="radio" checked />도로명</label>
+												<label for="" class="radio02"><input type="radio" class="radio" />지명</label>
+											</div>
+											<fieldset>
+												<legend>검색어</legend>
+												<p class="clear2">
+													<span class="search-tit"><label for="sa">검색어</label></span>
+													<input type="text" class="search-allbox" id="sa" />
+												</p>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+			
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+												<div class="total-count">총 <span>319</span>건</div>
+												<div class="btn">
+													<a href="#" class="btn-minibox">목록보기</a>
+													<a href="#" class="btn-minibox">엑셀출력</a>
+												</div>
+											</div>
+											<ul class="search-result-list">
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+											</ul>
+											<div class="pagination">
+												<ul>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+													<li class="active"><a href="#">1</a></li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+												</ul>
+											</div>
+											<br /><br /><br /><br /><br /><br />
+									</div>
+									<!-- //장소 검색 탭 -->
+									<!-- 주소 검색 탭 -->
+									<div id="ttb03" class="tab-area">
+										<div class="searchbox">
+											<div class="radiobox">
+												<label for="" class="radio01"><input type="radio" class="radio" checked />도로명</label>
+												<label for="" class="radio02"><input type="radio" class="radio" />지명</label>
+											</div>
+											<fieldset>
+												<legend>검색어</legend>
+												<p class="clear2">
+													<span class="search-tit"><label for="sa">검색어</label></span>
+													<input type="text" class="search-allbox" id="sa" />
+												</p>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+			
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+												<div class="total-count">총 <span>319</span>건</div>
+												<div class="btn">
+													<a href="#" class="btn-minibox">목록보기</a>
+													<a href="#" class="btn-minibox">엑셀출력</a>
+												</div>
+											</div>
+											<ul class="search-result-list">
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+											</ul>
+											<div class="pagination">
+												<ul>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+													<li class="active"><a href="#">1</a></li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+												</ul>
+											</div>
+											<br /><br /><br /><br /><br /><br />
+									</div>
+									<!-- //주소 검색 탭 -->
+								</div>
+							</div>
+							<!-- //지도검색 탭 끝 -->
+
+							<!-- 부분별검색 시작 -->
+							<div id="tb02" class="tab-rightbox">
+								<p class="right-title">부분별검색</p>
+								<div  id="tab02" >
+									<ul class="mapsearch3">
+										<li><a href="#tab0201" >지역별</a></li>
+										<li><a href="#tab0202" >경찰서별</a></li>
+										<li><a href="#tab0203" >노선별</a></li>
+										<li><a href="#tab0204" class="last">관리청별</a></li>
+									</ul>
+									<!-- 지역별 탭 -->
+									<div id="tab0201" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">발생년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">서울특별시</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">군구</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">강남구</option>
+													</select>
+												</div>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit2">조건설정</h3>
+										<div class="condition-wrap">
+											<ul class="condition">
+												<li class="submenu"><a href="#">DB분류</a>
+													<div class="condition-sub">
+														<p class="condition-head"><a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a></p>
+														<div class="condition-body">
+															<ul>
+																<li><input type="checkbox" />1대형사고</li>
+																<li><input type="checkbox" />음주운전사고</li>
+																<li><input type="checkbox" />여성운전자사고</li>
+																<li><input type="checkbox" />노인운전사고</li>
+																<li><input type="checkbox" />고속도로사고</li>
+																<li><input type="checkbox" />무면허운전사고</li>
+																<li><input type="checkbox" />화물차운전사고</li>
+																<li><input type="checkbox" />이륜차운전사고</li>
+																<li><input type="checkbox" />사업용차량사고</li>
+																<li><input type="checkbox" />어린이사고</li>
+																<li><input type="checkbox" />어린이보호구역사고</li>
+															</ul>
+														</div>
+													</div>										
+												</li>
+												<li><a href="#">대상사고</a>
+													<div class="condition-sub">
+														<p class="condition-head"><a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a></p>
+														<div class="condition-body">
+															<ul id="browser3" class="filetree">
+																<li class="collapsable"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed  disable"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox"  /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox"   /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</div>										
+												</li>
+												<li class="last"><a href="#">사고내용</a>
+													<div class="condition-sub condition-sub2">
+														<p class="condition-head">
+															<a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a>
+														</p>
+														<div class="condition-body">
+															<ul id="browser4" class="filetree">
+																<li class="collapsable"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed  disable"><span class="folder"><input type="checkbox" disabled readonly /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" disabled readonly /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox"  disabled readonly /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="collapsable"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="collapsable"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</div>										
+												</li>
+												<li><a href="#">사고유형</a></li>
+												<li><a href="#">법규위반</a></li>
+												<li class="last"><a href="#">행정단위</a></li>
+												<li><a href="#">월별</a></li>
+												<li><a href="#">요일별</a></li>
+												<li class="last"><a href="#">시간대별</a></li>
+												<li><a href="#">노면상태</a></li>
+												<li><a href="#">기상상태</a></li>
+												<li class="last"><a href="#">도로형태</a></li>
+											</ul>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+
+										</div>
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //지역별 탭 -->
+									<!-- 경찰서별 탭 -->
+									<div id="tab0202" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">발생년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">서울특별시</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">군구</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">강남구</option>
+													</select>
+												</div>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit2">조건설정</h3>
+										<div class="condition-wrap">
+											<ul class="condition">
+												<li class="submenu"><a href="#" class="active">DB분류</a></li>
+												<li><a href="#">대상사고</a></li>
+												<li class="last"><a href="#">사고내용</a></li>
+												<li><a href="#">사고유형</a></li>
+												<li><a href="#">법규위반</a></li>
+												<li class="last"><a href="#">행정단위</a></li>
+												<li><a href="#">월별</a></li>
+												<li><a href="#">요일별</a></li>
+												<li class="last"><a href="#">시간대별</a></li>
+												<li><a href="#">노면상태</a></li>
+												<li><a href="#">기상상태</a></li>
+												<li class="last"><a href="#">도로형태</a></li>
+											</ul>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											<div class="condition-sub">
+												<p class="sub-keyword"><input type="text" /><a href="#" class="sub-close">닫기</a></p>
+												<ul>
+													<li><input type="checkbox" />대형사고</li>
+													<li><input type="checkbox" />음주운전사고</li>
+													<li><input type="checkbox" />여성운전자사고</li>
+													<li><input type="checkbox" />노인운전사고</li>
+													<li><input type="checkbox" />고속도로사고</li>
+													<li><input type="checkbox" />무면허운전사고</li>
+													<li><input type="checkbox" />화물차운전사고</li>
+													<li><input type="checkbox" />이륜차운전사고</li>
+													<li><input type="checkbox" />사업용차량사고</li>
+													<li><input type="checkbox" />어린이사고</li>
+													<li><input type="checkbox" />어린이보호구역사고</li>
+												</ul>
+											</div>
+										</div>
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //경찰서별 탭 -->
+									<!-- 노선별 탭 -->
+									<div id="tab0203" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">발생년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">서울특별시</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">군구</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">강남구</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">도로종류</label></span>
+													<div class="tree-wrap">
+														<ul id="browser" class="filetree">
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed  disable"><span class="folder"><input type="checkbox" disabled readonly /> 1번국도</span></li>
+																	<li class="closed"><span class="folder"><input type="checkbox" disabled readonly /> 1번국도</span></li>
+																	<li class="closed"><span class="folder"><input type="checkbox"  disabled readonly /> 1번국도</span></li>
+																	<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																</ul>
+															</li>
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																</ul>
+															</li>
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																</ul>
+															</li>
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit2">조건설정</h3>
+										<div class="condition-wrap">
+											<ul class="condition">
+												<li class="submenu"><a href="#" class="active">DB분류</a></li>
+												<li><a href="#">대상사고</a></li>
+												<li class="last"><a href="#">사고내용</a></li>
+												<li><a href="#">사고유형</a></li>
+												<li><a href="#">법규위반</a></li>
+												<li class="last"><a href="#">행정단위</a></li>
+												<li><a href="#">월별</a></li>
+												<li><a href="#">요일별</a></li>
+												<li class="last"><a href="#">시간대별</a></li>
+												<li><a href="#">노면상태</a></li>
+												<li><a href="#">기상상태</a></li>
+												<li class="last"><a href="#">도로형태</a></li>
+											</ul>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											<div class="condition-sub">
+												<p class="sub-keyword"><input type="text" /><a href="#" class="sub-close">닫기</a></p>
+												<ul>
+													<li><input type="checkbox" />대형사고</li>
+													<li><input type="checkbox" />음주운전사고</li>
+													<li><input type="checkbox" />여성운전자사고</li>
+													<li><input type="checkbox" />노인운전사고</li>
+													<li><input type="checkbox" />고속도로사고</li>
+													<li><input type="checkbox" />무면허운전사고</li>
+													<li><input type="checkbox" />화물차운전사고</li>
+													<li><input type="checkbox" />이륜차운전사고</li>
+													<li><input type="checkbox" />사업용차량사고</li>
+													<li><input type="checkbox" />어린이사고</li>
+													<li><input type="checkbox" />어린이보호구역사고</li>
+												</ul>
+											</div>
+										</div>
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+								<!-- //노선별 탭 -->
+									<!-- 관리청별 탭 -->
+									<div id="tab0204" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">발생년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">관리청</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">서울지방국토관리청</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">관리사무소</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">전체</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">도로종류</label></span>
+													<div class="tree-wrap">
+														<ul id="browser2" class="filetree">
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul>
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li class="closed"><span class="folder">일반국도</span>
+																<ul>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																	<li class="closed"><span class="folder">1번국도</span>
+																		<ul id="folder21">
+																			<li><span class="file">File 2.1.1</span></li>
+																			<li><span class="file">File 2.1.2</span></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit2">조건설정</h3>
+										<div class="condition-wrap">
+											<ul class="condition">
+												<li class="submenu"><a href="#" class="active">DB분류</a></li>
+												<li><a href="#">대상사고</a></li>
+												<li class="last"><a href="#">사고내용</a></li>
+												<li><a href="#">사고유형</a></li>
+												<li><a href="#">법규위반</a></li>
+												<li class="last"><a href="#">행정단위</a></li>
+												<li><a href="#">월별</a></li>
+												<li><a href="#">요일별</a></li>
+												<li class="last"><a href="#">시간대별</a></li>
+												<li><a href="#">노면상태</a></li>
+												<li><a href="#">기상상태</a></li>
+												<li class="last"><a href="#">도로형태</a></li>
+											</ul>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											<div class="condition-sub">
+												<p class="sub-keyword"><input type="text" /><a href="#" class="sub-close">닫기</a></p>
+												<ul>
+													<li><input type="checkbox" />대형사고</li>
+													<li><input type="checkbox" />음주운전사고</li>
+													<li><input type="checkbox" />여성운전자사고</li>
+													<li><input type="checkbox" />노인운전사고</li>
+													<li><input type="checkbox" />고속도로사고</li>
+													<li><input type="checkbox" />무면허운전사고</li>
+													<li><input type="checkbox" />화물차운전사고</li>
+													<li><input type="checkbox" />이륜차운전사고</li>
+													<li><input type="checkbox" />사업용차량사고</li>
+													<li><input type="checkbox" />어린이사고</li>
+													<li><input type="checkbox" />어린이보호구역사고</li>
+												</ul>
+											</div>
+										</div>
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //관리청별 탭 -->
+								</div>
+							</div>
+							<!-- //부분별검색 끝 -->
+
+							<!-- 사고다발지검색탭 시작 -->
+							<div id="tb03" class="tab-rightbox">
+								<p class="right-title">지도검색</p>
+								<div  id="tab03">
+									<ul class="mapsearch">
+										<li><a href="#tab0301" >다발지역별</a></li>
+										<li><a href="#tab0302" style="line-height:121%;  padding-top:2px; box-sizing: border-box;">특정도로<br />환경별</a></li>
+										<li><a href="#tab0303" class="last" style="line-height:121%; padding-top:2px; box-sizing: border-box;">교통약자<br />보호구역별</a></li>
+									</ul>
+									<!-- 다발지역별 탭 -->
+									<div id="tab0301" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">분류항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">세분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">세분류</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div id="tab0301-sub">
+											<ul class="map-seach-result2 clear">
+												<li><a href="#tab0301-sub01" >대상구간</a></li>
+												<li><a href="#tab0301-sub02" >사고정보</a></li>
+											</ul>	
+											<!-- 검색결과 탭 -->
+											<!-- 대상구간 탭 -->
+											<div id="tab0301-sub01" >
+												<div class="searc-total">
+													<div class="total-count">총 <span>319</span>건</div>
+													<div class="btn">
+														<a href="#" class="btn-minibox">목록보기</a>
+														<a href="#" class="btn-minibox">엑셀출력</a>
+													</div>
+												</div>
+												<ul class="search-result-list">
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+												</ul>
+												<div class="pagination">
+													<ul>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+														<li class="active"><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+													</ul>
+												</div>
+												<br /><br /><br /><br /><br /><br />
+											</div>
+											<!-- //대상구간 탭 -->
+											<!-- 사고정보 탭 -->
+											<div id="tab0301-sub02" >
+												사고정보 탭
+											</div>
+											<!-- //사고정보 탭 -->
+										</div>
+										<!-- //검색결과 탭 -->
+									</div>
+									<!-- //다발지역별 탭 -->
+									<!-- 특정도로환경별 탭 -->
+									<div id="tab0302" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">분류항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">세분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">세분류</option>
+													</select>
+												</div>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div id="tab0302-sub">
+											<ul  class="map-seach-result clear">
+												<li><a href="#tab0302-sub01" >대상구간</a></li>
+												<li><a href="#tab0302-sub02" >사고정보</a></li>
+											</ul>	
+											<!-- 검색결과 탭 -->
+											<!-- 대상구간 탭 -->
+											<div id="tab0302-sub01" >
+												<div class="searc-total">
+													<div class="total-count">총 <span>319</span>건</div>
+													<div class="btn">
+														<a href="#" class="btn-minibox">목록보기</a>
+														<a href="#" class="btn-minibox">엑셀출력</a>
+													</div>
+												</div>
+												<ul class="search-result-list">
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+												</ul>
+												<div class="pagination">
+													<ul>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+														<li class="active"><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+													</ul>
+												</div>
+												<br /><br /><br /><br /><br /><br />
+											</div>
+											<!-- //대상구간 탭 -->
+											<!-- 사고정보 탭 -->
+											<div id="tab0302-sub02" >
+												사고정보 탭
+											</div>
+											<!-- //사고정보 탭 -->
+										</div>
+									</div>
+									<!-- //특정도로환경별 탭 -->
+									<!-- 교통약자보호구역별 탭 -->
+									<div id="tab0303" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">분류항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">세분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">세분류</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div  id="tab0303-sub" >
+											<ul class="map-seach-result clear">
+												<li><a href="#tab0303-sub01" >대상구간</a></li>
+												<li><a href="#tab0303-sub02" >사고정보</a></li>
+											</ul>	
+											<!-- 검색결과 탭 -->
+											<!-- 대상구간 탭 -->
+											<div id="tab0303-sub01" >
+												<div class="searc-total">
+													<div class="total-count">총 <span>319</span>건</div>
+													<div class="btn">
+														<a href="#" class="btn-minibox">목록보기</a>
+														<a href="#" class="btn-minibox">엑셀출력</a>
+													</div>
+												</div>
+												<ul class="search-result-list">
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name"></p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+													<li>
+														<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+														<p class="add">서울특별시 강남구 도산대로 336</p>
+														<p class="buld-name">디지털프라자 강남본점 4층</p>
+													</li>
+												</ul>
+												<div class="pagination">
+													<ul>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+														<li class="active"><a href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+														<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+													</ul>
+												</div>
+												<br /><br /><br /><br /><br /><br />
+											</div>
+											<!-- //대상구간 탭 -->
+											<!-- 사고정보 탭 -->
+											<div id="tab0303-sub02" >
+												사고정보 탭
+											</div>
+											<!-- //사고정보 탭 -->
+										</div>
+										<!-- //검색결과 탭 -->
+									</div>
+								</div>
+								<!-- //교통약자보호구역별 탭 -->
+							</div>
+							<!-- //사고다발지검색탭 끝 -->
+
+							<!-- //교통사고 일반검색 탭 시작 -->
+							<div id="tb04" class="tab-rightbox">
+								<p class="right-title">교통사고 일반 검색</p>
+								<div  id="tab04">
+									<ul class="mapsearch2">
+										<li><a href="#tab0401" >사상사고</a></li>
+										<li><a href="#tab0402" class="last">교통사고 원인조사</a></li>
+									</ul>
+									<!-- 사상사고 탭 -->
+									<div id="tab0401" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<p class="clear2">
+													<span class="search-tit2"><label for="sa">발생년도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">발생년도</option>
+													</select>
+												</p>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">사고분류</label></span>
+													<p class="search-checkbox">
+														<label for="" class="check-wrap"><input type="checkbox" />사망사고</label>
+														<label for="" class="check-wrap"><input type="checkbox" />중상사고</label>
+														<label for="" class="check-wrap"><input type="checkbox" />경상사고</label>
+													</p>
+												</div>
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+			
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+												<div class="total-count">총 <span>319</span>건</div>
+												<div class="btn">
+													<a href="#" class="btn-minibox">목록보기</a>
+													<a href="#" class="btn-minibox">엑셀출력</a>
+												</div>
+											</div>
+											<ul class="search-result-list">
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+											</ul>
+											<div class="pagination">
+												<ul>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+													<li class="active"><a href="#">1</a></li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+												</ul>
+											</div>
+											<br /><br /><br /><br /><br /><br />
+									</div>
+									<!-- //사상사고 탭 -->
+									<!-- 교통사고 원인조사 탭 -->
+									<div id="tab0402" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="clear2">
+													<span class="search-tit2"><label for="sa">분류항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">시도</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+
+												<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+											</fieldset>
+			
+										</div>
+										<!-- 검색폼 끝 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+												<div class="total-count">총 <span>319</span>건</div>
+												<div class="btn">
+													<a href="#" class="btn-minibox">목록보기</a>
+													<a href="#" class="btn-minibox">엑셀출력</a>
+												</div>
+											</div>
+											<ul class="search-result-list">
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name"></p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+												<li>
+													<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+													<p class="add">서울특별시 강남구 도산대로 336</p>
+													<p class="buld-name">디지털프라자 강남본점 4층</p>
+												</li>
+											</ul>
+											<div class="pagination">
+												<ul>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+													<li class="active"><a href="#">1</a></li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+													<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+												</ul>
+											</div>
+											<br /><br /><br /><br /><br /><br />
+									</div>
+									<!-- //교통사고 원인조사 탭 -->
+								</div>
+							</div>
+							<!-- //교통사고 일반검색 탭 끝 -->
+
+
+
+							<!-- 교통사고GIS통계 탭 -->
+							<div id="tb05" class="tab-rightbox">
+								<p class="right-title">교통사고 GIS 통계</p>
+								<div  id="tab002">
+									<ul class="mapsearch">
+										<li><a href="#tabcont0601" >주제도</a></li>
+										<li><a href="#tabcont0602" >밀집도</a></li>
+										<li><a href="#tabcont0603" class="last"   onclick="view_show(8);return false;">시계열 분석</a></li>
+									</ul>
+									<!-- 주제도 탭 -->
+									<div id="tabcont0601" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="radiobox">
+													<label for="" class=""><input type="radio" class="radio" checked />시도별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />시군구별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />읍면동별</label>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">주제도 항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">DB분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">검색년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">발생지역</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">검색단계</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+											</fieldset>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+										</div>
+										<!-- 검색폼 끝 -->
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //주제도 탭 -->
+									<!-- 밀집도 탭 -->
+									<div id="tabcont0602" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="radiobox">
+													<label for="" class=""><input type="radio" class="radio" checked />시도별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />시군구별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />읍면동별</label>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">밀집도 항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">DB분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">검색년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">발생지역</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">검색단계</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+											</fieldset>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+										</div>
+										<!-- 검색폼 끝 -->
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //밀집도 탭 -->
+									<!-- 시계열 분석 탭 -->
+									<div id="tabcont0603" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="radiobox">
+													<label for="" class=""><input type="radio" class="radio" checked />시도별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />시군구별</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />읍면동별</label>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">밀집도 항목</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">분류항목</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">DB분류</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">분석년도</label></span>
+													<p>
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년 <span>~</span> 
+														<select name="" id="" class="search-select2">
+															<option value="">2014</option>
+														</select> 년
+													</p>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">발생지역</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2"><label for="sa">검색단계</label></span>
+													<select name="" id="" class="search-select">
+														<option value="">시도</option>
+													</select>
+												</div>
+											</fieldset>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+										</div>
+										<!-- 검색폼 끝 -->
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list2">
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+												<p class="text-r mt-8"><a href="#" class="btn-minibox mr-2">상세보기</a><a href="#" class="btn-minibox2 mr-2"><img src="../../images/gis/btn_image.gif" alt="이미지보기" class="vertical-m" /></a><a href="#" class="btn-minibox2 mr-5"><img src="../../images/gis/btn_movie.gif" alt="동영상보기" class="vertical-m" /></a></p>
+											</li>
+											<li>
+												<h4><a href="#">차대사람-횡단중</a></h4>
+												<p>발생일시 : 2014년 11월 17일 06시</p>
+												<p>발생요일 : 월요일</p>
+												<p>사망자수 : 1, 중상자수 : 0</p>
+												<p>경상자수 : 0, 부상신고자수 : 0</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //시계열 분석 탭 -->
+								</div>
+							</div>
+							<!-- //교통사고GIS통계 탭 끝 -->
+							
+							<div id="tb06" class="tab-rightbox">
+								<p class="right-title">교통사고 GIS 통계</p>
+								<div  id="tab07" >
+									<ul class="mapsearch2">
+										<li><a href="#tab0701" >위험도분석</a></li>
+										<li><a href="#tab0702" class="last">사고다발구간</a></li>
+									</ul>
+									<!-- 위험도분석 탭 -->
+									<div id="tab0701" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="radiobox">
+													<label for="" class="radio04"><input type="radio" class="radio" checked />셀분석</label>
+													<label for=""><input type="radio" class="radio" />교통사고 건수법</label>
+													<label for="" class="radio04 mt-5"><input type="radio" class="radio" />교통사고 율법</label>
+													<label for="" class="mt-5"><input type="radio" class="radio" />EPDO법</label>
+												</div>
+												<div class="clear2 mt-5">
+													<span class="search-tit2 mt-12 mr-5"><label for="">가로셀 개수</label></span>
+													<p class="search-line"><input type="text" value="10" class="text" /> 개</p>
+												</div>
+											</fieldset>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+										</div>
+										<!-- 검색폼 끝 -->
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list">
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name">디지털프라자 강남본점 4층</p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name"></p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name"></p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name">디지털프라자 강남본점 4층</p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name">디지털프라자 강남본점 4층</p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //위험도분석 탭 -->
+									<!-- 사고다발구간 탭 -->
+									<div id="tab0702" class="tab-area">
+										<div class="searchbox">
+											<fieldset>
+												<legend>검색어</legend>
+												<div class="radiobox">
+													<label for="" class="radio05"><input type="radio" class="radio" checked />교통사고 원인조사</label>
+													<label for="" class="radio03"><input type="radio" class="radio" />사고잦은 곳</label>
+												</div>
+												<table class="option-table">
+													<colgroup>
+														<col width="138px;" />
+														<col width="" />
+													</colgroup>
+													<thead>
+														<tr>
+															<th colspan="2">도로형태별(m)</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>교차로/횡단보도</td>
+															<td><input type="text" class="text" value="10" /> (m)</td>
+														</tr>
+														<tr>
+															<td>도시지역구간/도시외지역</td>
+															<td><input type="text" class="text" value="10" /> (m)</td>
+														</tr>
+													</tbody>
+												</table>
+												<table class="option-table mt-10">
+													<colgroup>
+														<col width="135px;" />
+														<col width="" />
+													</colgroup>
+													<thead>
+														<tr>
+															<th colspan="2">사고내용(건수)</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>사망사고</td>
+															<td><input type="text" class="text" value="10" /> (m)</td>
+														</tr>
+														<tr>
+															<td>중상이상</td>
+															<td><input type="text" class="text" value="10" /> (m)</td>
+														</tr>
+													</tbody>
+												</table>
+											</fieldset>
+											<p class="mt-10"><a href="#" class="btn-search">검색</a></p>
+										</div>
+										<!-- 검색폼 끝 -->
+										<!-- 검색결과 -->
+										<h3 class="search-result-tit">검색결과</h3>
+										<div class="searc-total">
+											<div class="total-count">총 <span>319</span>건</div>
+											<div class="btn">
+												<a href="#" class="btn-minibox">목록보기</a>
+												<a href="#" class="btn-minibox">엑셀출력</a>
+											</div>
+										</div>
+										<ul class="search-result-list">
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name">디지털프라자 강남본점 4층</p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name"></p>
+											</li>
+											<li>
+												<h4><a href="#">삼성전자서비스 강남센터</a></h4>
+												<p class="add">서울특별시 강남구 도산대로 336</p>
+												<p class="buld-name"></p>
+											</li>
+										</ul>
+										<div class="pagination">
+											<ul>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_first.png" alt="처음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_prev.png" alt="이전 페이지로"></a></li>
+												<li class="active"><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_next.png" alt="다음 페이지로"></a></li>
+												<li class="pg-btn"><a href="#"><img src="../../images/gis/btn_last.png" alt="마지막 페이지로"></a></li>
+											</ul>
+										</div>
+										<!-- //검색결과  -->
+									</div>
+									<!-- //사고다발구간 탭 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 	
+				<!-- left side end -->
+			</div>			
+		</div>
+
+
+		
+		<div id="mapContent">
+			<div class="controll_btn">
+				<a href="#" title="닫기" class="bt_nav_close" onclick="document.getElementById('mapWrap').className = 'nav_close';return false;"></a>
+				<a href="#" title="열기" class="bt_nav_open" onclick="document.getElementById('mapWrap').className = '';return false;"></a>
+			</div>			
+			<div class="controll_btn02">
+				<a href="#" title="닫기" class="bt_nav_close2" onclick="document.getElementById('mapWrap').className = 'nav_close2';return false;"></a>
+				<a href="#" title="열기" class="bt_nav_open2" onclick="document.getElementById('mapWrap').className = '';return false;"></a>
+			</div>
+			<div id="jtContentHeader">				
+				<div class="map-iconbtns clear">
+					<div class="map-icon-left">
+						<a href="#" onclick="view_show(5);return false;" class="map_btn01">지도변경신고</a>
+					</div>	
+					<div class="map-icon-right clear">
+						<a href="#" class="map_btn02">위치검색</a><a href="#" class="map_btn03">북마크</a><a href="#" class="map_btn04">확대</a><a href="#" class="map_btn05">축소</a><a href="#" class="map_btn06">거리</a><a href="#" class="map_btn07">면적</a><a href="#"  onclick="view_show(6);return false;" class="map_btn08">지도선택</a>						
+					</div>
+				</div>				
+			</div>
+			<div id="jtMap" style="background: url(../../images/gis/bg_map.gif) no-repeat left top;background-size:100% auto;" >
+				<div id="go-area">			
+					<div class="go-list">
+						<div class="selbox-title01">
+							<p>
+								<select id="" class="selbox1">
+									<option value="" selected="selected">대구광역시</option>
+									<option value=""></option>
+								</select>
+							</p>
+							<p>
+								<select id="" class="selbox2">
+									<option value="" selected="selected">동구</option>
+									<option value=""></option>
+								</select>
+							</p>
+							<p class="map-title1">&nbsp&nbsp지역</p>
+							<p>
+								<select id="" class="selbox3">
+									<option value="" selected="selected">사당동</option>
+									<option value=""></option>
+								</select>
+							</p>
+							<p class="l-boder"><input type="button" class="s-go-btn" value="GO"></p>
+						</div>
+						<div class="selbox-title01">
+							<p class="map-title2">새주소길</p>
+							<p>
+								<select id="" class="selbox4">
+									<option value="" selected="selected">가</option>
+									<option value=""></option>
+								</select>
+							</p>
+							<p>
+								<select id="" class="selbox5">
+									<option value="" selected="selected">가도교길</option>
+									<option value=""></option>
+								</select>
+							</p>
+							<p><input type="button" class="s-go-btn" value="GO"></p>
+							<p class="g-box02"><a href="#"  onclick="view_show(10);return false;"><input type="button" class="book-m-btn" value="북마크관리"></a></p>
+
+							<!-- 위치 팝업 -->
+							<div class="popup" style="display:none;">
+									<a href="#" class="pop-close btn_close"></a>
+									<a href="#" class="pop-hide btn_mini"></a>
+								<div class="pop-header">
+									<h1>삼성전자 서비스 강남센터</h1>     
+								</div>
+								<div class="pop-content">
+									<div class="content-inbox">
+										<ul class="pop-txt">
+											<li class="pop-txt01">북마크</li>
+											<li>
+												<select >
+													<option ></option>
+													<option ></option>
+													<option ></option>
+												</select>
+											</li>
+										</ul>
+										<ul class="pop-btn">
+											<li><input type="button" class="pop-btn01 " value="추가" /></li>
+											<li><input type="button" class="pop-btn01 " value="삭제" /></li>
+											<li><input type="button" class="pop-btn02 " value="이동" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- //위치 팝업 -->
+
+
+						</div>
+					</div>
+				</div>
+				<ul class="map-bar1">
+					<li class="map-bar-icon1 plus "><input type="button" /></li>
+					<li><img src="../../images/gis/map-bar.png" alt=""/></li>
+					<li class="map-bar-icon2 minus"><input type="button" /></li>
+				</ul>
+				<ul class="map-bar2">
+					<li class="map-bar-icon icon01  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-bar-icon icon02  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-bar-icon icon03   DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li id="icon04" class="map-bar-icon icon04   DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-bar-icon icon0404   DemoTooltipLeft" ><a href="#pop03" onclick="view_show(4);return false;" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></a></li>
+					<li class="map-bar-icon icon05  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-bar-icon icon06  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-bar-icon icon07  DemoTooltipLeft" ><a href="#pop02" onclick="view_show(7);return false;" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></a></li>
+					<li class="map-bar-icon icon08  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li  id="icon09" class="map-bar-icon icon09  DemoTooltipLeft" ><span>설명입니다 설명입니다 설명입니다 설명입니다</span><input type="button" /></li>
+					<li class="map-last-icon icon10"><input type="button" /></li>
+				</ul>
+				<ul class="side-btn1">
+					<li class=" icon04-02"><input type="button" /></li>
+					<li class=" icon04-03"><input type="button" /></li>
+				</ul>
+				<ul class="side-btn2">
+					<li class=" icon09-03"><input type="button" /></li>
+					<li class=" icon09-02"><input type="button" /></li>
+					<li class=" icon09-01"><input type="button" /></li>
+				</ul>
+				<p class="side-btn3"><a href="#" class="map-on">열기</a></p>
+				<div class="index-map-wrap">
+					<div class="index-map">
+					</div>
+				</div>
+
+
+				<a href="#" class="location-btn"><img src="../../images/gis/icon_location.png" alt="" /></a>
+				<!-- 위치 팝업 -->
+				<div class="location-popup" style="display:none;">
+					<div class="popup04">
+						<div class="pop-header">
+							<p class="pop-close">팝업닫기</p>
+							<p class="pop-hide">팝업숨기기</p>
+							<h1>삼성전자 서비스 강남센터</h1>
+						</div>
+						<div class="pop-content">
+							<div class="content-inbox">
+								<p class="address">서울특별시 강남구 도산대로 336<br />디지털프라자 강남본점 4층</p>
+								<ul class="pop-btn2">
+									<li><input type="button" class="pop-btn01 " value="확인" /></li>
+									<li><input type="button" class="pop-btn03 " value="닫기" /></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(".location-btn").click(function(){
+							$(".location-popup").show();
+							$(".pop-close").click(function(){
+								$(".location-popup").hide();
+							});
+					});
+
+					$(".map-bar2").on("mouseenter",function(){
+						$(".DemoTooltipLeft span").show();
+					}).on("mouseleave",function(){
+						$(".DemoTooltipLeft span").hide();
+					});
+				</script>
+
+				
+				<!-- 위치 팝업 -->
+
+				<!-- 교통사고 상세검색 팝업 -->
+				<div class="popup05 layer_com"   data-win="win_1"  id="dispay_view1" style="display:none;">
+					<div class="pop-header">
+						<h1>교통사고 상세검색</h1>
+						<a href="#" class="pop-close"   onclick="view_hide(1);"></a>
+					</div>
+					<div class="pop-content">
+						<div class="content-inbox"  id="poptab">
+							<ul class="poptab clear">
+								<li><a href="#poptab01">35개 항목</a></li>
+								<li class="last"><a href="#poptab02">65개 항목</a></li>
+							</ul>
+							<!-- 35개 항목 탭 -->
+							<div id="poptab01" class="poptab-area">
+								<div class="pop-head">
+									<h2 class="float-l  ftbold">조회조건</h2>
+									<p class="float-r"><a class="pop-btn05 " href="#" onclick="view_show(2);return false;" />검색</a></p>
+								</div>
+								<div class="pop-scroll-body">
+									<div class="pop-searchbox">
+										<p class="search-tit float-l  ftbold">조회기간</p>
+										<p class="float-l">
+											<select name="" id="" class="wd-87">
+												<option value="">2014년</option>
+											</select>
+											<select name="" id="" class="wd-67">
+												<option value="">1월</option>
+											</select>
+											<select name="" id="" class="wd-67">
+												<option value="">1일</option>
+											</select> ~
+											<select name="" id="" class="wd-87">
+												<option value="">2014년</option>
+											</select>
+											<select name="" id="" class="wd-67">
+												<option value="">1월</option>
+											</select>
+											<select name="" id="" class="wd-67">
+												<option value="">1일</option>
+											</select>
+										</p>
+										<p class="search-tit float-l  ftbold">사고번호</p>
+										<p class="float-l"><input type="text" class="wd-164" /></p>
+									</div>
+									<div class="search-item">
+										<p class="search-tit ftbold">사고일반</p>
+										<div class="item clear">
+											<ul class="item-list clear">
+												<li>
+													<input type="button" class="item-option" title="" value="대상사고" name=""/>
+													<div class="db-div">
+														<div class="div-header">
+															<p class="btn-left">
+																<a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a>
+															</p>
+														</div>
+														<div class="div-body">
+															<ul id="checkbox-list">
+																<li><input type="checkbox" />1대형사고</li>
+																<li><input type="checkbox" />음주운전사고</li>
+																<li><input type="checkbox" />여성운전자사고</li>
+																<li><input type="checkbox" />노인운전사고</li>
+																<li><input type="checkbox" />고속도로사고</li>
+																<li><input type="checkbox" />무면허운전사고</li>
+																<li><input type="checkbox" />화물차운전사고</li>
+																<li><input type="checkbox" />이륜차운전사고</li>
+																<li><input type="checkbox" />사업용차량사고</li>
+																<li><input type="checkbox" />어린이사고</li>
+																<li><input type="checkbox" />어린이보호구역사고</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="발생시도" name=""/>
+													<div class="db-div">
+														<div class="div-header">
+															<p class="btn-left">
+																<a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a>
+															</p>
+														</div>
+														<div class="div-body">
+															<ul id="browser3" class="filetree">
+																<li class="collapsable"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder">일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="발생시군구" name=""/>
+													<div class="db-div">
+														<div class="div-header">
+															<p class="btn-left">
+																<a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a>
+															</p>
+														</div>
+														<div class="div-body">
+															<ul id="browser4" class="filetree">
+																<li class="collapsable"><span class="folder"><input type="checkbox" /> 일반국도</span>
+																	<ul>
+																		<li class="closed  disable"><span class="folder"><input type="checkbox" disabled readonly /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox"  /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox"  /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="collapsable"><span class="folder"><input type="checkbox" /> 일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="collapsable"><span class="folder"><input type="checkbox" /> 일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span></li>
+																	</ul>
+																</li>
+																<li class="closed"><span class="folder"><input type="checkbox" /> 일반국도</span>
+																	<ul>
+																		<li class="closed"><span class="folder">1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																		<li class="closed"><span class="folder"><input type="checkbox" /> 1번국도</span>
+																			<ul id="folder21">
+																				<li><span class="file">File 2.1.1</span></li>
+																				<li><span class="file">File 2.1.2</span></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="사고시간대" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="요일" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="사고내용" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="사고유형" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="경찰서 신고여부" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="기상상태" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="도로종류" name=""/>
+												</li>
+												<li>
+													<input type="button" class="item-option" title="" value="도로형태" name=""/>
+												</li>
+											</ul>										
+										</div>									
+									
+									</div>
+									<div class="search-item">
+										<p class="search-tit ftbold">운전자관련</p>
+										<div class="item">
+											<select name="" id="">
+												<option value="">성별(1당)</option>
+												<option value="">성별(1당)</option>
+												<option value="">성별(1당)</option>
+												<option value="">성별(1당)</option>
+												<option value="">성별(1당)</option>
+												<option value="">성별(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">성별(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">연령(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">연령(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">법규위반(1당)</option>
+											</select>
+											<select name="" id="" >
+												<option value="">법규위반(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해정도(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해정도(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해주부위(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해주부위(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">장애등급(1당)</option>
+											</select>
+											<select name="" id="" >
+												<option value="">장애등급(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">음주여부(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">음주여부(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">도주여부(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">도주여부(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">무면허여부(1당)</option>
+											</select>
+											<select name="" id="" >
+												<option value="">무면허여부(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">보호장구착용(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">보호장구착용(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">면허종류(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">면허종류(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">면허경과년수(1당)</option>
+											</select>
+											<select name="" id="" >
+												<option value="">면허경과년수(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량종별(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량종별(2당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량용도(1당)</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량용도(2당)</option>
+											</select>
+										</div>
+									</div>
+									<div class="search-item">
+										<p class="search-tit  ftbold">사상자관련</p>
+										<div class="item">
+											<select name="" id="">
+												<option value="">성별</option>
+											</select>
+											<select name="" id="">
+												<option value="">연령</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해정도</option>
+											</select>
+											<select name="" id="">
+												<option value="">신체상해주부위</option>
+											</select>
+											<select name="" id="">
+												<option value="">장애등급</option>
+											</select>
+											<select name="" id="" class="last">
+												<option value="">음주여부</option>
+											</select>
+											<select name="" id="">
+												<option value="">도주여부</option>
+											</select>
+											<select name="" id="">
+												<option value="">무면허여부</option>
+											</select>
+											<select name="" id="">
+												<option value="">보호장구착용</option>
+											</select>
+											<select name="" id="">
+												<option value="">면허종류</option>
+											</select>
+											<select name="" id="">
+												<option value="">면허경과년수</option>
+											</select>
+											<select name="" id="" class="last">
+												<option value="">차량종별</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량용도</option>
+											</select>
+										</div>
+									</div>
+									<div class="search-item">
+										<p class="search-tit ftbold">사업용자동차 정보</p>
+										<div class="item">
+											<select name="" id="">
+												<option value="">회사명</option>
+											</select>
+											<select name="" id="">
+												<option value="">사업자등록번호</option>
+											</select>
+										</div>
+									</div>
+									<div class="search-item">
+										<p class="search-tit ftbold">피해물 정보</p>
+										<div class="item">
+											<select name="" id="">
+												<option value="">피해구분</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량손상도</option>
+											</select>
+											<select name="" id="">
+												<option value="">차량수리비</option>
+											</select>
+										</div>
+									</div>
+									<div class="search-item">
+										<p class="search-tit ftbold">사업용자동차 정보</p>
+										<div>
+											<input type="text" />
+											<input type="text" />
+											<input type="text" />
+											<input type="text" />
+											<select name="" id="" class="wd-87">
+												<option value="">AND</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //35개 항목 탭 -->
+							<!-- 65개 항목 -->
+							<div id="poptab02" class="poptab-area" style="display: none;">
+								탭2 내용
+							</div>
+							<!-- //65개 항목 -->
+						</div>
+					</div>
+				</div>
+				<!-- //교통사고 상세검색 팝업 -->
+
+				<!-- 교통사고 상세검색결과 팝업 -->
+				<div class="popup06 layer_com"   data-win="win_1" id="dispay_view2" style="z-index:9999 !important;display:none;" >
+					<div class="pop-header">
+						<a href="#" class="pop-close"   onclick="view_hide(2);"></a>
+						<h1>Excel</h1> 
+					</div>
+					<div class="pop-content">
+						<div class="content-inbox">
+							<table class="result-table">
+								<colgroup>
+									<col width="127px;" />
+									<col width="190px;" />
+									<col width="78px;" />
+									<col width="78px;" />
+									<col width="78px;" />
+									<col width="78px;" />
+									<col width="" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>시군구</th>
+										<th>지점명</th>
+										<th>발생건수</th>
+										<th>사망자수</th>
+										<th>중상자수</th>
+										<th>경상자수</th>
+										<th>부상신고자수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>서울특별시 서대문구1</td>
+										<td>서울특별시 종로구 서란동<br />(종로1가부근)</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="pop-btn-area text-r">
+								<input type="button" class="pop-btn04 " value="Excel 출력" />
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- //교통사고 상세검색결과 팝업 -->
+
+				<!-- 시계열 탭 팝업 -->
+				<div class="popup07 layer_com"   data-win="win_1"   id="dispay_view8"    style="display:none;">								
+					<div class="pop-header2">
+						
+						<ul class="time-year">
+							<li><h1>2011</h1></li>
+							<li><h1>2012</h1></li>
+							<li class="last"><h1>2013</h1></li>
+						</ul>
+						<a href="#" class="pop-close"   onclick="view_hide(8);"></a>
+					</div>
+					<div class="pop-content">
+						<div class="content-inbox5 clear">
+							<ul class="time-map clear">
+								<li><img src="../../images/gis/map00.gif"  alt="" /></li>
+								<li><img src="../../images/gis/map00.gif"  alt="" /></li>
+								<li class="last"><img src="../../images/gis/map00.gif"  alt="" /></li>
+							</ul>							
+						</div>
+					</div>
+
+				</div>
+				<!-- //시계열 탭 팝업 -->
+							<!-- 지도옵션 팝업 -->
+							<div class="popup02 layer_com"   data-win="win_1"   id="dispay_view7" style="display:none;">								
+								<div class="pop-header">
+									<h1>지도옵션</h1>
+									<a href="#" class="pop-close"  onclick="view_hide(7);"></a>
+								</div>
+								<div class="pop-content">
+									<div class="content-inbox">
+										<table class="map-option">
+											<colgroup>
+												<col width="25%" />
+												<col width="25%" />
+												<col width="25%" />
+												<col width="" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th colspan="2">년도</th>
+													<th>On/Off</th>
+													<th>레이어 설정</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th rowspan="4">보기</th>
+													<td>축척바</td>
+													<td><input type="checkbox" /></td>
+													<td><input type="checkbox" /></td>
+												</tr>
+												<tr>
+													<td>축척값</td>
+													<td><input type="checkbox" /></td>
+													<td><input type="checkbox" /></td>
+												</tr>
+												<tr>
+													<td>현재위치</td>
+													<td><input type="checkbox" /></td>
+													<td><input type="checkbox" /></td>
+												</tr>
+												<tr>
+													<td>줌바</td>
+													<td><input type="checkbox" /></td>
+													<td><input type="checkbox" /></td>
+												</tr>
+												<tr>
+													<th rowspan="3">지도범례</th>
+													<td>사고지점도</td>
+													<td><input type="radio" /></td>
+													<td><input type="checkbox" /></td>
+												</tr>
+												<tr>
+													<td>사고형태도</td>
+													<td><input type="radio" /></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>사고현황도</td>
+													<td><input type="radio" /></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td colspan="2">개별사고 크기조절</td>
+													<td>
+														<select name="" id="">
+															<option value="">1</option>
+														</select>
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td colspan="2">개별사고 위치보기</td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+										<ul class="pop-btn2">
+											<li><input type="button" class="pop-btn01 " value="적용" /></li>
+											<li><input type="button" class="pop-btn03 " value="닫기" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- //지도옵션 팝업 -->
+							<!-- 그리기 도구 상자 팝업 -->
+							<div class="popup03 layer_com"   data-win="win_1"  id="dispay_view4" style="display:none;">
+								<div class="pop-header">
+									<h1>그리기 도구 상자</h1>
+									<a href="#" class="pop-close" onclick="view_hide(4);"></a>
+								</div>
+								<div class="pop-content">
+									<div class="content-inbox02">
+										<div  id="tool-tab">
+											<ul class="tool-tab clear">
+												<li class="active"><a href="#tool-tab01" class="tool-tab01">탭1 타이틀</a></li>
+												<li><a href="#tool-tab02" class="tool-tab02">탭1 타이틀</a></li>
+												<li><a href="#tool-tab03" class="tool-tab03">탭1 타이틀</a></li>
+												<li><a href="#tool-tab04" class="tool-tab04">탭1 타이틀</a></li>
+												<li><a href="#tool-tab05" class="tool-tab05">탭1 타이틀</a></li>
+												<li><a href="#tool-tab06" class="tool-tab06">탭1 타이틀</a></li>
+												<li><a href="#tool-tab07" class="tool-tab07">탭1 타이틀</a></li>
+												<li><a href="#tool-tab08" class="tool-tab08">탭1 타이틀</a></li>
+												<li class="last"><a href="#tool-tab09" class="tool-tab09">탭2 타이틀</a></li>
+											</ul>
+											<!-- 행사개요 및 목적 탭 -->
+											<div id="tool-tab01" class="tool-area">
+												<p>색깔 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p>크기 : 
+													<select name="" id="">
+														<option value="">1</option>
+													</select>
+												</p>
+												<p>심볼 : 
+													<select name="" id="">
+														<option value="">Circle(●)</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab02" class="tool-area" style="display: none;">
+												<p>색깔 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p> 두께 : 
+													<select name="" id="">
+														<option value="">1</option>
+													</select>
+												</p>
+												<p>선종류 : 
+													<select name="" id="">
+														<option value="">Solid(─)</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab03" class="tool-area" style="display: none;">
+												<p>내부색 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p>외각선 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p> 채우기 : 
+													<input type="checkbox" />
+												</p>
+												<p>투명도 : 
+													<select name="" id="">
+														<option value="">0(투명)</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab04" class="tool-area" style="display: none;">
+												<p>내부색 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p>외각선 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p> 채우기 : 
+													<input type="checkbox" />
+												</p>
+												<p>투명도 : 
+													<select name="" id="">
+														<option value="">0(투명)</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab05" class="tool-area" style="display: none;">
+												<p>내부색 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p>외각선 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p> 채우기 : 
+													<input type="checkbox" />
+												</p>
+												<p>투명도 : 
+													<select name="" id="">
+														<option value="">0(투명)</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab06" class="tool-area" style="display: none;">
+												<p>내용 : 
+													<input type="text" class="text" />
+												</p>
+												<p>색깔 : 
+													<select name="" id="">
+														<option value="">Black</option>
+													</select>
+												</p>
+												<p>크기 : 
+													<select name="" id="">
+														<option value="">6</option>
+													</select>
+												</p>
+												<p> 글꼴 : 
+													<select name="" id="">
+														<option value="">굴림</option>
+													</select>
+												</p>
+												<p>속성 : 
+													<select name="" id="">
+														<option value="">일반</option>
+													</select>
+												</p>
+											</div>
+											<div id="tool-tab07" class="tool-area" style="display: none;">
+												탭7 내용
+											</div>
+											<div id="tool-tab08" class="tool-area" style="display: none;">
+												탭8 내용
+											</div>
+											<div id="tool-tab09" class="tool-area" style="display: none;">
+												탭9 내용
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //그리기 도구 상자 팝업 -->
+							<!-- 북마크관리 팝업 -->
+							<div class="popup"   id="dispay_view10"  style="display:none;">
+								<div class="pop-header">
+									<h1>북마크관리</h1>  
+									<a href="#" class="pop-close" onclick="view_hide(10);"></a>
+					
+								</div>
+								<div class="pop-content">
+									<div class="content-inbox">
+										<ul class="pop-txt">
+											<li class="pop-txt01">북마크</li>
+											<li>
+												<select >
+													<option ></option>
+													<option ></option>
+													<option ></option>
+												</select>
+											</li>
+										</ul>
+										<ul class="pop-btn">
+											<li><input type="button" class="pop-btn01 " value="추가" /></li>
+											<li><input type="button" class="pop-btn01 " value="삭제" /></li>
+											<li><input type="button" class="pop-btn02 " value="이동" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- //북마크관리 팝업 -->
+				<div class="l_bar"></div>
+				<!-- 지도 이미지 -->
+					
+				<!-- 지도 이미지 -->				
+				
+			</div>		
+		</div>		
+
+	</div>
+
+<script type="text/javascript">
+$(function(){
+	/* 좌측 검색결과 스크롤 조정 */
+	$('.search-result-scroll').css({overflow:'auto'});
+	$(window).on('load resize',function(){
+		windowHeight=$(window).height();
+		$('#ttc01').height(windowHeight-234);
+		$('.search-result-scroll').height(windowHeight-372).css({minHeight:327});
+	});
+})
+</script>	
+		<script type="text/javascript" src="../../js/layerdrag.js"></script>
+</body> 
+</html>

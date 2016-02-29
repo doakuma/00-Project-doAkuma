@@ -1,0 +1,1502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head> 
+<meta charset="utf-8" /> 
+<title>도로교통공단 TAAS</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<link rel="stylesheet" type="text/css" href="../../css/map.css"></link>
+<link rel="StyleSheet" href="../../css/dtree.css" type="text/css" />
+<script type="text/javascript" src="../../js/layer_pop.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/dtree.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript">
+    $(function() {
+      var dates = $( "#from1, #to1" ).datepicker({
+        showOn: "button",
+          buttonImage: "../../images/icon_date.gif",
+          buttonImageOnly: true,
+          prevText: '이전 달',
+          nextText: '다음 달',
+          monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          dayNames: ['일','월','화','수','목','금','토'],
+          dayNamesShort: ['일','월','화','수','목','금','토'],
+          dayNamesMin: ['일','월','화','수','목','금','토'],
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true,
+          yearSuffix: '년',
+          onSelect: function( selectedDate ) {
+          /*
+            var option = this.id == "from1" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat ||
+                $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings );
+            dates.not( this ).datepicker( "option", option, date );
+            */
+          }
+          });
+		  
+		
+		  jQuery(".rightBtn05 ").on("click", function() {
+			jQuery("li[class^='btn-db']").children().removeClass("active");
+			jQuery("div[class^='db-div']").hide();
+		  });
+		
+    });
+</script>
+
+<script type="text/javascript">
+	function popupOpen(){
+		var popUrl = "popup.html";	
+		var popOption = "width=688, height=550, resizable=no, scrollbars=yes, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+	function popupOpen2(){
+		var popUrl = "popup2.html";	
+		var popOption = "width=688, height=400, resizable=no, scrollbars=no, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+</script>
+
+</head>
+<body>
+
+<div id="mapWrap"> 
+	<div class="subBg"></div>
+	<div id="mapHeader">		
+		<div class="statistics-logo">
+			<a href="#" target="_blank" title="도로교통공단 새창열림"><img src="../../images/sta/logo.gif" class="top_img1" alt="도로교통공단"/></a>
+		</div> 
+		<ul class="top_link">
+			<li class="top-icon"><img src="../../images/sta/icon-mybus.png" alt="아이콘"/></li>
+			<li class="msg"><a href="javascript:popupOpen();" onclick="">용어정리</a></li>
+		</ul>
+	</div> 
+	<div id="mapContainer"> 		
+		<div id="Navside"> 
+			<div class="sidecont">	
+				<div class="left_inside">
+					<p class="left-title">통합검색</p>
+				<div class="dSearch" >
+					<ul>
+						<li>
+							<select class="selType" title="DB" >
+								<option value="01">전체</option>
+								<option value="02">경찰DB</option>
+								<option value="03">통합DB</option>
+							</select>
+						</li>
+						<li><input type="text" class="searchWord" value="" /></li>
+						<li><input type="button" class="serchBtn " title="" value="검색" name=""/></li>
+					</ul>
+				</div>
+				<div class="leftBtn-box">
+					<ul class="leftBtn">
+						<li class="all-close "><a href="this.location"onclick="javascript: d.closeAll();return false;"  value="">모두닫기</a></li>
+						<li class="all-open " ><a href="this.location"onclick="javascript: d.openAll();return false;">모두열기</a></li>
+						<li class="reset "><a href="#">초기화</a></li>
+					</ul>
+				</div>
+				<div  class="tree-box" >
+						<div class="dtree" style="width:400px;padding:10px 10px 20px 10px;">
+										
+					
+					<script type="text/javascript">
+						d = new dTree('d');
+						d.add(0,-1,'공통메뉴');
+							
+						d.add(421,259,"도로형태별 1당사자 차종별 교통사고","javascript:goReport('25','Y','352','','도로형태별 1당사자 차종별 교통사고','F');");
+							
+						d.add(734,261,"전년대비 교통사고 현황.","javascript:goReport('25','Y','671','','전년대비 교통사고 현황.','F');");
+							
+						d.add(416,258,"도로종류별 도로형태별 교통사고","javascript:goReport('25','Y','347','','도로종류별 도로형태별 교통사고','F');");
+							
+						d.add(425,260,"시군구별 월별 교통사고","javascript:goReport('25','Y','356','','시군구별 월별 교통사고','F');");
+							
+						d.add(411,257,"기상상태별 도로종류별 교통사고(통합DB)","javascript:goReport('25','Y','342','','기상상태별 도로종류별 교통사고(통합DB)','F');");
+							
+						d.add(293,249,"월별 주야별 교통사고","javascript:goReport('25','Y','221','','월별 주야별 교통사고','F');");
+							
+						d.add(362,252,"1당 법규위반별 경찰신고여부별 교통사고","javascript:goReport('25','Y','290','','1당 법규위반별 경찰신고여부별 교통사고','F');");
+							
+						d.add(243,242,'교통사고(통합DB) 통계검색');
+							
+						d.add(257,256,'기상상태별');
+							
+						d.add(372,253,"1당 성별 연령층별 기상상태별 교통사고","javascript:goReport('25','Y','300','','1당 성별 연령층별 기상상태별 교통사고','F');");
+							
+						d.add(249,248,'사고일시별');
+							
+						d.add(261,243,'교통사고 발생 현황 요약');
+							
+						d.add(391,254,"1당 차종별 기상상태별 교통사고","javascript:goReport('25','Y','321','','1당 차종별 기상상태별 교통사고','F');");
+							
+						d.add(353,250,"사고유형별 1당 연령층별 교통사고","javascript:goReport('25','Y','281','','사고유형별 1당 연령층별 교통사고','F');");
+							
+						d.add(252,251,'1당 법규위반별');
+							
+						d.add(417,258,"도로종류별 1당사자 차종별 교통사고.","javascript:goReport('25','Y','348','','도로종류별 1당사자 차종별 교통사고.','F');");
+							
+						d.add(410,257,"기상상태별 도로형태별 교통사고","javascript:goReport('25','Y','341','','기상상태별 도로형태별 교통사고','F');");
+							
+						d.add(392,254,"1당 차종별 도로종류별 교통사고","javascript:goReport('25','Y','322','','1당 차종별 도로종류별 교통사고','F');");
+							
+						d.add(373,253,"1당 성별 연령층별 도로종류별 교통사고","javascript:goReport('25','Y','301','','1당 성별 연령층별 도로종류별 교통사고','F');");
+							
+						d.add(363,252,"1당 법규위반별 기상상태별 교통사고","javascript:goReport('25','Y','291','','1당 법규위반별 기상상태별 교통사고','F');");
+							
+						d.add(354,250,"사고유형별 법규위반별 교통사고","javascript:goReport('25','Y','282','','사고유형별 법규위반별 교통사고','F');");
+							
+						d.add(295,249,"월별 요일별 교통사고.","javascript:goReport('25','Y','223','','월별 요일별 교통사고.','F');");
+							
+						d.add(248,243,'사고일반');
+							
+						d.add(250,248,'사고유형별');
+							
+						d.add(253,251,'1당 연령층별');
+							
+						d.add(258,256,'도로종류별');
+							
+						d.add(736,261,"전년대비 시도별 대형 교통사고 발생건수 현황.","javascript:goReport('25','Y','673','','전년대비 시도별 대형 교통사고 발생건수 현황.','F');");
+							
+						d.add(426,260,"시군구별 요일별 교통사고","javascript:goReport('25','Y','357','','시군구별 요일별 교통사고','F');");
+							
+						d.add(422,259,"도로형태별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','353','','도로형태별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(374,253,"1당 성별 연령층별 도로형태별 교통사고","javascript:goReport('25','Y','302','','1당 성별 연령층별 도로형태별 교통사고','F');");
+							
+						d.add(259,256,'도로형태별');
+							
+						d.add(251,243,'1당사자별');
+							
+						d.add(364,252,"1당 법규위반별 도로종류별 교통사고","javascript:goReport('25','Y','292','','1당 법규위반별 도로종류별 교통사고','F');");
+							
+						d.add(738,261,"전년대비 시도별 사망사고 발생건수 현황.","javascript:goReport('25','Y','675','','전년대비 시도별 사망사고 발생건수 현황.','F');");
+							
+						d.add(418,258,"도로종류별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','349','','도로종류별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(393,254,"1당 차종별 도로형태별 교통사고","javascript:goReport('25','Y','323','','1당 차종별 도로형태별 교통사고','F');");
+							
+						d.add(427,260,"시군구별 시간대별 교통사고","javascript:goReport('25','Y','358','','시군구별 시간대별 교통사고','F');");
+							
+						d.add(296,249,"월별 시간대별 교통사고.","javascript:goReport('25','Y','224','','월별 시간대별 교통사고.','F');");
+							
+						d.add(412,257,"기상상태별 1당사자 차종별 교통사고","javascript:goReport('25','Y','343','','기상상태별 1당사자 차종별 교통사고','F');");
+							
+						d.add(254,251,'1당 차량 관련');
+							
+						d.add(355,250,"사고유형별 기상상태별 교통사고","javascript:goReport('25','Y','283','','사고유형별 기상상태별 교통사고','F');");
+							
+						d.add(1104,261,"전년대비 주요 요인별 교통사고 발생현황.","javascript:goReport('362','Y','1056','','전년대비 주요 요인별 교통사고 발생현황.','F');");
+							
+						d.add(297,249,"월별 사고유형별 교통사고.","javascript:goReport('25','Y','225','','월별 사고유형별 교통사고.','F');");
+							
+						d.add(356,250,"사고유형별 도로종류별 교통사고","javascript:goReport('25','Y','284','','사고유형별 도로종류별 교통사고','F');");
+							
+						d.add(365,252,"1당 법규위반별 도로형태별 교통사고","javascript:goReport('25','Y','293','','1당 법규위반별 도로형태별 교통사고','F');");
+							
+						d.add(375,253,"1당 성별 연령층별 1당사자 차종별 교통사고","javascript:goReport('25','Y','304','','1당 성별 연령층별 1당사자 차종별 교통사고','F');");
+							
+						d.add(394,254,"1당 차종별 2당 차종별 교통사고","javascript:goReport('25','Y','324','','1당 차종별 2당 차종별 교통사고','F');");
+							
+						d.add(413,257,"기상상태별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','344','','기상상태별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(773,260,"시군구별 교통사고(여성, 노인.)","javascript:goReport('61','Y','710','','시군구별 교통사고(여성, 노인.)','F');");
+							
+						d.add(256,243,'도로환경');
+							
+						d.add(242,0,'통합DB');
+							
+						d.add(1180,261,"전년대비 1당사자 차종별 교통사고 발생건수.","javascript:goReport('25','Y','1144','','전년대비 1당사자 차종별 교통사고 발생건수.','F');");
+							
+						d.add(320,249,"월별 법규위반별 교통사고.","javascript:goReport('25','Y','248','','월별 법규위반별 교통사고.','F');");
+							
+						d.add(357,250,"사고유형별 도로형태별 교통사고","javascript:goReport('25','Y','285','','사고유형별 도로형태별 교통사고','F');");
+							
+						d.add(368,252,"1당 법규위반별 1당사자 차종별 교통사고","javascript:goReport('25','Y','296','','1당 법규위반별 1당사자 차종별 교통사고','F');");
+							
+						d.add(376,253,"1당 성별 연령층별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','305','','1당 성별 연령층별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(770,254,"1당 차종별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','707','','1당 차종별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(932,260,"시군구별 교통사고사상자(어린이, 노인, 보행자, 자전 거)","javascript:goReport('61','Y','872','','시군구별 교통사고사상자(어린이, 노인, 보행자, 자전 거)','F');");
+							
+						d.add(260,243,'발생지역(시군구별)');
+							
+						d.add(319,249,"월별 기상상태별 교통사고.","javascript:goReport('25','Y','247','','월별 기상상태별 교통사고.','F');");
+							
+						d.add(358,250,"사고유형별 1당사자 차종별 교통사고","javascript:goReport('25','Y','286','','사고유형별 1당사자 차종별 교통사고','F');");
+							
+						d.add(367,252,"1당 법규위반별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','295','','1당 법규위반별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(743,261,"전년대비 도로종류별 교통사고 발생건수.","javascript:goReport('25','Y','680','','전년대비 도로종류별 교통사고 발생건수.','F');");
+							
+						d.add(775,260,"시군구별 사고유형별 교통사고","javascript:goReport('57','Y','712','','시군구별 사고유형별 교통사고','F');");
+							
+						d.add(1160,261,"전년대비 월별 교통사고 사망자 현황.","javascript:goReport('25','Y','1116','','전년대비 월별 교통사고 사망자 현황.','F');");
+							
+						d.add(321,249,"월별 도로종류별 교통사고.","javascript:goReport('25','Y','249','','월별 도로종류별 교통사고.','F');");
+							
+						d.add(359,250,"사고유형별 1당사자 차종용도별 교통사고","javascript:goReport('25','Y','287','','사고유형별 1당사자 차종용도별 교통사고','F');");
+							
+						d.add(776,260,"시군구별 1당 법규위반별 교통사고","javascript:goReport('25','Y','713','','시군구별 1당 법규위반별 교통사고','F');");
+							
+						d.add(322,249,"월별 도로형태별 교통사고.","javascript:goReport('25','Y','250','','월별 도로형태별 교통사고.','F');");
+							
+						d.add(370,252,"1당 법규위반별 2당 법규위반별 교통사고","javascript:goReport('25','Y','298','','1당 법규위반별 2당 법규위반별 교통사고','F');");
+							
+						d.add(379,253,"1당 연령층별 월별 교통사고","javascript:goReport('25','Y','308','','1당 연령층별 월별 교통사고','F');");
+							
+						d.add(399,254,"1당 차량용도별 주야별 교통사고","javascript:goReport('25','Y','330','','1당 차량용도별 주야별 교통사고','F');");
+							
+						d.add(433,260,"시군구별 1당 성별 교통사고","javascript:goReport('25','Y','365','','시군구별 1당 성별 교통사고','F');");
+							
+						d.add(749,261,"전년대비 요일별 교통사고 사망자 현황.","javascript:goReport('25','Y','686','','전년대비 요일별 교통사고 사망자 현황.','F');");
+							
+						d.add(323,249,"월별 1당사자 차종별 교통사고.","javascript:goReport('25','Y','251','','월별 1당사자 차종별 교통사고.','F');");
+							
+						d.add(380,253,"1당 연령층별 요일별 교통사고","javascript:goReport('25','Y','310','','1당 연령층별 요일별 교통사고','F');");
+							
+						d.add(400,254,"1당 차량용도별 시군구별 교통사고","javascript:goReport('25','Y','331','','1당 차량용도별 시군구별 교통사고','F');");
+							
+						d.add(432,260,"시군구별 1당 연령층별 교통사고","javascript:goReport('25','Y','364','','시군구별 1당 연령층별 교통사고','F');");
+							
+						d.add(752,261,"전년대비 시간대별 교통사고 사망자 현황.","javascript:goReport('25','Y','689','','전년대비 시간대별 교통사고 사망자 현황.','F');");
+							
+						d.add(324,249,"월별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','252','','월별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(381,253,"1당 연령층별 시간대별 교통사고","javascript:goReport('25','Y','311','','1당 연령층별 시간대별 교통사고','F');");
+							
+						d.add(401,254,"1당 차량용도별 기상상태별 교통사고","javascript:goReport('25','Y','332','','1당 차량용도별 기상상태별 교통사고','F');");
+							
+						d.add(434,260,"시군구별 1당 차종별 교통사고","javascript:goReport('25','Y','366','','시군구별 1당 차종별 교통사고','F');");
+							
+						d.add(754,261,"전년대비 사고유형별 교통사고 사망자 현황.","javascript:goReport('25','Y','691','','전년대비 사고유형별 교통사고 사망자 현황.','F');");
+							
+						d.add(382,253,"1당 연령층별 주야별 교통사고","javascript:goReport('25','Y','312','','1당 연령층별 주야별 교통사고','F');");
+							
+						d.add(402,254,"1당 차량용도별 도로종류별 교통사고","javascript:goReport('25','Y','333','','1당 차량용도별 도로종류별 교통사고','F');");
+							
+						d.add(435,260,"시군구별 1당 차량용도별 교통사고","javascript:goReport('25','Y','367','','시군구별 1당 차량용도별 교통사고','F');");
+							
+						d.add(756,261,"전년대비 시도별 교통사고 사망자 현황.","javascript:goReport('25','Y','693','','전년대비 시도별 교통사고 사망자 현황.','F');");
+							
+						d.add(383,253,"1당 연령층별 시군구별 교통사고","javascript:goReport('25','Y','313','','1당 연령층별 시군구별 교통사고','F');");
+							
+						d.add(403,254,"1당 차량용도별 도로형태별 교통사고","javascript:goReport('25','Y','334','','1당 차량용도별 도로형태별 교통사고','F');");
+							
+						d.add(758,261,"전년대비 도로종류별 교통사고 사망자 현황.","javascript:goReport('25','Y','695','','전년대비 도로종류별 교통사고 사망자 현황.','F');");
+							
+						d.add(1116,261,"전년대비 사고시 상태별 교통사고 사망자 현황.","javascript:goReport('134','Y','1069','','전년대비 사고시 상태별 교통사고 사망자 현황.','F');");
+							
+						d.add(327,249,"월별 차량손상정도별 교통사고.","javascript:goReport('25','Y','255','','월별 차량손상정도별 교통사고.','F');");
+							
+						d.add(384,253,"1당 연령층별 기상상태별 교통사고","javascript:goReport('25','Y','314','','1당 연령층별 기상상태별 교통사고','F');");
+							
+						d.add(437,260,"시군구별 기상상태별 교통사고","javascript:goReport('25','Y','369','','시군구별 기상상태별 교통사고','F');");
+							
+						d.add(385,253,"1당 연령층별 도로종류별 교통사고","javascript:goReport('25','Y','315','','1당 연령층별 도로종류별 교통사고','F');");
+							
+						d.add(438,260,"시군구별 도로종류별 교통사고","javascript:goReport('25','Y','370','','시군구별 도로종류별 교통사고','F');");
+							
+						d.add(778,261,"전년대비 연령층별 교통사고 사망자 현황.","javascript:goReport('25','Y','715','','전년대비 연령층별 교통사고 사망자 현황.','F');");
+							
+						d.add(330,249,"요일별 사고유형별 교통사고","javascript:goReport('25','Y','258','','요일별 사고유형별 교통사고','F');");
+							
+						d.add(386,253,"1당 연령층별 도로형태별 교통사고","javascript:goReport('25','Y','316','','1당 연령층별 도로형태별 교통사고','F');");
+							
+						d.add(439,260,"시군구별 도로형태별 교통사고","javascript:goReport('25','Y','371','','시군구별 도로형태별 교통사고','F');");
+							
+						d.add(761,261,"전년대비 월별 음주운전 교통사고 사망자 현황.","javascript:goReport('25','Y','698','','전년대비 월별 음주운전 교통사고 사망자 현황.','F');");
+							
+						d.add(1181,261,"전년대비 사고유형별 음주운전교통사고 사망자 현황.","javascript:goReport('25','Y','1145','','전년대비 사고유형별 음주운전교통사고 사망자 현황.','F');");
+							
+						d.add(331,249,"요일별 법규위반별 교통사고","javascript:goReport('25','Y','259','','요일별 법규위반별 교통사고','F');");
+							
+						d.add(387,253,"1당 연령층별 1당사자 차종별 교통사고","javascript:goReport('25','Y','317','','1당 연령층별 1당사자 차종별 교통사고','F');");
+							
+						d.add(332,249,"요일별 기상상태별 교통사고","javascript:goReport('25','Y','260','','요일별 기상상태별 교통사고','F');");
+							
+						d.add(388,253,"1당 연령층별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','318','','1당 연령층별 1당사자 차량용도별 교통사고','F');");
+							
+						d.add(766,261,"전년대비 1당사자 차종에 따른 교통사고 사망자 현황.","javascript:goReport('25','Y','703','','전년대비 1당사자 차종에 따른 교통사고 사망자 현황.','F');");
+							
+						d.add(783,260,"시군구별 연령층별 사상자","javascript:goReport('29','Y','720','','시군구별 연령층별 사상자','F');");
+							
+						d.add(333,249,"요일별 도로종류별 교통사고","javascript:goReport('25','Y','261','','요일별 도로종류별 교통사고','F');");
+							
+						d.add(768,261,"전년대비 1당사자 법규위반에 따른 교통사고 사망자 현황.","javascript:goReport('25','Y','705','','전년대비 1당사자 법규위반에 따른 교통사고 사망자 현황.','F');");
+							
+						d.add(782,260,"시군구별 승차상태별 사상자","javascript:goReport('29','Y','719','','시군구별 승차상태별 사상자','F');");
+							
+						d.add(335,249,"요일별 도로형태별 교통사고","javascript:goReport('25','Y','263','','요일별 도로형태별 교통사고','F');");
+							
+						d.add(781,260,"시군구별 보호장구착용별 사상자","javascript:goReport('29','Y','718','','시군구별 보호장구착용별 사상자','F');");
+							
+						d.add(336,249,"요일별 1당사자 차종별 교통사고","javascript:goReport('25','Y','264','','요일별 1당사자 차종별 교통사고','F');");
+							
+						d.add(780,260,"시군구별 상해주부위별 사상자","javascript:goReport('29','Y','717','','시군구별 상해주부위별 사상자','F');");
+							
+						d.add(777,260,"시군구별 교통사고현황(교통안전계획기초자료)","javascript:goReport('60','Y','6722','','시군구별 교통사고현황(교통안전계획기초자료)','F');");
+							
+						d.add(339,249,"요일별 차량손상정도별 교통사고","javascript:goReport('25','Y','267','','요일별 차량손상정도별 교통사고','F');");
+							
+						d.add(351,249,"시간대별 사고유형별 교통사고","javascript:goReport('25','Y','279','','시간대별 사고유형별 교통사고','F');");
+							
+						d.add(350,249,"시간대별 법규위반별 교통사고","javascript:goReport('25','Y','278','','시간대별 법규위반별 교통사고','F');");
+							
+						d.add(349,249,"시간대별 기상상태별 교통사고","javascript:goReport('25','Y','277','','시간대별 기상상태별 교통사고','F');");
+							
+						d.add(348,249,"시간대별 도로종류별 교통사고","javascript:goReport('25','Y','276','','시간대별 도로종류별 교통사고','F');");
+							
+						d.add(347,249,"시간대별 도로형태별 교통사고","javascript:goReport('25','Y','275','','시간대별 도로형태별 교통사고','F');");
+							
+						d.add(345,249,"시간대별 1당사자 차종별 교통사고","javascript:goReport('25','Y','273','','시간대별 1당사자 차종별 교통사고','F');");
+							
+						d.add(341,249,"시간대별 차량손상정도별 교통사고","javascript:goReport('25','Y','269','','시간대별 차량손상정도별 교통사고','F');");
+		
+						document.write(d);
+					</script>
+						</div>
+					
+					</div> 	
+				</div>
+			</div>	
+		</div>
+
+
+
+		<div class="controll_btn">
+			<a href="#" title="닫기" class="bt_nav_close" onclick="document.getElementById('mapWrap').className = 'nav_close';return false;"></a>
+			<a href="#" title="열기" class="bt_nav_open" onclick="document.getElementById('mapWrap').className = '';return false;"></a>
+		</div>
+		
+		<div id="mapContent">
+			<div id="jtContentHeader">	
+				<p class="right-title">교통사고 비교</p>
+				<div class="right-body">
+					<div class="body-top01">
+						<p class="top01-01"><img src="../../images/sta/color-spot.png" alt=""/><span>조회 범위&nbsp :&nbsp</span>[1970년] - [2013년]</p>
+						<ul class="top01-02">
+							<li class="p-top"><img src="../../images/sta/color-spot.png" alt=""/><span>조회 기간</span></li>
+							<li>
+								<select class="dateType">
+									<option>2012</option>
+								</select>
+								<select class="dateType2">
+									<option>02</option>
+								</select>
+							</li>
+							<li class="sel-center">&nbsp~&nbsp</li>
+							<li>
+								<select class="dateType">
+									<option >2013</option>
+								</select>
+								<select class="dateType2">
+									<option>02</option>
+								</select>
+							</li>
+						</ul>
+						<ul  class="top01-03">
+							<li><input type="button" class="rightBtn01" title=""  onclick="view_show(1);return false;"  value="조건설정" name=""/></li>
+							<li><input type="button" class="rightBtn02" title="" value="조회" name=""/></li>
+						</ul>
+					</div>
+					<div class="body-top02"  id="dispay_view1"  style="display:none;">
+						<ul >
+							<li class="btn-db01"><input type="button" class="rightBtn03" title="" value="DB분류" name=""/>
+								<div class="db-div db01">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select01">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect01">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd1 = new dTree('dd1');
+
+										dd1.add(0,-1,'');
+										dd1.add(1,0,'<input type="checkbox" />DB분류');
+										dd1.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd1.add(3,1,'<input type="checkbox" />손해보험사DB손해보험사DB ');
+										dd1.add(4,1,'<input type="checkbox" />공제조합DB ');
+										dd1.add(5,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd1);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db01").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db01").show();
+													
+													$(".div-close").click(function(){
+														$(".db01").fadeOut(100,function(){
+																$(".btn-db01").children().removeClass("active");
+																
+														});
+													});
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select01").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect01").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db02"><input type="button" class="rightBtn03" title="" value="대상사고" name=""/>
+								<div class="db-div db02">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select02">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect02">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd2 = new dTree('dd2');
+
+										dd2.add(0,-1,'');
+										dd2.add(1,0,'<input type="checkbox" />DB분류');
+										dd2.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd2.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd2.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd2);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db02").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													
+													$(".db02").show();
+													
+													$(".div-close").click(function(){
+														$(".db02").fadeOut(100,function(){
+																$(".btn-db02").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select02").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect02").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db03"><input type="button" class="rightBtn03" title="" value="반기" name=""/>
+								<div class="db-div db03">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select03">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect03">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd3 = new dTree('dd3');
+
+										dd3.add(0,-1,'');
+										dd3.add(1,0,'<input type="checkbox" />DB분류');
+										dd3.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd3.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd3.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd3);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db03").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db03").show();
+													
+													$(".div-close").click(function(){
+														$(".db03").fadeOut(100,function(){
+																$(".btn-db03").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select03").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect03").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db04"><input type="button" class="rightBtn03" title="" value="분기" name=""/>
+								<div class="db-div db04">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select04">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect04">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd4 = new dTree('dd4');
+
+										dd4.add(0,-1,'');
+										dd4.add(1,0,'<input type="checkbox" />DB분류');
+										dd4.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd4.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd4.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd4);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db04").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db04").show();
+													
+													$(".div-close").click(function(){
+														$(".db04").fadeOut(100,function(){
+																$(".btn-db04").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select04").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect04").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db05"><input type="button" class="rightBtn03" title="" value="시도" name=""/>
+								<div class="db-div db05">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select05">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect05">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd5 = new dTree('dd5');
+
+										dd5.add(0,-1,'');
+										dd5.add(1,0,'<input type="checkbox" />DB분류');
+										dd5.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd5.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd5.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd5);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db05").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db05").show();
+													
+													$(".div-close").click(function(){
+														$(".db05").fadeOut(100,function(){
+																$(".btn-db05").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select05").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect05").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db06"><input type="button" class="rightBtn03" title="" value="사고유형" name=""/>
+								<div class="db-div db06">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select06">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect06">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd6 = new dTree('dd6');
+
+										dd6.add(0,-1,'');
+										dd6.add(1,0,'<input type="checkbox" />DB분류');
+										dd6.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd6.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd6.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd6);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db06").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db06").show();
+													
+													$(".div-close").click(function(){
+														$(".db06").fadeOut(100,function(){
+																$(".btn-db06").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select06").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect06").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db07"><input type="button" class="rightBtn03" title="" value="법규위반" name=""/>
+								<div class="db-div db07">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select07">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect07">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd7 = new dTree('dd7');
+
+										dd7.add(0,-1,'');
+										dd7.add(1,0,'<input type="checkbox" />DB분류');
+										dd7.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd7.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd7.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd7);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db07").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db07").show();
+													
+													$(".div-close").click(function(){
+														$(".db07").fadeOut(100,function(){
+																$(".btn-db07").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select07").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect07").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db08"><input type="button" class="rightBtn03" title="" value="경찰신고여부" name=""/>
+								<div class="db-div db08">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select08">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect08">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd8 = new dTree('dd8');
+
+										dd8.add(0,-1,'');
+										dd8.add(1,0,'<input type="checkbox" />DB분류');
+										dd8.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd8.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd8.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd8);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db08").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db08").show();
+													
+													$(".div-close").click(function(){
+														$(".db08").fadeOut(100,function(){
+																$(".btn-db08").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select08").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect08").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db09"><input type="button" class="rightBtn03" title="" value="기상상태" name=""/>
+								<div class="db-div db09">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select09">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect09">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd9 = new dTree('dd9');
+
+										dd9.add(0,-1,'');
+										dd9.add(1,0,'<input type="checkbox" />DB분류');
+										dd9.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd9.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd9.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd9);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db09").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db09").show();
+													
+													$(".div-close").click(function(){
+														$(".db09").fadeOut(100,function(){
+																$(".btn-db09").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select09").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect09").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db10"><input type="button" class="rightBtn03" title="" value="도로종류" name=""/>
+								<div class="db-div db10">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select10">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect10">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd10 = new dTree('dd10');
+
+										dd10.add(0,-1,'');
+										dd10.add(1,0,'<input type="checkbox" />DB분류');
+										dd10.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd10.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd10.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd10);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db10").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db10").show();
+													
+													$(".div-close").click(function(){
+														$(".db10").fadeOut(100,function(){
+																$(".btn-db10").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select10").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect10").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db11"><input type="button" class="rightBtn03" title="" value="도로형태" name=""/>
+								<div class="db-div db11">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select09">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect09">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd11 = new dTree('dd11');
+
+										dd11.add(0,-1,'');
+										dd11.add(1,0,'<input type="checkbox" />DB분류');
+										dd11.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd11.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd11.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd11);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db11").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db11").show();
+													
+													$(".div-close").click(function(){
+														$(".db11").fadeOut(100,function(){
+																$(".btn-db11").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select11").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect11").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db12"><input type="button" class="rightBtn03" title="" value="1당차량종별" name=""/>
+								<div class="db-div db12">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select12">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect12">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd12 = new dTree('dd12');
+
+										dd12.add(0,-1,'');
+										dd12.add(1,0,'<input type="checkbox" />DB분류');
+										dd12.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd12.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd12.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd12);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db12").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db12").show();
+													
+													$(".div-close").click(function(){
+														$(".db12").fadeOut(100,function(){
+																$(".btn-db12").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select12").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect12").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db13"><input type="button" class="rightBtn03" title="" value="1당차량용도" name=""/>
+								<div class="db-div db13">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select13">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect13">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd13 = new dTree('dd13');
+
+										dd13.add(0,-1,'');
+										dd13.add(1,0,'<input type="checkbox" />DB분류');
+										dd13.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd13.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd13.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd13);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db13").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db13").show();
+													
+													$(".div-close").click(function(){
+														$(".db13").fadeOut(100,function(){
+																$(".btn-db13").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select13").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect13").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db14"><input type="button" class="rightBtn03" title="" value="음주여부" name=""/>
+								<div class="db-div db14">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select14">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect14">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd14 = new dTree('dd14');
+
+										dd14.add(0,-1,'');
+										dd14.add(1,0,'<input type="checkbox" />DB분류');
+										dd14.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd14.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd14.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd14);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db14").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db14").show();
+													
+													$(".div-close").click(function(){
+														$(".db14").fadeOut(100,function(){
+																$(".btn-db14").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select14").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect14").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db15"><input type="button" class="rightBtn03" title="" value="도주여부" name=""/>
+								<div class="db-div db15">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select15">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect15">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd15 = new dTree('dd15');
+
+										dd15.add(0,-1,'');
+										dd15.add(1,0,'<input type="checkbox" />DB분류');
+										dd15.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd15.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd15.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd15);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db15").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db15").show();
+													
+													$(".div-close").click(function(){
+														$(".db15").fadeOut(100,function(){
+																$(".btn-db15").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select15").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect15").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db16"><input type="button" class="rightBtn03" title="" value="무면허여부" name=""/>
+								<div class="db-div db16">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select16">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect16">전체해제</a>
+										</p>
+										<p class="btn-right">
+											<a href="#" class="div-close btn-enter mr-2">확인</a><a href="#" class="div-close btn-cancle">취소</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd16 = new dTree('dd16');
+
+										dd16.add(0,-1,'');
+										dd16.add(1,0,'<input type="checkbox" />DB분류');
+										dd16.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd16.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd16.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd16);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db16").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db16").show();
+													
+													$(".div-close").click(function(){
+														$(".db16").fadeOut(100,function(){
+																$(".btn-db16").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select16").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect16").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db17"><input type="button" class="rightBtn03" title="" value="성별구분" name=""/>
+								<div class="db-div db17">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select17">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect17">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd17 = new dTree('dd17');
+
+										dd17.add(0,-1,'');
+										dd17.add(1,0,'<input type="checkbox" />DB분류');
+										dd17.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd17.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd17.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd17);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db17").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db17").show();
+													
+													$(".div-close").click(function(){
+														$(".db17").fadeOut(100,function(){
+																$(".btn-db17").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select17").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect17").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db18"><input type="button" class="rightBtn03" title="" value="휴일구분" name=""/>
+								<div class="db-div db18">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select18">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect18">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd18 = new dTree('dd18');
+
+										dd18.add(0,-1,'');
+										dd18.add(1,0,'<input type="checkbox" />DB분류');
+										dd18.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd18.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd18.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd18);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db18").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db18").show();
+													
+													$(".div-close").click(function(){
+														$(".db18").fadeOut(100,function(){
+																$(".btn-db18").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select18").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect18").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+							<li class="btn-db19"><input type="button" class="rightBtn03" title="" value="명절유형" name=""/>
+								<div class="db-div db19">
+									<div class="div-header">
+										<p class="btn-left">
+											<a href="#" class="btn-enter mr-2" id="chk_select19">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect19">전체해제</a>
+										</p>
+									</div>
+									<div class="div-body">
+										<script type="text/javascript">
+										dd19 = new dTree('dd19');
+
+										dd19.add(0,-1,'');
+										dd19.add(1,0,'<input type="checkbox" />DB분류');
+										dd19.add(2,1,'<input type="checkbox" />경찰DB ');
+										dd19.add(3,1,'<input type="checkbox" />손해보험사DB ');
+										dd19.add(4,1,'<input type="checkbox" />공제조합DB ');
+										
+										document.write(dd19);
+										</script>
+										<script type="text/javascript">
+											$(".btn-db19").click(function(){
+													jQuery("li[class^='btn-db']").children().removeClass("active");
+													jQuery("div[class^='db']").hide();
+													$(this).children().addClass("active");
+													$(".db19").show();
+													
+													$(".div-close").click(function(){
+														$(".db19").fadeOut(100,function(){
+																$(".btn-db19").children().removeClass("active");
+																
+														});
+													});
+												
+											});
+										</script>
+										<script type="text/javascript">
+											$(function(){
+													$("#chk_select19").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", true);
+														});
+													});
+													
+											});
+											$(function(){
+													$("#chk_deselect19").click(function(){
+														$(".dTreeNode input").each(function() {
+															$(this).prop("checked", false);
+														});
+													});
+											})
+										</script>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="right-contbtn">
+							<input type="button"  class="rightBtn05 "value="초기화" />
+							<input type="button" onclick="view_hide(1);" class="rightBtn04 "value="닫기" />
+						</div>
+						
+						<div id="bodytop02_layerBG"></div>
+					</div>
+					<div class="body-top03">
+						<div class="body-top03inbox">
+ <iframe  frameborder="0" src="http://www.daum.net" width="100%" height="100%"  id="eosFrame" name="eosFrame" title="장표출력" scrolling='no' style='margin-left:0px;' noresize ></iframe> 
+
+						</div>
+						<div class="show-index"><p class="ml-10"><span class="ft-bol">[검색조건]</span> _ <span class="ft-bol">[DB분류]</span> : 경찰DB,  <span class="ft-bol">[대상사고] </span>: 대형 <a href="javascript:popupOpen2();" class="link-more">more</a></p></div>
+					</div>
+				</div>
+			</div>
+			<div id="jtMap">
+				<div class="l_bar"></div>
+				<div class="r_bar"></div>
+				
+			</div>		
+		</div>	
+
+	
+	<div class="popup_layerBG" id="footerBG" style="display:none;"></div>
+
+<script type="text/javascript">
+$(function(){
+	/* 좌측 검색결과 스크롤 조정 */
+
+	$(window).on('load resize',function(){
+		windowHeight=$(window).height();
+		//$('#ttc01').height(windowHeight-234);
+		$('.body-top03').height(windowHeight-164).css({minHeight:'83.5%'});
+	});
+})
+</script>
+</div> 
+</body> 
+</html>

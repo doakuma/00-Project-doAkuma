@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS traffic accident analysis system</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015_eng.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015_eng.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub_eng.css"></link>
+
+	<script src="../../../js/response.js"></script>
+
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/eng/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<ul class="util">
+				<li><a href="#">HOME</a></li>
+				<li class="last"><a href="#">KOREA</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>Introduction </span></a></h2>
+					<ul>
+						<li><h5><a href="#"> <span>TAAS</span></a></h5></li>
+						<li><h5><a href="#"><span>Action Plan</span></a></h5></li>						
+					</ul>
+					<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>Traffic Accident Statistical DB</span></a></h5></li>
+						<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>Driver’s Manual </span></a></h2>
+					<ul style="top:65px !important;">
+						<li><h5 ><a href="#"><span>Road Traffic Environment And Traffic Accident</span></a></h5></li>
+						<li><h5><a href="#"><span>Foundation Of Safe Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Specification Of Each Driver</span></a></h5></li>
+						<li class="clear-both"><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+						<li><h5><a href="#"><span>Risk Anticipation  And Defensive Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>About Us </span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>KoROAD</span></a></h5></li>
+						<li><h5><a href="#"><span>History</span></a></h5></li>
+						<li><h5><a href="#"><span>Organization</span></a></h5></li>
+						<li><h5><a href="#"><span>Major Program</span></a></h5></li>
+						<li><h5><a href="#"><span>Location</span></a></h5></li>
+						<li><h5><a href="#"><span>Contact Us</span></a></h5></li>
+					</ul>
+					
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>Introduction</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg01_1"> <span>TAAS</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg01_2"><span>Action Plan</span></a></h5></li>		
+						</ul>							
+					<li>
+						<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>Traffic Accident Statistical DB</span></a></h5></li>
+							<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>Driver’s Manual</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" class="full-box icon-bg03_1" ><span>Road Traffic Environment<br /> And Traffic Accident</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Foundation Of Safe Driving</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Specification Of Each Driver</span></a></h5></li>
+							<li><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+							<li><h5><a href="#"><span>Risk Anticipation<br /> And Defensive Driving</span></a></h5></li>
+							<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>About Us</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg04_1"><span>KoROAD</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_2"><span>History</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" class="icon-bg04_3"><span>Organization</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_4"><span>Major Program</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" class="icon-bg04_5"><span>Location</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" class="icon-bg04_6"><span>Contact Us</span></a></h5></li>
+						</ul>
+					</li>					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+
+		<!-- //gnb끝 -->
+	</div>
+
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>Driver’s Manual</span>
+			<span class="current">Appendix</span>
+		</div>
+	</div>
+	<!-- // 로케이션 영역 -->
+	<div class="subwrap"  id="subcont">
+			<div class="subpage-toprapper">
+				<div class="sub-top sub04">
+					<h2>Appendix</h2>
+					<!-- <p>Traffic AccidentStatistical DataBase</p> -->
+				</div>
+			</div>
+			<!-- //네비긑 -->
+		<div class="sub-cont">	
+			
+			<h4 class="subpage-tit mt-20">Appendix</h4>
+
+			<p class="sub-tit02">A. Classes of cars for each license type</p>
+			<p class="sub-tit03 mt-10">(1) Importance of risk anticipation</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+					<caption>Classes of cars for each license type table</caption>
+						<thead>
+							<tr>
+							  <th colspan="3" rowspan="2">Cars to 
+								drive</th>
+							  <th colspan="3">Class 2 <br>(personal 
+								cars)</th>
+							  <th colspan="3" class="last">Type 1 
+								<br>(Commercial and personal cars)</th></tr>
+							<tr>
+							  <th>Motorcycle</th>
+							  <th>Small</th>
+							  <th>Ordinary</th>
+							  <th>General </th>
+							  <th>Large</th>
+							  <th class="last">Special</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+						  <td rowspan="3">Passenger &amp; Sedan</td>
+						  <td>From 16 
+							passengers</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-1.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Up to 15 
+							passengers</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-2.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Up to 10 
+							passengers</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-3.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last"><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td></tr>
+						<tr>
+						  <td rowspan="2">Two-wheel motor vehicles<br>(Including the 
+							motor bike and bicycle)</td>
+						  <td>From 
+							126cc<br>(Including side seats)</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-4.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Up to 
+	125cc</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-5.gif" width="99"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last"><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td></tr>
+						<tr>
+						  <td rowspan="3">Cargo</td>
+						  <td>From 12 
+						  tons</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-6.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Less than 12 
+							tons</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-7.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Up to 4 
+						  tons</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-8.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Construction 
+							machinery</td>
+						  <td colspan="2">Dump trucks, Asphalt distributors, Road 
+							stabilizers, Concrete pumps, Concrete mixer trucks, 
+							Perforators <br>(truck loading type)</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td rowspan="2">Special vehicles</td>
+						  <td>Trailers</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-9.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td class="last"><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td></tr>
+						<tr>
+						  <td>Tow trucks</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-10.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td class="last"><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						 </tr>
+						<tr>
+						  <td rowspan="2">Emergency vehicles</td>
+						  <td>From 13 
+							passengers (including cargo)</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-11.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td>&nbsp;</td>
+						  <td class="last">&nbsp;</td></tr>
+						<tr>
+						  <td>Up to 12 
+							persons</td>
+						  <td style="background:#dbd9d2;"><img height="29" alt="Cars" src="../../../images/eng//img4-6-12.gif" width="99"></td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td><img height="8" alt="check" src="../../../images/eng//img4-6-13.gif" width="8"></td>
+						  <td class="last">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="mt-5">* Effective on June 30, 2001, Class 2 license is allowed to drive 10-passenger cars</p>
+			</div>
+			
+			<p class="sub-tit02 mt-20">B. Standard of administrative disposition of driver's license</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+						  <caption>Standard of administrative disposition of driver's license Table</caption>
+							<thead>
+							<tr>
+							  <th>Clause</th>
+							  <th colspan="2">Content</th>
+							  <th class="last">Remark</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							  <td>License 
+								suspension</td>
+							  <td colspan="2" class="text-l">When the 
+								penalty point for driver's license exceeds 40 points 
+								from violations or traffic accident</td>
+							  <td class="last">Calculate one point for 
+								one day</td></tr>
+							<tr>
+							  <td rowspan="4" class="text-l">Criteria to license revocation due to the 
+								excess of accumulative point</td>
+							  <td>Term</td>
+							  <td>Penalty points or 
+								accumulative points</td>
+							  <td rowspan="4" class="last">Manage for 3 
+								years <br>(Based on the date of applicable violation or 
+								accident)</td>
+							</tr>
+							<tr>
+							  <td>1 year</td>
+							  <td>121 or more points</td></tr>
+							<tr>
+							  <td>2 years</td>
+							  <td>201 or more points</td></tr>
+							<tr>
+							  <td>3 years</td>
+							  <td class="last">More than 271 
+		points</td></tr>
+							<tr>
+							  <td class="text-l">Criteria to 
+								license revocation due to incompletion of Class 2 
+								license renewal</td>
+							  <td colspan="2" class="text-l">110 days of 
+								license suspension after exceeding one year of renewal 
+								period (However, when applying for renewal during the 
+								license suspension period, the remaining suspension days 
+								will be exempted)</td>
+							  <td rowspan="2" class="last">Deduct from the 
+								accumulated score</td></tr>
+							<tr>
+							  <td>Lapse of 
+								penalty point (granting of incentive for persons without 
+								violation and accident)</td>
+							  <td colspan="2" class="last text-l">When the 
+								penalty point is below 40 points, When lapsing one year 
+								without violation and accident from the final date of 
+								violation or accident</td></tr>
+							<tr>
+							  <td>Deduction of 
+								accumulative point by arresting the hit-and-run vehicle 
+								<br>(granting of incentive)</td>
+							  <td colspan="2" class="text-l">When arresting 
+								the hit-and-run driver (involving personal injury) or 
+								reporting for arrest, 40 points are granted regardless 
+								of period </td>
+							  <td class="last">Deduction of accumulative 
+								point for once for each arrest or report if receiving 
+								the suspension or revocation</td></tr>
+							<tr>
+							  <td>Reduction of 
+								days for suspension for best drivers</td>
+							  <td colspan="2" class="text-l">Reduction of 
+								1/2 of days for license suspension of best drivers 
+								(person who engage in commercial driving for certain 
+								period (10 years or longer) without accident or person 
+								who engage in traffic safety service activities with the 
+								indication of meritorious service)</td>
+							  <td class="last">Exception when there is a 
+								penalty point for accident</td></tr>
+							<tr>
+							  <td>When 
+								completing the special traffic safety education, the 
+								penalty and the days for suspension will be reduced</td>
+							  <td colspan="2" class="text-l">
+								<p>* Education of traffic laws: Reduction of 20 penalty 
+								points<br>* Education of traffic matter: Reduction of 20 
+								suspension days <br>* Education for traffic 
+								participation: Additional reduction of 30 suspension 
+								days</p></td>
+							  <td class="last">Not deducyiog accumulated 
+								score</td></tr>
+							<tr>
+							  <td>Individual 
+								criteria for license revocation</td>
+							  <td colspan="2"  class="text-l">* Personal 
+								injury accident while intoxicated <br>(Blood alcohol 
+								level of 0.05% or more)<br>* Driving during the 
+								administrative disposition of driver's license<br>* 
+								Hit-and -run from traffic accident<br>* Violence on 
+								police officer and 14 others (when arrested)</td>
+							  <td class="last">Major categories from the 
+								entire 18 categories</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+
+			<p class="sub-tit02 mt-20">C. Penalty points for violation of traffic laws</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+					  <caption>Penalty points for violation of traffic laws Table</caption>
+						<thead>
+						<tr>
+						  <th colspan="2">Violation</th>
+						  <th>Penalty <br>(1 day 1 point)</th>
+						  <th class="last">Other information</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						  <td>1.</td>
+						  <td class="text-l">Lapse of one year without 
+							the renewal of the license after the expiration of the 
+							renewal for Class 2 license</td>
+						  <td colspan="2" class="last">110 
+							points<br>(excluding accumulated score)</td></tr>
+						<tr>
+						  <td>2.</td>
+						  <td class="text-l">Driving while in excess 
+							of criteria for intoxication <br>(when blood alcohol is 
+							0.05% or more and less than 0.1%)</td>
+						  <td>100 points</td>
+						  <td rowspan="2" class="last">Criminal arrest 
+						  </td></tr>
+						<tr>
+						  <td>3.</td>
+						  <td class="text-l">When the driver is 
+							arrested for criminal incident of battering on arresting 
+							police officer</td>
+						  <td class="last">90 points</td></tr>
+						<tr>
+						  <td>4.</td>
+						  <td class="text-l">Disobeying for action on 
+							stop or parking violation (Limited to cases of 
+							interference on traffic without following the order to 
+							move for 3 times or more by the police officer with the 
+							membership in an organization or multiple people 
+						  group)</td>
+						  <td rowspan="3">40 points</td>
+						  <td rowspan="3" class="last">Imposition of 
+							penalty</td></tr>
+						<tr>
+						  <td>5.</td>
+						  <td class="last text-l">Violation of safe driving 
+							obligations (Limited to cases of speed or method of 
+							driving that interferes with the other people without 
+							following the instruction of safety driving for 3 times 
+							or more by the police officer with the membership in an 
+							organization or multiple people group)</td></tr>
+						<tr>
+						  <td>6.</td>
+						  <td class="last text-l">Driving in neglection of 
+							commotion of passenger in the vehicle</td></tr>
+						<tr>
+						  <td>7.</td>
+						  <td class="text-l">No attendance to the 
+							summary proceeding until the lapse of 60 days from the 
+							expiration date of penalty payment period or attendance 
+							period</td>
+						  <td colspan="2" class="last text-l">
+							<p>40 points <br>(excluding the accumulated score) <br>* 
+							However, it is calculated in the accumulated score from 
+							the time of not paying the penalty.</p></td></tr>
+						<tr>
+						  <td height="25">8.</td>
+						  <td class="text-l">Violation of passing 
+							(Encroachment of center line)</td>
+						  <td rowspan="6">30 points</td>
+						  <td rowspan="5" class="last">Imposition of 
+							penalty</td></tr>
+						<tr>
+						  <td>9.</td>
+						  <td class="last text-l">Speed violation (excess 
+							of 40km/h)</td></tr>
+						<tr>
+						  <td>10.</td>
+						  <td class="last text-l">Violation of passing the 
+							railway cross</td></tr>
+						<tr>
+						  <td>11.</td>
+						  <td class="last text-l">Driving on shoulder in 
+							expressway and vehicle exclusive road</td></tr>
+						<tr>
+						  <td>12.</td>
+						  <td class="last text-l">Violation of driving on 
+							expressway bus road and multi-passenger road</td></tr>
+						<tr>
+						  <td>13.</td>
+						  <td class="text-l">Violation of presentment 
+							of driver's license</td>
+						  <td class="last">Summary proceeding</td></tr>
+						<tr>
+						  <td>14.</td>
+						  <td class="text-l">violation of signal or 
+							instruction</td>
+						  <td rowspan="6">15 points</td>
+						  <td rowspan="6" class="last">Imposition of 
+							penalty</td></tr>
+						<tr>
+						  <td>15.</td>
+						  <td class="last  text-l">Speed violation (excess 
+							of 20km/h but below 40 km/h)</td></tr>
+						<tr>
+						  <td>16.</td>
+						  <td class="last  text-l">violation of no passing 
+							time or place</td></tr>
+						<tr>
+						  <td>17.</td>
+						  <td class="last  text-l">Use of mobile phone while 
+							driving</td></tr>
+						<tr>
+						  <td>18.</td>
+						  <td class="text-l">violation of not driving 
+							the cars without installation of driving record 
+						meter</td></tr>
+						<tr>
+						  <td>19.</td>
+						  <td class="text-l">violation of duty of 
+							drivers for school bus for minors</td></tr>
+						<tr>
+						  <td>20.</td>
+						  <td class="text-l">violation of passing lane 
+							(encroachment of pedestrian road, crossing section)</td>
+						  <td rowspan="10">10 points</td>
+						  <td rowspan="10" class="last">Imposition of 
+							penalty</td></tr>
+						<tr>
+						  <td>21.</td>
+						  <td class="text-l">violation of passing in 
+							designated area <br>(Including the lane change in a 
+							place prohibiting he lane change)</td></tr>
+						<tr>
+						  <td>22.</td>
+						  <td class="text-l">violation of passing on 
+							general road with bus exclusive lane</td></tr>
+						<tr>
+						  <td>23.</td>
+						  <td class="text-l">Not securing the safe 
+							distance (including the violation of lane change)</td></tr>
+						<tr>
+						  <td>24.</td>
+						  <td class="text-l">violation of passing 
+							method</td></tr>
+						<tr>
+						  <td>25.</td>
+						  <td class="text-l">Fail to protect 
+							pedestrian (including the violation of stop line)</td></tr>
+						<tr>
+						  <td>26.</td>
+						  <td class="text-l">violation of action to 
+							prevent the fall for passengers during on or off of 
+							vehicle</td></tr>
+						<tr>
+						  <td>27.</td>
+						  <td class="text-l">violation of duty to safe 
+							drive</td></tr>
+						<tr>
+						  <td>28.</td>
+						  <td class="text-l">Act of interfering by 
+							cars by arguing and conflict on the road</td></tr>
+						<tr>
+						  <td>29.</td>
+						  <td class="text-l">violation of special 
+							protection for school bus</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="sub-tit02 mt-20">D. Criteria for penalty when causing traffic accident</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+				  <caption>Criteria for penalty when causing traffic accident Table</caption>
+					<thead>
+					<tr>
+					  <th colspan="2">Classification</th>
+					  <th>Penalty</th>
+					  <th colspan="2" class="last">Contents</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					  <td rowspan="4">Traffic accident with personal injury</td>
+					  <td>Each person 
+						of death</td>
+					  <td>90 points</td>
+					  <td colspan="2" class="last text-l">When dies 
+						within 72 hours from the accident</td></tr>
+					<tr>
+					  <td>Each person 
+						of serious injury</td>
+					  <td>15 points</td>
+					  <td colspan="2" class="last text-l">Injury with 3 
+						weeks or longer treatment time</td></tr>
+					<tr>
+					  <td>Each person 
+						of minor injury</td>
+					  <td>5 points</td>
+					  <td colspan="2" class="last text-l">Injury less 
+						than 3 weeks but longer than 5 days of treatment 
+					time</td></tr>
+					<tr>
+					  <td>Each person 
+						reporting injury</td>
+					  <td>2 points</td>
+					  <td colspan="2" class="last text-l">Injury less 
+						than 5 days of treatment time</td></tr>
+					<tr>
+					  <td colspan="2" rowspan="3">Failure to aid in traffic accident <br>(rescue 
+						of injured persons)</td>
+					  <td>60 points</td>
+					  <td class="text-l">Voluntary report within 
+						48 hours after the lapse of reporting time</td>
+					  <td rowspan="3" class="last">Criminal 
+					  arrest</td></tr>
+					<tr>
+					  <td>30 points</td>
+					  <td class="last text-l">Fail to take rescue 
+						action immediately after the traffic accident, but made 
+						voluntary report</td>
+					</tr>
+					<tr>
+					  <td>15 points</td>
+					  <td class="last text-l">Caused the property 
+						damage but run away</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+
+			<p class="sub-tit02 mt-20">E. Period of limitation to take driver's license</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<caption>Period of limitation to take driver's license Table</caption>
+						  <thead>
+						  <tr>
+							<th  width="27%">Limitation 
+							  period</th>
+							<th  width="73%" class="last">Cause</th>
+						  </tr>
+						  </thead>
+						  <tbody>
+						  <tr>
+							<td >Limit 
+							  for 5 years</td>
+							<td class="last text-l">Hit-and-run after 
+							  involving in an accident with personal injury 
+							  attributable to drive under the influence of 
+							  alcohol, driving without license, drug addiction, 
+							  fatigue driving and others without taking 
+							  necessary rescue action</td></tr>
+						  <tr>
+							<td >Limit 
+							  for 4 years</td>
+							<td class="last text-l">Caused the accident 
+							  with personal injury other than the causes listed 
+							  above</td></tr>
+						  <tr>
+							<td >Limit 
+							  for 3 years</td>
+							<td class="last text-l">* Cause three times 
+							  or more of traffic accidents while driving under 
+							  the influence of alcohol<br>* Driving without 
+							  license by a person who used the vehicle for crime 
+							  or used the stolen or robbed vehicle</td></tr>
+						  <tr>
+							<td >Limit 
+							  for 2 years</td>
+							<td class="last text-l">* Driving without 
+							  license<br>* Acquisition or use of license for 
+							  inappropriate way<br>* Person who used the vehicle 
+							  for crime or used the stolen or robbed 
+							  vehicle<br>*** Person applicable for three-strike 
+							  out for simple driving under the influence of 
+							  alcohol (After June 30, 2001)</td></tr>
+						  <tr>
+							<td >Limit 
+							  for 1 year</td>
+							<td class="last text-l">In the event of 
+							  revocation of license for two-year limitation and 
+							  others</td></tr>
+						  <tr>
+							<td >Limit 
+							  for 6 months</td>
+							<td class="last text-l">Period of 
+							  prohibiting the re-acquisition of motor bicycle 
+							  license</td></tr>
+						  <tr>
+							<td >In the 
+							  event that it is possible to take the license 
+							test</td>
+							<td class="last text-l">* Person yet to 
+							  complete the aptitude test or renewal of 
+							  license<br>* Person failed for aptitude test for 
+							  class 1 license to take the class 
+						2</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="sub-tit02 mt-20">F. Chart for Traffic Signs</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+			                  <caption>Chart for Traffic Signs Table</caption>
+			                    <tbody>
+			                    <tr class="pd_5">
+			                      <td  width="10%" rowspan="3">Warning 
+			                        signs</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">109</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">110</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">116</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">121</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">128</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">129</td>
+			                      <td  width="10%" bgcolor="#e8e2d3">130</td>
+			                      <td  width="10%" bgcolor="#e8e2d3"  class="last">133</td></tr>
+			                    <tr class="pd_5">
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-14.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-15.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-16.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-17.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-18.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-19.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-20.gif" width="47"></td>
+			                      <td  bgcolor="#e8e2d3" class="last"><img height="44" alt="Warning signs" src="../../../images/eng/img4-6-21.gif" width="47"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">Traffic 
+			                        circle</td>
+			                      <td bgcolor="#e8e2d3">Railroad 
+			                        crossing</td>
+			                      <td bgcolor="#e8e2d3">Hill 
+			                      upwards</td>
+			                      <td bgcolor="#e8e2d3">Keep right 
+			                      </td>
+			                      <td bgcolor="#e8e2d3">Bumpy 
+			road</td>
+			                      <td bgcolor="#e8e2d3">Hump</td>
+			                      <td bgcolor="#e8e2d3">Falling 
+			                      rocks</td>
+			                      <td bgcolor="#e8e2d3" class="last">Children 
+			                        protection </td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="3">Regulatory signs</td>
+			                      <td  bgcolor="#e8e2d3">201</td>
+			                      <td  bgcolor="#e8e2d3">202</td>
+			                      <td  bgcolor="#e8e2d3">203</td>
+			                      <td  bgcolor="#e8e2d3">204</td>
+			                      <td  bgcolor="#e8e2d3">205</td>
+			                      <td  bgcolor="#e8e2d3">206</td>
+			                      <td  bgcolor="#e8e2d3">207</td>
+			                      <td  bgcolor="#e8e2d3" class="last">208</td></tr>
+			                    <tr class="pd_5">
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-22.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-23.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-24.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-25.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-26.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-27.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-28.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3" class="last"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-29.gif" width="40"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">Road 
+			                      closed</td>
+			                      <td bgcolor="#e8e2d3">No passenger 
+			                        cars</td>
+			                      <td bgcolor="#e8e2d3">No cargo 
+			                        vehicles</td>
+			                      <td bgcolor="#e8e2d3">No buses</td>
+			                      <td bgcolor="#e8e2d3">No 
+			                        motorcycles</td>
+			                      <td bgcolor="#e8e2d3">No passenger 
+			                        cars/motorcycles</td>
+			                      <td bgcolor="#e8e2d3">No tractors 
+			                        or cultivators</td>
+			                      <td bgcolor="#e8e2d3" class="last">No animal 
+			                        drawn vehicles</td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="3">&nbsp;</td>
+			                      <td  bgcolor="#e8e2d3">209</td>
+			                      <td  bgcolor="#e8e2d3">210</td>
+			                      <td  bgcolor="#e8e2d3">211</td>
+			                      <td  bgcolor="#e8e2d3">217</td>
+			                      <td  bgcolor="#e8e2d3">225</td>
+			                      <td  bgcolor="#e8e2d3">227</td>
+			                      <td  bgcolor="#e8e2d3" colspan="2" rowspan="3" class="last">&nbsp;</td></tr>
+			                    <tr class="pd_5">
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-30.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-31.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-32.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-33.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-34.gif" width="40"></td>
+			                      <td  bgcolor="#e8e2d3" class="last"><img height="40" alt="Regulatory signs" src="../../../images/eng/img4-6-35.gif" width="40"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">No hand 
+			                      carts</td>
+			                      <td bgcolor="#e8e2d3">No 
+			                      bicycles</td>
+			                      <td bgcolor="#e8e2d3">Do not 
+			                      enter</td>
+			                      <td bgcolor="#e8e2d3">Do not 
+			                      pass</td>
+			                      <td bgcolor="#e8e2d3">Minimum 
+			                        speed limit</td>
+			                      <td bgcolor="#e8e2d3" class="last">Stop</td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="3">Mandatory signs</td>
+			                      <td  bgcolor="#e8e2d3">311</td>
+			                      <td  bgcolor="#e8e2d3">313</td>
+			                      <td  bgcolor="#e8e2d3">315</td>
+			                      <td  bgcolor="#e8e2d3">316</td>
+			                      <td  bgcolor="#e8e2d3">318</td>
+			                      <td  bgcolor="#e8e2d3">321</td>
+			                      <td  bgcolor="#e8e2d3">326</td>
+			                      <td  bgcolor="#e8e2d3" class="last">329</td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-36.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-37.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-38.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-39.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-40.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-41.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-42.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3" class="last"><img height="40" alt="Mandatory signs" src="../../../images/eng/img4-6-43.gif" width="40"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">U-turn</td>
+			                      <td bgcolor="#e8e2d3">Keep 
+			right</td>
+			                      <td bgcolor="#e8e2d3">Proceeding 
+			                        directions</td>
+			                      <td bgcolor="#e8e2d3">By pass</td>
+			                      <td bgcolor="#e8e2d3">Regular 
+			                        service bus only</td>
+			                      <td bgcolor="#e8e2d3">Safety zone 
+			                      </td>
+			                      <td bgcolor="#e8e2d3">Pedestrian 
+			                        only</td>
+			                      <td bgcolor="#e8e2d3" class="last">One-way 
+			                        traffic </td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="3">&nbsp;</td>
+			                      <td  bgcolor="#e8e2d3">330</td>
+			                      <td class="no_tit pd_5" bgcolor="#e8e2d3" colspan="3" rowspan="3">&nbsp;</td>
+			                      <td class="sub_box pd_5" bgcolor="#e8e2d3" rowspan="3">Auxiliary signs</td>
+			                      <td  bgcolor="#e8e2d3">426</td>
+			                      <td  bgcolor="#e8e2d3">428</td>
+			                      <td  bgcolor="#e8e2d3" class="last">429</td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3"><img height="37" alt="Mandatory signs" src="../../../images/eng/img4-6-44.gif" width="32"></td>
+			                      <td bgcolor="#e8e2d3"><img height="38" alt="Auxiliary signs" src="../../../images/eng/img4-6-45.gif" width="38"></td>
+			                      <td bgcolor="#e8e2d3"><img height="36" alt="Auxiliary signs" src="../../../images/eng/img4-6-46.gif" width="35"></td>
+			                      <td bgcolor="#e8e2d3" class="last"><img height="39" alt="Auxiliary signs" src="../../../images/eng/img4-6-47.gif" width="36"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">Unprotected 
+			                        left turn </td>
+			                      <td bgcolor="#e8e2d3">Release</td>
+			                      <td bgcolor="#e8e2d3">Towing 
+			                      zone</td>
+			                      <td bgcolor="#e8e2d3" class="last">Children 
+			                        protection zone</td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="3">Road surface</td>
+			                      <td  bgcolor="#e8e2d3" colspan="2">501</td>
+			                      <td  bgcolor="#e8e2d3">502</td>
+			                      <td  bgcolor="#e8e2d3">503</td>
+			                      <td  bgcolor="#e8e2d3" colspan="2">504</td>
+			                      <td  bgcolor="#e8e2d3">505</td>
+			                      <td class="last" bgcolor="#e8e2d3" rowspan="3">&nbsp;</td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3" colspan="2"><img height="45" alt="Road surface" src="../../../images/eng/img4-6-48.gif" width="125"></td>
+			                      <td bgcolor="#e8e2d3"><img height="44" alt="Road surface" src="../../../images/eng/img4-6-49.gif" width="24"></td>
+			                      <td bgcolor="#e8e2d3"><img height="44" alt="Road surface" src="../../../images/eng/img4-6-50.gif" width="40"></td>
+			                      <td bgcolor="#e8e2d3" colspan="2"><img height="44" alt="Road surface" src="../../../images/eng/img4-6-51.gif" width="59"></td>
+			                      <td bgcolor="#e8e2d3" class="last"><img height="44" alt="Road surface" src="../../../images/eng/img4-6-52.gif" width="41"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3" colspan="2">Centerline</td>
+			                      <td bgcolor="#e8e2d3">U-turn 
+			                      zone</td>
+			                      <td bgcolor="#e8e2d3">Lane line</td>
+			                      <td bgcolor="#e8e2d3" colspan="2">Exclusive bus lane</td>
+			                      <td bgcolor="#e8e2d3" class="last">Road way 
+			                        edge line</td></tr>
+			                    <tr class="pd_5">
+			                      <td class="sub_box pd_5" rowspan="6">&nbsp;</td>
+			                      <td  bgcolor="#e8e2d3">506</td>
+			                      <td  bgcolor="#e8e2d3">507</td>
+			                      <td  bgcolor="#e8e2d3">508</td>
+			                      <td  bgcolor="#e8e2d3">514</td>
+			                      <td  bgcolor="#e8e2d3">515</td>
+			                      <td  bgcolor="#e8e2d3">516</td>
+			                      <td  bgcolor="#e8e2d3">521</td>
+			                      <td  bgcolor="#e8e2d3" class="last">522</td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3"><img height="43" alt="Road surface" src="../../../images/eng/img4-6-53.gif" width="37"></td>
+			                      <td bgcolor="#e8e2d3"><img height="45" alt="Road surface" src="../../../images/eng/img4-6-54.gif" width="23"></td>
+			                      <td bgcolor="#e8e2d3"><img height="45" alt="Road surface" src="../../../images/eng/img4-6-55.gif" width="26"></td>
+			                      <td bgcolor="#e8e2d3"><img height="46" alt="Road surface" src="../../../images/eng/img4-6-56.gif" width="18"></td>
+			                      <td bgcolor="#e8e2d3"><img height="43" alt="Road surface" src="../../../images/eng/img4-6-57.gif" width="38"></td>
+			                      <td bgcolor="#e8e2d3"><img height="43" alt="Road surface" src="../../../images/eng/img4-6-58.gif" width="38"></td>
+			                      <td bgcolor="#e8e2d3"><img height="42" alt="Road surface" src="../../../images/eng/img4-6-59.gif" width="25"></td>
+			                      <td bgcolor="#e8e2d3" class="last"><img height="45" alt="Road surface" src="../../../images/eng/img4-6-60.gif" width="18"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3" colspan="3">No 
+			                        lane change </td>
+			                      <td bgcolor="#e8e2d3">No U-turn 
+			</td>
+			                      <td bgcolor="#e8e2d3">No parking 
+			                      </td>
+			                      <td bgcolor="#e8e2d3">No parking 
+			                        or standing</td>
+			                      <td bgcolor="#e8e2d3">Stop</td>
+			                      <td bgcolor="#e8e2d3" class="last">Yield</td></tr>
+			                    <tr class="pd_5">
+			                      <td  bgcolor="#e8e2d3">524</td>
+			                      <td  bgcolor="#e8e2d3">529</td>
+			                      <td  bgcolor="#e8e2d3">530</td>
+			                      <td  bgcolor="#e8e2d3">531</td>
+			                      <td  bgcolor="#e8e2d3">537</td>
+			                      <td class="last" bgcolor="#e8e2d3" colspan="3" rowspan="3">&nbsp;</td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3"><img height="41" alt="Road surface" src="../../../images/eng/img4-6-61.gif" width="32"></td>
+			                      <td bgcolor="#e8e2d3"><img height="41" alt="Road surface" src="../../../images/eng/img4-6-62.gif" width="47"></td>
+			                      <td bgcolor="#e8e2d3"><img height="40" alt="Road surface" src="../../../images/eng/img4-6-63.gif" width="47"></td>
+			                      <td bgcolor="#e8e2d3"><img height="43" alt="Road surface" src="../../../images/eng/img4-6-64.gif" width="29"></td>
+			                      <td bgcolor="#e8e2d3" class="last"><img height="41" alt="Road surface" src="../../../images/eng/img4-6-65.gif" width="46"></td></tr>
+			                    <tr class="pd_5">
+			                      <td bgcolor="#e8e2d3">No standing 
+			                        zone</td>
+			                      <td bgcolor="#e8e2d3">Pedestrian 
+			                        crosswalk a head </td>
+			                      <td bgcolor="#e8e2d3">Stop line</td>
+			                      <td bgcolor="#e8e2d3">Safety 
+			                      zone</td>
+			                      <td bgcolor="#e8e2d3" class="last">Proceeding 
+			                        directions</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="footer-wrap">
+			<address>
+				<p><img src="../../../images/eng/f_logo.gif" alt=""  /> Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+		</div>
+	</div>
+	
+ </body>
+</html>

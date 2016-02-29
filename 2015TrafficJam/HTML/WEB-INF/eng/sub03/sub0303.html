@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS traffic accident analysis system</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015_eng.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015_eng.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub_eng.css"></link>
+
+	<script src="../../../js/response.js"></script>
+
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/eng/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<ul class="util">
+				<li><a href="#">HOME</a></li>
+				<li class="last"><a href="#">KOREA</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>Introduction </span></a></h2>
+					<ul>
+						<li><h5><a href="#"> <span>TAAS</span></a></h5></li>
+						<li><h5><a href="#"><span>Action Plan</span></a></h5></li>						
+					</ul>
+					<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>Traffic Accident Statistical DB</span></a></h5></li>
+						<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>Driver’s Manual </span></a></h2>
+					<ul style="top:65px !important;">
+						<li><h5 ><a href="#"><span>Road Traffic Environment And Traffic Accident</span></a></h5></li>
+						<li><h5><a href="#"><span>Foundation Of Safe Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Specification Of Each Driver</span></a></h5></li>
+						<li class="clear-both"><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+						<li><h5><a href="#"><span>Risk Anticipation  And Defensive Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>About Us </span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>KoROAD</span></a></h5></li>
+						<li><h5><a href="#"><span>History</span></a></h5></li>
+						<li><h5><a href="#"><span>Organization</span></a></h5></li>
+						<li><h5><a href="#"><span>Major Program</span></a></h5></li>
+						<li><h5><a href="#"><span>Location</span></a></h5></li>
+						<li><h5><a href="#"><span>Contact Us</span></a></h5></li>
+					</ul>
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>Introduction</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg01_1"> <span>TAAS</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg01_2"><span>Action Plan</span></a></h5></li>	
+						</ul>
+					<li>
+						<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>Traffic Accident Statistical DB</span></a></h5></li>
+							<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>Driver’s Manual</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" class="full-box icon-bg03_1" ><span>Road Traffic Environment<br /> And Traffic Accident</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Foundation Of Safe Driving</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Specification Of Each Driver</span></a></h5></li>
+							<li><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+							<li><h5><a href="#"><span>Risk Anticipation<br /> And Defensive Driving</span></a></h5></li>
+							<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>About Us</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg04_1"><span>KoROAD</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_2"><span>History</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" class="icon-bg04_3"><span>Organization</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_4"><span>Major Program</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" class="icon-bg04_5"><span>Location</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" class="icon-bg04_6"><span>Contact Us</span></a></h5></li>
+						</ul>
+					</li>					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+
+		<!-- //gnb끝 -->
+	</div>
+
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>Driver’s Manual</span>
+			<span class="current">Foundations of Safe Driving</span>
+		</div>
+	</div>
+	<!-- // 로케이션 영역 -->
+	<div class="subwrap"  id="subcont">
+			<div class="subpage-toprapper">
+				<div class="sub-top sub04">
+					<h2>Foundations of Safe Driving</h2>
+					<!-- <p>Traffic AccidentStatistical DataBase</p> -->
+				</div>
+			</div>
+			<!-- //네비긑 -->
+		<div class="sub-cont">	
+			
+			<h4 class="subpage-tit mt-20">Foundations Of Safe Driving Driving</h4>
+
+	<p class="sub-tit02">A. Mental and Physical Condition and Safe Driving</p>
+
+ 	 	<p class="sub-tit03">(1) Motion of Consciousness</p>
+ 	 	 	<p class="sub-txt">Because it is difficult to maintain prolonged tension, human brain repeats relax and tension alike the waves while driving, and the longer the time and severity of tension, time and severity of relaxation is proportioned to tension. The problem is, while in relaxation state and reduced attention span, driver is unable to see the dangerous elements or ignore its meaning. Moreover, the drivers who experience tension of consciousness often due to frequent violation, he/she experienced relaxed state often as well which reduces severity of tension gradually and unable to detect the tension in actual dangerous situation.</p>
+
+ 	 	 	<p class="tbl-tit">[Extreme tiredness can cause the accident under the blank in the consciousness]</p>
+ 	 	 	<div class="trafic-img">
+				<img src="../../../images/eng/manual_img13.gif"  alt="" />
+				<img src="../../../images/eng/manual_img14.gif"  alt="" />
+			</div>
+
+ 	 	<p class="sub-tit03">(2) Blank in the consciousness</p>
+ 	 	 	<p class="sub-txt">Te extremity of blank consciousness would be the sleeping stage. Sometimes there are drivers who say that the accident occur without their knowledge, and this is attribute to the fact that their consciousness was extremely relaxed.<br /><br />
+This type of phenomenon occurs under extreme tiredness due to long distance driving or immediately after experiencing intense tension such as passing the vehicle by going over center lane. While in the blank of consciousness, you are unable to notice the obstacle right in front of you.</p>
+
+ 	 	<p class="sub-tit03">(3) Detouring of awareness</p>
+ 	 	 	<p class="sub-txt">The detouring of awareness is, for example, are when a male driver to look at the beautiful woman walking down the street and not to realizing the change of traffic light and continue to drive or a driver who had a bad day in his/her office and was thinking about whether to quit his job or not and crosses crosswalk without seeing the pedestrian.</p>
+
+ 	 	<p class="sub-tit03">(4) Influence of emotion on perception (attention)
+ 	 	 	<p class="sub-txt">What would you feel when you hear the news that you won a lottery or your mother was killed in traffic accident? You may have the black out and end up driving recklessly in such condition.</p>
+
+ 	 	 	<p class="tbl-tit">[Excited emotion provokes the reckless driving action]</p>
+ 	 	 	 <div class="trafic-img">
+				<img src="../../../images/eng/manual_img15.gif"  alt="" />
+			</div>
+
+ 	 	<p class="sub-tit03">(5) Influence of emotion on decision making competency</p>
+ 	 	 	<p class="sub-txt">When you drive under overly excited condition, dangerous elements and its associated process may be cut off and judge only with the circumstances that meets the eye.</p>
+
+ 	 	<p class="sub-tit03">(6) Influence of emotion on driving maneuvering</p>
+ 	 	 	<p class="sub-txt">According to the survey result, half of industrial disasters occur when workers were in bad condition. Coincidentally while driving, the drivers who were in the excited condition, would be aggressive while braking or steering wheel and change lane without turning on the signal light.</p>
+
+ 	 	<p class="sub-tit03">(7) Method of controlling the emotion</p>
+ 	 	 	<p class="sub-txt">Normally when a car cuts in front, it is acceptable with an idea that a person might be amateur driver or new in town, etc. however if this happens when you feel angry after an argument with the spouse or feel bad due to the stress from the office, you tend show aggressive respond by honking or pass the car closely by the side, etc. The point is by responding aggressively you would not be able to solve the problems in emotion and it will only get worse thus you need to cut off the emotion that effects the driving behavior.</p>
+
+ 	 	 	<p class="tbl-tit">[There is a need of flexible attitude to understand the unavoidable actions]</p>
+ 	 	 	 <div class="trafic-img">
+				<img src="../../../images/eng/manual_img16.gif"  alt="" />
+			</div>
+
+ 	 	<p class="sub-tit03">(8) Method of controlling emotion provoked while driving</p>
+ 	 	 	<p class="sub-txt">When you experience unpleasantness or anger by the other drivers or pedestrians is because you might have felt it was disadvantage to you or threatened your safety. But if you can think of it as the other driver or pedestrian had no other choice but to do that at the time due to unavoidable situation, you may be able to easy your anger.</p>
+
+ 	 	<p class="sub-tit03">(9) Attitude of safe driving</p>
+ 				<ul class="yakguan-list2">
+			 <li><span>•</span> Drive with possible expectation
+ 	<p>You may not have noticed but while driving, drivers are making necessary choices in each and every moment. And the standard to choose the action is possible expectation. In other words, choose the action suited to the method of other drivers and pedestrians.</p>
+			 </li>
+
+			 <li><span>•</span>Comply with the traffic laws and regulations
+ 	<p>We expect the right turn by looking at the slowly moving car in the front towards the intersection. This is the vague expectation that all cars would move under the Road Traffic Act. In other words, complying with the traffic laws is an act to practice the possible expectation actions. By acting in the range of expectation , may expect the help from the others even if when you commit mistake.</p>
+			 </li>
+
+			 <li><span>•</span>Do the defensive driving
+ 	<p>Defensive driving is when you predict danger through associated process. It is by think of invisible and potential danger before hand and prepare for such danger.</p>
+			 </li>
+
+			 <li><span>•</span>Do the driving with thinking
+ 	<p>“Thinking” means the associated reaction. What does a “swallow” remind you of? The people in the old days thought “swallow” reminded them of the “rain” by the way of flying low nearly to the ground. And they were able to prevent the damage by the rain before hand. Drivers need to think about the potential danger while looking at the other cars or pedestrians. This is “driving with thinking”.</p>
+			 </li>
+			 </ul>
+
+ 	 	 	<p class="tbl-tit">[Driving with thinking is the safe driving]</p>
+ 	 	 	 <div class="trafic-img">
+				<img src="../../../images/eng/manual_img17.gif"  alt="" />
+			</div>
+
+ 	<p class="sub-tit02 mt-20">B. Driving Habit</p>
+ 	 	<p class="sub-tit03">(1) Driving habit, emotion and violation</p>
+ 	 	 	<p class="sub-txt">When you are on elevator, do you press the close button, or wait until the door is automatically closed?
+Most of violation by the drivers actually have a lot to do with driving habits. People normally would withstand the confinement as much as they can and at one point they break down and choose to take violation. But the problem is when an individual committed more violations, his/her patience span is significantly shorter.</p>
+
+ 	 	<p class="sub-tit03">(2) Correcting the driving habit</p>
+ 	 	 	<p class="sub-txt">By the analyzation of driving habit, we can verify the fact that there were certain expectation on the other side of those type of behavior. For instance, driver who forcefully entering into intersection after change of traffic light would have the inappropriate expectation such as ‘Driver on the side will yield me.’ Ideas determined the action and repeated actions create habits and the habits determine that person’s destiny. This means in order to cultivate good habits, thinking is most important of them all.</p>
+
+ 	 	 	<p class="tbl-tit">[Persons with frequent violation cannot withstand even a slight traffic jam and choose the violation easily]</p>
+ 	 	 	 <div class="trafic-img">
+				<img src="../../../images/eng/manual_img18.gif"  alt="" />
+			</div>
+
+ 	<p class="sub-tit02 mt-20">C. Driving Behavior</p>
+ 	 	<p class="sub-tit03">(1) Perception of Information Process</p>
+ 	 	 	<p class="sub-txt">Most people perceive the information visually and when you look at elsewhere or focused to one place it causes the mistake of unable to recognize the information.</p>
+
+ 	 	<p class="sub-tit03">(2) Danger prediction Process</p>
+ 	 	 	<p class="sub-txt">The driver should predict danger through movements of pedestrians or cars and even predict the danger to the point where it may not be visible. Particularly, predicting the danger by pedestrians and cars commit violation is important.</p>
+
+ 	 	<p class="sub-tit03">(3) Decision Process</p>
+ 	 	 	<p class="sub-txt">When the danger is detected, driver needs to determine what action to take to avoid the danger. Important point at this time is that the driver should not decide on his/ her own action after carelessly assuming the other driver’s action based on his/ her own experience.</p>
+ 	 	 	 <div class="trafic-img clear">
+				<div class="l-img">						
+				   <p class="tbl-tit">[The driver recognizes the information that first comes in to the view ]
+					</p>
+							 <div class="trafic-img">
+								<img src="../../../images/eng/manual_img19.gif"  alt="" />
+							</div>
+				</div>
+				<div class="r-img">						
+				   <p class="tbl-tit">[Risk can be forecasted through the perceived information]
+					</p>
+							 <div class="trafic-img">
+								<img src="../../../images/eng/manual_img20.gif"  alt="" />
+							</div>
+				</div>
+			</div>
+ 	 	 	
+
+ 	 	<p class="sub-tit03">(4) Maneuvering Process</p>
+ 	 	 <p class="sub-txt">	Most important at this time is precise instrument maneuvering and timing. Accidents due to mishaps of maneuvering is frequently overlooked, omitted or inappropriate timing. These types of mistakes occur when the driver is overly tired, driving under influence or driving recklessly.</p>
+
+ 	 	<p class="sub-tit03">(5) Factors that influence on driving behavior</p>
+ 	 		<ul class="yakguan-list2"> 	
+				<li><span>•</span>Illusion
+					<p>Drivers tend to be aware of the speed when there are other cars around while driving, but when you are driving alone you tend to speed up because your awareness decreases. Therefore, same object can be seem different depend on the distance, location and angle of view or surrounding environment.	</p>
+							 </li>
+
+				<li><span>•</span>Fatigue
+					<p>When the driver is tired, his/ her field of vision narrows and eyesight worsens which decrease the ability to observe the situation in the front. Also, driver tend to get lazy on observing the situation in the back by looking into rear view mirror. Fatigue reduces the sense and exercise ability thus reduces the ability to perceive surrounding information by vision or hearing and is more prone to make mistakes such as excessive use of maneuvering instruments or omission.
+					</p>
+				 </li>
+			 </ul>
+
+
+ 	 	 	 <div class="trafic-img clear">
+				<div class="l-img">						
+				   <p class="tbl-tit">[When a risk is anticipated, determine
+what action to take]</p>
+							 <div class="trafic-img">
+								<img src="../../../images/eng/manual_img21.gif"  alt="" />
+							</div>
+				</div>
+				<div class="r-img">						
+				   <p class="tbl-tit">[Once the decision is made, it has to be in action 
+through appropriate maneuvering]
+					</p>
+					 <div class="trafic-img">
+						<img src="../../../images/eng/manual_img22.gif"  alt="" />
+					</div>
+				</div>
+			</div>
+
+ 	 		<ul class="yakguan-list2 mt-20"> 	
+				<li><span>•</span> Driving under the influence
+ <p>	When you are driving under the influence of alcohol or drugs your judgment ability and perception of danger decreases and your exercise capability becomes dull. When this happens not only your ability to respond on sudden danger decreases but also possibility of accident increases with mistakes made on instrument maneuvering due to break down of coordination and response system.	</p>
+				 </li>
+			 </ul>
+
+
+ 	 	 	<p class="tbl-tit">[The drunk driving decreases danger respond capability and end up in maneuvering accident.]</p>
+			 <div class="trafic-img">
+				<img src="../../../images/eng/manual_img23.gif"  alt="" />
+			</div>
+
+ 	<p class="sub-tit02">D. Limitation in Driver Competency</p>
+ 	 	<p class="sub-tit03">(1) Suspended vision</p>
+ 	 	 	<p class="sub-txt">When driving at night, the shade of the street trees on median moves by the headlight of oncoming car and mistaken for a pedestrian to jump in to the street. This is attributable to the fact that when the driver is unale to accurately recognize objects within the viewpoint and an object appears and you are off by 2 degrees, the eyesights drop by 1/2 and when you are off by 10 degrees it drops by 1/5. When people do not accurately recognize the object, and in the event of watching an object, the vision drops by 1/2 with 2 degrees off from the main focus and by 1/5 with 10 degrees. Therefore, rather than focus the attention on one place it is best to distribute view point and broaden the field of vision and reduce the speed at night is most important.</p>
+
+			   <p class="tbl-tit">[As speed is increased, the vision gets narrowed]</p>
+				 <div class="trafic-img">
+					<img src="../../../images/eng/manual_img24.gif"  alt="" />
+				</div>
+ 	 	 	
+ 	 	 <div class="clear mt-10">	
+			<div class="l-list-txt">
+ 	 	
+						<p class="sub-tit03">(2) Motion vision	 </p>
+							<p class="sub-txt">The motion vision means the eye vision to see the moving object or vision while in movement. It takes 0.5 second or longer to focus on an object. When an object moves faster, it would be hard to identify the object. The driver can see the object in the far distance due to less movement of the object while driving, closer objects are difficult to identify because they pass by quickly. The reason driver’s vision narrows down as speed of the car increases would be this same reason. </p>
+
+						<p class="sub-tit03">(3) Relationship between fatigue and vision
+						<p class="sub-txt"> 	When the fatigue become severe, the impact displays clearly from the eyes. In particular, the motion visibility is declined which is necessary while driving, it is very dangerous to drive under such condition.</p>
+
+						<p class="sub-tit03">(4) Field of vision and speed
+							<p class="sub-txt">In normal cases, the field of vision of each eye is 160 degree and the range to see with both eyes are around 200 degree. However, only about 70 degree would be clear in image or color.<br />
+						Faster the speed of he car, field of vision for driver to identify objects narrows and as front viewpoint being further away and visibility is dimmed for objects nearby and the danger can not be detected before hand.</p>
+
+						<p class="sub-tit03">(5) Light and vision
+							<p class="sub-txt">The human eyes react sensitively to the light. Therefore, when the light is turned on suddenly or when you enter into dark area from the brightly lighted area, the vision is momentarily lost and not able to see the obstacle immediately.<br /><br />
+						Particularly at night, you may not be able to see the pedestrian who is standing near center lane or crossing due to the disappearing effect by light of the oncoming car.</p>
+			</div>
+			<div class="r-list-img">
+			   <p class="tbl-tit">[Due to the strong will to pass, the driver interpret
+as the oncoming car from the opposite side will 
+reduce the speed]</p>
+				 <div class="trafic-img">
+					<img src="../../../images/eng/manual_img25.gif"  alt="" />
+				</div>				
+			</div>
+		</div>
+
+ 	 	<p class="sub-tit03">(6) Reason for the misjudgment </p>
+ 	 		<ul class="yakguan-list2"> 
+			<li><span>•</span> 	Determine the traffic situation with the method meeting to his/her own experience
+				<p>When the brake light of the car in the front illuminated while you were tailgating, the driver who had not experienced braking is necessary on that spot consider the driver in the front as being an amateur driver and maybe attempt to pass however, the driver is unfamiliar with the road would have increased possibility to judge how to respond as dangerous situation by illuminating brake light of the car in the front.	</p>
+							 </li>
+
+			<li><span>•</span> 	 Interpret the situation with the method correspond to objectiveoriented behavior
+				<p>The driver who is determined to pass makes the interpretation of the situation to his/ her desire when it is dangerous to cross the center lane for there might be oncoming car from the opposite direction. He/She would think that ‘the car in the front is slow that I would make it if I drive quickly’ or ‘the car from the opposite side would slow down when I cross the center lane’.					</p>
+							 </li>
+			 </ul>
+
+ 	 	<p class="sub-tit03">(7) Capability to determine the speed </p>
+ 	 	 	<p class="sub-txt">The sense of speed is gained by what you see with the stream of surrounding environment and is not necessarily accurate every time. Speed can seems to be faster in a narrow road than it actually is and underestimate the speed of oncoming car and accident arise and a stalled car on the expressway in the front can be mistaken for moving car and it can also lead to the accident. </p>
+
+ 	 	<p class="sub-tit03">(8) Capability to determine the distance </p>
+ 	 	 	<p class="sub-txt">As with the case of speed, judging distance may easily cause mistake as well. There are cases of assuming sufficient distance while it is not secured well, and may determine that your car is closer to the intersection than the other car approaching to the intersection without the traffic light. </p>
+
+ 	 	<p class="sub-tit03">(9) Limitation of reaction capability </p>
+ 	 	 	<p class="sub-txt">It takes approximately one second to step on the brake when you see the brake light illuminating from the car in the front. As such, it is referred to reaction time for driver to identify the risk and respond, and it may be different by individual and may take more time under unexpected situations. During the reaction time, the car runs the same speed as before the perception of risk by driver, and the following is the running distance of the car. </p>
+				   <p class="tbl-tit">[Mileage per second for each speed]
+					</p>
+			
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<caption align="left">Mileage per second for each speed</caption>
+							<colgroup>
+								<col width="10%" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+				
+							</colgroup>
+						<tbody>
+						  <tr>
+							<th  colspan="2">Speed (km/h)</th>
+							<td  colspan="2">40</td>
+							<td  colspan="2">50</td>
+							<td  colspan="2">60</td>
+							<td  colspan="2">70</td>
+							<td  colspan="2">80</td>
+							<td  colspan="2">90</td>
+							<td  colspan="2" class="last">100</td>
+						 </tr>
+						  <tr>
+							<th  colspan="2">Mileage per second (m)</th>
+							<td colspan="2">11.1</td>
+							<td colspan="2">13.8</td>
+							<td colspan="2">16.6</td>
+							<td colspan="2">19.4</td>
+							<td colspan="2">22.2</td>
+							<td colspan="2">25.0</td>
+							<td colspan="2" class="last">27.7</td>
+						  </tr>
+					</tbody>
+					</table>
+			</div>
+
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="footer-wrap">
+			<address>
+				<p><img src="../../../images/eng/f_logo.gif" alt=""  /> Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+		</div>
+	</div>
+	
+ </body>
+</html>

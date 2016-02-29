@@ -1,6 +1,7 @@
 .icon {
 	overflow: hidden;
 	display: inline-block;
+	vertical-align: middle;
 	border: 5px solid #ccc;
 	font: 0/0 Dotum;
 	width: 90px;
@@ -18,7 +19,7 @@
 .icon.ic_hexagon {
 	position: relative;
 	overflow: visible;
-	margin: 20px 0;
+	/*margin: 20px 0;*/
 	height: 50px;
 	width: 90px;
 	border: none;

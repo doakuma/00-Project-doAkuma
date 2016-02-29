@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head> 
+<meta charset="utf-8" /> 
+<title>도로교통공단 TAAS</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<link rel="stylesheet" type="text/css" href="../../css/map_eng.css"></link>
+<link rel="StyleSheet" href="../../css/dtree.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/dtree.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript">
+    $(function() {
+      var dates = $( "#from1, #to1" ).datepicker({
+        showOn: "button",
+          buttonImage: "../../images/icon_date.gif",
+          buttonImageOnly: true,
+          prevText: 'Pre',
+          nextText: 'Next',
+          monthNames: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+          monthNamesShort: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+          dayNames: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+          dayNamesShort: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+          dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true,
+          yearSuffix: '',
+          onSelect: function( selectedDate ) {
+          /*
+            var option = this.id == "from1" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat ||
+                $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings );
+            dates.not( this ).datepicker( "option", option, date );
+            */
+          }
+          });
+    });
+</script>
+
+<script type="text/javascript">
+	function popupOpen(){
+		var popUrl = "http://taas.koroad.or.kr/eos_web/portal_eng/help.html";	
+		var popOption = "width=688, height=550, resizable=no, scrollbars=yes, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+	function popupOpen2(){
+		var popUrl = "http://taas.koroad.or.kr/eos_web/portal_eng/ViewerTroubleHelp.html";	
+		var popOption = "width=701, height=508, resizable=no, scrollbars=no, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+	function popupOpen3(){
+		var popUrl = "http://taas.koroad.or.kr/eos_web/portal_eng/ViewerTroubleHelp2.html";	
+		var popOption = "width=700, height=550, resizable=no, scrollbars=yes, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+</script>
+
+</head>
+<body class="stapage">
+
+<div id="mapWrap"> 
+	<div id="mapHeader">		
+		<div class="statistics-logo">
+			<a href="#" target="_blank" title="Traffic Accident Analysis System"><img src="../../images/sta_eng/logo.gif"  alt="Traffic Accident Analysis System" /></a>
+		</div> 
+		<ul class="top_link">
+			<li class="msg"><a href="javascript:popupOpen();" onclick="">User Guide</a></li>
+			<li class="msg"><a href="javascript:popupOpen2();">Installation Guide</a></li>
+			<li class="msg"><a href="javascript:popupOpen3();">Trouble Guide</a></li>
+		</ul>
+	</div> 
+	<div id="mapContainer"> 		
+
+		<div id="mapContent">
+			<div id="jtContentHeader">	
+				<p class="right-title">Accidents and Casualties by Location</p>
+				<div class="right-body">
+					<div class="body-top02 clear">
+						<ul>
+							<li class="tit"><img src="../../images/sta/color-spot.png" alt=""/> Download</li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon01.gif"  alt="word" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon02.gif"  alt="ppt" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon03.gif"  alt="excel" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon04.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon05.gif"  alt="PDF" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon06.gif"  alt="text" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon07.gif"  alt="print" /></a></li>
+							<li class="tit tit2"><img src="../../images/sta/color-spot.png" alt=""/> Stat Analysis</li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon08.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon09.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon10.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon11.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon12.gif"  alt="" /></a></li>
+							<li><a href="#"><img src="../../images/sta_eng/file_icon13.gif"  alt="" /></a></li>
+						</ul>
+					</div>
+					<div class="body-top01">
+						<p class="top01-01"><img src="../../images/sta/color-spot.png" alt=""/><span>Term :&nbsp &nbsp</span>[1970년] - [2013년]</p>
+							<div class="pick-wrap">
+								<img src="../../images/sta/color-spot.png" alt=""/><span>Search Period : <span class="pick-input"><input type="text" id="from1" /></span> ~ <span class="pick-input" ><input type="text" id="to1" /></span>   
+							</div>
+							<ul  class="top01-03">							
+								<li><input type="button" class="rightBtn02" title="" value="Search" name=""/></li>
+							</ul>
+					</div>
+
+					<div class="body-top03">
+
+
+
+						<div class="show-index"><p class="ml-10">Source : Road Traffic Authority</p></div>
+					</div>
+				</div>
+			</div>
+
+		</div>	
+	
+</div> 
+</body> 
+</html>

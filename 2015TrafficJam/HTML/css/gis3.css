@@ -1,0 +1,658 @@
+@charset 'utf-8';
+
+@font-face {
+  font-family: 'NanumGothicBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/NanumGothic-Bold.eot);
+  src: url(../font/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumGothic-Bold.woff) format('woff'),
+       url(../font/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/NanumGothic-Regular.eot);
+  src: url(../font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),     
+       url(../font/NanumGothic-Regular.woff) format('woff'),
+       url(../font/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumGothicExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../font/NanumGothic-ExtraBold.eot);
+  src: url(../font/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+       url(../font/NanumGothic-ExtraBold.woff) format('woff'),
+       url(../font/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+/**기본셋팅css**/
+html{*overflow:hidden;height:100%;font-size:12px;line-height:140%;font-family:Nanum Gothic;letter-spacing:-0.03em;}
+body{*overflow:hidden;height:100%;margin:0;overflow-x:hidden;} 
+
+/* inline */
+img{display:inline-block;border:0 none;}
+cite, code, dfn, del, em, ins, label, q, span, strong{display:inline-block;}
+cite, em, dfn {font-style:normal;}
+sub{vertical-align:bottom;font-family:helvetica;}
+sup{vertical-align:top;font-family:helvetica;}
+hr{display:none;}
+
+/* block */
+h1, h2, h3, h4, h5, h6{margin:0;font-size:1em;font-weight:normal;}
+address{font-style:normal;}
+blockquote, p{margin:0;}
+pre{margin:0;font-size:1em;}
+
+/* table */
+table{border-collapse:separate;border-spacing:0;border-collapse:collapse;}
+caption{display:none;}
+th,td {padding:0;vertical-align:top;text-align:left;font-weight:normal;} 
+
+/* list */
+dd, dl, ol, ul {margin:0;padding:0;}
+li {list-style-type:none;}
+
+/* form */
+form {margin:0;}
+fieldset {margin:0;padding:0;border:0 none;}
+legend {display:none;}
+input {vertical-align:middle;font-size:12px;}
+input.text {font-size:12px;border:1px solid #b1b0b0;line-height:140%;border-radius:2px;color:#666;padding-left:5px; }
+input.it {border:1px solid #cdccc1;font-size:12px;line-height:140%;font-family:NanumGothic;padding-left:5px;color:#666;}
+input.check,
+input.radio {width:13px;height:13px;margin:0px 2px 1px 0;padding:0;border:0;}
+select{font-size:12px;color:#555;font-family: 'Nanum GothicBold' !important;text-indent:7px;}
+
+/* basic */
+.spacial-char {font-family:verdana;}
+.hidden-obj {position:absolute;visibility:hidden;top:-9000px;left:-9000px;}
+.display-none {display:none;}
+a {color:#666; text-decoration:none;}
+
+/* align */
+.text-c {text-align:center !important;}
+.text-l {text-align:left !important;}
+.text-r {text-align:right !important;}
+.vertical-t {vertical-align:top !important;}
+.vertical-m {vertical-align:middle !important;}
+.vertical-b {vertical-align:bottom !important;}
+.float-l {float:left !important;}
+.float-r {float:right !important;}
+.float-n {float:none !important;}
+
+.ml-3{margin-left:3px !important;}
+.ml-5{margin-left:5px !important;}
+.ml-10{margin-left:10px !important;}
+.mt-5{margin-top:5px !important;}
+.mt-8{margin-top:8px !important;}
+.mt-10{margin-top:10px !important;}
+.mt-12{margin-top:12px !important;}
+.mt-20 {margin-top:20px !important;}
+.mt-25 {margin-top:25px !important;}
+.mt-75 {margin-top:75px !important;}
+
+
+.mr-2{margin-right:2px !important;}
+.mr-3{margin-right:3px !important;}
+.mr-5{margin-right:5px !important;}
+.wd-80p {width:80% !important;}
+
+/* clear */
+.clear:after{content:".";height:0;font-size:0;visibility:hidden;display:block;clear:both;}
+.clear{display:inline-block;}
+
+.clear2:after{content:".";height:0;font-size:0;visibility:hidden;display:block;clear:both;}
+.clear2 {display:block;*display:inline-block;}
+
+#go-area{overflow:hidden;position:absolute;top:0;right:0;width:100%;height:40px;background:#fff;border-bottom:1px solid #888888;}
+.go-list{height:100%;}
+.go-list ul{padding-top:40px;}
+.go-list ul li{padding:0 13px;display:block;}
+.go-list ul li:hover{background-color:#e6e6e6;} 
+.go-list ul li a{display:block;padding-bottom:2px;background:url(../images/gis/go_line.png) repeat-x left bottom;}
+.go-list ul li a span{display:block; height:33px; font-size:0; text-indent:-9999em;}
+.go-list .go1 {background:url(../images/gis/go01.png) no-repeat left top;}
+.go-list .go2 {background:url(../images/gis/go02.png) no-repeat left top;}
+.go-list .go3 {background:url(../images/gis/go03.png) no-repeat left top;}
+.go-list .go4 {background:url(../images/gis/go04.png) no-repeat left top;}
+.go-list .go5 {background:url(../images/gis/go05.png) no-repeat left top;}
+
+#quick-area {position:absolute;width:100%;left:0;bottom:0;z-index:1200;}
+.quick-btn {position:absolute; width:106px; left:50%;margin-left:-53px;top:-17px; z-index:500;}
+.quick-btn-on {display:none;}
+#quick-wrap {width:100%;background:url(../images/gis/bg_quick.png) repeat-x left top;position:relative;height:146px;}
+.quick-content {width:100%; position:relative;height:146px;}
+.slide-area {display:block;margin-right:116px; position:relative;}
+.slide-btn {position:absolute; right:0; top:48px; width:115px; text-align:center;}
+.slide-btn a {display:block;margin-bottom:10px;}
+
+
+/*지도영역*/
+#mapContent{overflow:hidden;position:relative;height:100%;zoom:1;}
+#jtContentHeader{overflow:hidden;position:absolute;left:0;top:0;z-index:30;width:100%;/*height:1px;background:#888888;*/}
+.l_bar {width:1px;height:100%;position:absolute;left:0;top:0;background:#888888;z-index:9999;}
+.r_bar {width:1px;height:100%;position:absolute;right:0;top:0;background:#888888;z-index:31;}
+.controll_btn {position:absolute;top:50%;z-index:1000;margin-top:-33.5px}
+.bt_nav_close {display:inline-block;width:19px;height:67px;background: url(../images/gis/btn_close.png) no-repeat;}
+.bt_nav_open{display:inline-block;width:19px;height:67px;background: url(../images/gis/btn_open.png) no-repeat;}
+.bt_nav_open{display:none}
+.nav_close .bt_nav_close{display:none}
+.nav_close .bt_nav_open{display:inline-block}
+.nav_close #Navside{display:none;}
+
+.controll_btn02 {position:absolute;right:20px;top:0px;z-index:1000;margin-top:-33.5px}
+.bt_nav_close2 {display:inline-block;width:67px;height:15px;background: url(../images/gis/btn_close02.png) no-repeat; position:absolute;right:20px;top:73px;}
+.bt_nav_open2{display:inline-block;width:67px;height:15px;background: url(../images/gis/btn_open02.png) no-repeat;position:absolute;right:20px;top:34px;}
+.bt_nav_open2{display:none}
+.nav_close2 .bt_nav_close2{display:none}
+.nav_close2 .bt_nav_open2{display:inline-block}
+.nav_close2 #go-area{display:none;}
+
+#jtMap{position:relative;width:100%;height:100%;margin:0 auto;overflow:hidden;}
+
+
+/*통계메인*/
+.statistics-wrap{width: 100%; height: 100%; }
+.main-top{height: 50px; padding-top: 10px; box-sizing: border-box; padding-left:20px; }
+.statistics-logo{float: left; padding-top: 17px; margin-left: 17px;}
+.top_link{float: right; margin-top: 35px;width: 95px; height: 25px; background-color: #069b68; border-top-right-radius: 5px;  border-top-left-radius: 5px; padding:5px 10px; box-sizing: border-box; }
+.top-icon{float: left; margin-right: 7px;}
+.msg a{color: #fff;}
+
+/*gis메인 */
+#mapWrap{position:relative;height:100%;min-width:1000px;min-height:700px;}
+#mapHeader{position:absolute;*position:static;top:0;width:100%;height:78px;}
+.header {width:100%;position:relative;height:78px;background: url(../images/gis/bg_head.png) repeat-x left bottom;}
+.header .logo {position:absolute;top:14px;left:35px;width:218px;}
+.header .title {width:500px; margin:0 auto; text-align:center;font-size:30px; color:#2d3035;padding-top:30px;}
+.header .user-info {position:absolute; right:17px; top:24px;}
+.header .user-info p {position:relative; color:#242424;text-align:right; font-size:11px; font-family:dotum; font-weight:bold;}
+.header .user-info p strong {color:#666666; font-weight:normal !important;}
+.header .user-info p.date {background:url(../images/gis/icon_date.gif) no-repeat left center; padding-left:19px;}
+.header .user-info p.user {margin-top:6px;}
+.header .user-info p.user span {background:url(../images/gis/icon_people.gif) no-repeat left center; padding-left:20px;padding-top:4px;} 
+.header .user-info p.user a {color:#414e62 !important;text-decoration:none; background:url(../images/gis/line.gif) no-repeat left center; padding-left:11px; margin-left:10px;padding-top:4px;}
+
+#mapContainer{position:absolute;*position:static; top: 0px;bottom:0px;width:100%;height:auto;height:100% ;    overflow: hidden;}
+#Navside {position:relative;float:left;width:338px;height:100%; }
+.sidecont {height:100%;position:relative; overflow-y: hidden; overflow-x: hidden;}
+.left_inside{height:100%;}
+.menu {position:absolute; left:0; top:0; width:61px;height:100%; background:#fff;z-index:5000;}
+.menu li a {display:block; position:relative; height:63px; line-height:85px; color:#b1b1b1; font-size:11px;text-align:center;text-decoration:none;}
+.menu li.active a, .menu li a:hover {background:#3587d6; color:#fff;}
+.m-icon01 {display:block;position:absolute; top:16px; left:20px;width:20px; height:14px; background:url(../images/gis/icon_menu01.png) no-repeat center center;}
+.m-icon02 {display:block;position:absolute; top:14px; left:20px;width:20px; height:17px; background:url(../images/gis/icon_menu02.png) no-repeat center center;}
+.m-icon03 {display:block;position:absolute; top:15px; left:20px;width:20px; height:13px; background:url(../images/gis/icon_menu03.png) no-repeat center center;}
+.m-icon04 {display:block;position:absolute; top:13px; left:20px;width:20px; height:18px; background:url(../images/gis/icon_menu04.png) no-repeat center center;}
+.m-icon05 {display:block;position:absolute; top:14px; left:20px;width:20px; height:19px; background:url(../images/gis/icon_menu05.png) no-repeat center center;}
+
+.cont-title {height:28px; background:#878c97; border-top:1px solid #888888; color:#fff; position:absolute;left:61px; top:0;width:269px; text-align:center; font-size:13px; line-height:28px;}
+
+.lnbcontposition {position:absolute;top:29px;left:61px;width:269px;height:auto;overflow:auto;*overflow:auto;}
+.cont-wrap {padding:13px 5px; position:relative;}
+.cont-wrap02 {padding:0 5px; position:relative;}
+
+#mapContent{overflow:hidden;position:relative;height:100%;zoom:1;}
+#jtContentHeader{overflow:hidden;position:absolute;left:0;top:0;z-index:30;width:100%;height:1px;}
+
+.l_bar {width:1px;height:100%;position:absolute;left:0;top:0;background:#888888;}
+.controll_btn {position:absolute;top:50%;z-index:1000;margin-top:-33.5px}
+.bt_nav_close {display:inline-block;width:15px;height:67px;background: url(../images/gis/btn_close.png) no-repeat;}
+.bt_nav_open{display:inline-block;width:15px;height:67px;background: url(../images/gis/btn_open.png) no-repeat;}
+.bt_nav_open{display:none}
+.nav_close .bt_nav_close{display:none}
+.nav_close .bt_nav_open{display:inline-block}
+.nav_close #Navside{margin-left:-271px;}
+
+#jtMap{position:relative;width:100%;height:100%;margin:0 auto;overflow:hidden;}
+.map-layer {width:100%;height:100%;position:relative;}
+.inside-left{position: absolute; left:0px; top:52px;bottom:0;height:100%;background-color: #d9e8f2; }
+.selbox-title01{float: left;}
+.map-title1{width: 60px; height: 40px; background:#f4f4f4 url(../images/gis/area-spot.png) no-repeat; background-position: 8px 13px;   color: #0265cb;padding-top: 14px; padding-left: 15px;box-sizing: border-box; font-size: 13px; font-family: 'NanumGothicBold'; border: none; border-right: 1px solid #dedede;border-left:1px solid #a9a9a9;}
+.map-title2{width:74px; height: 40px;background: #f4f4f4 url(../images/gis/area-spot.png) no-repeat; background-position: 8px 13px;  color: #0265cb; padding-left:20px;padding-top: 14px;box-sizing: border-box; font-size: 13px; font-family: 'NanumGothicBold'; border: none; border-right: 1px solid #dedede;letter-spacing:-0.08em;border-left:1px solid #a9a9a9;}
+.selbox1{ font-family:Nanum Gothic;width: 100px; height:40px;  border: none; border-right: 1px solid #dedede; }
+.selbox2{ font-family:Nanum Gothic;width: 75px; height: 40px; border: none;}
+.selbox3{ font-family:Nanum Gothic;width: 75px; height: 40px; border: none; }
+.l-boder{ height: 40px;padding-right: 5px;box-sizing: border-box;}
+.selbox4{ font-family:Nanum Gothic;width: 60px; height: 40px; border: none; border-right: 1px solid #dedede;}
+.selbox5{ font-family:Nanum Gothic;width: 80px; height: 40px; border: none;}
+.s-go-btn{ cursor: pointer;width: 35px; height: 27px; background-color: #727272; border: 1px solid #3e3e3e;  color: #fff; margin-top: 7px; border-radius: 5px; margin-left: 5px;}
+.selbox-title01 p{float: left;}
+.selbox-title02 p{float: left;}
+.book-m-btn{cursor: pointer;width: 85px; height: 27px; background:#424242 url(../images/gis/book-btn.png) no-repeat; background-position: 5px; padding-left: 15px;border: 1px solid #3e3e3e;  color: #fff; margin-top: 7px; border-radius: 5px; margin-left: 5px; }
+
+
+.tmenu{width: 65px; height: 100%; float: left; }
+.tmenu li{width:65px; height: 75px; overflow: hidden; background-color: #d9e8f2; border-bottom: 1px solid #71bae2; text-align: center; position: relative;}
+.tmenu li a{font-size: 12px; font-family: 'NanumGothic';}
+.tmenu li.active .left-icon01{ font-weight: 700;background: #0265cb url(../images/left-icon01on.png) no-repeat; display: block; width: 65px; height:20px;  padding-top: 55px; background-position: center 15px; color: #fff;  }
+.tab-rightbox{ position: absolute; left: 66px; top: 0px;height:100%;}
+.tab-area{width:273px;/*height:81%;overflow-y:scroll;*/}
+.search-result-scroll {overflow-y:scroll;height:320px;}
+.left-icon01{background: url(../images/left-icon01.png) no-repeat; display: block; height:20px;  padding-top: 55px;background-position: center 15px; padding-top: 50px; color: #0182d4;  }
+.left-icon02{background: url(../images/left-icon02.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px;  padding-top: 55px;color: #0182d4;}
+.left-icon02:hover,.tmenu li.active .left-icon02{ font-weight: 700;background:#0265cb url(../images/left-icon02on.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px;  padding-top: 55px; color: #ffffff;}
+
+.left-icon03{background: url(../images/left-icon03.png) no-repeat;background-position: center 9px;display: block; width: 65px; height:28px; padding-top: 47px; color: #0182d4; }
+.left-icon03:hover,.tmenu li.active .left-icon03{font-weight: 700;background:#0265cb url(../images/left-icon03on.png) no-repeat;background-position: center 9px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+
+.left-icon04{background: url(../images/left-icon04.png) no-repeat;background-position: center 11px;display: block; width: 65px; height:28px; padding-top: 47px; color: #0182d4; }
+.left-icon04:hover,.tmenu li.active .left-icon04{font-weight: 700;background:#0265cb url(../images/left-icon04on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+
+.left-icon05{ background: url(../images/left-icon05.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px; padding-top: 47px; color: #0182d4;}
+.left-icon05:hover,.tmenu li.active .left-icon05{ font-weight: 700;background:#0265cb url(../images/left-icon05on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+.left-icon06{background: url(../images/left-icon06.png) no-repeat;background-position: center 11px;display: block; width: 65px; height:28px; padding-top: 47px;color: #0182d4; }
+.left-icon06:hover,.tmenu li.active .left-icon06{font-weight: 700;background:#0265cb url(../images/left-icon06on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px; padding-top: 47px; color: #ffffff;}
+.left-icon07{background: url(../images/left-icon07.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px;  padding-top: 55px; color: #0182d4;}
+.left-icon07:hover,.tmenu li.active .left-icon07{font-weight: 700;background:#0265cb url(../images/left-icon07on.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px; padding-top: 55px; color: #ffffff;}
+.tmenu-box{width: 65px; height: 100%; background-color: #d9e8f2; border-right: 1px solid #0082c8;line-height:100%;position:relative;}
+
+.t-menu05 {width:65px; height: 75px; overflow: hidden; background-color: #d9e8f2; border-bottom: 1px solid #71bae2; text-align: center; position:absolute;left:0;top:304px;}
+.t-menu05 a {font-family: 'NanumGothic';}
+.t-menu05:fucus,.t-menu05:active { background:#0265cb url(../images/left-icon05on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+
+#lefttab .ui-tabs-active .left-icon01{ font-weight: 700;background: #0265cb url(../images/left-icon01on.png) no-repeat; display: block; width: 65px; height:20px;  padding-top: 55px; background-position: center 15px; color: #fff;  }
+#lefttab .ui-tabs-active .left-icon02{ font-weight: 700;background:#0265cb url(../images/left-icon02on.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px;  padding-top: 55px; color: #ffffff;}
+#lefttab .ui-tabs-active .left-icon03{font-weight: 700;background:#0265cb url(../images/left-icon03on.png) no-repeat;background-position: center 9px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+#lefttab .ui-tabs-active .left-icon04{font-weight: 700;background:#0265cb url(../images/left-icon04on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+#lefttab .ui-tabs-active .left-icon05{ font-weight: 700;background:#0265cb url(../images/left-icon05on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px;padding-top: 47px; color: #ffffff;}
+#lefttab .ui-tabs-active .left-icon06{font-weight: 700;background:#0265cb url(../images/left-icon06on.png) no-repeat;background-position: center 7px;display: block; width: 65px; height:28px; padding-top: 47px; color: #ffffff;}
+#lefttab .ui-tabs-active .left-icon07{font-weight: 700;background:#0265cb url(../images/left-icon07on.png) no-repeat;background-position: center 15px;display: block; width: 65px; height:20px; padding-top: 55px; color: #ffffff;}
+
+
+
+
+.right-title{width:273px; height:35px; background-color:#0fbe82;  color: #fff; text-align: center;line-height:35px;font-weight:bold;font-size:14px; font-family: 'NanumGothicBold';}
+.mapsearch{width: 273px;}
+.mapsearch:after{content:"";display:block;*display:inline-block;clear:both;}
+.mapsearch li{ width: 33.33%;  height: 35px; float: left;background:#e0e0e0 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch li a.last{}
+.mapsearch li a{font-size:13px;font-family: 'NanumGothic';line-height:38px;color:#888888;display:block;width:99%; padding-right:1px; height: 35px;text-align:center;background:url(../images/tab_btmline.gif) repeat-x 0 bottom;outline:0;}
+.mapsearch li.active{ width: 33.33%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch li.active a{line-height:38px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;}
+
+#tab002 .mapsearch li.ui-tabs-active  { width: 33.33%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab002 .mapsearch li.ui-tabs-active a {line-height:38px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab01 .mapsearch li.ui-tabs-active  { width: 33.33%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab01 .mapsearch li.ui-tabs-active a {line-height:38px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab03 .mapsearch li.ui-tabs-active  { width: 33.33%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab03 .mapsearch li.ui-tabs-active a {line-height:38px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab02 .mapsearch li.ui-tabs-active  { width: 33.33%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab02 .mapsearch li.ui-tabs-active a {line-height:38px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+.mapsearch2{width: 273px;}
+.mapsearch2:after{content:"";display:block;*display:inline-block;clear:both;}
+.mapsearch2 li{ width: 50%;  height: 35px; float: left;background:#e0e0e0 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch2 li a.last{}
+.mapsearch2 li a{font-size:13px;font-family: 'NanumGothic';line-height:33px;color:#888888;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:url(../images/tab_btmline.gif) repeat-x 0 bottom;outline:0;}
+.mapsearch2 li.active{ width: 50%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch2 li.active a{line-height:33px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;}
+
+#tab04 .mapsearch2 li.ui-tabs-active  { width: 50%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab04 .mapsearch2 li.ui-tabs-active a { line-height:33px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab07 .mapsearch2 li.ui-tabs-active  { width: 50%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab07 .mapsearch2 li.ui-tabs-active a { line-height:33px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+.mapsearch3{width: 273px;}
+.mapsearch3:after{content:"";display:block;*display:inline-block;clear:both;}
+.mapsearch3 li{ width: 25%;  height: 35px; float: left;background:#e0e0e0 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch3 li a.last{}
+.mapsearch3 li a{font-size:13px;font-family: 'NanumGothic';line-height:33px;color:#888888;display:block;width:99%; padding-right:1px; height: 35px;text-align:center;background:url(../images/tab_btmline.gif) repeat-x 0 bottom;outline:0;}
+.mapsearch3 li.active{ width: 25%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+.mapsearch3 li.active a{line-height:33px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;}
+
+#tab02 .mapsearch3 li.ui-tabs-active {width: 25%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+#tab02 .mapsearch3 li.ui-tabs-active a {line-height:33px;color:#009d66;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+
+.map-seach-result{width:272px;}
+.map-seach-result li{ width: 50%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+.map-seach-result li a{font-size:13px;font-family: 'NanumGothicBold';line-height:33px;color:#888888;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:url(../images/tab_btmline.gif) repeat-x 0 bottom;outline:0;}
+.map-seach-result li a.last{}
+.map-seach-result li.active{ width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+.map-seach-result li.active a{font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;}
+
+#tab0101 .map-seach-result li.ui-tabs-active { width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+#tab0101 .map-seach-result li.ui-tabs-active a {font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab0302-sub .map-seach-result li.ui-tabs-active { width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+#tab0302-sub .map-seach-result li.ui-tabs-active a {font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+#tab0303-sub .map-seach-result li.ui-tabs-active { width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+#tab0303-sub .map-seach-result li.ui-tabs-active a {font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+
+.map-seach-result2{width:272px;}
+.map-seach-result2 li{ width: 50%;  height: 35px; float: left;background:#f4f4f4 url(../images/bg_tabline.gif) no-repeat right center;}
+.map-seach-result2 li a{font-size:13px;font-family: 'NanumGothicBold';line-height:33px;color:#888888;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:url(../images/tab_btmline.gif) repeat-x 0 bottom;outline:0;}
+.map-seach-result2 li a.last{}
+.map-seach-result2 li.active{ width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+.map-seach-result2 li.active a{font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;}
+
+
+
+
+#tab0301-sub .map-seach-result2 li.ui-tabs-active {  width: 50%;  height: 35px; float: left; background:#ffffff url(../images/bg_tabline.gif) no-repeat right center;}
+#tab0301-sub .map-seach-result2 li.ui-tabs-active a {font-family: 'NanumGothicBold';line-height:33px;color:#033333;display:block;width:99%;padding-right:1px; height: 35px;text-align:center;background:none;outline:0;}
+
+
+.radiobox{width:100%;margin-bottom:10px;font-family: 'NanumGothicBold';color:#555;}
+.radiobox .radio01{margin-left:7px;}
+.radiobox .radio02{margin-left:68px;}
+.radiobox .radio03{margin-left:15px;}
+.radiobox .radio04{margin-left:0;width:110px;letter-spacing:-0.1em;}
+.radiobox .radio{width:18px;height:18px;margin-right:4px;}
+.radiobox .radio05{margin-left:0;letter-spacing:-0.1em;}
+
+.option-table{width:100%;border:1px solid #cdcdcd;font-family: 'NanumGothicBold';color:#555555;}
+.option-table th{background-color:#eae9e9;padding:3px 5px;border-bottom:1px solid #cdcdcd;}
+.option-table td{background-color:#FFF;padding:3px 0 3px 5px;border-bottom:1px solid #cdcdcd;vertical-align:middle;}
+
+
+.searchbox{background:#f4f4f4;padding:12px 10px;}
+.search-tit{float:left;line-height:30px;font-family: 'NanumGothicBold'; color: #555555;}
+.search-tit2{float:left;width:55px;line-height:24px;font-family: 'NanumGothicBold';letter-spacing:-0.13em; color: #555555;}
+.search-allbox{float:right;width:196px;border:1px solid #cdcdcd;height:25px; border-radius: 3px;}
+.search-select{float:left;width:165px;border:1px solid #cdcdcd;height:24px; border-radius: 3px;font-family:'NanumGothic' !important;color:#555555;}
+.search-select2{width:62px;border:1px solid #cdcdcd;height:24px; border-radius: 3px;font-family:'NanumGothic' !important;color:#555555;}
+.search-checkbox{float:left;width:165px;height:74px;margin-top:3px;}
+.check-wrap{display:block;margin-bottom:5px;color:#555555;}
+.check-wrap input{width:15px;height:15px;border:1px solid #abafb3;}
+.searchbox input.text{width:62px;height:24px;border:1px solid #cdcdcd;border-radius: 3px;color:#555555;background-color:#FFF;}
+.search-line{border-top:1px solid #e0e0e0;padding-top:10px;}
+
+.search-result-tit{color:#555;text-align:center;font-size:13px;background:#d2d2d2;padding:10px 0;font-family: 'NanumGothicBold';font-weight:700;}
+.search-result-tit2{color:#555;text-align:center;font-size:13px;line-height:100%;font-weight:700;background:#e0e0e0;padding:10px 0;font-family: 'NanumGothicBold';border-top:1px solid #cdcdcd;border-bottom:1px solid #cdcdcd;}
+
+.searc-total{padding-top:10px;width:238px;margin:0 auto;padding-bottom:10px;*line-height:24px;}
+.searc-total:after{content:"";display:block;clear:both;}
+.searc-total .total-count{float:left;font-family: 'NanumGothicBold';}
+.searc-total .total-count span{color:#029c67;}
+.searc-total .btn{float:right;}
+
+.search-result-list{width:238px;margin:0 auto;border-top:1px solid #d8d8d8;}
+.search-result-list li{border-bottom:1px solid #d8d8d8;height:70px;padding-left:33px; background: url(../images/gis/search-spot2.png) no-repeat; background-position: 7px 11px;}
+.search-result-list li:hover{background:#f4f4f4 url(../images/gis/search-spot.png) no-repeat; background-position: 7px 11px; }
+.search-result-list li h4{font-size:12px;line-height:100%;padding-top:10px;margin-bottom:5px;}
+.search-result-list li h4 a{font-family: 'NanumGothicBold';color:#038a5c;font-weight:700;}
+.search-result-list li p{font-family: 'NanumGothic';color:#666666;}
+
+.search-result-list2{width:238px;margin:0 auto;border-top:1px solid #d8d8d8;}
+.search-result-list2 li{border-bottom:1px solid #d8d8d8;padding-left:33px; padding-bottom:10px;background: url(../images/gis/search-spot2.png) no-repeat; background-position: 7px 11px;}
+.search-result-list2 li:hover{background:#f4f4f4 url(../images/gis/search-spot.png) no-repeat; background-position: 7px 11px; }
+.search-result-list2 li h4{font-size:12px;line-height:100%;padding-top:10px;margin-bottom:5px; font-weight: bold;}
+.search-result-list2 li h4 a{font-family: 'NanumGothicBold';color:#038a5c;}
+.search-result-list2 li p{color:#666666;}
+
+.condition-wrap{margin:8px;position:relative;}
+.condition {width:100%;}
+.condition > li{float:left;width:74px;margin-right:8px;margin-bottom:4px;position:relative;}
+.condition > li > a{font-family: 'NanumGothic';width:100%;border:1px solid #cdcdcd;border-radius:3px;display:block;text-align:center;padding:7px 0;line-height:100%;color:#555555;}
+.condition > li > a:hover,.condition > li > a.active{background-color:#0fbe82;border:1px solid #0fbe82;font-family: 'NanumGothicBold';color:#fff;}
+.condition:after{content:"";display:block;clear:both;}
+.condition > li.last{margin-right:0;}
+
+.condition-sub {font-family: 'NanumGothic';width:140px;height:180px;position:absolute;top:30px;border:1px solid #a7a6a6;border-radius:3px;background-color:#FFF;display:none;z-index:9999;}
+.condition-sub2 {font-family: 'NanumGothic';width:140px;height:180px;position:absolute;right:0px;top:30px;border:1px solid #a7a6a6;border-radius:3px;background-color:#FFF;display:none;z-index:9999;overflow-y:auto;}
+.sub-keyword{position:relative;width:120px;height:23px;}
+.sub-keyword input{width:120px;height:23px;border:0;border-bottom:1px solid #a7a6a6;background-color:#dff2eb;text-indent:5px;}
+.condition-body {overflow-y:auto;width:100%;height:150px;}
+.sub-close{width:18px;height:17px;background:url(../images/gis/submenu_close.gif) no-repeat 0 0;position:absolute;right:4px;top:3px;text-indent:-9999px;}
+.condition-sub ul{margin-top:7px;}
+.condition-sub li{color:#888888;line-height:100%;margin-bottom:5px;letter-spacing:-0.05em;position:relative;}
+.condition-sub li input{width:9px;height:9px;border:1px solid #696969;}
+.condition-head {position:relative;width:120px;height:23px;border-bottom:1px solid #a7a6a6;background-color:#dff2eb;text-indent:5px;}
+.condition-head .btn-enter{font-size:11px;line-height:100%;color:#666666;border:1px solid #b4b4b4;border-radius:2px;padding:4px !important;background-color:#f9f9f9;letter-spacing:-0.1em;display:inline-block;}
+.condition-head .btn-cancle{font-size:11px;line-height:100%;color:#666666;border:1px solid #b4b4b4;border-radius:2px;padding:4px !important;background-color:#ececec;letter-spacing:-0.1em;display:inline-block;}
+
+.tree-wrap{float:right;width:179px;height:117px;border:1px solid #cdcdcd;border-radius:3px;background-color:#FFF;overflow-y:scroll;}
+
+/* 버튼 */
+.btn-search { font-family: 'NanumGothic';width:117px;display:block;*display:inline-block;background:#fb9d15 url(../images/gis/btn_search.gif) no-repeat 97px center;border-radius:3px;color:#fff;border:1px solid #e37715;padding:7px 0 7px 118px;font-size:13px;line-height:100%;}
+.btn-minibox {*line-height:22px;height:4px;font-size:11px;font-family:dotum;color:#666666;padding:4px 7px;border:1px solid #b4b4b4;border-radius:2px;background-color:#f9f9f9;letter-spacing:-0.08em;}
+.btn-minibox2 {*line-height:22px;height:4px;font-size:11px;font-family:dotum;color:#666666;padding:4px 2px;border:1px solid #b4b4b4;border-radius:2px;background-color:#f9f9f9;letter-spacing:-0.08em;}
+
+.selbox {border:0;width:120px;}
+
+
+.pagination {position:relative;display:block;text-align:center; margin-top: 10px;  }/*text-align 으로 정렬방향 결정*/
+.pagination ul { display: inline-block;text-align:center;}
+.pagination ul > li { display: inline;*zoom:1;}
+.pagination ul > li > a,
+.pagination ul > li > span {float:left;padding:0 0px;height:30px;line-height:30px;background:#ffffff;border: 1px solid #d5d5d5;width:27px;text-align:center;margin-right:3px;}
+.pagination ul > li > a:focus, .pagination ul > .active > a,
+.pagination ul > .active > span {background:#0fbe82;color: #fff;}
+.pagination ul > .active > a, .pagination ul > .active > span {color:#fff; cursor: default;}                    
+.pagination ul > .disabled > span, .pagination ul > .disabled > a, .pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {color: #fff;cursor: default;background-color: #0fbe82;}
+
+.pagination ul > li.pg-btn > a {border:0;height:30px;line-height:30px;margin-top:10px;}
+.pagination ul > li.pg-btn > a:hover, .pagination ul > li.pg-btn > a:focus {background:none;border:0;}
+
+#simplemodal-overlay {display:none !important;}
+.simplemodal-close{background:url(../images/gis/pop_close02.png) no-repeat; width:14px; height:13px; display:inline; z-index:5200; position:absolute; top:10px; right:10px; cursor:pointer;}
+.simplemodal-hide{background:url(../images/gis/btn_pop_hide.png) no-repeat; width:14px; height:13px; display:inline; z-index:5200; position:absolute; top:10px; right:35px; cursor:pointer;}
+
+.pop-close{background:url(../images/gis/pop_close02.png) no-repeat; width:14px; height:13px; display:inline; z-index:5200; position:absolute; top:10px; right:10px; cursor:pointer;text-indent:-9999px;}
+.pop-hide{background:url(../images/gis/btn_pop_hide.png) no-repeat; width:14px; height:13px; display:inline; z-index:5200; position:absolute; top:10px; right:35px; cursor:pointer;text-indent:-9999px;}
+.popup {width:362px;border:3px solid #0265cb; border-radius: 5px;position:absolute;left:50%;margin-left:-290px;height:auto;top:20%;z-index:9999;}
+.popup02 {width:402px;border-left:3px solid #0265cb;border-right:3px solid #0265cb;border-bottom:3px solid #0265cb; border-radius: 5px;position:absolute;left:20%;height:auto;top:100px;z-index:9000;}
+.popup03 {width:239px;border-left:3px solid #0265cb;border-right:3px solid #0265cb;border-bottom:3px solid #0265cb; border-radius: 5px;position:absolute;left:50%;margin-left:-190px;height:auto;top:20%;z-index:9000;}
+.popup04 {width:281px;border-left:1px solid #0265cb;border-right:1px solid #0265cb;border-radius: 5px;box-sizing:border-box;/*position:absolute;left:20%;height:auto;top:100px;z-index:9999;*/}
+.popup05 {width:894px;border-left:1px solid #0265cb;border-right:1px solid #0265cb;border-bottom:1px solid #0265cb;border-radius: 5px;box-sizing:border-box;position:absolute;left:20%;height:auto;top:100px;z-index:9000;}
+.popup06{width:735px;border-left:1px solid #0265cb;border-right:1px solid #0265cb;border-bottom:1px solid #0265cb;border-radius: 5px;box-sizing:border-box;position:absolute;left:20%;height:auto;top:100px;z-index:9999;}
+.popup07{width:623px;height:400px;border-left:2px solid #0265cb;overflow:hidden;border-right:2px solid #0265cb;border-bottom:2px solid #0265cb;border-radius: 5px;box-sizing:border-box;position:absolute;left:5px;top:44px;z-index:9000;}
+
+.popup04 h1{background:url(../images/gis/pop_icon_location.png) no-repeat 0 center;padding-left:17px;}
+.pop-header {width:100%;position:relative;height:30px;background:#0265cb;}
+.pop-header h1 {color:#fff;line-height:30px; font-size:13px;font-family: 'NanumGothicBold';margin-left:8px;}
+.pop-header2 {width:100%;position:relative;height:30px;background:#0265cb;}
+.pop-header2 h1 {}
+.pop-content {clear:both;background:#fff;border-radius:5px;}
+
+.content-inbox {padding:13px 10px 5px;}
+.content-inbox02 {padding:0;height:359px;}
+.content-inbox p{font-size: 12px; color:#555; }
+.content-inbox select{width: 295px; height: 25px; border: 1px solid #cdcdcd; margin-left: 5px; }
+.content-inbox .address{padding-left:15px;}
+.content-inbox2 {padding:0px;}
+.content-inbox5 {padding:0px;height:370px;}
+.pop-txt{width:100%;}
+.pop-txt:after{content:"";display:block;clear:both;}
+.pop-txt li {float: left;}
+.pop-txt01{padding-top: 3px;margin-right:8px;font-family: 'NanumGothicBold';color:#555;}
+.pop-btn{width:100%;text-align:right;}
+.pop-btn:after{content:"";display:block;clear:both;}
+.pop-btn li{margin-top: 10px;display:inline-block;}
+.pop-btn2{width:100%;text-align:right;border-top:1px solid #e9e9e9;margin-top:10px;}
+.pop-btn2:after{content:"";display:block;clear:both;}
+.pop-btn2 li{margin-top: 10px;display:inline-block;}
+.pop-btn01{width: 49px; height: 27px; background-color: #0082c6; border: 1px solid #096ca2; color: #fff; font-family: 'NanumGothicBold';font-size: 13px; cursor:pointer;border-radius:3px;}
+.pop-btn02{width: 49px; height: 27px; background-color: #0fbe82; border: 1px solid #069866; color: #fff; font-family: 'NanumGothicBold';font-size: 13px; cursor:pointer;border-radius:3px;}
+.pop-btn03 {width: 49px; height: 27px; background-color: #626161; border: 1px solid #3e3e3e; color: #fff; font-family: 'NanumGothicBold';font-size: 13px; cursor:pointer;border-radius:3px;}
+.pop-btn03:fucus {border:none;}
+.pop-btn04{width: 75px; height: 27px; background-color: #0fbe82; border: 1px solid #069866; color: #fff; font-family: 'NanumGothicBold';font-size: 13px; cursor:pointer;border-radius:3px;}
+.pop-btn-area{padding-top:8px;border-top:1px solid #e9e9e9;}
+.pop-btn05 {width: 49px; height: 27px; background-color: #626161;line-height:29px; text-align:center;display:inline-block;border: 1px solid #3e3e3e; color: #fff; font-family: 'NanumGothicBold' !important;font-size: 13px; cursor:pointer;border-radius:3px;}
+.pop-btn05:fucus {border:none;}
+
+
+/*지도옵션팝업*/
+.map-option{width:100%;border-top:2px solid #737678;color:#555;}
+.map-option th,.map-option td{padding:10px 0;border-left:1px solid #cccccc;border-right:1px solid #cccccc;text-align:center;vertical-align:middle;}
+.map-option thead th{background-color:#ebf2f7;border-bottom:1px solid #abafb3;font-family: 'NanumGothicBold';font-size: 13px;}
+.map-option tbody th{border-bottom:1px solid #cccccc;}
+.map-option td{border-bottom:1px solid #cccccc;}
+.map-option td select{width:56px;height:24px;line-height:100%;border-radius:2px;}
+
+/*그리기도구팝업*/
+.tool-tab {width:49px; position:relative;float:left;}
+.tool-tab li {text-align:center; margin-right:1px;}
+.tool-tab li.last a{border-bottom:0;}
+.tool-tab li a {width:49px;height:39px;color:#333;display:block;text-indent:-9999px;border-bottom:1px solid #c3c8cb;border-right:1px solid #c3c8cb;}
+.tool-tab li a.tool-tab01{background:#eaeef0 url(../images/gis/tool01.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab01{background:#fff url(../images/gis/tool01.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab02{background:#eaeef0 url(../images/gis/tool02.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab02{background:#fff url(../images/gis/tool02.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab03{background:#eaeef0 url(../images/gis/tool03.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab03{background:#fff url(../images/gis/tool03.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab04{background:#eaeef0 url(../images/gis/tool04.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab04{background:#fff url(../images/gis/tool04.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab05{background:#eaeef0 url(../images/gis/tool05.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab05{background:#fff url(../images/gis/tool05.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab06{background:#eaeef0 url(../images/gis/tool06.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab06{background:#fff url(../images/gis/tool06.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab07{background:#eaeef0 url(../images/gis/tool07.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab07{background:#fff url(../images/gis/tool07.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab08{background:#eaeef0 url(../images/gis/tool08.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab08{background:#fff url(../images/gis/tool08.png) no-repeat center center;border-right:0;}
+.tool-tab li a.tool-tab09{background:#eaeef0 url(../images/gis/tool09.png) no-repeat center center;}
+.tool-tab li.active a.tool-tab09{background:#fff url(../images/gis/tool09.png) no-repeat center center;border-right:0;}
+.tool-area{float:left;width:159px;height:337px;background-color:#FFF;padding:11px 15px;color:#555;}
+.tool-area p{margin-top:11px;}
+.tool-area select{width:94px;height:24px;border:1px solid #cdcdcd;border-radius:3px;margin-left:10px;}
+.tool-area input{margin-left:10px;}
+.tool-area input.text{width:100px;border:1px solid #cdcdcd;border-radius:3px;}
+
+/*위치팝업*/
+.location-btn{position:absolute;left:500px;top:500px;}
+.location-popup{position:absolute;left:270px;top:350px;padding-bottom:16px;background:url(../images/gis/pop_bg_location.png) no-repeat 0 bottom;}
+
+/*교통사고 상세검색*/
+.poptab {width:100%; position:relative;background:url(../images/gis/poptab_bg.gif) repeat-x 0 bottom;height:43px;border-left:1px solid #cecece;}
+.poptab li {float:left;width:119px;text-align:center;}
+.poptab li.last {margin-right:0 !important;}
+.poptab li a {font-family: 'NanumGothic';color:#777777;display:block;line-height:44px;background-color:#FFF;height:41px;font-size:14px;border-top:1px solid #cecece;background: url(../images/gis/bg_tline.gif) no-repeat right top;}
+ @media screen and (-webkit-min-device-pixel-ratio:0) {.poptab li a {line-height:40px;} }
+.poptab li.active {color:#fff !important;}
+
+
+.poptab li.active a {font-family: 'NanumGothicBold';color:#0066cc;background-color:#FFF;height:39px;border-left:2px solid #636567;border-top:2px solid #636567;border-right:2px solid #636567;border-bottom:2px solid #fff;}
+#poptab .poptab li.ui-tabs-active {color:#fff !important;}
+#poptab .poptab li.ui-tabs-active a  {font-family: 'NanumGothicBold';color:#0066cc;background-color:#FFF;height:39px;border-left:2px solid #636567;border-top:2px solid #636567;border-right:2px solid #636567;border-bottom:2px solid #fff;}
+
+.poptab-area {width:100%; position:relative;padding-top:15px;}
+
+.poptab-area h2{background:url(../images/gis/popup_h2.gif) no-repeat 2px center;padding-left:26px;font-family: 'NanumGothicBold';font-size:15px;color:#444444;margin-top:6px;}
+.pop-head {height:28px;}
+.pop-scroll-body{height:474px;overflow-y:scroll;margin-top:14px;}
+.pop-searchbox{width:100%;padding:14px 0;background-color:#f8f7f7;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;}
+.pop-searchbox:after{content:"";display:block;clear:both;}
+.poptab-area .search-tit{float:none;font-family: 'NanumGothicBold';color:#555555;line-height:26px;margin-left:12px;margin-right:9px;}
+.pop-searchbox select{font-family: 'NanumGothic';border:1px solid #cdcdcd;border-radius:3px;height:26px;padding:0;margin:0;}
+.pop-searchbox input{border:1px solid #cdcdcd;border-radius:3px;height:24px;padding:0;margin:0;}
+.search-item{margin-top:10px;position:relative;}
+.item{width:100%;padding-bottom:10px;border-bottom:1px solid #e6e6e6;}
+.search-item input{width:133px;border:1px solid #cdcdcd;border-radius:3px;height:24px;padding:0;margin:0;margin-right:8px;margin-bottom:7px;}
+.search-item select{width:133px;border:1px solid #cdcdcd;border-radius:3px;height:26px;padding:0;margin:0;margin-right:8px;margin-bottom:7px;vertical-align:top;}
+.search-item select.active{background-color:#0066cc;border:1px solid #0066cc;color:#fff;}
+.search-item select.last{margin-right:0;}
+.wd-87{width:87px !important;}
+.wd-67{width:67px !important;}
+.wd-164{width:164px;}
+
+.ftbold {color:#555555;font-weight:bold;}
+
+/*DB분류*/
+.db-div{position:absolute;left:.0px;top:28px;border:1px solid #a7a6a6;border-radius:3px 3px 0 0;background-color:#FFF;width:179px;height:150px;z-index:9999;display:none;}
+.div-header{width:100%;background-color:#e8eff6;border-bottom:1px solid #a7a6a6;padding:2px 0;line-height:100%;}
+.div-header:after{content:"";display:block;clear:both;}
+.div-body{height:124px;overflow-y:scroll;}
+.btn-enter{font-size:11px;line-height:100%;color:#666666;border:1px solid #b4b4b4;border-radius:2px;padding:4px ;background-color:#f9f9f9;letter-spacing:-0.1em;display:inline-block;}
+.btn-cancle{font-size:11px;line-height:100%;color:#666666;border:1px solid #b4b4b4;border-radius:2px;padding:4px;background-color:#ececec;letter-spacing:-0.1em;display:inline-block;}
+.db-div .btn-left{float:left;margin-left:2px;}
+.db-div .btn-right{float:right;margin-right:2px;}
+.div-body ul{margin-top:7px;margin-left:5px;}
+.div-body li{color:#888888;line-height:100%;margin-bottom:1px;}
+.div-body li input {width:10px;height:10px;border:1px solid #696969;margin-top:0px;margin-bottom:2px;margin-right:0px !important;background:#fff !important;}
+.div-body li input[disabled] { opacity: .5 }
+
+/*교통사고 상세검색 결과*/
+.result-table{width:100%;border-top:2px solid #737678;color:#555555;margin-bottom:15px;}
+.result-table th{background-color:#ebf2f7;padding:10px 0;font-family: 'NanumGothicBold';font-size:13px;text-align:center;border-bottom:1px solid #abafb3;border-left:1px solid #cccccc;border-right:1px solid #cccccc;}
+.result-table td{border-left:1px solid #cccccc;border-right:1px solid #cccccc;border-bottom:1px solid #cccccc;height:44px;padding-left:8px;vertical-align:middle;}
+
+
+.map-bar1{position: absolute; top: 100px; right: 29px;}
+.map-bar2{position: absolute; top: 330px; right: 29px;}
+.map-bar2 li{margin-bottom: 2px;}
+.map-bar-icon{width: 25px; height: 25px; border: 1px solid #888888; border-radius: 3px; background-color: #fff; cursor:pointer; }
+.map-bar-icon:hover{width: 25px; height: 25px; border: 1px solid #0265cb; border-radius: 3px; background-color: #fff; cursor:pointer; }
+.map-bar-icon1{width: 25px; height: 25px; border: 1px solid #888888; border-radius: 2px 2px 0 0; background-color: #fff; cursor:pointer; }
+.map-bar-icon2{width: 25px; height: 25px; border: 1px solid #888888; border-radius: 0 0 2px 2px ; background-color: #fff; cursor:pointer; }
+.icon01 input[type=button]{background: url(../images/gis/map-icon01.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon02 input[type=button]{background: url(../images/gis/map-icon02.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon03 input[type=button]{background: url(../images/gis/map-icon03.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon04 input[type=button]{background: url(../images/gis/map-icon04-01.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon0404 input[type=button]{background: url(../images/gis/map-icon0404.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon05 input[type=button]{background: url(../images/gis/map-icon05.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon06 input[type=button]{background: url(../images/gis/map-icon06.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon07 input[type=button]{background: url(../images/gis/map-icon07.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon08 input[type=button]{background: url(../images/gis/map-icon08.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon09 input[type=button]{background: url(../images/gis/map-icon09-01.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon01 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon01on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon02 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon02on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon03 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon03on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon04 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon04-01on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon0404 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon0404on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon05 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon05on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon06 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon06on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon07 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon07on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon08 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon08on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.icon09 input[type=button]:hover{background:#0265cb url(../images/gis/map-icon09-01on.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center;}
+.map-last-icon input[type=button]{background:#0265cb url(../images/gis/map-icon10.png) no-repeat;width: 27px; height: 14px;  border: none; cursor:pointer; background-position: center;border: 1px solid #888888; border-radius: 3px;  background-color: #dedede;}
+.icon11 input[type=button]{background: url(../images/gis/map-icon11_onon.gif) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.plus input[type=button]{background: url(../images/gis/plus-btn.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center}
+.minus{margin-top: -5px;}
+.minus input[type=button]{background: url(../images/gis/minus-btn.png) no-repeat;width: 25px; height: 25px;  border: none; cursor:pointer; background-position: center}
+
+.side-btn1{width: 54px; height: 25px; border: 1px solid #888888; border-radius: 3px; background-color: #fff; cursor:pointer; position: absolute; top: 417px; right:60px;display:none;}
+.side-btn1 li{float: left;}
+.icon04-02 input[type=button]{background: url(../images/gis/map-icon04-03.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon04-03 input[type=button]{background: url(../images/gis/map-icon04-02.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+
+.icon04-02:hover input[type=button]{background:#0265cb  url(../images/gis/map-icon04-03on.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon04-03:hover input[type=button]{background:#0265cb  url(../images/gis/map-icon04-02on.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+
+.side-btn2{width: 81px; height: 25px; border: 1px solid #888888; border-radius: 3px; background-color: #fff; cursor:pointer; position: absolute; top: 592px; right:60px;display:none;}
+.side-btn2 li{float: left;}
+.icon09-01 input[type=button]{background: url(../images/gis/map-icon09-02.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon09-02 input[type=button]{background: url(../images/gis/map-icon09-03.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon09-03 input[type=button]{background: url(../images/gis/map-icon09-01.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+
+.icon09-01:hover input[type=button]{background:#0265cb  url(../images/gis/map-icon09-02on.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon09-02:hover input[type=button]{background:#0265cb  url(../images/gis/map-icon09-03on.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+.icon09-03:hover input[type=button]{background:#0265cb url(../images/gis/map-icon09-01on.png) no-repeat;width: 27px; height: 27px;  border: none; cursor:pointer; background-position: center;}
+
+.side-btn3 .map-on{width:29px;height:30px;background:url(../images/gis/map-icon11_on.gif) no-repeat 0 0;position:absolute;right:0;bottom:0;text-indent:-9999px;display:block;}
+.side-btn3 .map-off{width:29px;height:29px;background:url(../images/gis/map-icon11_off.gif) no-repeat 0 0;position:absolute;right:136px;bottom:139px;text-indent:-9999px;display:block;z-index:10;}
+.index-map-wrap{width:164px;height:167px;position:absolute;right:0;bottom:0;border-left:1px solid #838b91;border-top:1px solid #838b91;background-color:#FFF;display:none;}
+.index-map{width:161px;height:164px;position:absolute;right:0;bottom:0;border-left:1px solid #838b91;border-top:1px solid #838b91;background-color:#FFF;}
+
+.time-year li {float:left;width:205px;border-right:2px solid #0265cb;text-align:center;color:#fff;font-size:13px;font-weight:bold;height:27px;line-height:30px;font-family:'NanumGothic';}
+.time-year li.last {border-right:0;}
+.time-map li.last {border-right:0;}
+.time-map li {float:left;width:205px;border-right:2px solid #0265cb;text-align:center;height:370px;background:#fff;}
+.simplemodal-hide{overflow: hidden !important;}
+
+.item-list li {float:left;position:relative;}
+.div-body li {clear:both;}
+.filetree li li {margin-bottom:-6px  !important;}
+#checkbox-list li {margin-bottom:4px;}
+
+.item-option,.item-option:active,.item-option:visited,.item-option:focus 
+	{width: 133px;border: 1px solid #cdcdcd; border-radius: 3px; height: 26px !important;line-height:15px;background: #fff url(../images/gis/icon_selarrow.gif) no-repeat 120px center;font-size: 12px;
+    color: #555; font-family: 'Nanum GothicBold' !important; text-indent: 7px;text-align:left;cursor:pointer;}
+.item-option:hover,.item-option.active 
+	{width: 133px;border: 1px solid #0066cc; border-radius: 3px; height: 26px !important; line-height:15px;background: #0066cc url(../images/gis/icon_selarrow_on.gif) no-repeat 120px center;font-size: 12px;
+    color: #fff; font-family: 'Nanum GothicBold' !important; text-indent: 7px;text-align:left;cursor:pointer;}
+
+				.map-bar2 li{position:relative;}
+				.DemoTooltipLeft span{position:absolute; left:-290px ; top:0; padding:2px 5px; width:270px; height:20px;background-color:#fff; box-shadow:2px 2px 2px #aaa; display:none;}
