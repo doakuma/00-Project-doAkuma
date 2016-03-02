@@ -1878,3 +1878,53 @@ table caption {
 	text-align: center;
 	font-weight: bold;
 }
+
+.box_progress02 {
+	position: relative;
+	
+}
+.prog_rad02 {
+	position: relative;
+	background: #2E96DB;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+.prog_rad02 .overlay {
+	width: 10px;
+	height: 50%;
+	background: #d7d7d7;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: all 0.35s ease-out 0.15s;
+	-moz-transition: all 0.35s ease-out 0.15s;
+	-ms-transition: all 0.35s ease-out 0.15s;
+	-o-transition: all 0.35s ease-out 0.15s;
+	transition: all 0.35s ease-out 0.15s;
+	-webkit-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+.prog_rad02 .prog_cont {
+	display: none;
+	
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #f7f7f7;
+	border-radius: 50%;
+}
