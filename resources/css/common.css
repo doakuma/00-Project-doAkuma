@@ -1,5 +1,7 @@
 @charset "utf-8";
+@import url(normalize.css);
 @import url(reset.css);
+@import url(UImatome.css);
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
 html { font-size: 10px; }
@@ -22,7 +24,7 @@ legend {
   outline: 1px solid rgba(1,1,1,0.8);
 }
 /* Common */
-a { color: #333; text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 .dummy_img {
 	display: table;
 	width: 100%;
@@ -542,12 +544,47 @@ body.gnb_on #wrap  .ctrl_bar {
 	border-radius: 5px;
 	padding: 1rem;
 	text-align: center;
+	vertical-align: middle;
 	line-height: 1.2;
 	background: transparent;
 	border: none;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.75);
+	background: #2e96db;
+	-webkit-transition: all 0.35s ease-out 0.05s;
+	-o-transition: all 0.35s ease-out 0.05s;
+	transition: all 0.35s ease-out 0.05s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0 0 .2rem rgba(0,0,0,0.45);
+	box-shadow: 0 0 .2rem rgba(0,0,0,0.45);
+}
+.btn[disabled] {
+	background: #666;
+}
+.btn:not([disabled]):hover {
+	background: rgba(0,0,0,0.45);
 	cursor: pointer;
 }
+
+.sz-x-sm {
+	font-size: 1rem;
+	padding: 0.5rem 1rem;  
+}
+.sz-sm{
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;  
+}
+.sz-lg {
+	font-size: 1.8rem;
+}
+.sz-fw {
+	display: block;
+	width: 100%;
+	margin: 1rem 0 0;
+	text-align: center;
+}
+
 .btn_gotop {
 	position: fixed;
 	right: 0;
@@ -565,6 +602,18 @@ body.gnb_on #wrap  .ctrl_bar {
 	font-weight: bold;
 	line-height: 1.4;
 	color: #fff;
+}
+.wrap_btn_group {
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.wrap_btn_group .btn {
+	border-radius: 0;
 }
 
 /* Title */
@@ -645,6 +694,19 @@ body.gnb_on #wrap  .ctrl_bar {
 	-ms-transform: rotate(5deg);
 	-o-transform: rotate(5deg);
 	transform: rotate(5deg);
+}
+.stit_exec {
+	position: relative;
+	padding: 0 0 1rem 1rem;
+	margin: 1rem 0 0;
+}
+.stit_exec:before {
+	content: "- ";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
 }
 
 /* Paragraph */

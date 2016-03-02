@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS 교통사고분석시스템 관리자 페이지</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../css/default.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../css/admin.css"></link>
+	<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../js/jquery.jqtransform.js"></script>
+		<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->	
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript">
+    $(function() {
+      var dates = $( "#from1, #to1" ).datepicker({
+        showOn: "button",
+          buttonImage: "../../images/admin/btn_cal.gif",
+          buttonImageOnly: true,
+          prevText: '이전 달',
+          nextText: '다음 달',
+          monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          dayNames: ['일','월','화','수','목','금','토'],
+          dayNamesShort: ['일','월','화','수','목','금','토'],
+          dayNamesMin: ['일','월','화','수','목','금','토'],
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true,
+          yearSuffix: '년',
+          onSelect: function( selectedDate ) {
+          /*
+            var option = this.id == "from1" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat ||
+                $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings );
+            dates.not( this ).datepicker( "option", option, date );
+            */
+          }
+          });
+    });
+</script>
+
+ </head>
+ <body>
+	<div id="wrapper">
+		<div id="header-area">
+			<div class="topbar">
+				<div class="innerbox clear">
+					<h1 class="sitetitle">관리자</h1>
+					<p class="loginmsg"><strong>홍길동</strong>  관리자님 환영합니다 <a href="#" class="btn-grays ml-10">로그아웃</a></p>
+				</div>
+			</div>
+			<!-- //탑바 -->
+			<div class="logoarea">
+				<div class="innerbox clear">
+					<h1 class="logo"><img src="../../images/admin/logo.gif"  alt="교ㅛ통사고 분석시스템" /></h1>
+					<p class="gohome"><a href="#" class="btn-home">홈으로</a></p>
+				</div>
+			</div>
+			<!-- //로고 영역 -->
+			<div class="subBg"></div>
+			<div class="gnbarea"  id="gnbarea">
+				<ul class="gnb clear">
+					<li class="m01">
+						<a href="#"><span>회원관리</span></a>
+					</li>
+					<li class="m02">
+						<a href="#"><span>통계관리</span></a>
+						<div class="subWrap sub02">
+							<ul>
+								<li><a href="#">방문통계</a></li>
+								<li><a href="#">방문자통계(위험도로)</a></li>
+								<li><a href="#">회원보안등급통계</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="m03">
+						<a href="#"><span>통합문서관리</span></a>
+					</li>
+					<li class="m04">
+						<a href="#"><span>작업이력관리</span></a>
+					</li>
+					<li class="m05">
+						<a href="#"><span>운영자<br />메뉴얼관리</span></a>
+					</li>
+					<li class="m06">
+						<a href="#"><span>공통코드관리</span></a>
+					</li>
+					<li class="m07 last">
+						<a href="#"><span>교통사고통계정보<br />제공실적</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //헤더 영역 -->
+		<div id="content">
+			<h3 class="page-title">통합문서관리</h3>
+			<h4 class="sub-tit">상세정보</h4>
+			<div class="subcont">
+
+				<!-- //상단검색 -->
+				<div class="board-rapper">					
+				<table class="table06 mt-10" >
+					<caption>새소식목록</caption>
+					<colgroup>
+						<col style="width:100px;"  />
+						<col style="width:350px;"  />
+						<col style="width:110px;"  />
+						<col style="width:200px;;"  />
+						<col style="width:100px;"  />
+						<col style=";"  />
+					</colgroup>
+					<tbody>           
+						<tr>
+							<th scope="row" class="subject1">배포제목</th>
+							<td class="last2" colspan="5">
+								<div class="pdtb10">
+									2015년 교통사고 유형별 발생 결과
+
+								</div>
+							</td>
+						</tr>
+							<th scope="row" class="subject1">배포결과내용</th>
+							<td class="last2" colspan="5">
+								<div class="pdtb10 ">
+									2015년 교통사고 유형별 발생결과 입니다
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">배포담당자</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									test
+								</div>
+							</td>
+							<th scope="row" class="subject1">첨부파일</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									<a href="#">처리방법설명.PDF 처리결과.HWP</a>
+								</div>
+							</td>
+							<th scope="row" class="subject1">배포일시</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									2015-02-21
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">배포방법</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">배포위치</th>
+							<td class="last2" colspan="3">
+								<div class="pdtb10">
+									
+								</div>
+							</td>							
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table06 mt-10" >
+					<caption>새소식목록</caption>
+					<colgroup>
+						<col style="width:100px;"  />
+						<col style="width:350px;"  />
+						<col style="width:110px;"  />
+						<col style="width:200px;;"  />
+						<col style="width:100px;"  />
+						<col style=";"  />
+					</colgroup>
+					<tbody>           
+						<tr>
+							<th scope="row" class="subject1">처리담당자</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">처리일시</th>
+							<td class="last2" colspan="3">
+								<div class="pdtb10">
+									
+								</div>
+							</td>							
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">처리방법</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">첨부파일<br />(참고자료)</th>
+							<td class="last2" colspan="3">
+								<div class="pdtb10">
+									<a href="#">처리방법설명.PDF 처리결과.HWP</a>
+								</div>
+							</td>							
+						</tr>
+					</tbody>
+				</table>
+				<table class="table06 mt-10" >
+					<caption>새소식목록</caption>
+					<colgroup>
+						<col style="width:100px;"  />
+						<col style="width:350px;"  />
+						<col style="width:110px;"  />
+						<col style="width:200px;;"  />
+						<col style="width:100px;"  />
+						<col style=";"  />
+					</colgroup>
+					<tbody>          
+						<tr>
+							<th scope="row" class="subject1">요청제목</th>
+							<td class="last2" colspan="5">
+								<div class="pdtb10">
+									2015년 교통사고 유형별 발생 결과
+
+								</div>
+							</td>
+						</tr>					
+						<tr>
+							<th scope="row" class="subject1">요청제목</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									
+								</div>
+							</td>
+							<th scope="row" class="subject1">요청기관명상세</th>
+							<td class="last2" colspan="3">
+								<div class="pdtb10">
+									
+								</div>
+							</td>							
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">요청자</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">연락처</th>
+							<td>
+								<div class="pdtb10">
+									
+								</div>
+							</td>		
+							<th scope="row" class="subject1">이메일</th>
+							<td class="last2">
+								<div class="pdtb10">
+									
+								</div>
+							</td>								
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">요청제목</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">요청방식</th>
+							<td colspan="3" class="last2" >
+								<div class="pdtb10">
+									
+								</div>
+							</td>		
+						
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">요청내용</th>
+							<td class="last2">
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">관련근거<br />첨부자료</th>
+							<td colspan="3" class="last2" >
+								<div class="pdtb10">
+									
+								</div>
+							</td>		
+						
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">요청일시</th>
+							<td class="last2">
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">공개여부</th>
+							<td colspan="3" class="last2">
+								<div class="pdtb10">
+									
+								</div>
+							</td>	
+						
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">과업명</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									공문회신
+								</div>
+							</td>
+							<th scope="row" class="subject1">발주기관명</th>
+							<td>
+								<div class="pdtb10">
+									
+								</div>
+							</td>		
+							<th scope="row" class="subject1">과업 기간</th>
+							<td class="last2">
+								<div class="pdtb10">
+									
+								</div>
+							</td>								
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="bottom-btn text-r">
+					<a href="#" class="btn-org5">수정</a>
+					<a href="#" class="btn-org5">삭제</a>
+					<a href="#" class="btn-gray4">취소</a>	
+				</div>
+
+			</div>
+		</div>
+		<!-- //content -->
+		<div id="footer">
+			<div class="innerbox clear">
+				<div class="copy">
+					주소 : 우)100-789  서울특별시 중구 왕십리로 407(신당5동 171) 도로교통공단    대표전화: 02-2230-6114    팩스 : 02-2230-6113<br />
+					Copyright © 2015 KoROAD. All rights Reserved.
+				</div>
+				<div class="fbn">
+					<img src="../../images/admin/f_bn01.png" width="126" height="33" alt="사이버경찰청" /> <img src="../../images/admin/f_bn02.png"  alt="도로교통공단" />
+				</div>
+			</div>
+		</div>
+	</div>	
+ </body>
+</html>

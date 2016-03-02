@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS 교통사고분석시스템</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub.css"></link>
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015.js"></script>
+	<script src="../../../js/placeholders.min.js"></script>
+	<script src="../../../js/response.js"></script>
+	<script src="../../js/response.js"></script>
+	<script type="text/javascript" src="../../../js/jquery.slides.min.js"></script>
+	
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+	<!--placeholder-->
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+		$(function() {
+		 $('input, textarea').placeholder();
+		});
+	//]]>
+	</script>
+	<!--//placeholder-->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/web/common/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<div class="search">
+				<input type="text" value="통합검색" onfocus="this.value=''" />
+				<a href="#" class="btn-search">검색</a>
+			</div>
+			<ul class="util">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">사이트맵</a></li>
+				<li><a href="#">ENGLISH</a></li>
+				<li class="last"><a href="#">이용안내</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>한눈에 보는 교통사고 통계</span></a></h2>
+					<ul>
+						<li><h5><a href="sub01/sub0101.html" class="icon-bg01_1"> <span>교통사고 비교</span></a></h5>
+							<ul class="ul01">
+								<li><a href="sub01/sub0101.html">교통사고 여건</a></li>
+								<li ><a href="sub01/sub0102.html">교통사고 추세</a></li>
+								<li ><a href="sub01/sub0103.html">교통사고 발생(증감)현황</a></li>
+								<li><a href="sub01/sub0104.html">교통여건 및 교통사고 현황</a></li>
+								<li><a href="sub01/sub0105.html">자동차 1만대당 교통사고</a></li>
+								<li class="ml-35 "><a href="sub01/sub0106.html">인구 10만명당 교통사고</a></li><br/>
+								<li ><a href="sub01/sub0107.html">도로 10km당 교통사고</a></li>
+								<li><a href="sub01/sub0108.html">OECD국가교통사고 발생현황</a></li>
+								<li ><a href="sub01/sub0109.html">지역별 교통안전지수</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="sub01/sub0201.html" class="icon-bg01_2"><span>교통사고 일반</span></a></h5>
+							<ul class="ul02" >
+								<li class="ml-15"><a href="sub01/sub0201.html">월별 교통사고</a></li>
+								<li><a href="sub01/sub0202.html">요일별 교통사고</a></li>
+								<li ><a href="sub01/sub0203.html">시간대별 교통사고</a></li>
+								<li  ><a href="sub01/sub0204.html">주야별 교통사고</a></li>
+								<li ><a href="sub01/sub0205.html">사고유형별 교통사고</a></li>
+								<li><a href="sub01/sub0206.html">도로종류별 교통사고</a></li>
+								<li ><a href="sub01/sub0207.html">도로형태별 교통사고</a></li>
+								<li><a href="sub01/sub0208.html">차종별 교통사고</a></li>
+								<li ><a href="sub01/sub0209.html">법규위반별 교통사고</a></li>
+								<li ><a href="sub01/sub0210.html">연령층별 교통사고</a></li>
+								<li ><a href="sub01/sub0211.html">시도별 교통사고</a></li>
+								<li ><a href="sub01/sub0212.html">시군구별 교통사고</a></li>
+							</ul>
+						</li>
+						<li class="g-bar"><h5><a href="sub01/sub0301.html" class="icon-bg01_3"><span>사상자</span></a></h5>
+							<ul class="ul03">
+								<li><a href="sub01/sub0301.html">연령층별 사상자</a></li>
+								<li><a href="sub01/sub0302.html">사고시 상태별 사상자</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="sub01/sub0401.html" class="icon-bg01_4"><span>부분별 교통사고</span></a></h5>
+							<ul class="ul04">
+								<li class="ml-5"><a href="sub01/sub0401.html">보행자 교통사고</a></li>
+								<li ><a href="sub01/sub0402.html">무단횡단 교통사고</a></li>
+								<li><a href="sub01/sub0403.html">이륜차 교통사고</a></li>
+								<li ><a href="sub01/sub0404.html">뺑소니 교통사고</a></li>
+								<li ><a href="sub01/sub0405.html">어린이 교통사고</a></li>
+								<li><a href="sub01/sub0406.html">스쿨존내 어린이 교통사고</a></li>
+								<li><a href="sub01/sub0407.html">어린이보행자 교통사고</a></li>
+								<li ><a href="sub01/sub0408.html">어린이통학버스로 인한 어린이 교통사고</a></li>
+								<li ><a href="sub01/sub0409.html">노인 교통사고</a></li>
+								<li ><a href="sub01/sub0410.html">노인운전자 교통사고</a></li>
+								<li ><a href="sub01/sub0411.html">노인보행자 교통사고</a></li>
+								<li class="m-left"><a href="sub01/sub0412.html">음주운전 교통사고</a></li>
+								<li ><a href="sub01/sub0413.html">자전거 교통사고</a></li>
+								<li ><a href="sub01/sub0414.html">대형 교통사고</a></li>
+								<li ><a href="sub01/sub0415.html">사업용차량 교통사고</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h2><a href="#"><span>통계분석</span></a></h2>
+					<ul>
+						<li><h5><a href="#" class="icon-bg02_1"><span>통합 분석 시스템</span></a></h5>
+							<ul class="ul05">
+								<li><a href="#" target="_blank" title="새창열림">전체보기</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통여부</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통사고 추세</a></li>
+								<li><a href="#" target="_blank" title="새창열림">외국교통사고 통계</a></li>
+								<li><a href="#" target="_blank" title="새창열림">경찰 DB</a></li>
+								<li><a href="#" target="_blank" title="새창열림">통합 DB</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" class="icon-bg02_2"><span>비정형 분석 시스템</span></a></h5>
+						</li>
+					</ul>
+					<h2><a href=""><span>GIS분석</span></a></h2>
+					<ul>
+						<li class="line"><h5 ><a href="#" target="_blank" title="새창열림"class="full-box icon-bg03_1" ><span>교통사고 GIS 분석 시스템</span></a></h5>
+							<ul class="ul06">
+								<li><a href="#" target="_blank" title="새창열림">교통사고 다발지역</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통사고 주제도</a></li>
+								<li><a href="#" target="_blank" title="새창열림">지역별 교통사고 검색</a></li>
+								<li><a href="#" target="_blank" title="새창열림">노선별 교통사고 검색</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림"  class="icon-bg03_2"><span>위험 도로 예보 시스템</span></a></h5>
+						</li>
+					</ul>
+					<h2><a href="#" target="_blank"><span>고객센터</span></a></h2>
+					<ul>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_1"><span>알림마당</span></a></h5>
+							<ul class="ul07">
+								<li><a href="#" target="_blank" title="새창열림">공단 새소식</a></li>
+								<li><a href="#" target="_blank" title="새창열림">보도자료</a></li>
+								<li><a href="#" target="_blank" title="새창열림">공지사항</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_2"><span>자주묻는 질문</span></a></h5></li>
+						<li class="g-bar2"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_3"><span>묻고답하기</span></a></h5></li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_4"><span>사용자메뉴얼</span></a></h5></li>
+						<li class="g-bar3"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_5"><span>자료신청</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_6"><span>통계보고서</span></a></h5></li>
+					</ul>
+					<h2><a href="#" target="_blank" title="새창열림"><span>통합DB소개</span></a></h2>
+					<ul>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_1"><span>통합 DB 소개</span></a></h5>
+							<ul class="ul08">
+								<li><a href="#" target="_blank" title="새창열림">배경 및 목적</a></li>
+								<li><a href="#" target="_blank" title="새창열림">법적근거</a></li>
+								<li><a href="#" target="_blank" title="새창열림">구출개요</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_2"><span>홈페이지 이용안내</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_3"><span>이용약관</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_4"><span>사이트맵</span></a></h5></li>
+						<li class="g-bar3" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_5"><span>관련사이트</span></a></h5></li>
+						<li class="g-bar4" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_6"><span>OpenAPI 연결</span></a></h5></li>
+					</ul>
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>한눈에 보는 교통사고 통계</span></a></h2>
+						<ul>
+							<li><h5><a href="sub01/sub0101.html" class="icon-bg01_1"> <span>교통사고 비교</span></a></h5>
+								<ul class="ul01">
+									<li><a href="sub01/sub0101.html">교통사고 여건</a></li>
+									<li ><a href="sub01/sub0102.html">교통사고 추세</a></li>
+									<li ><a href="sub01/sub0103.html">교통사고 발생(증감)현황</a></li>
+									<li><a href="sub01/sub0104.html">교통여건 및 교통사고 현황</a></li>
+									<li><a href="sub01/sub0105.html">자동차 1만대당 교통사고</a></li>
+									<li><a href="sub01/sub0106.html">인구 10만명당 교통사고</a></li><br/>
+									<li ><a href="sub01/sub0107.html">도로 10km당 교통사고</a></li>
+									<li><a href="sub01/sub0108.html">OECD국가교통사고 발생현황</a></li>
+									<li ><a href="sub01/sub0109.html">지역별 교통안전지수</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="sub01/sub0201.html" class="icon-bg01_2"><span>교통사고 일반</span></a></h5>
+								<ul class="ul02" >
+									<li><a href="sub01/sub0201.html">월별 교통사고</a></li>
+									<li><a href="sub01/sub0202.html">요일별 교통사고</a></li>
+									<li ><a href="sub01/sub0203.html">시간대별 교통사고</a></li>
+									<li  ><a href="sub01/sub0204.html">주야별 교통사고</a></li>
+									<li ><a href="sub01/sub0205.html">사고유형별 교통사고</a></li>
+									<li><a href="sub01/sub0206.html">도로종류별 교통사고</a></li>
+									<li ><a href="sub01/sub0207.html">도로형태별 교통사고</a></li>
+									<li><a href="sub01/sub0208.html">차종별 교통사고</a></li>
+									<li ><a href="sub01/sub0209.html">법규위반별 교통사고</a></li>
+									<li ><a href="sub01/sub0210.html">연령층별 교통사고</a></li>
+									<li ><a href="sub01/sub0211.html">시도별 교통사고</a></li>
+									<li ><a href="sub01/sub0212.html">시군구별 교통사고</a></li>
+								</ul>
+							</li>
+							<li class="g-bar"><h5><a href="sub01/sub0301.html" class="icon-bg01_3"><span>사상자</span></a></h5>
+								<ul class="ul03">
+									<li><a href="sub01/sub0301.html">연령층별 사상자</a></li>
+									<li><a href="sub01/sub0302.html">사고시 상태별 사상자</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="sub01/sub0401.html" class="icon-bg01_4"><span>부분별 교통사고</span></a></h5>
+								<ul class="ul04">
+									<li><a href="sub01/sub0401.html">보행자 교통사고</a></li>
+									<li ><a href="sub01/sub0402.html">무단횡단 교통사고</a></li>
+									<li><a href="sub01/sub0403.html">이륜차 교통사고</a></li>
+									<li ><a href="sub01/sub0404.html">뺑소니 교통사고</a></li>
+									<li ><a href="sub01/sub0405.html">어린이 교통사고</a></li>
+									<li><a href="sub01/sub0406.html">스쿨존내 어린이 교통사고</a></li>
+									<li><a href="sub01/sub0407.html">어린이보행자 교통사고</a></li>
+									<li ><a href="sub01/sub0408.html">어린이통학버스로 인한 어린이 교통사고</a></li>
+									<li ><a href="sub01/sub0409.html">노인 교통사고</a></li>
+									<li ><a href="sub01/sub0410.html">노인운전자 교통사고</a></li>
+									<li ><a href="sub01/sub0411.html">노인보행자 교통사고</a></li>
+									<li class="m-left"><a href="sub01/sub0412.html">음주운전 교통사고</a></li>
+									<li ><a href="sub01/sub0413.html">자전거 교통사고</a></li>
+									<li ><a href="sub01/sub0414.html">대형 교통사고</a></li>
+									<li ><a href="sub01/sub0415.html">사업용차량 교통사고</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>통계분석</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>통합 분석 시스템</span></a></h5>
+								<ul class="ul05">
+									<li><a href="#" target="_blank" title="새창열림">전체보기</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통여부</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통사고 추세</a></li>
+									<li><a href="#" target="_blank" title="새창열림">외국교통사고 통계</a></li>
+									<li><a href="#" target="_blank" title="새창열림">경찰 DB</a></li>
+									<li><a href="#" target="_blank" title="새창열림">통합 DB</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#"><span>비정형 분석 시스템</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href=""><span>GIS분석</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" target="_blank" title="새창열림"class="full-box icon-bg03_1" ><span>교통사고 GIS 분석 시스템</span></a></h5>
+								<ul class="ul06">
+									<li><a href="#" target="_blank" title="새창열림">교통사고 다발지역</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통사고 주제도</a></li>
+									<li><a href="#" target="_blank" title="새창열림">지역별 교통사고 검색</a></li>
+									<li><a href="#" target="_blank" title="새창열림">노선별 교통사고 검색</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림"  class="icon-bg03_2"><span>위험 도로 예보 시스템</span></a></h5>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>고객센터</span></a></h2>
+						<ul>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_1"><span>알림마당</span></a></h5>
+								<ul class="ul07">
+									<li><a href="#" target="_blank" title="새창열림">공단 새소식</a></li>
+									<li><a href="#" target="_blank" title="새창열림">보도자료</a></li>
+									<li><a href="#" target="_blank" title="새창열림">공지사항</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_2"><span>자주묻는 질문</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_3"><span>묻고답하기</span></a></h5></li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_4"><span>사용자메뉴얼</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_5"><span>자료신청</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_6"><span>통계보고서</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank" title="새창열림"><span>통합DB소개</span></a></h2>
+						<ul>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_1"><span>통합 DB 소개</span></a></h5>
+								<ul class="ul08">
+									<li><a href="#" target="_blank" title="새창열림">배경 및 목적</a></li>
+									<li><a href="#" target="_blank" title="새창열림">법적근거</a></li>
+									<li><a href="#" target="_blank" title="새창열림">구출개요</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_2"><span>홈페이지 이용안내</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_3"><span>이용약관</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_4"><span>사이트맵</span></a></h5></li>
+							<li class="g-bar3" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_5"><span>관련사이트</span></a></h5></li>
+							<li class="g-bar4" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_6"><span>OpenAPI 연결</span></a></h5></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+			<div class="menu_back02"></div>
+		<!-- //gnb끝 -->
+	</div>
+
+	<!-- 서브페이지 시작 -->
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>통합DB소개</span>
+			<span class="current">이용약관 </span>
+		</div>
+	</div>
+	<div class="subwrap" id="subcont">
+		<div class="sub-top sub07">
+			<h2>이용약관(개인정보처리방침)</h2>
+			<p>교통사고분석시스템의 이용약관 안내입니다.</p>
+		</div>
+		<div class="sub-cont">
+			<h4 class="subpage-tit mt-40">도로교통공단의 교통사고 분석시스템의 개인정보 처리방침</h4>
+			<p class="yakguan-par">
+교통사고 분석시스템 (이하 "TAAS")은 도로교통공단의 패밀리사이트로서 취급하는 모든 개인정보는 관련법령에 근거하거나 정보주체의 동의에 의하여 도로교통공단에서 수집·
+보유 및 처리되고 있습니다. <br />
+「공공기관의 개인정보보호에 관한 법률」은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 도로교통공단은 이러한 법령의 규정에 따라 수집·보유 및 처리하는 개인
+정보를 공공업무의 적절한 수행과 국민의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.<br />
+또한, 도로교통공단은 관련 법령에서 규정한 바에 따라 우리 기관에서 보유하고 있는 개인정보에 대한 열람청구권 및 정정·삭제청구권 등 여러분의 권익을 존중하며, 여러분은 이
+러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다. 다음은 TAAS의 개인정보 보호방침을 설명드리겠습니다. <br />
+TAAS의 개인정보 보호방침은 도로교통공단이 운영하는 여러 홈페이지와 같이 이용자 여러분의 개인정보를 보호하기 위한 [홈페이지 이용자의 개인정보 보호]와 소관업무를 수행
+하는데 필요한 개인정보 취급에 대한 [컴퓨터 등에 의해 처리되는 개인정보 보호]로 구성되어 있습니다. 
+			</p>
+
+			<h4 class="subpage-tit mt-40">TAAS 홈페이지에서의 개인정보보호 </h4>
+			<p class="yakguan-par">
+여기는 TAAS 웹사이트 입니다. 교통사고 분석시스템 홈페이지의 이용에 대해 감사드리며, 홈페이지에서의 개인정보 보호방침에 대하여 설명을 드리겠습니다. 이는 현행 「공공기관
+의 개인정보보호에 관한 법률」 및 [공공기관의 개인정보보호를 위한 기본지침]에 근거를 두고 있습니다. </p>
+		<p class="yakguan-par mt-10"> <span class="b-txt">자동으로 수집, 저장되는 정보</span> 
+		  <ul class="yakguan-list">
+			 <li><span>•</span> 여러분이 TAAS 홈페이지를 이용할 경우 다음의 정보는 자동적으로 수집, 저장됩니다. </li>
+			 <li><span>•</span> 이용자 여러분의 인터넷 도메인명과 TAAS 홈페이지를 방문할 때 거친 웹사이트의 주소 </li>
+			 <li><span>•</span> 이용자의 브라우져 종류 및 OS 방문일시 등 </li>
+		   </ul>
+		   </p>
+					<p class="yakguan-par">	위와 같이 자동 수집·저장되는 정보는 이용자 여러분에게 보다 나은 서비스를 제공하기 위해 홈페이지의 개선과 보완을 위한 통계분석, 이용자와 웹사이트간의 원활한 의사소통 등
+			을 위해 이용되어질 것입니다. 다만, 법령의 규정에 따라 이러한 정보를 제출하게 되어 있을 경우도 있다는 것을 유념하시기 바랍니다.
+			</p>
+			
+			<h4 class="subpage-tit mt-40">[컴퓨터 등에 의해 처리되는 개인정보]에 대한 취급 및 처리방침</h4>
+			<p class="yakguan-par mt-10"> <span class="b-txt">개인정보의 수집 및 보유</span> 
+			<div class="board-rapper">					
+				<table class="table01 mt-10">
+					<colgroup>
+						<col style="width:30%;"  />
+						<col style="width:;"  />
+					</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">항목</th>
+								<th scope="col">내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>보유목적</td>
+								<td class="last">페이지 서비스 제공을 위한 회원관리</td>
+							</tr>
+							<tr>
+								<td>보유근거</td>
+								<td class="last">홈페이지 회원 약관</td>
+							</tr>
+							<tr>
+								<td>수집방법</td>
+								<td class="last">홈페이지를 통한 개인동의 대상범위 대국민</td>
+							</tr>
+							<tr>
+								<td>보유기간</td>
+								<td class="last">회원탈퇴전까지</td>
+							</tr>
+							<tr>
+								<td>열람예정일</td>
+								<td class="last">수시</td>
+							</tr>
+							<tr>
+								<td>사용부서</td>
+								<td class="last">통합DB처</td>
+							</tr>
+							<tr>
+								<td>열람청구부서 및 주소</td>
+								<td class="last">통합DB처/서울시 중구 왕십리로 407 도로교통공단</td>
+							</tr>
+							<tr>
+								<td>열람제한항목</td>
+								<td class="last">없음</td>
+							</tr>
+							<tr>
+								<td>열람제한사유</td>
+								<td class="last">없음</td>
+							</tr>
+							<tr>
+								<td>제공기관</td>
+								<td class="last">없음</td>
+							</tr>
+							<tr>
+								<td>제공근거</td>
+								<td class="last">없음</td>
+							</tr>
+							<tr>
+								<td>제공항목</td>
+								<td class="last">없음</td>
+							</tr>
+							<tr>
+								<td>기록항목</td>
+								<td class="last">이름, 전화번호, 이메일</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		   </p>
+		   <h4 class="subpage-tit mt-40">개인정보의 이용 및 제공의 제한</h4>
+			<p class="yakguan-par mt-10">
+				TAAS에서 수집·보호하고 있는 개인정보는 일반 행정정보와 달리 이용 및 제공에 엄격한 제한이 있는 정보입니다. 「공공기관의 개인정보보호에 관한 법률」제10조(이용 및 제공의 제한)는 이에 관하여 다음과 같이 규정하고 있습니다. 
+				다른 법률에 의해 보유기관 내부에서 이용하거나 보유기관이외의 자에게 제공하는 경우를 제외하고는 당해 개인정보파일의 보유목적 외의 목적으로 처리정보를 이용하게 하거나 제공하여서는 아니된다. 
+				다음의 경우, 어느 하나에 해당하는 경우에는 당해 개인정보파일의 보유목적외의 목적으로 처리정보를 이용하게 하거나 제공할 수 있다. 다만, 어느 하나에 해당하더라도 정보주체 또는 제3자의 권리와 이익을 부당하게 침해할 우려가 있다고 인정되는 때에는 그러하지 아니하다.
+			</p>
+			<p class="yakguan-par mt-10">
+				정보주체의 동의가 있거나 정보주체에게 제공하는 경우
+				처리정보를 보유목적 외의 목적으로 이용하게 하거나 제공하지 아니하면 다른 법률에서 정하는 소관 업무를 수행할 수 없는 경우로서 제20조에 따른 공공기관개인정보보호심의위원회의 심의를 거친 경우
+				조약 기타 국제협정의 이행을 위하여 외국정부 또는 국제기구에 제공하는 경우
+				통계작성 및 학술연구등의 목적을 위한 경우로서 특정개인을 식별할 수 없는 형태로 제공하는 경우
+				정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명등으로 동의를 할 수 없는 경우로서 정보
+				주체외의 자에게 이용하게 하거나 제공하는 것이 명백히 정보주체에게 이익이 된다고 인정되는 경우
+				범죄의 수사와 공소의 제기 및 유지에 필요한 경우
+				법원의 재판업무수행을 위하여 필요한 경우
+				</p>
+				<p class="yakguan-par mt-10">
+				우리기관은 개인정보의 이용 및 제공에 있어 관계법령을 엄수하여 부당하게 이용되지 않도록 노력하겠습니다.
+			</p>
+			<h4 class="subpage-tit mt-40">개인정보파일의 열람 및 정정·삭제 청구</h4>
+			<p class="yakguan-par mt-10">우리기관이 보유하고 있는 개인정보파일은「공공기관의 개인정보보호에 관한 법률」(다른 법률에 규정이 있는 경우는 해당 법률)의 규정이 정하는 바에 따라 열람을 청구할 수 있습니다.</p>
+			<p class="yakguan-par mt-10">열람청구 절차(「공공기관의 개인정보보호에 관한 법률」의 경우)</p>
+			<p><img src="../../../images/web/sub/privacy_img_1.gif" alt="서브이미지"/></p>
+			<p class="yakguan-par mt-10">다음 사항은 「공공기관의 개인정보보호에 관한 법률」제13조(처리정보의 열람제한) 규정에 의하여 열람을 제한할 수 있습니다.</p>
+			<p class="yakguan-par mt-10">1. 다음 사항에 해당하는 업무로서 당해업무의 수행에 중대한 지장을 초래하는 경우 
+			  <ul class="yakguan-list">
+				<li>조세의 부과·징수 또는 환급에 관한 업무</li>
+				 <li>조세의 부과·징수 또는 환급에 관한 사항</li>
+				 <li>학력·기능 및 채용에 관한 시험, 자격의 검사, 보상금·급부금의 산정 등 평가 또는 판단에 관한 업무</li>
+				 <li>다른 법률에 의한 감사 및 조사에 관한 업무</li>
+				 <li>토지 및 주택 등에 관한 부동산 투기를 방지하기 위한 업무 등
+			   </ul>
+			  </p>
+
+			<p class="yakguan-par mt-10">2. 개인의 생명·신체를 해할 우려가 있거나 개인의 재산과 기타의 이익을 부당하게 침해할 우려가 있는 경우본인의 개인정보를 열람한 정보주체는 다음의 경우 정정·삭제를 청구할 수 있습니다
+			  <ul class="yakguan-list">
+				<li>정정·삭제 청구의 범위</li>
+				 <li><span>- </span>사실과 다르게 기록된 정보의 정정·삭제항</li>
+				 <li><span>- </span>특정항목에 해당사실이 없는 내용에 대한 삭제</li>
+				 <li>정정·삭제 청구의 절차(「공공기관의 개인정보보호에 관한 법률」의 경우) </li>
+			   </ul>
+			  </p>
+				<p><img src="../../../images/web/sub/privacy_img_2.gif" alt="서브이미지"/></p>
+			
+			 <h4 class="subpage-tit mt-40">권익침해 구제</h4>
+			<p class="yakguan-par mt-10">
+				공공기관의 개인정보보호에 관한 법률」제12조(처리정보의 열람) 제1항 및 제14조제1항(처리정보의 정정)의 규정에 의한 청구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익이 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.
+			</p>
+
+			<div class="board-rapper">					
+				<table class="table01 mt-10">
+					<colgroup>
+						<col style="width:30%;"  />
+						<col style="width:;"  />
+					</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">항목</th>
+								<th scope="col">내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>서울특별시 행정심판 위원회</td>
+								<td class="last">(02) 731-6157, 6557</td>
+							</tr>
+							<tr>
+								<td>부산광역시 행정심판 위원회</td>
+								<td class="last">(051) 888-2212</td>
+							</tr>
+							<tr>
+								<td>대구광역시 행정심판 위원회</td>
+								<td class="last">(053) 429-2137</td>
+							</tr>
+							<tr>
+								<td>인천광역시 행정심판 위원회</td>
+								<td class="last">(032) 440-2292</td>
+							</tr>
+							<tr>
+								<td>광주광역시 행정심판 위원회</td>
+								<td class="last">(062) 606-2132</td>
+							</tr>
+							<tr>
+								<td>대전광역시 행정심판 위원회</td>
+								<td class="last">(042) 600-2152</td>
+							</tr>
+							<tr>
+								<td>울산광역시 행정심판 위원회</td>
+								<td class="last">(052) 229-2132</td>
+							</tr>
+							<tr>
+								<td>경기도 행정심판 위원회</td>
+								<td class="last">(031) 249-2132</td>
+							</tr>
+							<tr>
+								<td>강원도 행정심판 위원회</td>
+								<td class="last">(033) 249-2132, 2478</td>
+							</tr>
+							<tr>
+								<td>충청북도 행정심판 위원회</td>
+								<td class="last">(043) 220-2321~4</td>
+							</tr>
+							<tr>
+								<td>충청남도 행정심판 위원회</td>
+								<td class="last">(042) 251-2133</td>
+							</tr>
+							<tr>
+								<td>전라북도 행정심판 위원회</td>
+								<td class="last">(063) 280-2132</td>
+							</tr>
+							<tr>
+								<td>전라남도 행정심판 위원회</td>
+								<td class="last">(062) 607-2131</td>
+							</tr>
+							<tr>
+								<td>경상북도 행정심판 위원회</td>
+								<td class="last">(053) 950-2133</td>
+							</tr>
+							<tr>
+								<td>경상남도 행정심판 위원회</td>
+								<td class="last">(055) 279-2133</td>
+							</tr>
+							<tr>
+								<td>제주도 행정심판 위원회</td>
+								<td class="last">(064) 710-2272</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p class="yakguan-par mt-10"> <span class="b-txt">※ 행정심판에 대한 자세한 사항은 법제처 홈페이지(http://www.moleg.go.kr)를 참고하시기 바랍니다.</span> 
+
+				<h4 class="subpage-tit mt-40">침해사항의 신고</h4>
+				<p class="yakguan-par mt-10">도로교통공단 개인정보관리책임관 : 경영정보처 한영섭 처장
+				  <ul class="yakguan-list">
+					 <li><span>- </span>이메일 : kortic@koroad.or.kr</li>
+					 <li><span>- </span>전화번호 및 Fax : 02-2230-6350 / 02-2230-6359</li>
+					 <li><span>- </span>주소 : 서울시 중구 왕십리로 407(신당5동 171번지) 도로교통공단 </li>
+				   </ul>
+				</p>
+				<p class="yakguan-par mt-10">TAAS 홈페이지 개인정보관리책임관 : 통합DB 한만식 처장
+				  <ul class="yakguan-list">
+					 <li><span>- </span> 이메일 : hmansik@koroad.or.kr</li>
+					 <li><span>- </span>전화번호 및 Fax : 02-2230-6342 / 02-2230-6444</li>
+					 <li><span>- </span>주소 : 서울시 중구 왕십리로 407(신당5동 171번지) 도로교통공단</li>
+				   </ul>
+				</p>
+			
+				<h4 class="subpage-tit mt-40">개인정보 침해ㆍ신고 처리 절차</h4>
+				<p class="yakguan-par mt-10">
+					공공기관의 개인정보보호에 관한 법률」제12조(처리정보의 열람) 제1항 및 제14조제1항(처리정보의 정정)의 규정에 의한 청구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익이 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.
+				</p>
+				<p class="yakguan-par mt-20"> <span class="b-txt">※ 행정심판에 대한 자세한 사항은 법제처 홈페이지(http://www.moleg.go.kr)를 참고하시기 바랍니다.</span> 
+				<div class="board-rapper">					
+				<table class="table01 mt-10">
+					<colgroup>
+						<col style="width:20%;"  />
+						<col style="width:;"  />
+						<col style="width:20%;"  />
+						<col style="width:20%;"  />
+					</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">1. 침해신고접수</th>
+								<th scope="col">2. 침해사실조사</th>
+								<th scope="col">3. 처리</th>
+								<th scope="col">4. 결과통보</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>웹사이트 또는 방문접수 <br/>(해당기관)	</td>
+								<td>침해여부 확인, 침해기관 방문 및 서면조사 <br/>(침해사고신고대장)	</td>
+								<td>처리 및 조치<br/>(조치보고서)</td>
+								<td class="last">신고인 및 행안부 통보<br/>(결과통보서)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="yakguan-par">법령의 규정 등에 의하여 수집한 개인정보가 수집 및 처리목적에 맞게 이용될 수 있도록 항시 지도· 감독하겠습니다.</p>
+				<p class="yakguan-par mt-20"> 이전 개인정보처리방침 보기 : <span class="b-txt">2014년 05월 30일 ~ 2015년 5월 13일 적용)</span> 
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="inner-footer">
+			<div class="wrap">
+				<ul class="foot-util">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보취급/처리방침</a></li>
+					<li class="last"><a href="#">사이트맵</a></li>
+				</ul>
+				<div class="familysite">
+					<span class="comm_sel">
+						<select>
+							<option value="">FAMILY SITE</option>
+						</select>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="footer-wrap">
+			<address>
+				<p>주소 : 우)100-789  서울특별시 중구 왕십리로 407(신당5동 171) 도로교통공단    대표전화: 02-2230-6114    팩스 : 02-2230-6113</p>
+				<p>Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+			<p class="foot-logo">
+				<img src="../../../images/web/common/foot_logo01.gif" alt="" class="mr-20" /><img src="../../../images/web/common/foot_logo02.gif" alt="" />
+			</p>
+		</div>
+	</div>
+	
+ </body>
+</html>

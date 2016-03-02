@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS 교통사고분석시스템 관리자 페이지</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../css/default.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../css/admin.css"></link>
+	<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../js/jquery.jqtransform.js"></script>
+		<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->	
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript">
+    $(function() {
+      var dates = $( "#from1, #to1" ).datepicker({
+        showOn: "button",
+          buttonImage: "../../images/admin/btn_cal.gif",
+          buttonImageOnly: true,
+          prevText: '이전 달',
+          nextText: '다음 달',
+          monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          dayNames: ['일','월','화','수','목','금','토'],
+          dayNamesShort: ['일','월','화','수','목','금','토'],
+          dayNamesMin: ['일','월','화','수','목','금','토'],
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true,
+          yearSuffix: '년',
+          onSelect: function( selectedDate ) {
+          /*
+            var option = this.id == "from1" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat ||
+                $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings );
+            dates.not( this ).datepicker( "option", option, date );
+            */
+          }
+          });
+    });
+</script>
+
+ </head>
+ <body>
+	<div id="wrapper">
+		<div id="header-area">
+			<div class="topbar">
+				<div class="innerbox clear">
+					<h1 class="sitetitle">관리자</h1>
+					<p class="loginmsg"><strong>홍길동</strong>  관리자님 환영합니다 <a href="#" class="btn-grays ml-10">로그아웃</a></p>
+				</div>
+			</div>
+			<!-- //탑바 -->
+			<div class="logoarea">
+				<div class="innerbox clear">
+					<h1 class="logo"><img src="../../images/admin/logo.gif"  alt="교ㅛ통사고 분석시스템" /></h1>
+					<p class="gohome"><a href="#" class="btn-home">홈으로</a></p>
+				</div>
+			</div>
+			<!-- //로고 영역 -->
+			<div class="subBg"></div>
+			<div class="gnbarea"  id="gnbarea">
+				<ul class="gnb clear">
+					<li class="m01">
+						<a href="#"><span>회원관리</span></a>
+					</li>
+					<li class="m02">
+						<a href="#"><span>통계관리</span></a>
+						<div class="subWrap sub02">
+							<ul>
+								<li><a href="#">방문통계</a></li>
+								<li><a href="#">방문자통계(위험도로)</a></li>
+								<li><a href="#">회원보안등급통계</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="m03">
+						<a href="#"><span>통합문서관리</span></a>
+					</li>
+					<li class="m04">
+						<a href="#"><span>작업이력관리</span></a>
+					</li>
+					<li class="m05">
+						<a href="#"><span>운영자<br />메뉴얼관리</span></a>
+					</li>
+					<li class="m06">
+						<a href="#"><span>공통코드관리</span></a>
+					</li>
+					<li class="m07 last">
+						<a href="#"><span>교통사고통계정보<br />제공실적</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //헤더 영역 -->
+		<div id="content">
+			<h3 class="page-title">위험도로예보시스템 방문자수통계</h3>
+			<h4 class="sub-tit">조회기간 설정</h4>
+			<div class="subcont">
+				<div class="top-searchbox">
+					<table width="100%" class="viewtype02">
+						<colgroup>
+							<col width="80" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+						<tr class="line">
+							<th scope="row" rowspan="3">조회설정</th>
+							<td>
+								<span>전체조회</span>
+								<span>
+								<input type="radio" id="" />
+								권한별 조회
+								</span>
+								<span class=" ml-5">
+								<select id="" class="comm_sel" style="width:128px;">
+									<option value="" selected="selected"></option>
+									<option value=""></option>
+								</select>
+								</span>
+								
+							</td>
+						</tr>
+						<tr class="line">
+							<td>
+								<span><input type="radio" id="" /> 날짜별 조회	</span> <span class="ml-10"><input type="radio" id="" /> 월별 조회	</span> <span class="ml-10"><input type="radio" id="" /> 연도별 조회	</span>
+							
+							</td>
+						</tr>
+						<tr>
+							<td>								
+								<span class="time-set">
+								<input type="text"  class="comm_input" style="width:103px;" id="from1" /> ~
+								<input type="text"  class="comm_input"  style="width:103px;" id="to1" />
+								</span>
+								
+							
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="text-r mt-10"><a href="#" class="btn-search2 ml-10">검색</a></p>
+				<!-- //상단검색 -->
+				<h4 class="sub-tit">조회결과(전체결과)</h4>
+				<div class="board-rapper">					
+					<table class="table01 mt-10">
+						<colgroup>
+							<col style="width:110px;"  />
+							<col style="width:;"  />
+							<col style="width:;"  />
+							<col style="width:;"  />
+							<col style="width:;"  />
+						</colgroup>
+							<thead>
+								<tr>
+									<th rowspan="2" scope="col">날짜</th>
+									<th colspan="2" scope="col">중복포함</th>
+									<th colspan="2" scope="col" class="last">중복미포함</th>
+								</tr>
+								<tr>
+									<th>방문자</th>
+									<th>위험도로<br />예보</th>
+									<th>방문자</th>
+									<th class="last">위험도로<br />예보</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+								<tr>
+									<td>2015.06.01</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="last"></td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					<div class="pagination">
+						<ul>
+							<li class="pg-btn"><a href="#"><img src="../../images/admin/btn_first.png" alt="처음 페이지로"></a></li>
+							<li class="pg-btn"><a href="#"><img src="../../images/admin/btn_prev.png" alt="이전 페이지로"></a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li class="pg-btn"><a href="#"><img src="../../images/admin/btn_next.png" alt="다음 페이지로"></a></li>
+							<li class="pg-btn"><a href="#"><img src="../../images/admin/btn_last.png" alt="마지막 페이지로"></a></li>
+						</ul>
+
+						<p class="position-rt"><a href="#" class="btn-excel">엑셀다운로드</a></p>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!-- //content -->
+		<div id="footer">
+			<div class="innerbox clear">
+				<div class="copy">
+					주소 : 우)100-789  서울특별시 중구 왕십리로 407(신당5동 171) 도로교통공단    대표전화: 02-2230-6114    팩스 : 02-2230-6113<br />
+					Copyright © 2015 KoROAD. All rights Reserved.
+				</div>
+				<div class="fbn">
+					<img src="../../images/admin/f_bn01.png" width="126" height="33" alt="사이버경찰청" /> <img src="../../images/admin/f_bn02.png"  alt="도로교통공단" />
+				</div>
+			</div>
+		</div>
+	</div>	
+ </body>
+</html>

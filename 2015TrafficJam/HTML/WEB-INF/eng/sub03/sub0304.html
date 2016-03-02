@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS traffic accident analysis system</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015_eng.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015_eng.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub_eng.css"></link>
+
+	<script src="../../../js/response.js"></script>
+
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/eng/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<ul class="util">
+				<li><a href="#">HOME</a></li>
+				<li class="last"><a href="#">KOREA</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>Introduction </span></a></h2>
+					<ul>
+						<li><h5><a href="#"> <span>TAAS</span></a></h5></li>
+						<li><h5><a href="#"><span>Action Plan</span></a></h5></li>						
+					</ul>
+					<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>Traffic Accident Statistical DB</span></a></h5></li>
+						<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>Driver’s Manual </span></a></h2>
+					<ul style="top:65px !important;">
+						<li><h5 ><a href="#"><span>Road Traffic Environment And Traffic Accident</span></a></h5></li>
+						<li><h5><a href="#"><span>Foundation Of Safe Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Specification Of Each Driver</span></a></h5></li>
+						<li class="clear-both"><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+						<li><h5><a href="#"><span>Risk Anticipation  And Defensive Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>About Us </span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>KoROAD</span></a></h5></li>
+						<li><h5><a href="#"><span>History</span></a></h5></li>
+						<li><h5><a href="#"><span>Organization</span></a></h5></li>
+						<li><h5><a href="#"><span>Major Program</span></a></h5></li>
+						<li><h5><a href="#"><span>Location</span></a></h5></li>
+						<li><h5><a href="#"><span>Contact Us</span></a></h5></li>
+					</ul>
+					
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>Introduction</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg01_1"> <span>TAAS</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg01_2"><span>Action Plan</span></a></h5></li>
+						</ul>
+							
+					<li>
+						<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>Traffic Accident Statistical DB</span></a></h5></li>
+							<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>Driver’s Manual</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" class="full-box icon-bg03_1" ><span>Road Traffic Environment<br /> And Traffic Accident</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Foundation Of Safe Driving</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Specification Of Each Driver</span></a></h5></li>
+							<li><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+							<li><h5><a href="#"><span>Risk Anticipation<br /> And Defensive Driving</span></a></h5></li>
+							<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>About Us</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg04_1"><span>KoROAD</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_2"><span>History</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" class="icon-bg04_3"><span>Organization</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_4"><span>Major Program</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" class="icon-bg04_5"><span>Location</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" class="icon-bg04_6"><span>Contact Us</span></a></h5></li>
+						</ul>
+					</li>					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+
+		<!-- //gnb끝 -->
+	</div>
+
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>Driver’s Manual</span>
+			<span class="current">Specification of Each Driver</span>
+		</div>
+	</div>
+	<!-- // 로케이션 영역 -->
+	<div class="subwrap"  id="subcont">
+			<div class="subpage-toprapper">
+				<div class="sub-top sub04">
+					<h2>Specification of Each Driver</h2>
+					<!-- <p>Traffic AccidentStatistical DataBase</p> -->
+				</div>
+			</div>
+			<!-- //네비긑 -->
+		<div class="sub-cont">	
+			
+			<h4 class="subpage-tit mt-20">Specification Of Each Driver</h4>
+
+			<p class="sub-tit02">A. Disposition of Driver</p>
+			<p class="sub-tit03 mt-10">(1) Tendency of accident free driver</p>
+ 	 	 	<ul class="yakguan-list2">
+				<li><span>•</span> 	
+				Drive carefully
+ 	<p>Make effort to respond well to the changes of road or traffic environment. When making the direction or lane change, always inform with signal light or hand signal, and when driving at night in particular, do not only drive depending on the indications of the traffic light, but also consider the fact that there are people who violate the laws and regulations, speeding and jaywalking</p>
+					</li>
+
+<li><span>•</span> Do not undertake anything that interferes with driving
+ 		<p>While driving, knowing the fact that in case when the driver is in negligence of focusing the front view by unnecessary actions such as looking elsewhere can lead to major accident thus it is best not to do anything that reduces attention span such as use of mobile phone, smoking, watching TV and talking.</p>
+					</li>
+
+<li><span>•</span> Restraint the impulsive act and control yourself
+ 		<p>Always have the awareness of speeding and passing is dangerous and drive with care. Acknowledge the misery of the accident and do not rush, get upset or be excited while driving.</p>
+					</li>
+			</ul>
+ 	 	 	<p class="tbl-tit mt-20">[Do not undertake anything that interferes with driving for the accident free driving]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img26.gif"  alt="" /></div>
+
+			<p class="sub-tit03 mt-10">(2) Tendency of prone to accident drivers</p>
+ 	 	  	 	 	<ul class="yakguan-list2">
+
+				<li><span>•</span>Self-centered
+ 	<p>Thoroughly critical on the matters inconsistent to his own opinion. They tend to think that they violation of signal or passing is inevitable while other drivers commit such action, it is intentional and habitual behavior.</p>
+					</li>
+
+				<li><span>•</span> Significant fluctuation of emotion
+ 	 	<p>Severely temperamental. Small things make him edge and take action as wish without considering the consequences and has the tendency to ignore the traffic laws and regulations and drive recklessly.</p>
+					</li>
+
+				<li><span>•</span> Aggressive
+ 	 	<p>When he is angry, take whatever the action available. Driver gets upset when other driver passes him and even when the car in the front drives under the speed limit, he make the other driver nervous by tailgating with high beam on or honking.</p>
+					</li>
+			</ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[The aggressive drivers have higher tendency to be in the frequent accident driver]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img27.gif"  alt="" /></div>
+ 	 	  	 	 	<ul class="yakguan-list2">
+<li><span>•</span>Hysterical
+ 	<p>Easy to get mad and easy to get excited over minor things. He has hard time tolerating the traffic jam and when traffic does not move immediately after change of traffic light, he would honk and urge other driver to move forward.
+</p>
+					</li>
+<li><span>•</span>Lack in self-control
+ 	<p>Whatever was on his mind can not be reserved. For example, if passing the car was on mind, he does it no matter what the risk is. Knowing the fact that traffic laws and regulations has to be abided, he/she is quick to follow when other cars commit violation and think certain level of violation is inevitable depend on the situation.</p>
+					</li>
+
+<li><span>•</span>Lack of consideration for others
+ 	<p>Consider his position only and not about the others. He would not slow down for pedestrian but to use the horn to forcefully move them out of the way or refuse allow others to cut in on the merged area.</p>
+					</li>
+			</ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[When you recognize the rushing mode while driving, self-restraint will take over]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img28.gif"  alt="" /></div>
+
+			<p class="sub-tit03 mt-10">(3) Attitude for safe driving</p>
+ 	  	 	  <ul class="yakguan-list2">	 	
+				<li><span>•</span>Restrain the mind from rushing mode
+					People tend to hurry things even when driving without time constraint. You need to immediately recognize the fact that ‘rushing mode’ come in when you are upset or angry while you are driving.</p>
+									</li>
+
+				<li><span>•</span>Relax and drive
+					There is always the rushing mind or wrong action of driver behind the scene of accident. After you are already in the rushing mode it is hard to recover the relaxed mind thus, you should not create the situation to be in the rushing mode in the first place.</p>
+					</li>
+			</ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[Relaxed driving eliminate risky situation]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img29.gif"  alt="" /></div>
+
+			<p class="sub-tit02">B. Elderly driver and Safe driving</p>
+ 	 		<p class="sub-tit03 mt-10">(1) Characteristics of elderly drivers
+ 	  	  	  <ul class="yakguan-list2">		 	
+				<li><span>•</span>Takes longer to apply the brake
+ 	<p>Elderly drivers should always maintain safe distance with the car in the front because it takes longer time to react to the danger. Also reduce the speed and prepare for sudden danger if possible.</p>
+					</li>
+
+				<li><span>•</span> When fatigue, the vision is drastically weakens
+ 	 	<p>Avoid long distance trip if possible and take frequent rest for long distance driving.</p>
+					</li>
+
+				<li><span>•</span>Takes longer to focus the vision
+ 	 	<p>Maintain safe distance by reducing the speed because there may be delay in the risk detection and takes longer to look into the rear view mirror.</p>
+					</li>
+
+				<li><span>•</span>Risk anticipation capability is declined
+ 	 	<p>An elderly have high risk of involve in accident in a sudden danger situation due to panic, the best policy is reducing the speed.</p>
+					</li>
+				</ul>
+
+ 	 	<p class="sub-tit03 mt-10">(2) Consideration for elderly driver</p>
+ 	 	 	<p class="sub-txt">With the prolonged average life span, and longer survival period after the retirement, elderly driver became a part of ordinary feature on the road and became a reality that is not totally irrelevant to my family but with myself as well. Rather than hurl stream of profanity at slow moving vehicle or hesitant driver when you come across with by taking advantage for being anonymous, think of elderly as if they can be your parents or even yourself someday and courteous attitude is in order.</p>
+
+ 	<p class="sub-tit02">C. Safe Driving following the Major Traffic Laws and Regulations</p>
+ 	 	<p class="sub-tit03 mt-10">(1) Compliance with signal and safe passing of intersection</p>
+ 	 	 	<p class="sub-txt">All cars must follow the instruction of signal or traffic safety sign, police officer on traffic duty, and other officials. At this time, signal and instruction by the police officer take the priority.
+Among the regulatory sign of the safety signs, violations apply only 12 safety signs in conjunction which are street closed sign, do not enter sign and stop sign.</p>
+
+ 	 	 	<p class="tbl-tit mt-20">[The hand signal of police officer is required for responding to diverse traffic situations]</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+						<colgroup>
+							<col width="25%" />
+							<col width="25%" />
+							<col width="25%" />
+							<col width="25%" />
+						</colgroup>
+					  <tbody>
+					  <tr>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Proceed" src="../../../images/eng/img4-3-112.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Left turn" src="../../../images/eng/img4-3-113.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Right turn" src="../../../images/eng/img4-3-114.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Stop" src="../../../images/eng/img4-3-115.gif"></td></tr>
+					  <tr>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Proceed" src="../../../images/eng/img4-3-116.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Left turn" src="../../../images/eng/img4-3-117.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Right turn" src="../../../images/eng/img4-3-118.gif"></td>
+						<td class="text-c" style="background:#d3dde3;"><img alt="Stop" src="../../../images/eng/img4-3-119.gif"></td></tr>
+					  <tr>
+						<th class="text-c">Proceed</th>
+						<th  class="text-c">Left turn</th>
+						<th  class="text-c">Right turn</th>
+						<th  class="text-c last">Stop</th>
+					   </tr>
+					</tbody>
+				  </table>
+			</div>
+
+ 	 	 	<p class="tbl-tit mt-20">[Table for major regulatory signs ]</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+					  <tbody>
+						  <tr>
+							<td  class="text-c">201</td>
+							<td  class="text-c">202</td>
+							<td  class="text-c">203</td>
+							<td  class="text-c">204</td>
+							<td  class="text-c">205</td>
+							<td  class="text-c last">206</td></tr>
+						  <tr>
+							<td class="text-c" width="16%" bgcolor="#e9eef2"><img alt="Road Closed" src="../../../images/eng/img4-3-100.gif"></td>
+							<td class="text-c" width="16%" bgcolor="#e9eef2"><img alt="No passenger cars" src="../../../images/eng/img4-3-101.gif"></td>
+							<td class="text-c" width="16%" bgcolor="#e9eef2"><img alt="No Cargo Vehicles" src="../../../images/eng/img4-3-102.gif"></td>
+							<td class="text-c" width="16%" bgcolor="#e9eef2"><img alt="No buses" src="../../../images/eng/img4-3-103.gif"></td>
+							<td class="text-c" width="16%" bgcolor="#e9eef2"><img alt="No Motorcycles" src="../../../images/eng/img4-3-104.gif"></td>
+							<td class="text-c last" width="16%" bgcolor="#e9eef2"><img alt="No passenger" src="../../../images/eng/img4-3-105.gif"></td></tr>
+						  <tr>
+							<td class="text-c">Road Closed</td>
+							<td class="text-c">No passenger cars </td>
+							<td class="text-c">No Cargo Vehicles </td>
+							<td class="text-c">No buses </td>
+							<td class="text-c">No Motorcycles </td>
+							<td class="text-c last">No 
+							passenger<br>Cars/Motocycle</td>
+						</tr>
+						  <tr>
+							<td  class="text-c">207</td>
+							<td  class="text-c">208</td>
+							<td  class="text-c">209</td>
+							<td  class="text-c">210</td>
+							<td  class="text-c">211</td>
+							<td  class="text-c last">217</td></tr>
+						  <tr>
+							<td class="text-c" bgcolor="#e9eef2"><img alt="No tractors/cultivatiors" src="../../../images/eng/img4-3-106.gif"></td>
+							<td class="text-c" bgcolor="#e9eef2"><img alt="No Animal Drawn Vehicles" src="../../../images/eng/img4-3-107.gif"></td>
+							<td class="text-c" bgcolor="#e9eef2"><img alt="No Hand carts" src="../../../images/eng/img4-3-108.gif"></td>
+							<td class="text-c" bgcolor="#e9eef2"><img alt="No Bicycles" src="../../../images/eng/img4-3-109.gif"></td>
+							<td class="text-c" bgcolor="#e9eef2"><img alt="Do Not Enter" src="../../../images/eng/img4-3-110.gif"></td>
+							<td class="text-c last" bgcolor="#e9eef2"><img alt="Do Not pass" src="../../../images/eng/img4-3-111.gif"></td></tr>
+						  <tr>
+							<td>No 
+							  tractors/<br>cultivatiors</td>
+							<td>No Animal<br>Drawn 
+							  Vehicles</td>
+							<td>No Hand carts </td>
+							<td>No Bicycles</td>
+							<td>Do Not Enter</td>
+							<td class=" last">Do Not 
+						  pass</td>
+						</tr>
+				</tbody>
+			</table>
+			</div>
+
+			<p class="tbl-tit mt-20">[Types and meanings of vehicle signal ]</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+			            <tbody>
+			              <tr>
+			                <td width="21%">By Signal </td>
+			                <td width="79%">Contents </td></tr>
+			              <tr>
+			                <td>Green Light</td>
+			                <td class="text-l "><span>•</span> A carriage may 
+			                  go straight and make slow right turn without interfering the 
+			                  traffic.<br><span>•</span> At a place with 
+			                  non-protected left turn, make left turn when not interfering 
+			                  with the other traffic following the&nbsp; signal. However, 
+			                  when interfered with other traffic, it may be liable for 
+			                  traffic violation.</td>
+						 </tr>
+			              <tr>
+			                <td>Yellow light</td>
+			                <td class="text-l "><span>•</span> A carriage may 
+			                  make right turn, and to make the right turn, it may not 
+			                  interfere the crossing of pedestrian.<br><span>•</span> When 
+			                  there is a stop line or pedestrian crossing road, carriage 
+			                  shall stop before the intersection, and if entered into the 
+			                  intersection, promptly proceed out of the intersection.</td>
+						</tr>
+			              <tr>
+			                <td>Red light </td>
+			                <td class="text-l "><span>•</span> A carriage has 
+			                  to stop before the stop line or pedestrian crossing road or 
+			                  before the intersection.<br><span>•</span> A carriage may 
+			                  make the right turn without interfering the side traffic 
+			                  moving straight.</td>
+						  </tr>
+			              <tr>
+			                <td>Green arrow </td>
+			                <td class="text-l "><span>•</span> A carriage may 
+			                  proceed to the arrow direction. </td></tr>
+			              <tr>
+			                <td>Flashing&nbsp; <br>red light </td>
+			                <td class="text-l "><span>•</span> When there is a 
+			                  stop line or&nbsp; pedestrian crossing road, carriage shall 
+			                  stop before the intersection, and proceed forward with paying 
+			                  attention to other traffic. </td></tr>
+			              <tr>
+			                <td>Flashing&nbsp;<br>yellow light </td>
+			                <td class="text-l "><span>•</span> A carriage 
+			                  cannot proceed with paying attention to other traffic.</td></tr>
+			              <tr>
+			                <td>Red × mark<br>Light </td>
+			                <td class="text-l "><span>•</span> A carriage 
+			                  cannot proceed with the designed lane with × mark.</td></tr>
+			              <tr>
+			                <td>Flashing&nbsp;<br>red × mark </td>
+			                <td class="text-l "><span>•</span> A carriage can 
+			                  not enter into the lane with × mark and if entered, promptly 
+			                  change the lane</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+	<p class="sub-tit03 mt-10">(2) Method of drive over on intersection</p>
+			<ul class="yakguan-list2">
+				<li><span>•</span> 	 The traffic signal is to prevent the accident by maintain smooth traffic flow thus it is most important to precisely understand the signal.</li>
+
+<li><span>•</span>Maintain plenty of safe distance around the intersection area and observe the situation with the 2~3 cars in the front.</li>
+
+<li><span>•</span>Make sure it is completely safe before you start moving even with the green light and always consider that there may be a car or a pedestrian might suddenly appear without observing the signal.</li>
+
+<li><span>•</span>When approaching intersection, enter to the location with the clear view of the signal, and maintain sufficient distance from large cars due to blocked view of signal.</li>
+
+<li><span>•</span>When turning, the rear wheels turn further inside than the front wheels. When making right turn in particular, care is required not to have a bicycle or pedestrian hit by the rear wheel.</li>
+
+<li><span>•</span>After learning the lane direction of destination before hand, pass slowly and prepare to signal and be aware of other traffic and not to interfere with other cars.</li>
+			</ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[When making right turn at the intersection, be aware of the bicycle or pedestrian on the right.]</p>
+
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img30.gif"  alt="" /></div>
+
+			<ul class="yakguan-list2">
+				<li><span>•</span> Even for green light, do not enter if the traffic is congested and you might end up stop within the intersection.</li>
+				<li><span>•</span>When the light is turned to yellow, if you step on the brake too quickly without considering the car behind or too rush to pass can result in accident, thus you might prepare for change of light by reducing the speed when you are approaching the intersection.</li>
+				<li><span>•</span>Yellow light after the green light means the ‘beginning of red light’ rather than the ‘extension of green light’.</li>
+				<li><span>•</span>While the traffic is not cleared, or unable to confirm, momentarily stop at the intersection and check the safety.</li>
+			</ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[When approaching to the intersection, reduce the speed to respond to the change of signal]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img31_1.gif"  alt="" /></div>
+
+ 	 	 	<p class="tbl-tit mt-20">	[The right-of-way at the intersection should observed where there is no traffic light]</p>
+ 			<div class="trafic-img"><img src="../../../images/eng/manual_img31.gif"  alt="" /></div>
+
+		<p class="sub-tit03 mt-10">(3) Right-of-way at the intersection where the traffic is not cleared</p>
+			<ul class="yakguan-list2">
+				<li>① Car with the all-time right-of-way with emergency car and others</li> 
+				<li>② Car entered first into the intersection </li>
+				<li>③ Car entering from the broader road </li>
+				<li>④ Car entered from the right side of the road</li>
+				<li>⑤ For making left turn: Straight oncoming car or car turing right</li>
+				<li>⑥ For going straight or right turn: Car already making left turn</li>
+				<li>⑦ Temporarily stopped or the car which is on the side without the yield sign</li>
+			</ul>
+
+		<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="10%" />
+							<col width="" />
+						</colgroup>						
+						<thead>
+			              <tr>
+			                <td colspan="2" class="last">Traffic consultation office</td>
+							</tr>
+						 </thead>
+			              <tbody>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">At the T-shaped intersection 
+			                  without the left turn signal, I made the left turn with red 
+			                  light and was ticketed. The walking sign was on with the red 
+			                  light, and the cars on the opposite sides are all stopped, and 
+			                  why was this a violation?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td  class="last pdl-15 text-l">The red signal is 
+			                  the signal for stop or right turn thus making left turn is in 
+			                  violation of the signal. However, the left turn can be made if 
+			                  there is a separate sign to make the left turn at the time of 
+			                  red light.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td class="last  pdl-15 text-l" >At the intersection with 
+			                  unprotected left turn sign, I made the left turn with red 
+			                  light and was ticketed. Which violation does it fall under? 
+			              </td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last  pdl-15  text-l" >The unprotected left 
+			                  turn should be made with the green light and not to be 
+			                  interfere with the opposite traffic. If interfered with the 
+			                  opposite traffic or made the left turn on other signals, it is 
+			                  the signal violation.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td  class="last  pdl-15  text-l">In the event of 
+			                  accident with personal injury by mutual signal violation, how 
+			                  will the penalty point be given? </td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">In the event of 
+			                  accident for signal violation on both parties, the penalty on 
+			                  personal injury is applied to the driver with more serious 
+			                  violation to cause the accident. 
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+
+	<p class="sub-tit03 mt-10">(4) Status of Vehicle vs. Pedestrian</p>
+	
+ 	 	 	<p class="tbl-tit mt-20">[Status of each accident type for pedestrian in 2010 / Unit : person, %]</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+				 <thead>
+				  <tr>
+					<th>Classification </th>
+					<th>Total </th>
+					<th>While Crossing </th>
+					<th>While <br>Passing on  
+					  <br>Road </th>
+					<th>While <br>Passing on 
+					  <br>Roadside </th>
+					<th>While Passing <br>on Sidewalk </th>
+					<th class="last">Others </th>
+				 </tr>
+				 <thead>
+				  <tbody>
+				  <tr>
+					<td>Persons killed </td>
+					<td>2,010<br>(100.0%) </td>
+					<td>1,063<br>(52.9%) 
+					</td>
+					<td>263<br>(13.1%) </td>
+					<td>145<br>(7.2%) </td>
+					<td>83<br>(4.1%) </td>
+					<td class="last">456 <br>(22.7%) 
+				  </td></tr>
+				  <tr>
+					<td>Persons Injuried</td>
+					<td>50,396<br>(100.0%) 
+					</td>
+					<td>22,082<br>(43.8%) 
+					</td>
+					<td>5,590<br>(11.1%) 
+					</td>
+					<td>4,365<br>(8.7%) </td>
+					<td>3,069<br>(6.1%) </td>
+					<td class="last">15,290<br>(30.3%) 
+					</td>
+				  </tr>
+				</tbody>
+			  </table>
+			</div>
+		<p class="sub-tit03 mt-10">(5) General characteristics of behavior for pedestrian</p>
+					<ul class="yakguan-list2">
+
+ 	 	 	 <li><span>•</span>They do not think that the driver might not be able to see them.</li>
+
+ <li><span>•</span>They assume that the drivers will reduce the speed or avoid to hit them.</li>
+
+ <li><span>•</span>They frequently cross the road carelessly when there is less traffic of cars or congested.</li>
+
+ <li><span>•</span>There are cases they jump in to the road where the speed of approaching car was unable to determine.</li>
+
+ <li><span>•</span>They may not fully understand that a car needs stopping distance to in order to stop.	</li>
+		   </ul>
+
+ 	 	 	 	 	 	<p class="tbl-tit mt-20">[Children do not think of danger when they have a subject of interest]</p>
+
+	<div class="trafic-img"><img src="../../../images/eng/manual_img32.gif"  alt="" /></div>
+
+
+
+
+			<p class="sub-tit03 mt-10">(6) General characteristics of behavior for children</p>
+								<ul class="yakguan-list2">
+ 	 	 	 <li><span>•</span>While child hold hands of parents but suddenly run into or cross the road. They think the headlight of the car would see them first.</li>
+
+ 	 	 	 <li><span>•</span>They jump into the road thinking that cars would stop by raising their hands right in front of the car.</li>
+
+ 	 	 	 <li><span>•</span>When children have subject of interest on the other side of the road, they may run toward it suddenly.</li>
+
+ 	 	 	 <li><span>•</span>Jump into the road to catch the pet or ball while playing. When playing, children may not notice the close by.</li>
+		   </ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[The pedestrians have the highest priority on road]</p>
+	<div class="trafic-img"><img src="../../../images/eng/manual_img33.gif"  alt="" /></div>
+
+ 	 			<p class="sub-tit03 mt-10">(7) Pedestrians have the highest priority on the road</p>
+<ul class="yakguan-list2">
+ 	 	 	 <li><span>•</span>Owner of the road is not the cars, it is the pedestrians. Always have the attitude to protect them as if they are the members of your own family.</li>
+
+ 	 	 	 <li><span>•</span>Pedestrian's actions are not as prompt as the driver would expect, thus it is best to slow down when they appear.</li>
+
+ 	 	 	 <li><span>•</span>When a pedestrian is crossing the cross walk, stop at the stop line for not to interfere or threaten the pedestrian.</li>
+
+ 	 	 	 <li><span>•</span>Even in the event of proceeding along the vehicle signal, it shall not be interfered with pedestrian who crossing the cross walk. </li>
+
+ 	 	 	 <li><span>•</span>Do not interfere when pedestrian is crossing the crosswalk or nearby road with no traffic light or crossing signal.</li>
+
+ 	 	 	 <li><span>•</span>Pass slowly with the safe distance when passing pedestrians in the narrow street without the driveway and when pedestrians are in the safe area installed on the driveway. </li>
+
+ 	 	 	 <li><span>•</span>When small children crossing the intersection or playing in alley without the parent's supervision, or when the visually impaired or other disabled crossing the road, take appropriate action for safety or stop.</li>
+
+ 	 	 	 <li><span>•</span>Be aware that sometimes the disabled person may cross under the overpass or over and on the underground.</li>
+
+ 	 	 	 <li><span>•</span>Be cautious when the two way street has frequent passing of pedestrians and children may running out of the space between the parked cars.</li>
+		   </ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[When entering and exiting the gas station or parking lot, stop first and do not interfere with the pedest rian.]</p>
+				<div class="trafic-img"><img src="../../../images/eng/manual_img34.gif"  alt="" /></div>
+
+		<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="10%" />
+							<col width="" />
+						</colgroup>						
+						<thead>
+			              <tr>
+			                <td colspan="2" class="last">Traffic consultation office</td>
+							</tr>
+						 </thead>
+			              <tbody>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">When there is an accident while driving on the sidewalk within the vehicle access permitted area, how will it be disposed?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td  class="last pdl-15 text-l">If accident arises on the sidewalk permitted for vehicle access, by Article 3 paragraph (2), clause(ix) (Road Encroachment Accident) under the Special Act on Traffic Accident Processing for 'interfering with pedestrian crossing while driving on the sidewalk' and be accounted for criminal punishment.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td class="last  pdl-15 text-l" >What violation would it apply for car that collided with the passing motorcycle that was making right turn under the crosswalk signal in green with the intersection signal in red?
+			              </td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last  pdl-15  text-l" >In the event that there is no vehicle signal on the cross road and has the vehicle signal on the intersection, all cars are under obligation to stop before the crossing road. Therefore, when collided with a motorcycle crossing the cross road on pedestrian signal (green), it is applicable for the traffic violation.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td  class="last  pdl-15  text-l">An accident occurred when there was no distance between the cars and rear ended the front car and the impact caused to push the front car to hit the pedestrian crossing the  cross way pedestrian road for 10 weeks of treatment. What kind of punishment will be rendered and should the stipulation be reached?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">This accident is processed as the accident within the pedestrian crosswalk. Under the Special Act on Traffic Accident Processing for safety including slow down on the pedestrian crosswalk, regardless of subscription to insurance or agreement with victim, it is subject of criminal punishment (imprisonment, penalty) and the offending driver is subject of license revocation or suspension depending on the outcome of the accident. Stipulation is a mitigating circumstances for criminal prosecution to effect on the sentencing.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+
+ 	 	 	<p class="sub-tit03 mt-20">(8) Implication of centerline</p>
+				<div class="trafic-img"><img src="../../../images/eng/manual_img35.gif"  alt="" /> <img src="../../../images/eng/manual_img36.gif"  alt="" /></div>
+			<ul class="yakguan-list2">
+<li><span>•</span>A carriage can not cross over the yellow solid line.</li>
+
+<li><span>•</span>The yellow dotted line can be crossed over to the opposite lane momentarily with careful observation of oncoming traffic, and must be back on the proceeding direction lane.</li>
+
+<li><span>•</span>When is combination of solid yellow line and dotted line, the side with dotted line for carriage may cross over to the opposite traffic and back but no crossing is allowed on the side of solid line.</li>
+		   </ul>
+ 	 	<p class="sub-tit03 mt-20">(9) Definition and standard of center lane violation</p>
+			<ul class="yakguan-list2">
+ 	 	 	<li><span>•</span>Center lane violation is the provision of Article 13 paragraph (3) of the Road Traffic Law as it describes “the driver of carriage has to drive on the right side from the center (it means the center in the event of having the centerline) of the road (vehicle road on the road classified with the pedestrian road and vehicle road).”</li>
+
+			<li><span>•</span>The yellow solid line of center lane prohibits the car to cross, the center lane violation includes the circumstances when any of the following crosses the center lane not only the wheels but also any part of the car and cargo products.</li>
+		   </ul>
+ 	 	<p class="sub-tit03 mt-20">(10) Safe passing</p>
+					<ul class="yakguan-list2">
+ 	 	 		<li><span>•</span>Passing must be done on to the left side and estimate the time and distance needed for passing in advance. If the speed difference with the front car is minimum of 20km/h, it would be dangerous.</li>
+
+				<li><span>•</span>Passing over the yellow solid center lane is absolutely prohibited, due to the high risk of collision with the on-coming car.</li>
+
+				<li><span>•</span>Stop passing when the on-coming car approaches faster than expected.	</li>
+		   </ul>
+
+
+			<p class="tbl-tit mt-20">[Passing is possible when the driver’s speed is at least 20km/h faster than the car in the front]</p>
+				<div class="eng-tblbox">
+						<table class="table01 mt-10">
+							<thead>
+							  <tr>
+								<th  width="11%" rowspan="2">Speed of<br>the 
+								  car <br>(km/h) </th>
+								<th  width="14%" rowspan="2">Speed of 
+								  <br>car in front <br>(km/h) </th>
+								<th  width="13%" rowspan="2">Speed of 
+								  <br>your car<br>(km/h) </th>
+								<th  colspan="2">Distance (m) </th>
+								<th  width="15%" rowspan="2">Required 
+								  <br>minimum <br>distance (m) </th>
+								<th  width="12%" rowspan="2">Required 
+								  <br>minimum <br>time(sec) </th>
+								<th  width="8%" rowspan="2" class="last">Remark </th></tr>
+							  <tr>
+								<th  width="10%">Front </th>
+								<th  width="10%" class="last">Back </th>
+							</tr>
+							</thead>
+							  <tbody>
+							  <tr>
+								<td rowspan="3">
+								  10 </td>
+								<td>
+								  50 </td>
+								<td>
+								  60 </td>
+								<td>
+								  44 </td>
+								<td>
+								  32 </td>
+								<td>
+								  516</td>
+								<td>
+								  32</td>
+								<td rowspan="3" class="last">
+								 Inappr<br>opriate</td></tr>
+							  <tr>
+								<td>
+								  60</td>
+								<td>
+								  70</td>
+								<td>
+								  58</td>
+								<td>
+								  44</td>
+								<td>
+								  784</td>
+								<td>
+								  40</td></tr>
+							  <tr>
+								<td>
+								  90</td>
+								<td>
+								  100</td>
+								<td>
+								  112</td>
+								<td>
+								  93</td>
+								<td>
+								  2,150</td>
+								<td class="last">
+								  77</td></tr>
+							  <tr>
+								<td rowspan="2">
+								  
+								  20</td>
+								<td>
+								  50</td>
+								<td>
+								  70</td>
+								<td>
+								  58</td>
+								<td>
+								  32</td>
+								<td>
+								  350</td>
+								<td>
+								  18</td>
+								<td rowspan="2" class="last">
+								 Appropriate</td></tr>
+							  <tr>
+								<td>
+								  60</td>
+								<td>
+								  80</td>
+								<td>
+								  76</td>
+								<td>
+								  44</td>
+								<td>
+								  520</td>
+								<td class="last">
+								  23</td>
+							</tr>
+						</tbody>					
+				</table>				
+			</div>
+
+			<div class="clear">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">(11) Method of safely helping the other car to pass	</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>WWhen the car in the back attempts to pass, cooperate and slow down until it passes by. If he is interfered by accelerating, the risk of accident will increase. </li>
+					 <li><span>•</span>WWhen the driver of passing car misjudged and there is an on-coming traffic appears check the safety situation in the back and reduced the speed for the passing car to get in easily. </li>
+					 <li><span>•</span>WWhen a car parked on the edge of the street is about to start and merge into the traffic, it is safe to yield to merge to the flow of traffic.			 </li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit mt-20">[When the car in the back attempts to pass, cooperate and slow down]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_13.gif"  alt="" /></div>
+				</div>
+			</div>
+
+			<div class="clear">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">(12) No passing situations	</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>When a car in the front attempts to change the route to the left or pass other cars. </li>
+					 <li><span>•</span>When another car is driving on the left side of the car in the front. </li>
+					 <li><span>•</span>When there may be the possibility of interference in flow of on-coming cars. When the car behind attempts to pass your car. </li>
+					 <li><span>•</span>When a car stops or slows down for intersection or cross road, when the car in front is following the order of police officer or stops or slows down for safe driving. </li>
+					 <li><span>•</span>All cars are prohibited to pass the school bus with small children. </li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit mt-20">[Passing is prohibited when there is on-coming car from opposite direction.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_14.gif"  alt="" /></div>
+				</div>
+			</div>
+
+
+
+			<div class="clear">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">(13) Places of no passing		</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>Intersection, inside the tunnel, above bridge </li>
+					 <li><span>•</span>Curved road </li>
+					 <li><span>•</span>Around the ridge of curved road or downhill of the steep hill </li>
+					 <li><span>•</span>No Passing Zone designated by the commissioner of local police agency </li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit mt-20">No passing in tunnels]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_15.gif"  alt="" /></div>
+				</div>
+			</div>
+
+		<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="10%" />
+							<col width="" />
+						</colgroup>						
+						<thead>
+			              <tr>
+			                <td colspan="2" class="last">Traffic consultation office</td>
+							</tr>
+						 </thead>
+			              <tbody>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">When detecting a risk under rainy day and tried to avoid it by sudden braking but skidded to cross the center lane and what is the disposition?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td  class="last pdl-15 text-l">In the event of crossing the center lane by skidding on the rainy day with the sudden braking to prevent the accident, it is not applicable to crossing the center lane. However, if speeding, it is applicable to encroachment of the center lane even when it is inevitable case.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td class="last  pdl-15 text-l" >When the car behind did not have the safe distance and collided with the car in front and the car was pushed across the center lane to cause an accident, what law should it be applied?
+			              </td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last  pdl-15  text-l" >Under the Road Traffic Act, crossing of the center lane means to cross the center lane without a cause, and the car collided caused the accident by crossing the center lane would not be treated as crossing the center lane but is processed as unsecured safe distance.</td></tr>
+			              <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"> </td>
+			                <td  class="last  pdl-15  text-l">An accident occurred when there was no distance between the cars and rear ended the front car and the impact caused to push the front car to hit the pedestrian crossing the  In the event that the front car yielded for passing in the place of no passing zone, can it pass?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">Article 22 (3) of the Road Traffic Act defines that, “drivers of all cars shall not pass the car in front in the following places.” And since it prohibits passing in certain areas that the following places prohibits the passing under Article 20 of the Road Traffic Act even with the yield.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+
+
+				<p class="sub-tit03 mt-20">(14) Legal speed</p> 
+ 	 	 		<p class="tbl-tit mt-20">[Legal speed on general road]</p> 
+				<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+			              <tr>
+			                <th  width="28%">For each road </th>
+			                <th width="72%">Speed limit </th>
+						</tr>
+						</thead>
+			              <tbody>
+			              <tr>
+			                <td  rowspan="2">General road </td>
+			                <td class="last" >2-lane or more per 
+			                  direction → Max. of 80km/h </td>
+						</tr>
+			              <tr>
+			                <td class="last">2-lane or less per 
+			                  direction → Max. 60km/h </td>
+						</tr>
+			              <tr>
+			                <td>Vehicle only road 
+			                </td>
+			                <td class="last">Max. of 90km/h (Min. speed of 
+			                  30km/h) </td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<ul class="yakguan-list2">
+					 <li><span>•</span>	Driving speed should be 20% reduced from maximum speed when the road surface is wet due to the rain, when snow accumulation of 20mm or less, and speed of wind is more than 15m and less than 20m per second.</li>
+
+					 <li><span>•</span>	Driving speed should be reduced 50% from the maximum speed when the visible distance is less than 100m due to heavy rain, snow or fog, when the surface is frozen, when snow accumulation of more than 20mm, and speed of the wind per second is 20m or more.</li>
+
+					 <li><span>•</span>	In the event that the maximum speed exceeds the designated speed by the facility structure of the road, depend on the region or the distance, the maximum speed is limited to be under the range of designated speed of the road.</li>
+
+					 <li><span>•</span>	Even when the maximum speed does not exceed the designed speed, maximum speed may be set differently for each zone if necessary in preventing the risk and traffic safety.</li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit mt-20">[When raining, the max. speed has to be reduced by 20%]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_16.gif"  alt="" /></div>
+				</div>
+			</div>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">(15) Risk of speeding	</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>	Faster the speed, greater the impact in collision. While driving the difference of speed between 60km/h and 100km/h is 40km/h, however, when the traffic accident occurs, it would have the same impact as if it falls from 5-story building and 13-story building. In particular, the speed is proportion to the square, the impact force is four times for the speed of two times.</li>
+					 <li><span>•</span>	If the speed is faster, it takes longer to stop. With speed of 60km/h, approximately 35m is required and when it is 100km/h, approximately 77m is required to stop.</li>
+					 <li><span>•</span>	On the curved road, the vehicle may be turned over or swerve off the road by centrifugal force.</li>
+					 <li><span>•</span>	As the speed of car increases, the vision is declines and view range narrows down thus the spontaneous judgment decreases.</li>
+					 <li><span>•</span>	In the event of driving at high speed, when sudden handling or braking was applied the to car, it may lose the stability, turned over or swerved into the opposite lane.</li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit mt-20">[When colliding at high speed, the impact is much greater.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_16.gif"  alt="" /></div>
+				</div>
+			</div>
+
+
+			<p class="sub-tit03 mt-20">(16) Speed and safe distance</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>All cars must secure sufficient space from the car in the front to avoid the collision in case when the car in the front makes sudden stop.</li>
+
+						<li><span>•</span>If stopped suddenly, it may seem as sudden brake, however consider the situation that there might be an accident thus you must secure the safe distance.</li>
+				   </ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[The proper safe distance has to be maintained following the road situation.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img37.gif"  alt="" /></div>
+
+
+				<p class="sub-tit03 mt-20">(17) Speed and stopping distance</p> 
+					<ul class="yakguan-list2">
+					 <li><span>•</span>When a driver applies the sudden brake, car does not stop immediately. The stopping distance is the combination of distance that a car traveled when driver maneuvered the brake to work (running distance) and from the travel distance since the application of the brake to stop (controlling distance).</li>
+
+					 <li><span>•</span>Generally, it takes about 1 second for driver to apply the brake upon the recognition of the danger in the front, it can take longer depend on the characteristics of the driver (age, personality and physical and mental condition).</li>
+
+					 <li><span>•</span>The stopping distance is 1.5 times on the rainy surface and 3 times or longer on slippery road. In addition, the control distance is lengthened in the event of vehicles with heavily loaded cargo.</li>
+				   </ul>
+
+
+ 	 	 	<p class="tbl-tit mt-20">[Even in a risky situation, car would proceed for running distance and control distance in order to stop.]</p>
+
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_19.gif"  alt="" /></div>
+
+				<p class="sub-tit03 mt-20">(18) Speed and stopping distance</p>
+					<ul class="yakguan-list2">
+ 	 	 	 <li><span>•</span>When driving around the curve and handle was turned centrifugal force comes in effect. And when centrifugal force is greater than the frictional resistance of tire and the road surface, the car may slide to the side and swerve off the road.</li>
+
+ <li><span>•</span>Centrifugal force is proportioned to square of speed and has small radius of curve and is greater by the weight.</li>
+
+ <li><span>•</span>While driving in high speed it is best not to apply sudden brake or handle the steering wheel and sufficiently reduce speed before entering the curved road and reduce the centrifugal force.</li>
+				   </ul>
+
+ 	 	 <p class="tbl-tit mt-20">	[When centrifugal force exceeds centripetal force, car will swerve off the road]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img38.gif"  alt="" /></div>
+
+					<p class="sub-tit03 mt-20">(19) Speed and stopping distance</p>
+					<ul class="yakguan-list2">
+					 <li><span>•</span>If is frequently seen the torn tire pieces on the expressway. When driving in high speed over certain speed, the rear part of tire touching the ground swell up and series of creases are created and this is called the ‘Standing Wave’. The general structure of tires on passenger car will have the standing wave around 150km/h of driving speed.</li>
+					 <li><span>•</span>The standing wave of tire may occur as the air pressure gets low thus inspect the air pressure of the tire prior to high speed driving and it has to be 10~20% higher than standard air pressure.</li>
+
+					 <li><span>•</span>The standing wave has the rubber on the tread part to scatter off and it makes the noise and hit the bottom plate of the car thus it is easy to detect.</li>
+				   </ul>
+
+ 	 	 	<p class="tbl-tit mt-20">[The standing wave occurs while driving in high speed that may damage the tire]</p>
+ 	 	 	<div class="trafic-img"><img src="../../../images/eng/manual_img39.gif"  alt="" /></div>
+
+ 	 			<p class="sub-tit03 mt-20">(20) Maintaining appropriate air pressure in tires</p>
+ 	 	 		<ul class="yakguan-list2">
+					 <li><span>•</span>Risk in the event that the air pressure is inappropriate
+ 						<p>-In the event of higher than appropriate air pressure: When suffered external impact with high air pressure, tire is easily punctured.<br />
+
+					-In the event of lower than appropriate air pressure: While driving in high speed, abnormal rotation may occur and damage the tires, or when making fast turn, the tire may come off from the wheel.</p></li>
+
+					 <li><span>•</span> Standard of appropriate air pressure of tire</li>
+				   </ul>
+
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+						<tr>
+						  <th  colspan="2" >Vehicle 
+							type </th>
+						  <th  width="17%">Dimension </th>
+						  <th  width="15%">PR </th>
+						  <th  width="25%">Standard air 
+							pressure </th>
+						  <th  width="20%">Remark </th>
+						 </tr>
+						 </thead>
+						<tbody>
+						<tr>
+						  <td colspan="2">Passenger car </td>
+						  <td>185 R 14 </td>
+						  <td>4 PR </td>
+						  <td>32~33 PSI </td>
+						  <td rowspan="5" class="last">Recommended 
+							to increase 10% of air pressure when driving on 
+							expressway </td></tr>
+						<tr>
+						  <td colspan="2" height="18">Bus 
+						  </td>
+						  <td>11 R 22.5 </td>
+						  <td>16 PR </td>
+						  <td>120~130 PSI </td></tr>
+						<tr>
+						  <td rowspan="3">Cargo vehicle </td>
+						  <td >Small (2.5t <br>or below) </td>
+						  <td>185 R 14 </td>
+						  <td>8 PR </td>
+						  <td>65 PSI </td></tr>
+						<tr>
+						  <td>Medium&nbsp; (2.5~8t) </td>
+						  <td>7 R 16 </td>
+						  <td>12 PR </td>
+						  <td>95 PSI </td></tr>
+						<tr>
+						  <td>Large&nbsp; <br>(8~11t) </td>
+						  <td>11 R 22.5 </td>
+						  <td>16 PR </td>
+						  <td class="last">120~130 PSI 
+						</td>
+					   </tr>
+					   </tbody>
+				  </table>
+					ㆍ R : Diameter of tire rim (inch) ㆍPR : Tire intensity <br />
+					ㆍPSI : Air pressure per each square inch of the tire (pound)
+			</div>
+					<ul class="yakguan-list2 mt-20">
+					 <li><span>•</span>Caution at the time of measuring the air pressure
+ 	<p>- In order to maintain the balance of the car, the difference of air pressure on the front and back tires has to be complied with.<br />
+
+- The air pressure is to be measured when the tire is in cold condition. When measuring under the hot condition, the temperature has to be considered to determine the air pressure.<br />
+
+- The cap for the air injection inlet blocks off the air leakage thus the cap has to be checked after measuring the air pressure and tightly lock it.</p>
+
+</li>
+				   </ul>
+
+
+
+		<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="10%" />
+							<col width="" />
+						</colgroup>						
+						<thead>
+			              <tr>
+			                <td colspan="2" class="last">Traffic consultation office</td>
+							</tr>
+						 </thead>
+			              <tbody>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">While driving 90km/h in the area with the speed limit of 80㎞/h and cited by the auto speed measuring instrument. Isn't the violation applicable only when exceeding speed of 20㎞/h?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">The legal speed or speed limit applies for speed violation if driving under or over the speed. Up to the current speed for 20㎞/h, it has no penalty points but fine of ￦30,000 for passenger car and bus, ￦60,000 and 15 penalty points if exceeded for 20㎞/h, while the bus is applicable for ￦70,000. If exceeding 40㎞/h, it renders 30 penalty points with ￦90,000 per passenger car and ￦100,000 of fine for bus. If the driver is unidentifiable, the police station imposes the fine with the addition of ￦10,000 to the owner of the car without penalty points.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+
+	<p class="sub-tit03 mt-20">(21) Designated lanes other than the expressway</p>
+ 	 	 	<p class="tbl-tit mt-10">[Designated-lane on general road]</p>
+ 	 	 	<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+			              <tr>
+			                <th width="11%" height="35">Road </th>
+			                <th width="11%">Lanes </th>
+			                <th width="78%">Accessible vehicles </th></tr>
+						</thead>
+						<tbody>
+			              <tr>
+			                <td rowspan="3">4-lane<br>per each 
+			                  <br>way </td>
+			                <td>1st<br>2nd -lane 
+			</td>
+			                <td class="last">
+			                  <p>passenger car, mid- to small passenger bus and cargo 
+			                  vehicle with the loaded weight of 1.5 tons or below </p></td></tr>
+			              <tr>
+			                <td>
+			                 3rd-lane</td>
+			                <td class="last">Large passenger bus, cargo 
+			                  vehicle with the loaded weight of 1.5 tons or over and 
+			                  construction machinery (Limited to dump truck and concrete 
+			                  mixer truck.) </td></tr>
+			              <tr>
+			                <td>4th-lane </td>
+			                <td>special vehicle, motorcycle, 
+			                  motor bicycle, bicycle, carriage and construction machinery 
+			                  (Excluding the dump truck and concrete mixer truck.) </td></tr>
+			              <tr>
+			                <td rowspan="3">3-lane <br>per each 
+			                  <br>way </td>
+			                <td>1st-lane </td>
+			                <td class="last">passenger car, mid- to small 
+			                  passenger bus and cargo vehicle with the loaded weight of 1.5 
+			                  tons or below </td>
+							</tr>
+			              <tr>
+			                <td>2nd-lane </td>
+			                <td class="last">Large passenger bus, cargo 
+			                  vehicle with the loaded weight of 1.5 tons or over and 
+			                  construction machinery (Limited to dump truck and concrete 
+			                  mixer truck.) </td></tr>
+			              <tr>
+			                <td>3rd-lane </td>
+			                <td class="last">special vehicle, motorcycle, 
+			                  motor bicycle, bicycle, carriage and construction machinery 
+			                  (Excluding to dump truck and concrete mixer truck.) </td></tr>
+			              <tr>
+			                <td rowspan="2">2-lane <br>per each 
+			                  <br>way </td>
+			                <td>1st-lane </td>
+			                <td class="last">passenger car, mid- to small 
+			                  passenger bus and cargo vehicle with the loaded weight of 1.5 
+			                  tons or below </td></tr>
+			              <tr>
+			                <td>2nd-lane </td>
+			                <td class="last">Large passenger bus, cargo 
+			                  vehicle with the loaded weight of 1.5 tons or over, special 
+			                  vehicle, motorcycle, motor bicycle, bicycle, carriage and 
+			                  construction machinery </td>
+							 </tr>
+						</tbody>
+					</table>
+			</div>
+
+	<p class="sub-tit03 mt-20">(22) Bus-lane on general road</p>
+ 	 	 <p class="sub-txt mt-10">	As a part of the policy to efficiently operate existing road rather than build new ones, bus-only lane policy which has the keynote in public transportation policy is in effect. Blue solid lane indicates for the commuting hours which consist of daytime commuting hours from 06:00~09:00 or 07:00~10:00 and evening commuting hours is 17:00~21:00. However, there are areas where operating times are different. Blue solid lanes are effective only in the morning commute hours and double blue lanes are operated from 07:00~15:00 on saturdays.</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img40.gif"  alt="" /></div>
+
+ 	 	 	<p class="tbl-tit mt-20">[Cars that have the access to the bus-lane(general road)]</p>
+			<ul class="yakguan-list2">
+ 	 	 	<li>1. Large passenger car with the capacity 36-person or more	</li>
+<li>2. Commercial passenger car with the capacity of less than 36-person	</li>
+<li>3. Commuting bus with the purpose of carrying children with the certificate of report	</li>
+<li>4. Car that is designated by the commissioner of regional police agency 	<br />
+- Passenger bus with capacity of 16 persons or more for commuting purposes in designated routes	<br />
+- Passenger van recognized as needed for carrying the personnel in international events (Limited time only)	</li>
+			</ul>
+
+
+			<div class="clear mt-20">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">	(23) Bus-lane on expressway</p> 
+					<p class="sub-txt mt-10">By holding back the use of passenger cars and granting the priority to the public transportation in bus, it is the policy to improve the transportation efficiency of the expressway, and it has been implemented simultaneously in both directions for a total distance of 137.4km from 283.9km (Sintanjin IC) to 421.3km (Seocho IC) starting from Busan in Gyeongbu Expressway in February 1995.</p>
+
+				</div>
+				<div class="r-list-img">
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_23.gif"  alt="" /></div>
+				</div>
+			</div>
+
+	 	 	 	<p class="tbl-tit mt-20">[Bus-lane time at Gyeongbu expressway]</p>
+				<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						  <thead>
+			              <tr>
+			                <th width="37%">Classification</th>
+			                <th  width="28%" >Transit 
+			                  Classification </th>
+			                <th class="last">Time </th>
+						  </tr>
+						  </thead>
+  			              <tbody>
+			              <tr>
+			                <td>Saturdays <br>(Implemented on 
+			                  Oct. 1, 2005) </td>
+			                <td >Both directions </td>
+			                <td class="last">09:00~21:00 (12 hours) </td></tr>
+			              <tr>
+			                <td>- Sundays <br>- National 
+			                  holidays (3/1, 7/17, 8/15, 10/3) <br>- Holidays (1/1, 5/5, 
+			                  Buddha's Birthday, 6/6, 12/25) </td>
+			                <td >To Seoul <br>To Busan </td>
+			                <td class="last">09:00~23:00 (14 hours) 
+			                  <br>09:00~21:00 (12 hours) </td></tr>
+			              <tr>
+			                <td>New Year's Day and 
+			                  ChuSeok holidays (Including the consecutive holidays) </td>
+			                <td >Both directions </td>
+			                <td class="last">From 12:00 day before the 
+			                  <br>holiday until 24:00 on the last <br>day of holiday 
+			                  vacation </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			<div class="clear mt-20">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">	(24) Types of lane violation</p> 
+					<ul class="yakguan-list2">
+						<li><span>•</span> Drive on two lanes</li>
+						<li><span>•</span> Driving in zigzag motion on two lanes without staying on one lane</li>
+						<li><span>•</span> Suddenly change the lane to cut in to the next lane</li>
+						<li><span>•</span> Cut across several lanes consecutively</li>
+						<li><span>•</span> Change the route in a place where the lane change is specifically prohibited	</li>
+					</ul>
+
+				</div>
+				<div class="r-list-img">
+				<p class="tbl-tit">[Crossing several lanes at once is 
+also a lane violation.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_24.gif"  alt="" /></div>
+				</div>
+			</div>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">	(25) Safe lane change</p> 
+					<ul class="yakguan-list2">
+						<li><span>•</span> Lane change for turning, crossing, backing up, u-turn and others are made while securing the safe space and slow enter after checking for safety.</li>
+						<li><span>•</span>When changing lane, it is safe to send signal in the distance of 30 m or farther (100m or longer on expressway)to avoid the collision with the car behind.</li>
+						<li><span>•</span>When changing lane, hold back if there is possibility to interfere with the flow of cars on the lane that you are about to enter.</li>
+						<li><span>•</span>Lane change is made only on white dotted line or yellow dotted line on road and changing is not allowed on place with white solid line (inside the tunnel, near the intersection, steep uphill, etc.)</li>
+						<li><span>•</span>Follow the traffic signal, safety sign, or instruction of police officer, and do not cut in to other cars who are stopped or slowing down.</li>
+					</ul>
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit">[When making the lane change on 
+general road, signal has to be made 
+in the distance of 30m or more.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_25.gif"  alt="" /></div>
+				</div>
+			</div>
+
+		<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="10%" />
+							<col width="" />
+						</colgroup>						
+						<thead>
+			              <tr>
+			                <td colspan="2" class="last">Traffic consultation office</td>
+							</tr>
+						 </thead>
+			              <tbody>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">I have received a citation for violating the bus lane regulation sometime ago. At the time when picture was shot, of taping, I was in the dotted bus lane to make the right turn (with the right turn sign on the road), and what was my the violation?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">The blue solid line of bus-lane indicates that the carriage cannot cross over it. The blue dotted line indicates the carriage that has access to bus lane can cross over but for the carriage that does not have access to bus lane can enter and exit on the road other than bus lane and from the very beginning of bus lane carriage can cross over to enter on the road other than bus lane. 
+It is not a violation if right turn is made right away after entering into the dotted line of bus-lane and you may made an appeal at the Traffic Division of the District Office under relevant jurisdiction.
+							</td>
+						</tr>
+						  <tr>
+			                <td><img alt="Question" src="../../../images/eng/sub4_3_Q.gif"></td>
+			                <td class="last  pdl-15  text-l">While driving, I turned on the right signal to change the lane to the right from the left turn lane but was collided with the car that was coming from the back. Whose fault is it?</td></tr>
+			              <tr>
+			                <td >&nbsp;</td>
+			                <td class="last   pdl-15 text-l">In the event of changing the lane, the drivers of all cars shall not make lane change when there is a concern of having interference on normal operation of other cars (Article 19 paragraph (2) the Road Traffic Act). Therefore, when the car from the back collided with the car to make the lane change, the car making the sudden lane change will be the offending car. In addition, the intersection area is solid line zone where the lane change is prohibited.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">	(26) Standard of drunk driving</p> 
+					<p class="sub-txt">	
+The ‘standard of intoxicated’ for prohibition of driving is 0.05% of the level of alcohol in blood, and the ‘condition of fully intoxicated’ is 0.1% or higher but it is safe not to drive at all under the influence of alcohol.</p>
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit">[When making the lane change on 
+general road, signal has to be made 
+in the distance of 30m or more.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_26.gif"  alt="" /></div>
+				</div>
+			</div>
+
+<p class="sub-tit03 mt-20">(27) Type of accident occurred during drunk driving</p> 
+				<ul class="yakguan-list2">
+				<li><span>•</span>Drunk driving clearly decreases the alertness, decision capability and motor ability of the driver which makes driver unable to recognize the information and misjudge the traffic situation. In this case, the machine operation is omitted or make mistake.</li>
+				<li><span>•</span>Because of the headlight of the on-coming car at night, the vision is not quickly restored to original condition.</li>
+				<li><span>•</span>Regardless of the object movement, there is higher possibility for single party accident to occur such as colliding into the parked car, objects on the road, car in operation, pedestrian and others.</li>
+				<li><span>•</span>Many times the drunk driving and the unlicensed driving go hand-inhand. </li>
+				<li><span>•</span>The driver may be in fear of the consequences from the drunk driving and it can leads to the secondary crimes (A half of the hit-and-run drivers are drunken drivers).</li>
+				<li><span>•</span>The rate of casualty is high such as encroaching the center lane which result in fatal accident.	</li>
+				</ul>
+
+ 	 	 <p class="tbl-tit">	[The drinking and driving leads to the secondary crime of hit-and-run for the fear of punishment]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img41.gif"  alt="" /></div>
+
+
+
+
+	<p class="sub-tit03 mt-20">(28) Standard of punishment for drunk driving</p> 
+ 	 	 	<p class="tbl-tit">[Standard of administrative disposition for driver’s license under the Road Traffic Act]</p> 
+
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+			              <tr>
+			                <th >Blood alcohol level</th>
+			                <th  width="41%" rowspan="2">0.05% ~ below 
+			                  0.1% </th>
+			                <th  rowspan="2"  class="last">0.1% or more </th>
+						  </tr>
+			              <tr>
+			                <th  width="32%"  class="last">Outcome</th>
+						  </tr>
+						</thead>
+			              <tbody>
+						  <tr>
+			                <td>Personal injury accident</td>
+			                <td>License revocation 
+							Criminal arrest</td>
+			                <td rowspan="2"  class="last">License revocation 
+			                  <br>(Criminal arrest) </td></tr>
+			              <tr>
+			                <td>Property damage 
+			                  accident<br>(Without accident) </td>
+			                <td  class="last">License suspension 
+			                  for <br>100 days Criminal arrest </td></tr>
+			              <tr>
+			                <td>Refusal of 
+			                  measuring <br>drinking level </td>
+			                <td  colspan="2"  class="last">Criminal 
+			                  arrest, license revocation (Possible to <br>collect blood when 
+			                  refusing to take breathing test) </td></tr>
+			              <tr>
+			                <td  colspan="3" class="last">* For 
+			                  criminal arrest: Imprisonment of 2 years or less or fine in 5 
+			                  million won or less <br>[Standard of administrative 
+			                  disposition for driver's license under the Road Traffic Act] 
+			                </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+	 	 	<p class="tbl-tit mt-20">[Criteria for punishment for drunk driving for each level of alcohol in blood under the Prosecutor’s Office]</p> 
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						 <thead>
+			              <tr>
+			                <th height="26">Blood alcohol level </th>
+			                <th width="25%">Simple drinking </th>
+			                <th width="27%">With accident </th>
+			                <th width="25%" class="last">Strengthened contents 
+			              </th>
+						  </tr>
+						  </thead>
+			              <tbody>
+			              <tr>
+			                <td height="39">0.05%~0.09% </td>
+			                <td >100 Penalty points 
+			                  <br>(suspended for 100 days) Indict without detention (fine) 
+			                </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (arrest) </td>
+			                <td rowspan="8" class="last">-.Arrest 
+			                  for offenders who<br>were punished for 4 times or<br>more in 5 
+			                  years (Regardless of level of drinking) <br>-. Arrest for 
+			                  offenders who are without the license and 0.10% B.A.L or more 
+			                  with for 3 times or more D.U.I in 5 years <br>-.Arrest for 
+			                  offenders who were punished for 3 times or more in 3 years 
+			                  (Regardless of level of drinking) <br>-.Arrest for offenders 
+			                  who drove while intoxicated while the license is suspended or 
+			                  revoked </td></tr>
+			              <tr>
+			                <td>0.10%~0.15% </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (fine) </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (arrest) </td></tr>
+			              <tr>
+			                <td>0.16%~0.25% </td>
+			                <td >1 year of license<br>revocation 
+			                  Indict without<br>detention (fine) </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (arrest) </td></tr>
+			              <tr>
+			                <td>0.26%~0.35% </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (fine) </td>
+			                <td >1 year of license 
+			                  <br>revocation Indict without<br>detention (arrest) </td></tr>
+			              <tr>
+			                <td>0.36% or more </td>
+			                <td >1 year of license 
+			                  <br>revocation arrest </td>
+			                <td >1 year of license<br>revocation 
+			                  arrest </td></tr>
+			              <tr>
+			                <td>Refusal for 
+			                  drinking test </td>
+			                <td  colspan="2">1 year of license 
+			                  revocation and fine, arrest </td></tr>
+			              <tr>
+			                <td>3 times or more of 
+			                  traffic<br>accident with drunk driving </td>
+			                <td  colspan="2">3 years of license 
+			                  revocation </td></tr>
+			              <tr>
+			                <td >hit-and-run after <br>personal injury 
+			                  accident<br>from drunk driving </td>
+			                <td  colspan="2">5 years of license 
+			                  revocation </td>
+						</tr>
+				   </tbody>
+				</table>
+			</div>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">	(29) Compliance of drivers</p> 
+					<ul class="yakguan-list2">
+ <li><span>•</span>Protect the vulnerable persons
+				<p >When passing a puddle, be cautious not to have the splash of water to harm persons standing nearby. When a child is exposed to risk of traffic accident for instance, a child is crossing the road without guidance, sits or stands on the road, or playing around, when a blinded person crosses the road with white cane, when a disabled person who can not use the crossing facilities try to cross the road, the cars must stop.</p>	</li>
+
+ <li><span>•</span> Do not use the mobile phone while driving
+<p >Use of mobile phone while driving decreases the accuracy level of handle maneuvering, lengthens the reaction time in times of emergency, and is equivalent to driving with 0.1% of level of alcohol in blood.<br /><br />
+
+While driving, when the car is stopped or driving an emergency car, and with the exception of in the event of emergency for reporting the crimes and disasters, the mobile phone shall not be used.</p>
+				</li>
+			</ul>
+
+
+				</div>
+				<div class="r-list-img">
+					<p class="tbl-tit">[Mobile phone use is 
+prohibited except for emergency.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_28.gif"  alt="" /></div>
+				</div>
+			</div>
+
+					<ul class="yakguan-list2">
+						<li><span>•</span>Do not use the mobile phone while driving
+	 	 	 	<p class="sub-txt">Not only the driver has the duty to wear seatbelt but also has the responsibility to have the accompanied passengers to wear the seatbelt. For an infant, the protective device for infant has to be installed and then to wear the seat belt.<br /><br />
+
+The seatbelt has significant effect to reduce the impact in traffic accident that it may avoid the critical injury or death. In addition, it restraints user from unnecessary action and brings correct posture for stability, and make the safe driving with less fatigue with broadened view.</p></li>
+					</ul>
+
+
+ 	 	 	<p class="tbl-tit mt-20">[Scope of seat belt wearing obligation]</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+				  <thead>
+				  <tr>
+					<th  width="48%">Road Classification </th>
+					<th  width="52%" class="last">Scope of Obligations 
+				  </th>
+				  </tr>
+    			 </thead>
+  				  <tbody>
+				  <tr>
+					<td>expressway and drive way </td>
+					<td class="last">Driver and all passengers 
+				  </td></tr>
+				  <tr>
+					<td>general road </td>
+					<td class="last">Driver and the passenger next 
+					  to the driver </td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<p class="sub-tit03 mt-20">(30) What is the Special Act on Traffic Accident Processing?</p>
+ 	 	 	<p class="sub-txt">The Special Act on Traffic Accident Processing was enacted to protect the driver and the victim from the traffic accident arising while driving the car. This Act promptly and clearly classify and dispose the accident (death, hitand- run, injury accident with 10 special cases) that requires criminal liability regardless of insurance or stipulation and the ordinary accident for the people involved in accident to return to their ordinary living as soon as possible.</p>
+
+ 	 	 	
+
+					<p class="tbl-tit mt-10">[Accident processing procedure following the Special Act on Traffic Accident Processing]</p>
+					<div class="trafic-img"><img src="../../../images/eng/sub4_3_29.gif"  alt="" /></div>
+ 	 	 	
+
+ 	 		<p class="sub-tit03 mt-20">(31) Exception to the special case of punishment</p>
+					<p class="tbl-tit mt-10">[Death and hit-and-run]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img42.gif"  alt="" /></div>
+ 	 	 	
+					<p class="tbl-tit mt-10">[10 Categories of violation of important laws and regulations]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img43.gif"  alt="" /></div>
+ 	 	 	
+ 	
+
+ 	 		<p class="sub-tit03 mt-20">(32) Method of action taken when a traffic accident occurs</p>
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Remember the things to do by driver and passenger
+ 	 	<p>In order not to interfere with flow of other cars, move the car to the edge of the road or empty space to prevent series of accidents.<br /><br />
+
+Administer the possible first aid until the doctors and emergency rescue team arrive. While you are doing so, do not move the injured persons. In particular, do not move person when he/she is injured in the head. However, if there might be concern for another accident, move the injured persons to safe area and protect the injured persons.<br /><br />
+
+The driver responsible for the accident has to report to the police officer for location of accident, number of injured, degree of injury, damaged property and others, and if there is no police officer present, report to the nearby police station.</p>
+					</li>
+		   </ul>
+
+
+					<p class="tbl-tit mt-10">[Take the emergency action at the accident site and wait for medical team.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img44.gif"  alt="" /></div>
+
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Method of action taken for victims and cooperation of surrounding persons
+ 	<p>Even the slightest injury has to be informed to the police officer. If the victim neglects the report, it may not only be disadvantageous for post accident effect from the accident, and may not also be able to obtain the traffic accident report.<br /><br />
+
+When there is strong impact on head or other parts without external injury, obtain the examination of doctor to avoid post accident effect.<br /><br />
+
+When rescuing the injured person or moving the cars involed in accident, make sure to help each other and cooperate.<br /><br />
+
+Take a note or remember all of the characteristics of the hit and run car such as license plate number, model, color and distinction, etc. and report to 112.<br /><br />
+
+In particular, the accident site may have the gasoline or hazard materials spillage thus absolutely refrain from smoking or discarding the lighted match.</p>
+					</li>
+		   </ul>
+
+ 	
+
+
+					<p class="tbl-tit mt-10">[Once the accident is witnessed, report immediately to 112.]</p>
+					<div class="trafic-img"><img src="../../../images/eng/manual_img45.gif"  alt="" /></div>
+
+
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="footer-wrap">
+			<address>
+				<p><img src="../../../images/eng/f_logo.gif" alt=""  /> Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+		</div>
+	</div>
+	
+ </body>
+</html>

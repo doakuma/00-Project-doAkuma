@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head> 
+<meta charset="utf-8" /> 
+<title>도로교통공단 TAAS</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<link rel="stylesheet" type="text/css" href="../../css/map.css"></link>
+<link rel="StyleSheet" href="../../css/dtree.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/dtree.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../../js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript">
+    $(function() {
+      var dates = $( "#from1, #to1" ).datepicker({
+        showOn: "button",
+          buttonImage: "../../images/icon_date.gif",
+          buttonImageOnly: true,
+          prevText: '이전 달',
+          nextText: '다음 달',
+          monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+          dayNames: ['일','월','화','수','목','금','토'],
+          dayNamesShort: ['일','월','화','수','목','금','토'],
+          dayNamesMin: ['일','월','화','수','목','금','토'],
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true,
+          yearSuffix: '년',
+          onSelect: function( selectedDate ) {
+          /*
+            var option = this.id == "from1" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat ||
+                $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings );
+            dates.not( this ).datepicker( "option", option, date );
+            */
+          }
+          });
+    });
+</script>
+
+<script type="text/javascript">
+	function popupOpen(){
+		var popUrl = "popup.html";	
+		var popOption = "width=688, height=550, resizable=no, scrollbars=no, status=no;";
+			window.open(popUrl,"",popOption);
+		}
+</script>
+
+</head>
+<body>
+
+<div id="mapWrap"> 
+	<div class="subBg"></div>
+	<div id="mapHeader">		
+		<div class="statistics-logo">
+			<a href="#" target="_blank" title="도로교통공단 새창열림"><img src="../../images/sta/logo.gif" class="top_img1" alt="도로교통공단"/></a>
+		</div> 
+		<ul class="top_link">
+			<li class="top-icon"><img src="../../images/sta/icon-mybus.png" alt="아이콘"/></li>
+			<li class="msg"><a href="javascript:popupOpen();" onclick="">용어정리</a></li>
+		</ul>
+	</div> 
+	<div id="mapContainer"> 		
+		<div id="Navside"> 
+			<div class="sidecont">	
+				<div class="left_inside">
+					<p class="left-title">통합검색</p>
+				<div class="dSearch" >
+					<ul>
+						<li>
+							<select class="selType" title="DB" >
+								<option value="01">전체</option>
+								<option value="02">경찰DB</option>
+								<option value="03">통합DB</option>
+							</select>
+						</li>
+						<li><input type="text" class="searchWord" value="" /></li>
+						<li><input type="button" class="serchBtn " title="" value="검색" name=""/></li>
+					</ul>
+				</div>
+				<div class="leftBtn-box">
+					<ul class="leftBtn">
+						<li class="all-close "><a href="this.location"onclick="javascript: d.closeAll();return false;"  value="">모두닫기</a></li>
+						<li class="all-open " ><a href="this.location"onclick="javascript: d.openAll();return false;">모두열기</a></li>
+						<li class="reset "><a href="#">초기화</a></li>
+					</ul>
+				</div>
+				<div  class="tree-box" >
+					<div style="width:290px;height:70%;overflow:auto; padding: 10px;  ">
+						<div class="dtree" style="width:400px;  ">
+						<script type="text/javascript">
+							d = new dTree('d');
+							d.add(0,-1,'공통메뉴');
+								
+							d.add(421,259,"도로형태별 1당사자 차종별 교통사고","javascript:goReport('25','Y','352','','도로형태별 1당사자 차종별 교통사고','F');");
+								
+							d.add(734,261,"전년대비 교통사고 현황.","javascript:goReport('25','Y','671','','전년대비 교통사고 현황.','F');");
+								
+							d.add(416,258,"도로종류별 도로형태별 교통사고","javascript:goReport('25','Y','347','','도로종류별 도로형태별 교통사고','F');");
+								
+							d.add(425,260,"시군구별 월별 교통사고","javascript:goReport('25','Y','356','','시군구별 월별 교통사고','F');");
+								
+							d.add(411,257,"기상상태별 도로종류별 교통사고(통합DB)","javascript:goReport('25','Y','342','','기상상태별 도로종류별 교통사고(통합DB)','F');");
+								
+							d.add(293,249,"월별 주야별 교통사고","javascript:goReport('25','Y','221','','월별 주야별 교통사고','F');");
+								
+							d.add(362,252,"1당 법규위반별 경찰신고여부별 교통사고","javascript:goReport('25','Y','290','','1당 법규위반별 경찰신고여부별 교통사고','F');");
+								
+							d.add(243,242,'교통사고(통합DB) 통계검색');
+								
+							d.add(257,256,'기상상태별');
+								
+							d.add(372,253,"1당 성별 연령층별 기상상태별 교통사고","javascript:goReport('25','Y','300','','1당 성별 연령층별 기상상태별 교통사고','F');");
+								
+							d.add(249,248,'사고일시별');
+								
+							d.add(261,243,'교통사고 발생 현황 요약');
+								
+							d.add(391,254,"1당 차종별 기상상태별 교통사고","javascript:goReport('25','Y','321','','1당 차종별 기상상태별 교통사고','F');");
+								
+							d.add(353,250,"사고유형별 1당 연령층별 교통사고","javascript:goReport('25','Y','281','','사고유형별 1당 연령층별 교통사고','F');");
+								
+							d.add(252,251,'1당 법규위반별');
+								
+							d.add(417,258,"도로종류별 1당사자 차종별 교통사고.","javascript:goReport('25','Y','348','','도로종류별 1당사자 차종별 교통사고.','F');");
+								
+							d.add(410,257,"기상상태별 도로형태별 교통사고","javascript:goReport('25','Y','341','','기상상태별 도로형태별 교통사고','F');");
+								
+							d.add(392,254,"1당 차종별 도로종류별 교통사고","javascript:goReport('25','Y','322','','1당 차종별 도로종류별 교통사고','F');");
+								
+							d.add(373,253,"1당 성별 연령층별 도로종류별 교통사고","javascript:goReport('25','Y','301','','1당 성별 연령층별 도로종류별 교통사고','F');");
+								
+							d.add(363,252,"1당 법규위반별 기상상태별 교통사고","javascript:goReport('25','Y','291','','1당 법규위반별 기상상태별 교통사고','F');");
+								
+							d.add(354,250,"사고유형별 법규위반별 교통사고","javascript:goReport('25','Y','282','','사고유형별 법규위반별 교통사고','F');");
+								
+							d.add(295,249,"월별 요일별 교통사고.","javascript:goReport('25','Y','223','','월별 요일별 교통사고.','F');");
+								
+							d.add(248,243,'사고일반');
+								
+							d.add(250,248,'사고유형별');
+								
+							d.add(253,251,'1당 연령층별');
+								
+							d.add(258,256,'도로종류별');
+								
+							d.add(736,261,"전년대비 시도별 대형 교통사고 발생건수 현황.","javascript:goReport('25','Y','673','','전년대비 시도별 대형 교통사고 발생건수 현황.','F');");
+								
+							d.add(426,260,"시군구별 요일별 교통사고","javascript:goReport('25','Y','357','','시군구별 요일별 교통사고','F');");
+								
+							d.add(422,259,"도로형태별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','353','','도로형태별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(374,253,"1당 성별 연령층별 도로형태별 교통사고","javascript:goReport('25','Y','302','','1당 성별 연령층별 도로형태별 교통사고','F');");
+								
+							d.add(259,256,'도로형태별');
+								
+							d.add(251,243,'1당사자별');
+								
+							d.add(364,252,"1당 법규위반별 도로종류별 교통사고","javascript:goReport('25','Y','292','','1당 법규위반별 도로종류별 교통사고','F');");
+								
+							d.add(738,261,"전년대비 시도별 사망사고 발생건수 현황.","javascript:goReport('25','Y','675','','전년대비 시도별 사망사고 발생건수 현황.','F');");
+								
+							d.add(418,258,"도로종류별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','349','','도로종류별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(393,254,"1당 차종별 도로형태별 교통사고","javascript:goReport('25','Y','323','','1당 차종별 도로형태별 교통사고','F');");
+								
+							d.add(427,260,"시군구별 시간대별 교통사고","javascript:goReport('25','Y','358','','시군구별 시간대별 교통사고','F');");
+								
+							d.add(296,249,"월별 시간대별 교통사고.","javascript:goReport('25','Y','224','','월별 시간대별 교통사고.','F');");
+								
+							d.add(412,257,"기상상태별 1당사자 차종별 교통사고","javascript:goReport('25','Y','343','','기상상태별 1당사자 차종별 교통사고','F');");
+								
+							d.add(254,251,'1당 차량 관련');
+								
+							d.add(355,250,"사고유형별 기상상태별 교통사고","javascript:goReport('25','Y','283','','사고유형별 기상상태별 교통사고','F');");
+								
+							d.add(1104,261,"전년대비 주요 요인별 교통사고 발생현황.","javascript:goReport('362','Y','1056','','전년대비 주요 요인별 교통사고 발생현황.','F');");
+								
+							d.add(297,249,"월별 사고유형별 교통사고.","javascript:goReport('25','Y','225','','월별 사고유형별 교통사고.','F');");
+								
+							d.add(356,250,"사고유형별 도로종류별 교통사고","javascript:goReport('25','Y','284','','사고유형별 도로종류별 교통사고','F');");
+								
+							d.add(365,252,"1당 법규위반별 도로형태별 교통사고","javascript:goReport('25','Y','293','','1당 법규위반별 도로형태별 교통사고','F');");
+								
+							d.add(375,253,"1당 성별 연령층별 1당사자 차종별 교통사고","javascript:goReport('25','Y','304','','1당 성별 연령층별 1당사자 차종별 교통사고','F');");
+								
+							d.add(394,254,"1당 차종별 2당 차종별 교통사고","javascript:goReport('25','Y','324','','1당 차종별 2당 차종별 교통사고','F');");
+								
+							d.add(413,257,"기상상태별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','344','','기상상태별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(773,260,"시군구별 교통사고(여성, 노인.)","javascript:goReport('61','Y','710','','시군구별 교통사고(여성, 노인.)','F');");
+								
+							d.add(256,243,'도로환경');
+								
+							d.add(242,0,'통합DB');
+								
+							d.add(1180,261,"전년대비 1당사자 차종별 교통사고 발생건수.","javascript:goReport('25','Y','1144','','전년대비 1당사자 차종별 교통사고 발생건수.','F');");
+								
+							d.add(320,249,"월별 법규위반별 교통사고.","javascript:goReport('25','Y','248','','월별 법규위반별 교통사고.','F');");
+								
+							d.add(357,250,"사고유형별 도로형태별 교통사고","javascript:goReport('25','Y','285','','사고유형별 도로형태별 교통사고','F');");
+								
+							d.add(368,252,"1당 법규위반별 1당사자 차종별 교통사고","javascript:goReport('25','Y','296','','1당 법규위반별 1당사자 차종별 교통사고','F');");
+								
+							d.add(376,253,"1당 성별 연령층별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','305','','1당 성별 연령층별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(770,254,"1당 차종별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','707','','1당 차종별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(932,260,"시군구별 교통사고사상자(어린이, 노인, 보행자, 자전 거)","javascript:goReport('61','Y','872','','시군구별 교통사고사상자(어린이, 노인, 보행자, 자전 거)','F');");
+								
+							d.add(260,243,'발생지역(시군구별)');
+								
+							d.add(319,249,"월별 기상상태별 교통사고.","javascript:goReport('25','Y','247','','월별 기상상태별 교통사고.','F');");
+								
+							d.add(358,250,"사고유형별 1당사자 차종별 교통사고","javascript:goReport('25','Y','286','','사고유형별 1당사자 차종별 교통사고','F');");
+								
+							d.add(367,252,"1당 법규위반별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','295','','1당 법규위반별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(743,261,"전년대비 도로종류별 교통사고 발생건수.","javascript:goReport('25','Y','680','','전년대비 도로종류별 교통사고 발생건수.','F');");
+								
+							d.add(775,260,"시군구별 사고유형별 교통사고","javascript:goReport('57','Y','712','','시군구별 사고유형별 교통사고','F');");
+								
+							d.add(1160,261,"전년대비 월별 교통사고 사망자 현황.","javascript:goReport('25','Y','1116','','전년대비 월별 교통사고 사망자 현황.','F');");
+								
+							d.add(321,249,"월별 도로종류별 교통사고.","javascript:goReport('25','Y','249','','월별 도로종류별 교통사고.','F');");
+								
+							d.add(359,250,"사고유형별 1당사자 차종용도별 교통사고","javascript:goReport('25','Y','287','','사고유형별 1당사자 차종용도별 교통사고','F');");
+								
+							d.add(776,260,"시군구별 1당 법규위반별 교통사고","javascript:goReport('25','Y','713','','시군구별 1당 법규위반별 교통사고','F');");
+								
+							d.add(322,249,"월별 도로형태별 교통사고.","javascript:goReport('25','Y','250','','월별 도로형태별 교통사고.','F');");
+								
+							d.add(370,252,"1당 법규위반별 2당 법규위반별 교통사고","javascript:goReport('25','Y','298','','1당 법규위반별 2당 법규위반별 교통사고','F');");
+								
+							d.add(379,253,"1당 연령층별 월별 교통사고","javascript:goReport('25','Y','308','','1당 연령층별 월별 교통사고','F');");
+								
+							d.add(399,254,"1당 차량용도별 주야별 교통사고","javascript:goReport('25','Y','330','','1당 차량용도별 주야별 교통사고','F');");
+								
+							d.add(433,260,"시군구별 1당 성별 교통사고","javascript:goReport('25','Y','365','','시군구별 1당 성별 교통사고','F');");
+								
+							d.add(749,261,"전년대비 요일별 교통사고 사망자 현황.","javascript:goReport('25','Y','686','','전년대비 요일별 교통사고 사망자 현황.','F');");
+								
+							d.add(323,249,"월별 1당사자 차종별 교통사고.","javascript:goReport('25','Y','251','','월별 1당사자 차종별 교통사고.','F');");
+								
+							d.add(380,253,"1당 연령층별 요일별 교통사고","javascript:goReport('25','Y','310','','1당 연령층별 요일별 교통사고','F');");
+								
+							d.add(400,254,"1당 차량용도별 시군구별 교통사고","javascript:goReport('25','Y','331','','1당 차량용도별 시군구별 교통사고','F');");
+								
+							d.add(432,260,"시군구별 1당 연령층별 교통사고","javascript:goReport('25','Y','364','','시군구별 1당 연령층별 교통사고','F');");
+								
+							d.add(752,261,"전년대비 시간대별 교통사고 사망자 현황.","javascript:goReport('25','Y','689','','전년대비 시간대별 교통사고 사망자 현황.','F');");
+								
+							d.add(324,249,"월별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','252','','월별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(381,253,"1당 연령층별 시간대별 교통사고","javascript:goReport('25','Y','311','','1당 연령층별 시간대별 교통사고','F');");
+								
+							d.add(401,254,"1당 차량용도별 기상상태별 교통사고","javascript:goReport('25','Y','332','','1당 차량용도별 기상상태별 교통사고','F');");
+								
+							d.add(434,260,"시군구별 1당 차종별 교통사고","javascript:goReport('25','Y','366','','시군구별 1당 차종별 교통사고','F');");
+								
+							d.add(754,261,"전년대비 사고유형별 교통사고 사망자 현황.","javascript:goReport('25','Y','691','','전년대비 사고유형별 교통사고 사망자 현황.','F');");
+								
+							d.add(382,253,"1당 연령층별 주야별 교통사고","javascript:goReport('25','Y','312','','1당 연령층별 주야별 교통사고','F');");
+								
+							d.add(402,254,"1당 차량용도별 도로종류별 교통사고","javascript:goReport('25','Y','333','','1당 차량용도별 도로종류별 교통사고','F');");
+								
+							d.add(435,260,"시군구별 1당 차량용도별 교통사고","javascript:goReport('25','Y','367','','시군구별 1당 차량용도별 교통사고','F');");
+								
+							d.add(756,261,"전년대비 시도별 교통사고 사망자 현황.","javascript:goReport('25','Y','693','','전년대비 시도별 교통사고 사망자 현황.','F');");
+								
+							d.add(383,253,"1당 연령층별 시군구별 교통사고","javascript:goReport('25','Y','313','','1당 연령층별 시군구별 교통사고','F');");
+								
+							d.add(403,254,"1당 차량용도별 도로형태별 교통사고","javascript:goReport('25','Y','334','','1당 차량용도별 도로형태별 교통사고','F');");
+								
+							d.add(758,261,"전년대비 도로종류별 교통사고 사망자 현황.","javascript:goReport('25','Y','695','','전년대비 도로종류별 교통사고 사망자 현황.','F');");
+								
+							d.add(1116,261,"전년대비 사고시 상태별 교통사고 사망자 현황.","javascript:goReport('134','Y','1069','','전년대비 사고시 상태별 교통사고 사망자 현황.','F');");
+								
+							d.add(327,249,"월별 차량손상정도별 교통사고.","javascript:goReport('25','Y','255','','월별 차량손상정도별 교통사고.','F');");
+								
+							d.add(384,253,"1당 연령층별 기상상태별 교통사고","javascript:goReport('25','Y','314','','1당 연령층별 기상상태별 교통사고','F');");
+								
+							d.add(437,260,"시군구별 기상상태별 교통사고","javascript:goReport('25','Y','369','','시군구별 기상상태별 교통사고','F');");
+								
+							d.add(385,253,"1당 연령층별 도로종류별 교통사고","javascript:goReport('25','Y','315','','1당 연령층별 도로종류별 교통사고','F');");
+								
+							d.add(438,260,"시군구별 도로종류별 교통사고","javascript:goReport('25','Y','370','','시군구별 도로종류별 교통사고','F');");
+								
+							d.add(778,261,"전년대비 연령층별 교통사고 사망자 현황.","javascript:goReport('25','Y','715','','전년대비 연령층별 교통사고 사망자 현황.','F');");
+								
+							d.add(330,249,"요일별 사고유형별 교통사고","javascript:goReport('25','Y','258','','요일별 사고유형별 교통사고','F');");
+								
+							d.add(386,253,"1당 연령층별 도로형태별 교통사고","javascript:goReport('25','Y','316','','1당 연령층별 도로형태별 교통사고','F');");
+								
+							d.add(439,260,"시군구별 도로형태별 교통사고","javascript:goReport('25','Y','371','','시군구별 도로형태별 교통사고','F');");
+								
+							d.add(761,261,"전년대비 월별 음주운전 교통사고 사망자 현황.","javascript:goReport('25','Y','698','','전년대비 월별 음주운전 교통사고 사망자 현황.','F');");
+								
+							d.add(1181,261,"전년대비 사고유형별 음주운전교통사고 사망자 현황.","javascript:goReport('25','Y','1145','','전년대비 사고유형별 음주운전교통사고 사망자 현황.','F');");
+								
+							d.add(331,249,"요일별 법규위반별 교통사고","javascript:goReport('25','Y','259','','요일별 법규위반별 교통사고','F');");
+								
+							d.add(387,253,"1당 연령층별 1당사자 차종별 교통사고","javascript:goReport('25','Y','317','','1당 연령층별 1당사자 차종별 교통사고','F');");
+								
+							d.add(332,249,"요일별 기상상태별 교통사고","javascript:goReport('25','Y','260','','요일별 기상상태별 교통사고','F');");
+								
+							d.add(388,253,"1당 연령층별 1당사자 차량용도별 교통사고","javascript:goReport('25','Y','318','','1당 연령층별 1당사자 차량용도별 교통사고','F');");
+								
+							d.add(766,261,"전년대비 1당사자 차종에 따른 교통사고 사망자 현황.","javascript:goReport('25','Y','703','','전년대비 1당사자 차종에 따른 교통사고 사망자 현황.','F');");
+								
+							d.add(783,260,"시군구별 연령층별 사상자","javascript:goReport('29','Y','720','','시군구별 연령층별 사상자','F');");
+								
+							d.add(333,249,"요일별 도로종류별 교통사고","javascript:goReport('25','Y','261','','요일별 도로종류별 교통사고','F');");
+								
+							d.add(768,261,"전년대비 1당사자 법규위반에 따른 교통사고 사망자 현황.","javascript:goReport('25','Y','705','','전년대비 1당사자 법규위반에 따른 교통사고 사망자 현황.','F');");
+								
+							d.add(782,260,"시군구별 승차상태별 사상자","javascript:goReport('29','Y','719','','시군구별 승차상태별 사상자','F');");
+								
+							d.add(335,249,"요일별 도로형태별 교통사고","javascript:goReport('25','Y','263','','요일별 도로형태별 교통사고','F');");
+								
+							d.add(781,260,"시군구별 보호장구착용별 사상자","javascript:goReport('29','Y','718','','시군구별 보호장구착용별 사상자','F');");
+								
+							d.add(336,249,"요일별 1당사자 차종별 교통사고","javascript:goReport('25','Y','264','','요일별 1당사자 차종별 교통사고','F');");
+								
+							d.add(780,260,"시군구별 상해주부위별 사상자","javascript:goReport('29','Y','717','','시군구별 상해주부위별 사상자','F');");
+								
+							d.add(777,260,"시군구별 교통사고현황(교통안전계획기초자료)","javascript:goReport('60','Y','6722','','시군구별 교통사고현황(교통안전계획기초자료)','F');");
+								
+							d.add(339,249,"요일별 차량손상정도별 교통사고","javascript:goReport('25','Y','267','','요일별 차량손상정도별 교통사고','F');");
+								
+							d.add(351,249,"시간대별 사고유형별 교통사고","javascript:goReport('25','Y','279','','시간대별 사고유형별 교통사고','F');");
+								
+							d.add(350,249,"시간대별 법규위반별 교통사고","javascript:goReport('25','Y','278','','시간대별 법규위반별 교통사고','F');");
+								
+							d.add(349,249,"시간대별 기상상태별 교통사고","javascript:goReport('25','Y','277','','시간대별 기상상태별 교통사고','F');");
+								
+							d.add(348,249,"시간대별 도로종류별 교통사고","javascript:goReport('25','Y','276','','시간대별 도로종류별 교통사고','F');");
+								
+							d.add(347,249,"시간대별 도로형태별 교통사고","javascript:goReport('25','Y','275','','시간대별 도로형태별 교통사고','F');");
+								
+							d.add(345,249,"시간대별 1당사자 차종별 교통사고","javascript:goReport('25','Y','273','','시간대별 1당사자 차종별 교통사고','F');");
+								
+							d.add(341,249,"시간대별 차량손상정도별 교통사고","javascript:goReport('25','Y','269','','시간대별 차량손상정도별 교통사고','F');");
+			
+							document.write(d);
+						</script>
+						</div>
+					</div>
+					
+					</div> 	
+				</div>
+			</div>	
+		</div>
+
+
+		<div class="controll_btn">
+			<a href="#" title="닫기" class="bt_nav_close" onclick="document.getElementById('mapWrap').className = 'nav_close';return false;"></a>
+			<a href="#" title="열기" class="bt_nav_open" onclick="document.getElementById('mapWrap').className = '';return false;"></a>
+		</div>
+		
+		<div id="mapContent">
+			<div id="jtContentHeader">	
+				<p class="right-title">교통사고 비교</p>
+				<div class="right-body">
+					<div class="body-top01">
+						<p class="top01-01"><img src="../../images/sta/color-spot.png" alt=""/><span>조회 범위&nbsp :&nbsp</span>[1970년] - [2013년]</p>
+							<div class="pick-wrap">
+								<span class="pick-input"><input type="text" id="from1" /></span> ~ <span class="pick-input" ><input type="text" id="to1" /></span>   
+							</div>
+
+						<ul  class="top01-03">
+							<li><input type="button" class="rightBtn01" title="" value="조건설정" name=""/></li>
+							<li><input type="button" class="rightBtn02" title="" value="조회" name=""/></li>
+						</ul>
+					</div>
+					<div class="body-top02">
+						<div class="db-div">
+							<div class="div-header">
+								<p class="btn-left">
+									<a href="#" class="btn-enter mr-2" id="chk_select">전체선택</a><a href="#" class="btn-cancle" id="chk_deselect">전체해제</a>
+								</p>
+								<p class="btn-right">
+									<a href="#" class="btn-enter mr-2" id="btn-enter">확인</a><a href="#" class="btn-cancle" id="btn-cancle">취소</a>
+								</p>
+							</div>
+							<div class="div-body">
+								<script type="text/javascript">
+								dd = new dTree('dd');
+
+								dd.add(0,-1,'');
+								dd.add(1,0,'<input type="checkbox" />DB분류');
+								dd.add(2,1,'<input type="checkbox" />경찰DB ');
+								dd.add(3,1,'<input type="checkbox" />손해보험사DB ');
+								dd.add(4,1,'<input type="checkbox" />공제조합DB ');
+								
+								document.write(dd);
+								</script>
+
+								<script type="text/javascript">
+									$(function(){
+											$("#chk_select").click(function(){
+												$(".dTreeNode input").each(function() {
+													$(this).prop("checked", true);
+												});
+											});
+											
+									});
+									$(function(){
+											$("#chk_deselect").click(function(){
+												$(".dTreeNode input").each(function() {
+													$(this).prop("checked", false);
+												});
+											});
+									})
+									
+									
+								</script>
+							</div>
+						</div>
+						<ul >
+							<li class="btn-db"><input type="button" class="rightBtn03 active" title="" value="DB분류" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="대상사고" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="반기" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="분기" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="시도" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="사고유형" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="법규위반" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="경찰신고여부" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="기상상태" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="도로종류" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="도로형태" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="1당차량종별" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="1당차량용도" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="음주여부" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="도주여부" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="무면허여부" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="성별구분" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="휴일구분" name=""/></li>
+							<li><input type="button" class="rightBtn03" title="" value="명절유형" name=""/></li>
+						</ul>
+						<input type="button" class="rightBtn04 "value="닫기" />
+						<script type="text/javascript">
+							$(".btn-db").click(function(){
+									$(".db-div").show();
+									$("#btn-enter,#btn-cancle").click(function(){
+										$(".db-div").hide();
+									});
+							});
+						</script>
+						
+					</div>
+					<div class="body-top03">
+						
+						<div class="show-index"><p class="ml-10">[검색조건] _ [DB분류] : 경찰DB,  [대상사고] : 대형</p></div>
+					</div>
+				</div>
+			</div>
+			<div id="jtMap">
+				<div class="l_bar"></div>
+				<div class="r_bar"></div>
+				
+			</div>		
+		</div>	
+
+	
+	<div class="popup_layerBG" id="footerBG" style="display:none;"></div>
+</div>
+	
+	<div class="loading-img"><img src="../../images/sta/loading.gif" alt=""/></div>
+
+	<div class="popup_layerBG2" style="display:;"></div>
+
+</body> 
+</html>

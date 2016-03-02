@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS traffic accident analysis system</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015_eng.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015_eng.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub_eng.css"></link>
+
+	<script src="../../../js/response.js"></script>
+
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/eng/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<ul class="util">
+				<li><a href="#">HOME</a></li>
+				<li class="last"><a href="#">KOREA</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>Introduction </span></a></h2>
+					<ul>
+						<li><h5><a href="#"> <span>TAAS</span></a></h5></li>
+						<li><h5><a href="#"><span>Action Plan</span></a></h5></li>						
+					</ul>
+					<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>Traffic Accident Statistical DB</span></a></h5></li>
+						<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>Driver’s Manual </span></a></h2>
+					<ul style="top:65px !important;">
+						<li><h5 ><a href="#"><span>Road Traffic Environment And Traffic Accident</span></a></h5></li>
+						<li><h5><a href="#"><span>Foundation Of Safe Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Specification Of Each Driver</span></a></h5></li>
+						<li class="clear-both"><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+						<li><h5><a href="#"><span>Risk Anticipation  And Defensive Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>About Us </span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>KoROAD</span></a></h5></li>
+						<li><h5><a href="#"><span>History</span></a></h5></li>
+						<li><h5><a href="#"><span>Organization</span></a></h5></li>
+						<li><h5><a href="#"><span>Major Program</span></a></h5></li>
+						<li><h5><a href="#"><span>Location</span></a></h5></li>
+						<li><h5><a href="#"><span>Contact Us</span></a></h5></li>
+					</ul>
+					
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>Introduction</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg01_1"> <span>TAAS</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg01_2"><span>Action Plan</span></a></h5></li>	
+						</ul>							
+					<li>
+						<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>Traffic Accident Statistical DB</span></a></h5></li>
+							<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>Driver’s Manual</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" class="full-box icon-bg03_1" ><span>Road Traffic Environment<br /> And Traffic Accident</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Foundation Of Safe Driving</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Specification Of Each Driver</span></a></h5></li>
+							<li><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+							<li><h5><a href="#"><span>Risk Anticipation<br /> And Defensive Driving</span></a></h5></li>
+							<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>About Us</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg04_1"><span>KoROAD</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_2"><span>History</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" class="icon-bg04_3"><span>Organization</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_4"><span>Major Program</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" class="icon-bg04_5"><span>Location</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" class="icon-bg04_6"><span>Contact Us</span></a></h5></li>
+						</ul>
+					</li>					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+
+		<!-- //gnb끝 -->
+	</div>
+
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>Driver’s Manual</span>
+			<span class="current">Road Traffic Environment And Traffic Accident</span>
+		</div>
+	</div>
+	<!-- // 로케이션 영역 -->
+	<div class="subwrap"  id="subcont">
+			<div class="subpage-toprapper">
+				<div class="sub-top sub04">
+					<h2>Road Traffic Environment And Traffic Accident</h2>
+					<!-- <p>Traffic AccidentStatistical DataBase</p> -->
+				</div>
+			</div>
+			<!-- //네비긑 -->
+		<div class="sub-cont">	
+			
+			<h4 class="subpage-tit mt-20">Road Traffic Environment And Traffic Accident</h4>
+			<p class="sub-tit02">A. Road Traffic Environment and Automobile Culture<p>
+			<p class="sub-tit03">(1) Change of the Road Traffic Environment</p>
+ 	 	 	<p class="sub-txt">The recent road traffic environment of Korea has changed in several aspects, particular noticeable are the drastic increase of the elderly population of 65 years or older of age, increase of women drivers, and change of automobile and road space and others. The number of registered vehicles in Korea has been drastically increased from the later part of 1980s and exceeded 20 million cars in 2014. The number of cars per 100 persons and the length of road extension are being increased, however, with the drastic increase of cars, the road space per car is being moderately declined.<br /><br />
+
+ 	 	 	While the entire population showed the rate of increase for 1.0% of annual average, the rate of increase in annual average for elderly population reached 4.3%.
+			</p>
+			<p class="tbl-tit">[Trend of change in entire population (thousands) / Statistics Korea]</p>
+			<div class="eng-tblbox">
+				<table  class="table01 mt-10">
+						<colgroup>
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+						</colgroup>
+						<thead>						
+							<tr>
+								<th>YEAR</th>
+								<th >1980</th>
+								<th >1990</th>
+								<th >2000</th>
+								<th >2005</th>
+								<th >2006</th>
+								<th >2007</th>
+								<th>2008</th>
+								<th >2009</th>
+								<th >2010</th>
+								<th >2011</th>
+								<th >2012</th>																		
+								<th >2013</th>																		
+								<th class="last">2014</th>																		
+							</tr>															
+						<thead>
+						<tbody>		
+							<tr>
+								<td>Population<br>(thousands)</td>
+								<td>38,124</td>
+								<td>42,869</td>
+								<td> 47,008</td>
+								<td>48,138</td>
+								<td> 48,372</td>
+								<td> 48,598</td>
+								<td>48,949</td>
+								<td>49,182</td>
+								<td> 49,410</td>
+								<td> 49,779</td>
+								<td> 50,004</td>
+								<td> 50,220</td>
+								 <td class="last">50,424</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+
+					<p class="tbl-tit mt-20">[Trend of change in the elderly population of 65 years or older of age (thousands) / Statistics Korea]</p>
+				 <div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<colgroup>
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+						</colgroup>
+						<thead>																
+								<tr>
+									<th>YEAR</th>
+<!-- 								<th >1970</th> -->
+									<th>1980</th>
+									<th>1990</th>
+									<th>2000</th>
+									<th>2005</th>
+									<th>2006</th>
+									<th>2007</th>
+									<th>2008</th>
+									<th>2009</th>
+									<th>2010</th>
+									<th>2011</th>
+									<th>2012</th>																		
+									<th>2013</th>																		
+									<th>2014</th>																		
+								</tr>	
+							</thead>
+							<tbody>									
+								<tr>
+									<td>																						
+									 Population<br>&nbsp;(thousands)&nbsp;</td>
+									<td >
+									 1,456</td>
+									<td >
+									  2,195</td>
+									<td >
+									 3,395</td>
+									<td >
+										<div align="center"> &nbsp;4,367</td>
+									<td >
+									  4,592</td>
+									<td >
+									  4,828</td>
+									<td >
+									 5,052</td>
+									<td >
+										5,256</td>
+									<td >
+									  5,452</td>
+									  <td >
+									  5,656</td>
+									<td >
+									  5,890</td>
+									<td >
+									  6,138</td>
+									<td class="last">
+									  6,404</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+						<p class="sub-tit03">(2) Desirable automobile culture</p>
+
+ 	 	 	<p class="sub-txt">While there is a drastic increase of cars, you come across the new vocabularies such traffic culture or automobile culture. However, in reality not only we are unable to free ourselves from poor traffic environment but also desirable car culture has yet to be established. From complying with basic parking etiquette in the limited parking space to avoid even the tiniest damage to others, obey the stop line on the cross street, wearing seatbelt, etc. would be the barometer of that nation’s traffic culture.<br /><br />
+
+Advanced traffic culture prioritize in safety rather than traffic flow, person over cars. Even with the advanced traffic system and complete systematic devices, without the proper conception of traffic culture by a driver or a pedestrian, it will not be as effective.</p>
+
+					<p class="tbl-tit mt-20">[Change in car and road space / KoROAD, 2010]</p>
+					<div class="eng-tblbox">
+						<table class="table01 mt-10">
+							<colgroup>
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+								<col width="" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Classification</th>
+									<th rowspan="2">
+										Registered Vehicles<br>(thousands) 
+										
+									</th>
+									<th rowspan="2">
+										No. of cars per 100 persons 
+									</th>
+									<th rowspan="2">
+										Length of road extension(km)
+									</th>
+									<th rowspan="2" class="last">
+										Road space per <br>each car(m) </th>
+								</tr>
+								<tr>
+									<th>Year</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+									  1970</td>
+									<td >
+										127</td>
+									<td >
+									  0.4</td>
+									<td >
+									  40,244</td>
+									<td  class="last">
+									  318.1</td>
+									  
+								</tr>
+								<tr>
+									<td>
+									  1980</td>
+									<td >
+									  528</td>
+									<td >
+									  1.4</td>
+									<td >
+									  46,951</td>
+									<td class="last" >
+									  89.0</td>
+								</tr>
+								<tr>
+									<td>
+									  1990</td>
+									<td >
+									  3,395</td>
+									<td >
+									  7.9</td>
+									<td >
+									  56,715</td>
+									<td  class="last">
+									  16.7</td>
+								</tr>
+								<tr>
+									<td>
+									  2000</td>
+									<td >
+									  12,059</td>
+									<td >
+									  25.7</td>
+									<td >
+									  88,775</td>
+									<td  class="last">
+									  7.4</td>
+								</tr>
+								<tr>
+									<td>
+									  2005</td>
+									<td >
+									  15,397</td>
+									<td >
+									  32.0</td>
+									<td >
+									  102,293</td>
+									<td  class="last">
+									  6.6</td>
+								</tr>
+								<tr>
+									<td>
+									  2006</td>
+									<td >
+									  15,895 </td>
+									<td >
+									  32.9</td>
+									<td >
+									  102,061</td>
+									<td  class="last">
+									  6.4</td>
+								</tr>
+								<tr>
+									<td>
+									  2007</td>
+									<td >
+									  16,428 </td>
+									<td >
+									  33.8</td>
+									<td >
+									  103,019</td>
+									<td  class="last">
+									  6.3</td>
+								</tr>
+								<tr>
+									<td>
+									  2008</td>
+									<td >
+									  16,794 </td>
+									<td >
+									  34.3</td>
+									<td >
+									  104,236</td>
+									<td  class="last">
+									  6.2</td>
+								</tr>
+								<tr>
+									<td>
+									  2009</td>
+									<td >
+									  17,325</td>
+									<td >
+									  35.2</td>
+									<td >
+									  104,983</td>
+									<td  class="last">
+									  6.1 </td>
+								</tr>
+								<tr>
+									<td>
+									  2010</td>
+									<td >
+									  17,941</td>
+									<td >
+									  36.3</td>
+									<td >
+									  105,565</td>
+									<td  class="last">
+									  5.9</td>
+								</tr>
+								<tr>
+									<td>
+									  2011</td>
+									<td >
+									  18,437</td>
+									<td >
+									  37.0</td>
+									<td >
+									  105,931</td>
+									<td  class="last">
+									  5.7</td>
+								</tr>
+								<tr>
+									<td>
+									  2012</td>
+									<td >
+									  18,870</td>
+									<td >
+									  37.7</td>
+									<td >
+									  105,703</td>
+									<td  class="last">
+									  5.6</td>
+								</tr>																		
+								<tr>
+									<td>
+									  2013</td>
+									<td >
+									  19,401</td>
+									<td >
+									  38.6</td>
+									<td >
+									  106,414</td>
+									<td  class="last">
+									  5.5</td>
+								</tr>																		
+								<tr>
+									<td>
+									  2014</td>
+									<td >
+									  20,118</td>
+									<td >
+									  39.9</td>
+									<td >
+									  105,672</td>
+									<td class="last">
+									  5.3</td>
+								</tr>																		
+							</tbody>
+						</table>
+					</div>
+
+			<p class="sub-txt mt-10">The ratio of women driver’s license holder among entire license holders has increased from 6.7% in 1980 to 40.6% in 2014.</p>
+
+ 	 	 	<p class="tbl-tit mt-20">[Trend of change in holder of driver’s license / National Police Agency]</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+							<tr>
+								<th>Classification</th>
+								<th >
+									Total
+								</th>
+								<th>
+									Male
+								</th>
+								<th class="last">
+									Female
+								</th>																
+							</tr>
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+								 1980</td>
+								<td>
+									1,860,654</td>
+								<td>
+								 1,735,814</td>
+								<td class="last">
+								 124,840</td>																
+							</tr>
+							<tr>
+								<td>
+								 1990</td>
+								<td>
+									8,543,903</td>
+								<td>
+								 7,503,101</td>
+								<td class="last">
+								 1,040,802</td>																
+							</tr>
+							<tr>
+								<td>
+								 2000</td>
+								<td>
+									18,697,346</td>
+								<td>
+								 12,701,997</td>
+								<td class="last">
+								 5,995,349</td>																
+							</tr>
+							<tr>
+								<td>
+								 2005</td>
+								<td>
+									23,497,657</td>
+								<td>
+								 14,744,888</td>
+								<td class="last">
+								 8,752,769</td>																
+							</tr>
+							<tr>
+								<td>
+								 2006</td>
+								<td>
+									24,088,229</td>
+								<td>
+								 14,992,244</td>
+								<td class="last">
+								 9,095,985</td>																
+							</tr>
+							<tr>
+								<td>
+								 2007</td>
+								<td>
+									24,681,440</td>
+								<td>
+								 15,248,126</td>
+								<td class="last">
+								 9,433,314</td>																
+							</tr>
+							<tr>
+								<td>
+								 2008</td>
+								<td>
+									25,268,379</td>
+								<td>
+								 15,554,394</td>
+								<td class="last">
+								 9,713,985</td>																
+							</tr>
+							<tr>
+								<td>
+								 2009</td>
+								<td>
+									25,822,149</td>
+								<td>
+								 15,817,223</td>
+								<td class="last">
+								 10,004,926</td>																
+							</tr>
+							<tr>
+								<td>
+								 2010</td>
+								<td>
+									26,402,364</td>
+								<td>
+								 16,074,165</td>
+								<td class="last">
+								 10,328,199</td>																
+							</tr>
+							<tr>
+								<td>
+								 2011</td>
+								<td>
+									27,251,153</td>
+								<td>
+								 16,474,240</td>
+								<td class="last">
+								 10,776,913</td>																
+							</tr>
+							<tr>
+								<td>
+								 2012</td>
+								<td>
+									28,263,317</td>
+								<td>
+								 16,933,257</td>
+								<td class="last">
+								 11,330,060</td>																
+							</tr>																																																														
+							<tr>
+								<td>
+								 2013</td>
+								<td>
+									28,848,040</td>
+								<td>
+								 17,227,765</td>
+								<td class="last">
+								 11,620,275</td>																
+							</tr>																																																														
+							<tr>
+								<td>
+								 2014</td>
+								<td>
+									29,544,245</td>
+								<td>
+								 17,557,803</td>
+								<td class="last">
+								 11,986,442</td>																
+							</tr>																																																														
+						</tbody>
+					</table>
+			</div>
+
+			<p class="tbl-tit mt-20">[Recently changed road traffic environment]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img01.gif" alt="" /></div>
+
+			<p class="tbl-tit mt-20">[The parking order is a barometer of traffic culture.]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img02.gif" alt="" /></div>
+
+ 	 	<p class="sub-tit02 mt-20">B. Seriousness of traffic Accident</p>
+ 	 	<p class="sub-tit03 mt-10">(1) The reality and characteristics of recent traffic accidents</p>
+ 	 	 	<p class="sub-txt mt-10">For Korea, as of the end of 2014, total of 223,552 cases of traffic accident with the 4,762 fatal and 337,497 injured.</p>
+
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+					<colgroup>
+						<col width="35%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th colspan="2"  class="last">
+							 Traffic Accidents by Accident Type in 2014</th>																	
+						</tr>
+						<tr>
+							<th>
+							 Case</th>	
+							<td class="last">
+							 223,552</td>															
+						</tr>
+						<tr>
+							<th>
+							 Vehicle vs. Vehicle</th>	
+							<td class="last">
+							 162,181</td>																
+						</tr>
+						<tr>
+							<th>
+							 Vehicle vs. Pedestrian</th>	
+							<td class="last">
+							 50,315</td>																
+						</tr>
+						<tr>
+							<th>
+							 Vehicle Alone</th>	
+							<td class="last">
+							  11,054</td>																
+						</tr>
+						<tr>
+							<th>
+							 Vehicle vs. Train</th>	
+							<td class="last">
+							 2</td>																
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Increase of Car versus car accident 
+				 <p>In 2014, the Car versus car accidents reach 72.5% among entire accidents. In order to prevent the accidents between the automobiles, active communication is needed such as turn on the signal while driving.</p>
+			 </li>
+			 <li><span>•</span> icon Increase of weekend accident 
+				<p>There has been increase on friday and weekend traffic accident with more people enjoying leisure activities due to expansion of 5 working days a week in work places. To prevent the traffic accidents, make sure you get plenty of rest before going on the road for long/short distance driving, conduct prior inspection of the car and drive safely with relaxed driving plan.</p>
+			 </li>
+		   </ul>
+
+
+ 	
+ 	 	 	<p class="tbl-tit mt-20">[Trend of Traffic Accident / KoROAD]</p>
+			<div class="eng-tblbox">			
+					<table class="table01 mt-10">
+						<thead>
+							<tr>
+								<th>Classification</th>
+								<th>
+									Traffic Accident
+								</th>
+								<th>
+									Persons Killed
+								</th>
+								<th class="last">
+									Persons Injuried
+								</th>																
+							</tr>
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+								  1970</td>
+								<td>
+									37,243</td>
+								<td>
+								  3,069</td>
+								<td class="last">
+								  42,830</td>																
+							</tr>
+							<tr>
+								<td>
+								  1980</td>
+								<td>
+									120,182</td>
+								<td>
+								  5,608</td>
+								<td class="last">
+								  111,641</td>																
+							</tr>
+							<tr>
+								<td>
+								  1990</td>
+								<td>
+									255,303</td>
+								<td>
+								  12,325</td>
+								<td class="last">
+								  324,229</td>																
+							</tr>
+							<tr>
+								<td>
+								  2000</td>
+								<td>
+									290,481</td>
+								<td>
+								  10,236</td>
+								<td class="last">
+								  426,984</td>																
+							</tr>
+							<tr>
+								<td>
+								  2005</td>
+								<td>
+									214,171</td>
+								<td>
+								  6,376</td>
+								<td class="last">
+								  342,233</td>																
+							</tr>
+							<tr>
+								<td>
+								  2006</td>
+								<td>
+									213,745</td>
+								<td>
+								  6,327</td>
+								<td class="last">
+								  340,229</td>																
+							</tr>
+							<tr>
+								<td>
+								  2007</td>
+								<td>
+									211,662</td>
+								<td>
+								  6,166</td>
+								<td class="last">
+								  335,906</td>																
+							</tr>
+							<tr>
+								<td>
+								  2008</td>
+								<td>
+									215,822</td>
+								<td>
+								  5,870</td>
+								<td class="last">
+								  338,962</td>																
+							</tr>
+							<tr>
+								<td>
+								  2009</td>
+								<td>
+									231,990</td>
+								<td>
+								  5,838</td>
+								<td class="last">
+								  361,875</td>																
+							</tr>
+							<tr>
+								<td>
+								  2010</td>
+								<td>
+									226,878</td>
+								<td>
+								  5,505</td>
+								<td class="last">
+								  352,458</td>																
+							</tr>
+							<tr>
+								<td>
+								  2011</td>
+								<td>
+									221,711</td>
+								<td>
+								  5,229</td>
+								<td class="last">
+								  341,391</td>																
+							</tr>
+							<tr>
+								<td>
+								  2012</td>
+								<td>
+									223,656</td>
+								<td>
+								  5,392</td>
+								<td class="last">
+								  344,565</td>																
+							</tr>																														
+							<tr>
+								<td>
+								  2013</td>
+								<td>
+									215,354</td>
+								<td>
+								  5,092</td>
+								<td class="last">
+								  328,711</td>																
+							</tr>																														
+							<tr>
+								<td>
+								  2014</td>
+								<td>
+									223,552</td>
+								<td>
+								  4,762</td>
+								<td class="last">
+								  337,497</td>																
+							</tr>																														
+						</tbody>
+					</table>
+			</div> 	
+			<ul class="yakguan-list2">
+			 <li><span>•</span>
+			Increase of nighttime accident
+ 	<p>Recently, with the growing number of nighttime activities, accidents occur frequently in the late night from 10:00 P.M. to early morning hours. To reduce the nighttime accident, you should let other drivers know your movements by turning on the headlight as it starts to get dusky outside and turn on the signal before you change your driving directions and make sure you have smooth communication with other drivers. For nighttime driving, extra attention is required than the day time for safe driving.</p>
+					</li>
+
+			 <li><span>•</span>Drastic increase of accidents by women driver, youth and the elderly
+ 	<p>Recently, with an increase of women drivers as well as the motorcycle and speed maniacs that accidents involving women driver and youth group have been on the rise. In addition, the drastic increase of traffic accidents due to the increase of elderly drivers is emerging as a social issue now.	</p>
+					</li>
+		   </ul>
+
+
+ 	 	 	<p class="tbl-tit mt-20">[Status of accident from the elderly drivers (In the event that the 61 years or older is 1st Party)]</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+						<thead>
+							<tr>
+								<th  rowspan="2">Year</th>
+								<th  colspan="2" class="last">
+									Overall
+								</th>																													
+							</tr>
+							<tr>
+								<th>Year</th>
+								<th class="last">
+									61 years or older
+								</th>																													
+							</tr>
+						</thead>
+						<tbody>	
+							<tr>
+								<td>
+								  2000</td>
+								<td>
+									290,481</td>
+								<td class="last">
+								  8,141</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2001</td>
+								<td>
+									260,579</td>
+								<td class="last">
+								  8,367</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2002</td>
+								<td>
+									231,026</td>
+								<td class="last">
+								  8,388</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2003</td>
+								<td>
+									240,832</td>
+								<td class="last">
+								  10,180</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2004</td>
+								<td>
+									220,755</td>
+								<td class="last">
+								  11,157</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2005</td>
+								<td>
+									214,171</td>
+								<td class="last">
+								  12,584</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2006</td>
+								<td>
+									213,745</td>
+								<td class="last">
+								  13,818</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2007</td>
+								<td>
+									211,662</td>
+								<td class="last">
+								  15,045</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2008</td>
+								<td>
+									215,822</td>
+								<td class="last">
+								  17,669</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2009</td>
+								<td>
+									231,990</td>
+								<td class="last">
+								  21,085</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2010</td>
+								<td>
+									226,878</td>
+								<td class="last">
+								  22,175</td>																															
+							</tr>
+							<tr>
+								<td>
+								  2011</td>
+								<td>
+									221,711</td>
+								<td class="last">
+								  24,165</td>																															
+							</tr>									
+							<tr>
+								<td>
+								  2012</td>
+								<td>
+									223,656</td>
+								<td class="last">
+								  25,975</td>																															
+							</tr>																				
+							<tr>
+								<td>
+								  2013</td>
+								<td>
+									215,354</td>
+								<td class="last">
+								  29,178</td>																															
+							</tr>																				
+							<tr>
+								<td>
+								  2014</td>
+								<td>
+									223,552</td>
+								<td class="last">
+								  32,902</td>																															
+							</tr>																				
+						</tbody>
+					</table>
+				</div>
+
+			<p class="tbl-tit mt-20">[Women, youths and the elderly are not excluded from traffic accident.]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img04.gif"  alt="" /></div>
+			<p class="sub-tit03 mt-10">(2) Why do traffic accidents occur?</p>
+			<ul class="yakguan-list2">
+				<li><span>•</span> 	 	 	
+				icon By the unsafe traffic environment
+				<p>Unsafe traffic environment means situations given to the driver externally such as decline of vision due to darkness, slippery surface, lack of traffic safety facilities, defective vehicle maintenance, sudden cutting in of cars to the front and others. particularly, most common to witness on the road where the regulations is frequently violated is either the cars or pedestrians who are violating the regulations.</p>
+					</li>
+
+				 <li><span>•</span> icon Due to the lack of accurate knowledge and ambiguous driving behavior
+				<p>Many traffic accidents are caused by the lack of knowledge. For example, when speeding or braking under the special situation of snowy road, rainy road or curved road, it is unable respond because of the unknown conditions of the cars.</p>
+				</li>
+			</ul>
+ 	 	 		<p class="tbl-tit mt-20">[When the special distinction of snowy road is unknown it can lead to an accident]	</p>			
+					<div class="trafic-img"><img src="../../../images/eng/manual_img05.gif"  alt="" /></div>
+			<ul class="yakguan-list2">
+				<li><span>•</span> 			
+Lack of recognition of danger
+ 	<p>Under the same circumstances, some drivers feel danger and take action, by slowing down, and some drivers don’t. This depends on the difference in experiences as “Dangerous”or “Not so dangerous” but it is because the standard of dhow much is considered as dangerous. The stronger your desire to be your destination, the more risk you take.</p>
+					</li>
+
+				<li><span>•</span> 	 	icon Due to the wrong driving attitude
+ 	<p>The elements of dangerous driving are the driving attitude of not complying the traffic laws and regulations with the mentality of ‘no traffic accident, no problem’, impetuous attitude whenever sitting behind the wheel even when you are running late, selfish attitude without the consideration for other drivers or pedestrians, tendency of changing attitude at will and easily get excited, over-confidence of driving skill and attempt to show it and others.</p>
+					</li>
+
+				<li><span>•</span> 	 	icon Due to the incorrect driving habit
+ 	<p>While dangerous driving continues and accidents do not occur, you start to believe that “These conducts are not dangerous”and this very belief is “Unawareness of safety”. Inappropriate driving habits start from such belief.</p>
+					</li>
+			</ul>
+
+ 	 	 	 	 	 		<p class="tbl-tit mt-20">[Rushing predicts danger at all times]	</p>	
+							<div class="trafic-img"><img src="../../../images/eng/manual_img06.gif"  alt="" /></div>
+
+
+				<p class="sub-tit03 mt-10">(3) Measures to prevent traffic accident</p>
+			<ul class="yakguan-list2">
+				<li><span>•</span> 	 	 	 	
+icon Let people notice you
+ 	 	<p>The modern society will not notice you if you do not inform yourself to them. Same applies to driving. It is important to show others your driving and inform them of your car movement. That is a way for others to help you or avoid the danger from you.</p></li>
+
+				<li><span>•</span>
+
+icon Compliance with traffic laws and regulations is the safety device for your family
+ 	 	<p>Everyone expects for pedestrian and car to comply with the traffic laws and regulations. However, the main cause of unsafe driving is to create the unexpected situations. Even if the other drivers violate the traffic laws and regulations, the accident may not occur if you keep the rules.</p>
+</li>
+
+				<li><span>•</span>
+icon All of sudden maneuvering are red light for safe driving
+ 	<p>It would be very difficult to respond when other drivers cut in or the car in front applies the sudden brake, particularly the driver is looking elsewhere. Act of sudden changes in short period of time, such as sudden handling maneuver, sudden braking, sudden starting, sudden entry and others raises the red signal for safe driving.
+</p>
+					</li>
+			</ul>
+
+ 	 	 	 	 	 		<p class="tbl-tit mt-20">[Compliance with traffic laws and regulations is the safety device for all my family members.]</p>	
+
+							<div class="trafic-img"><img src="../../../images/eng/manual_img07.gif"  alt="" /></div>
+
+
+				<ul class="yakguan-list2">
+				<li><span>•</span>Safe driving starts with maintaining appropriate speed and safe distance
+ 		<p>There are times when you have sufficient distance with a car approaching from far back but due to much faster speed than expected it end up in accident. It is not easy to determined the speed of a car approaching from far behind thus you should not judge whether it is “Dangerous”or “Not dangerous”. Remember that it is beginning of safe driving when you maintain proper speed posted by law and within the capability range of driver which is yourself.</p>
+					</li>
+
+				<li><span>•</span>Active information exchange is the green light for accident prevention
+ 		<p>Positive communication while driving takes important role in preventing accident. When a car in front attempts left turn at the intersection and suddenly slows down and stop, and the car behind attempts to pass by making 180 degree u-turn will result in accident.<br /><br />
+
+In this situation, had the car in the front indicated intention on u-turn, the car behind would not have attempted to pass, and even the car behind was in the no passing zone had it showed signal to pass, the car in front could have responded. This is why the efforts should be made for positive communication as if the car next to you or in front of you is a family or a close friend.</p>
+					</li>
+			</ul>
+
+ 	 	 		<p class="tbl-tit mt-20">[Inform other drivers with the signal before the lane change.]</p>	
+
+							<div class="trafic-img"><img src="../../../images/eng/manual_img08.gif"  alt="" /></div>
+
+
+ 	 	 		<p class="tbl-tit mt-20">	[Maintaining appropriate distance looks right and is safe]</p>	
+
+							<div class="trafic-img"><img src="../../../images/eng/manual_img09.gif"  alt="" /></div>
+
+ 	 	 		<p class="tbl-tit mt-20">		[Accident may occur when there is no communication]</p>	
+
+							<div class="trafic-img"><img src="../../../images/eng/manual_img10.gif"  alt="" /> <img src="../../../images/eng/manual_img11.gif"  alt="" /></div>
+				<ul class="yakguan-list2">
+				<li><span>•</span>
+Develop the risk anticipating skills
+ 	<p>You need to always have the idea in your mind that other cars or pedestrians might violate traffic regulation. In other words consider that the movements of other drivers may be disadvantage to you and prepare for the situation. Perhaps while you practice this ability, your risk anticipation would improve.</p>
+					</li>
+
+				<li><span>•</span>Drive in calm and cool manner
+ 	<p>Among the most common reason for traffic violation is time advantage in other words, to reduce the driving time. However you might want to think how much could that time advantage can help you. To save few minutes, not only you are risking the citation by the police and suspension of your driver’s license but also you are risking the danger of traffic accident.</p>
+					</li>
+			</ul>
+
+ 	 	 	 	 	 		<p class="tbl-tit mt-20">[Controlled driving is a smallinvestment for accident prevention]</p>	
+
+							<div class="trafic-img"><img src="../../../images/eng/manual_img12.gif"  alt="" /></div>
+
+
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="footer-wrap">
+			<address>
+				<p><img src="../../../images/eng/f_logo.gif" alt=""  /> Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+		</div>
+	</div>
+	
+ </body>
+</html>

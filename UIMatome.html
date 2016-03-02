@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="resources/css/common.css">
+</head>
+<body>
+    <div id="wrap">     
+        <header id="header">
+            <h1>doAkuma</h1>
+            <nav id="gnb" class="menu menu_gnb" role="navigation">
+                <button type="button" role="button" class="btn_gnb_ctrl"><span class="ctrl_bar"></span></button>
+                <ul class="list_gnb">
+                    <li>
+                        <a href="#menuInven01" class="btn btn_gnb">About</a>
+                    </li>
+                    <li>
+                        <a href="#menuInven02" class="btn btn_gnb">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#menuInven03" class="btn btn_gnb">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#menuInven04" class="btn btn_gnb">UI Inventory</a>
+                    </li>
+                    <li>
+                        <a href="#menuInven05" class="btn btn_gnb">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+            <article class="box_search_gnb">
+                <div class="box_input">
+                    <label for="txtSrch">Search</label>
+                    <input type="text" id="txtSrch" class="text" placeholder="Search">
+                    <button type="button" class="btn_search">Search</button>
+                </div>
+            </article>
+            <article class="box_sns">
+                <a href="#none" class="btn_sns fa fa-facebook"></a>
+                <a href="#none" class="btn_sns fa fa-twitter"></a>
+                <a href="#none" class="btn_sns fa fa-github"></a>
+            </article>
+        </header>
+        <div id="content">
+            <h1 class="tit tit_section">UI Inventory</h1>
+            <div class="box section">
+                <h2 class="tit tit_sub">Draggable</h2>
+                <h3 class="stit_sub">Drag and Drop</h3>
+                <div class="box_exec">
+                    <div class="wrap_btn_group">
+                        <button type="button" class="btn" data-add>Add</button>
+                        <button type="button" class="btn">Modify</button>
+                    </div>
+                    <div id="draggable" class="wrap_drag">
+                        <div class="box_drag">Drag Box1 <button type="button" class="btn close">close</button></div>
+                        <div class="box_drag">Drag Box2<button type="button" class="btn close">close</button></div>
+                        <div class="box_drag">Drag Box3<button type="button" class="btn close">close</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box section">
+                <h2 class="tit tit_sub">Navigation</h2>
+            </div>
+            <div class="box section">
+                <h2 class="tit tit_sub">Common</h2>
+                <h3 class="stit_sub">Button</h3>
+                <div class="box_exec">
+                    <a href="#none" class="btn">Link</a>
+                    <button type="button" class="btn">Button</button>
+                    <button type="button" class="btn" disabled="">Disabled</button>
+                </div>
+                <h3 class="stit_sub">Button Size</h3>
+                <div class="box_exec">
+                    <h4 class="stit_exec">Extra Small</h4>
+                    <a href="#none" class="btn sz-x-sm">Extra Small</a>
+                    <button type="button" class="btn sz-x-sm">Extra Small</button>
+                    <button type="button" class="btn sz-x-sm" disabled="">Extra Small</button>
+                </div>
+                <div class="box_exec">
+                    <h4 class="stit_exec">Small</h4>
+                    <a href="#none" class="btn sz-sm">Small</a>
+                    <button type="button" class="btn sz-sm">Small</button>
+                    <button type="button" class="btn sz-sm" disabled="">Small</button>
+                </div>
+                <div class="box_exec">
+                    <h4 class="stit_exec">Default</h4>
+                    <a href="#none" class="btn">Default</a>
+                    <button type="button" class="btn">Default</button>
+                    <button type="button" class="btn" disabled="">Default</button>
+                </div>
+                <div class="box_exec">
+                    <h4 class="stit_exec">Large</h4>
+                    <a href="#none" class="btn sz-lg">Large</a>
+                    <button type="button" class="btn sz-lg">Large</button>
+                    <button type="button" class="btn sz-lg" disabled="">Large</button>
+                </div>
+                <h3 class="stit_sub">Button Full Width</h3>
+                <div class="box_exec">
+                    <a href="#none" class="btn sz-fw">Link</a>
+                    <button type="button" class="btn sz-fw">Button</button>
+                    <button type="button" class="btn sz-fw" disabled="">Disabled</button>
+                </div>
+                <h3 class="stit_sub">Button Group</h3>
+                <div class="box_exec">
+                    <div class="wrap_btn_group">
+                        <a href="#none" class="btn">Link</a>
+                        <button type="button" class="btn">Button</button>
+                        <button type="button" class="btn" disabled="">Disabled</button>
+                    </div>
+                </div>
+
+                <h3 class="stit_sub">Icon Photo</h3>
+                <div class="icon">
+                    <img src="resources/images/common/img_doakuma_profile.png" alt="">
+                </div>
+                <div class="icon ic_circle">
+                    <img src="resources/images/common/img_doakuma_profile.png" alt="">
+                </div>
+                <div class="icon ic_hexagon"style="background-image: url(resources/images/common/img_doakuma_profile.png);">
+                    <span class="hexa1"></span><span class="hexa2"></span>
+                </div>
+            </div>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+<script src="resources/js/jquery-1.11.3.min.js"></script>
+<script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#draggable').sortable({
+            revert: true
+        });
+        $('.box_drag').each(function(){
+            $(this).draggable({
+                connectToSortable: '#draggable',
+                revert: 'invalid'
+            });
+        });
+        $('.btn[data-add]').each(function(){
+            $(this).on('click', function(){
+                var elBox = $('.box_drag').size() + 1,
+                    addBox = '<div class="box_drag">Drag Box'+elBox+'<button type="button" class="btn close">close</button></div>';
+                $('.wrap_drag').append(addBox);
+                removeBox();
+            })
+        });
+        function removeBox(){
+            $('.box_drag .btn.close').each(function(){
+                $(this).on('click', function(){
+                    $(this).parent().remove();
+                })
+            })
+        }
+    })
+</script>
+</body>
+</html>

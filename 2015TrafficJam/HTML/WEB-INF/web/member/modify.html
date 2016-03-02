@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS 교통사고분석시스템</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub.css"></link>
+	<script src="../../../js/placeholders.min.js"></script>
+	<script src="../../../js/response.js"></script>
+	<script language="javascript" type="text/javascript" src="../../../js/common.js"></script>
+	
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+	<!--placeholder-->
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+	$(function() {
+ $('input, textarea').placeholder();
+});
+	//]]>
+	</script>
+	<!--//placeholder-->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/web/common/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<div class="search">
+				<input type="text" value="통합검색" onfocus="this.value=''" />
+				<a href="#" class="btn-search">검색</a>
+			</div>
+			<ul class="util">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">사이트맵</a></li>
+				<li><a href="#">ENGLISH</a></li>
+				<li class="last"><a href="#">이용안내</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>한눈에 보는 교통사고 통계</span></a></h2>
+					<ul>
+						<li><h5><a href="sub01/sub0101.html" class="icon-bg01_1"> <span>교통사고 비교</span></a></h5>
+							<ul class="ul01">
+								<li><a href="sub01/sub0101.html">교통사고 여건</a></li>
+								<li ><a href="sub01/sub0102.html">교통사고 추세</a></li>
+								<li ><a href="sub01/sub0103.html">교통사고 발생(증감)현황</a></li>
+								<li><a href="sub01/sub0104.html">교통여건 및 교통사고 현황</a></li>
+								<li><a href="sub01/sub0105.html">자동차 1만대당 교통사고</a></li>
+								<li class="ml-35 "><a href="sub01/sub0106.html">인구 10만명당 교통사고</a></li><br/>
+								<li ><a href="sub01/sub0107.html">도로 10km당 교통사고</a></li>
+								<li><a href="sub01/sub0108.html">OECD국가교통사고 발생현황</a></li>
+								<li ><a href="sub01/sub0109.html">지역별 교통안전지수</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="sub01/sub0201.html" class="icon-bg01_2"><span>교통사고 일반</span></a></h5>
+							<ul class="ul02" >
+								<li class="ml-15"><a href="sub01/sub0201.html">월별 교통사고</a></li>
+								<li><a href="sub01/sub0202.html">요일별 교통사고</a></li>
+								<li ><a href="sub01/sub0203.html">시간대별 교통사고</a></li>
+								<li  ><a href="sub01/sub0204.html">주야별 교통사고</a></li>
+								<li ><a href="sub01/sub0205.html">사고유형별 교통사고</a></li>
+								<li><a href="sub01/sub0206.html">도로종류별 교통사고</a></li>
+								<li ><a href="sub01/sub0207.html">도로형태별 교통사고</a></li>
+								<li><a href="sub01/sub0208.html">차종별 교통사고</a></li>
+								<li ><a href="sub01/sub0209.html">법규위반별 교통사고</a></li>
+								<li ><a href="sub01/sub0210.html">연령층별 교통사고</a></li>
+								<li ><a href="sub01/sub0211.html">시도별 교통사고</a></li>
+								<li ><a href="sub01/sub0212.html">시군구별 교통사고</a></li>
+							</ul>
+						</li>
+						<li class="g-bar"><h5><a href="sub01/sub0301.html" class="icon-bg01_3"><span>사상자</span></a></h5>
+							<ul class="ul03">
+								<li><a href="sub01/sub0301.html">연령층별 사상자</a></li>
+								<li><a href="sub01/sub0302.html">사고시 상태별 사상자</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="sub01/sub0401.html" class="icon-bg01_4"><span>부분별 교통사고</span></a></h5>
+							<ul class="ul04">
+								<li class="ml-5"><a href="sub01/sub0401.html">보행자 교통사고</a></li>
+								<li ><a href="sub01/sub0402.html">무단횡단 교통사고</a></li>
+								<li><a href="sub01/sub0403.html">이륜차 교통사고</a></li>
+								<li ><a href="sub01/sub0404.html">뺑소니 교통사고</a></li>
+								<li ><a href="sub01/sub0405.html">어린이 교통사고</a></li>
+								<li><a href="sub01/sub0406.html">스쿨존내 어린이 교통사고</a></li>
+								<li><a href="sub01/sub0407.html">어린이보행자 교통사고</a></li>
+								<li ><a href="sub01/sub0408.html">어린이통학버스로 인한 어린이 교통사고</a></li>
+								<li ><a href="sub01/sub0409.html">노인 교통사고</a></li>
+								<li ><a href="sub01/sub0410.html">노인운전자 교통사고</a></li>
+								<li ><a href="sub01/sub0411.html">노인보행자 교통사고</a></li>
+								<li class="m-left"><a href="sub01/sub0412.html">음주운전 교통사고</a></li>
+								<li ><a href="sub01/sub0413.html">자전거 교통사고</a></li>
+								<li ><a href="sub01/sub0414.html">대형 교통사고</a></li>
+								<li ><a href="sub01/sub0415.html">사업용차량 교통사고</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h2><a href="#"><span>통계분석</span></a></h2>
+					<ul>
+						<li><h5><a href="#" class="icon-bg02_1"><span>통합 분석 시스템</span></a></h5>
+							<ul class="ul05">
+								<li><a href="#" target="_blank" title="새창열림">전체보기</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통여부</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통사고 추세</a></li>
+								<li><a href="#" target="_blank" title="새창열림">외국교통사고 통계</a></li>
+								<li><a href="#" target="_blank" title="새창열림">경찰 DB</a></li>
+								<li><a href="#" target="_blank" title="새창열림">통합 DB</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" class="icon-bg02_2"><span>비정형 분석 시스템</span></a></h5>
+						</li>
+					</ul>
+					<h2><a href=""><span>GIS분석</span></a></h2>
+					<ul>
+						<li class="line"><h5 ><a href="#" target="_blank" title="새창열림"class="full-box icon-bg03_1" ><span>교통사고 GIS 분석 시스템</span></a></h5>
+							<ul class="ul06">
+								<li><a href="#" target="_blank" title="새창열림">교통사고 다발지역</a></li>
+								<li><a href="#" target="_blank" title="새창열림">교통사고 주제도</a></li>
+								<li><a href="#" target="_blank" title="새창열림">지역별 교통사고 검색</a></li>
+								<li><a href="#" target="_blank" title="새창열림">노선별 교통사고 검색</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림"  class="icon-bg03_2"><span>위험 도로 예보 시스템</span></a></h5>
+						</li>
+					</ul>
+					<h2><a href="#" target="_blank"><span>고객센터</span></a></h2>
+					<ul>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_1"><span>알림마당</span></a></h5>
+							<ul class="ul07">
+								<li><a href="#" target="_blank" title="새창열림">공단 새소식</a></li>
+								<li><a href="#" target="_blank" title="새창열림">보도자료</a></li>
+								<li><a href="#" target="_blank" title="새창열림">공지사항</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_2"><span>자주묻는 질문</span></a></h5></li>
+						<li class="g-bar2"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_3"><span>묻고답하기</span></a></h5></li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_4"><span>사용자메뉴얼</span></a></h5></li>
+						<li class="g-bar3"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_5"><span>자료신청</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_6"><span>통계보고서</span></a></h5></li>
+					</ul>
+					<h2><a href="#" target="_blank" title="새창열림"><span>통합DB소개</span></a></h2>
+					<ul>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_1"><span>통합 DB 소개</span></a></h5>
+							<ul class="ul08">
+								<li><a href="#" target="_blank" title="새창열림">배경 및 목적</a></li>
+								<li><a href="#" target="_blank" title="새창열림">법적근거</a></li>
+								<li><a href="#" target="_blank" title="새창열림">구출개요</a></li>
+							</ul>
+						</li>
+						<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_2"><span>홈페이지 이용안내</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_3"><span>이용약관</span></a></h5></li>
+						<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_4"><span>사이트맵</span></a></h5></li>
+						<li class="g-bar3" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_5"><span>관련사이트</span></a></h5></li>
+						<li class="g-bar4" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_6"><span>OpenAPI 연결</span></a></h5></li>
+					</ul>
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>한눈에 보는 교통사고 통계</span></a></h2>
+						<ul>
+							<li><h5><a href="sub01/sub0101.html" class="icon-bg01_1"> <span>교통사고 비교</span></a></h5>
+								<ul class="ul01">
+									<li><a href="sub01/sub0101.html">교통사고 여건</a></li>
+									<li ><a href="sub01/sub0102.html">교통사고 추세</a></li>
+									<li ><a href="sub01/sub0103.html">교통사고 발생(증감)현황</a></li>
+									<li><a href="sub01/sub0104.html">교통여건 및 교통사고 현황</a></li>
+									<li><a href="sub01/sub0105.html">자동차 1만대당 교통사고</a></li>
+									<li><a href="sub01/sub0106.html">인구 10만명당 교통사고</a></li><br/>
+									<li ><a href="sub01/sub0107.html">도로 10km당 교통사고</a></li>
+									<li><a href="sub01/sub0108.html">OECD국가교통사고 발생현황</a></li>
+									<li ><a href="sub01/sub0109.html">지역별 교통안전지수</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="sub01/sub0201.html" class="icon-bg01_2"><span>교통사고 일반</span></a></h5>
+								<ul class="ul02" >
+									<li><a href="sub01/sub0201.html">월별 교통사고</a></li>
+									<li><a href="sub01/sub0202.html">요일별 교통사고</a></li>
+									<li ><a href="sub01/sub0203.html">시간대별 교통사고</a></li>
+									<li  ><a href="sub01/sub0204.html">주야별 교통사고</a></li>
+									<li ><a href="sub01/sub0205.html">사고유형별 교통사고</a></li>
+									<li><a href="sub01/sub0206.html">도로종류별 교통사고</a></li>
+									<li ><a href="sub01/sub0207.html">도로형태별 교통사고</a></li>
+									<li><a href="sub01/sub0208.html">차종별 교통사고</a></li>
+									<li ><a href="sub01/sub0209.html">법규위반별 교통사고</a></li>
+									<li ><a href="sub01/sub0210.html">연령층별 교통사고</a></li>
+									<li ><a href="sub01/sub0211.html">시도별 교통사고</a></li>
+									<li ><a href="sub01/sub0212.html">시군구별 교통사고</a></li>
+								</ul>
+							</li>
+							<li class="g-bar"><h5><a href="sub01/sub0301.html" class="icon-bg01_3"><span>사상자</span></a></h5>
+								<ul class="ul03">
+									<li><a href="sub01/sub0301.html">연령층별 사상자</a></li>
+									<li><a href="sub01/sub0302.html">사고시 상태별 사상자</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="sub01/sub0401.html" class="icon-bg01_4"><span>부분별 교통사고</span></a></h5>
+								<ul class="ul04">
+									<li><a href="sub01/sub0401.html">보행자 교통사고</a></li>
+									<li ><a href="sub01/sub0402.html">무단횡단 교통사고</a></li>
+									<li><a href="sub01/sub0403.html">이륜차 교통사고</a></li>
+									<li ><a href="sub01/sub0404.html">뺑소니 교통사고</a></li>
+									<li ><a href="sub01/sub0405.html">어린이 교통사고</a></li>
+									<li><a href="sub01/sub0406.html">스쿨존내 어린이 교통사고</a></li>
+									<li><a href="sub01/sub0407.html">어린이보행자 교통사고</a></li>
+									<li ><a href="sub01/sub0408.html">어린이통학버스로 인한 어린이 교통사고</a></li>
+									<li ><a href="sub01/sub0409.html">노인 교통사고</a></li>
+									<li ><a href="sub01/sub0410.html">노인운전자 교통사고</a></li>
+									<li ><a href="sub01/sub0411.html">노인보행자 교통사고</a></li>
+									<li class="m-left"><a href="sub01/sub0412.html">음주운전 교통사고</a></li>
+									<li ><a href="sub01/sub0413.html">자전거 교통사고</a></li>
+									<li ><a href="sub01/sub0414.html">대형 교통사고</a></li>
+									<li ><a href="sub01/sub0415.html">사업용차량 교통사고</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>통계분석</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>통합 분석 시스템</span></a></h5>
+								<ul class="ul05">
+									<li><a href="#" target="_blank" title="새창열림">전체보기</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통여부</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통사고 추세</a></li>
+									<li><a href="#" target="_blank" title="새창열림">외국교통사고 통계</a></li>
+									<li><a href="#" target="_blank" title="새창열림">경찰 DB</a></li>
+									<li><a href="#" target="_blank" title="새창열림">통합 DB</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#"><span>비정형 분석 시스템</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href=""><span>GIS분석</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" target="_blank" title="새창열림"class="full-box icon-bg03_1" ><span>교통사고 GIS 분석 시스템</span></a></h5>
+								<ul class="ul06">
+									<li><a href="#" target="_blank" title="새창열림">교통사고 다발지역</a></li>
+									<li><a href="#" target="_blank" title="새창열림">교통사고 주제도</a></li>
+									<li><a href="#" target="_blank" title="새창열림">지역별 교통사고 검색</a></li>
+									<li><a href="#" target="_blank" title="새창열림">노선별 교통사고 검색</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림"  class="icon-bg03_2"><span>위험 도로 예보 시스템</span></a></h5>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>고객센터</span></a></h2>
+						<ul>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_1"><span>알림마당</span></a></h5>
+								<ul class="ul07">
+									<li><a href="#" target="_blank" title="새창열림">공단 새소식</a></li>
+									<li><a href="#" target="_blank" title="새창열림">보도자료</a></li>
+									<li><a href="#" target="_blank" title="새창열림">공지사항</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_2"><span>자주묻는 질문</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_3"><span>묻고답하기</span></a></h5></li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_4"><span>사용자메뉴얼</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_5"><span>자료신청</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg04_6"><span>통계보고서</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank" title="새창열림"><span>통합DB소개</span></a></h2>
+						<ul>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_1"><span>통합 DB 소개</span></a></h5>
+								<ul class="ul08">
+									<li><a href="#" target="_blank" title="새창열림">배경 및 목적</a></li>
+									<li><a href="#" target="_blank" title="새창열림">법적근거</a></li>
+									<li><a href="#" target="_blank" title="새창열림">구출개요</a></li>
+								</ul>
+							</li>
+							<li><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_2"><span>홈페이지 이용안내</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_3"><span>이용약관</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_4"><span>사이트맵</span></a></h5></li>
+							<li class="g-bar3" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_5"><span>관련사이트</span></a></h5></li>
+							<li class="g-bar4" ><h5><a href="#" target="_blank" title="새창열림" class="icon-bg05_6"><span>OpenAPI 연결</span></a></h5></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+			<div class="menu_back02"></div>
+		<!-- //gnb끝 -->
+	</div>
+	<!-- 서브페이지 시작 -->
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>회원정보관리</span>
+			<span>마이페이지</span>
+			<span class="current">회원가입</span>
+		</div>
+	</div>
+	<div class="subwrap" id="subcont">
+		<div class="sub-top sub06">
+			<h2>회원정보변경</h2>
+			<p>회원님의 정보를 변경하실 수 있습니다.</p>
+		</div>
+		<div class="sub-cont">
+
+			<div class="text-wrapper mt-0">
+				<ul class="text-notic-list2">
+					<li>회원 변경/탈퇴에 앞서 다음의 안내사항을 확인하시기 바랍니다. </li>
+					<li>회원 변경/탈퇴를 신청하시면 즉시 탈퇴 처리되며, 다시 로그인하실 경우 회원가입이 필요합니다.</li>
+					<li>회원 변경/탈퇴를 신청하시면 회원님의 개인정보(아이디, 닉네임, 휴대폰번호, 주소, exp 등)를 포함한 정보도 삭제됩니다.</li>
+					<li>회원 변경/탈퇴 즉시 회원 정보는 삭제되며, 교통사고 분석시스템을 통해 만들어진 콘텐츠들은 모두 삭제됩니다.</li>
+				</ul>
+			</div>
+
+			<div class="clear-both ">
+				<table class="table06 mt-10" >
+					<caption>새소식목록</caption>
+					<colgroup>
+						<col style="width:110px;"  />
+						<col style=";"  />
+					</colgroup>
+					<tbody>           
+						<tr>
+							<th scope="row" class="subject1">아이디</th>
+							<td class="last2" >
+								<div class="pdtb10">
+									<p>
+										<input type="text" class="text-input wd-30p" title="아이디 입력하세요" id="" />
+									</p>
+									<p class="join-txt">영문소문자 및 숫자를 이용하여 6~20자를 입력하시기 바랍니다. <br />
+										사용자 ID는 변경이 불가능합니다. </p>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">본인인증</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<span><input type="radio" id="1" /> <label for="1">아이핀 인증</label></span>     
+									<span class="ml-20"><input type="radio" id="2" /> <label for="2"> 휴대폰 인증</label></span>  
+									<a href="#" class="ml-20 btn-gray2">본인인증</a>
+									<span class="org-txt">아이핀 인증으로 본인 인증 되었습니다</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">비밀번호</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<input type="text" class="text-input wd-30p mr-10" title="비밀번호 입력하세요" id="" /> <span class="join-txt">8~20자리 영문과 숫자, 특수문자의 조합</span>
+								</div>
+							</td>
+						</tr>						
+						<tr>
+							<th scope="row" class="subject1">비밀번호 확인</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<input type="text" class="text-input wd-30p mr-10" title="비밀번호 확인" id="" /> <span class="join-txt">입력하신 비밀번호를 다시 한번 입력해 주십시오</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">소속</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<p>
+										<input type="text" class="text-input wd-15p mr-10" title="대분류" id="" /> <input type="text" class="text-input wd-15p mr-10" title="중분류" id="" /> <input type="text" class="text-input wd-15p mr-10" title="소분류" id="" />
+									</p>
+									<p class="mt-5"><input type="text" class="text-input wd-48p mr-10" title="기관/부서명을 상세히 입력해 주십시오" id="" /> <span class="join-txt">기관/부서명을 상세히 입력해 주십시오</span></p>
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">e-mail</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<input type="text" class="text-input wd-30p" title="아이디 입력하세요" id="" / >@ <input type="text" class="text-input wd-30p" title="주소를 입력하세요" id="" />
+									<select id="" class="combobox wd-10p" title="선택하세요">
+										<option value="" selected="selected">직접입력</option>
+										<option value=""></option>
+									</select> <a href="#" class="ml-5 btn-gray2">중복확인</a> <a href="#" class="ml-5 btn-gray3">인증메일발송</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="subject1">상세명</th>
+							<td class="last2">
+								<div class="pdtb10">
+									<input type="text" class="text-input wd-70p mr-10" title="상세설명" id="" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="bottom-btn">
+				<a href="#" class="btn-org5"><img src="../../../images/web/sub/icon_write.png" class="vertical-m mr-5" alt="가입" /> 가입</a>
+				<a href="#" class="btn-gray4"><img src="../../../images/web/sub/icon_x.png" class="vertical-m mr-5" alt="취소" /> 취소</a>	
+				<a href="#" class="btn-blue">탈퇴신청</a>	
+			</div>
+
+
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="inner-footer">
+			<div class="wrap">
+				<ul class="foot-util">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보취급/처리방침</a></li>
+					<li class="last"><a href="#">사이트맵</a></li>
+				</ul>
+				<div class="familysite">
+					<span class="comm_sel">
+						<select>
+							<option value="">FAMILY SITE</option>
+						</select>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="footer-wrap">
+			<address>
+				<p>주소 : 우)100-789  서울특별시 중구 왕십리로 407(신당5동 171) 도로교통공단    대표전화: 02-2230-6114    팩스 : 02-2230-6113</p>
+				<p>Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+			<p class="foot-logo">
+				<img src="../../../images/web/common/foot_logo01.gif" alt="" class="mr-20" /><img src="../../../images/web/common/foot_logo02.gif" alt="" />
+			</p>
+		</div>
+	</div>
+	
+ </body>
+</html>

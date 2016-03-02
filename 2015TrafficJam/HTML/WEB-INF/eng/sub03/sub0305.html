@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>TAAS traffic accident analysis system</title>
+	<meta id="mobileMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/default_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/layout2_eng.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../../css/main2_2015_eng.css">
+	<script type="text/javascript" src="../../../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/main_2015_eng.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sub_eng.css"></link>
+
+	<script src="../../../js/response.js"></script>
+
+	<!-- 모바일메뉴 -->
+	<script language="javascript" type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/slicknav.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#m_menu').slicknav();
+	});
+	</script>
+	<!-- //모바일메뉴 -->
+
+	<!-- 셀렉트박스 -->
+	<script type="text/javascript" src="../../../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// selectbox design
+			$('.comm_sel').jqTransform();
+		});
+	</script>
+	<!-- //셀렉트박스 -->
+
+ </head>
+ <body>
+	<div id="skipnavi">
+		<a href="#gnbarea">메인메뉴</a>
+		<a href="#subcont">서브콘텐츠</a>
+	</div>
+	<div id="wrap">
+	<div class="header" id="header">
+		<div class="inner-header">
+			<h1 class="logo"><a href="/"><img src="../../../images/eng/logo.gif" alt="TAAS 교통사고분석시스템" /></a></h1>
+			<ul class="util">
+				<li><a href="#">HOME</a></li>
+				<li class="last"><a href="#">KOREA</a></li>
+			</ul>
+		</div>
+		<!-- gnb시작 -->
+		<div class="subBg"></div>
+		<div id="gnbarea">
+				<!-- pc gnb_menu -->
+				<ul id="menu" >
+					<h2><a href="#"><span>Introduction </span></a></h2>
+					<ul>
+						<li><h5><a href="#"> <span>TAAS</span></a></h5></li>
+						<li><h5><a href="#"><span>Action Plan</span></a></h5></li>						
+					</ul>
+					<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>Traffic Accident Statistical DB</span></a></h5></li>
+						<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>Driver’s Manual </span></a></h2>
+					<ul style="top:65px !important;">
+						<li><h5 ><a href="#"><span>Road Traffic Environment And Traffic Accident</span></a></h5></li>
+						<li><h5><a href="#"><span>Foundation Of Safe Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Specification Of Each Driver</span></a></h5></li>
+						<li class="clear-both"><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+						<li><h5><a href="#"><span>Risk Anticipation  And Defensive Driving</span></a></h5></li>
+						<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+					</ul>
+					<h2><a href="#"><span>About Us </span></a></h2>
+					<ul>
+						<li><h5><a href="#"><span>KoROAD</span></a></h5></li>
+						<li><h5><a href="#"><span>History</span></a></h5></li>
+						<li><h5><a href="#"><span>Organization</span></a></h5></li>
+						<li><h5><a href="#"><span>Major Program</span></a></h5></li>
+						<li><h5><a href="#"><span>Location</span></a></h5></li>
+						<li><h5><a href="#"><span>Contact Us</span></a></h5></li>
+					</ul>
+					
+					
+				</ul>
+				<!--// pc gnb_menu -->
+				<!-- mobile gnb_menu -->
+				<ul id="m_menu" >
+					<li>
+						<h2><a href="#"><span>Introduction</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg01_1"> <span>TAAS</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg01_2"><span>Action Plan</span></a></h5></li>		
+						</ul>							
+					<li>
+						<h2><a href="#"><span>Traffic Accident Statistics</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg02_1"><span>Traffic Accident Statistical DB</span></a></h5></li>
+							<li><h5><a href="#"><span>Recent Publications</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#"><span>Driver’s Manual</span></a></h2>
+						<ul>
+							<li class="line"><h5 ><a href="#" class="full-box icon-bg03_1" ><span>Road Traffic Environment<br /> And Traffic Accident</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Foundation Of Safe Driving</span></a></h5></li>
+							<li><h5><a href="#"  class="icon-bg03_2"><span>Specification Of Each Driver</span></a></h5></li>
+							<li><h5><a href="#"><span>Safe Driving On Expressway</span></a></h5></li>
+							<li><h5><a href="#"><span>Risk Anticipation<br /> And Defensive Driving</span></a></h5></li>
+							<li><h5><a href="#"><span>Appendix</span></a></h5></li>
+						</ul>
+					</li>
+					<li>
+						<h2><a href="#" target="_blank"><span>About Us</span></a></h2>
+						<ul>
+							<li><h5><a href="#" class="icon-bg04_1"><span>KoROAD</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_2"><span>History</span></a></h5></li>
+							<li class="g-bar2"><h5><a href="#" class="icon-bg04_3"><span>Organization</span></a></h5></li>
+							<li><h5><a href="#" class="icon-bg04_4"><span>Major Program</span></a></h5></li>
+							<li class="g-bar3"><h5><a href="#" class="icon-bg04_5"><span>Location</span></a></h5></li>
+							<li class="g-bar4"><h5><a href="#" class="icon-bg04_6"><span>Contact Us</span></a></h5></li>
+						</ul>
+					</li>					
+				</ul>
+				<!--// mobile gnb_menu -->
+			</div>
+			<div class="menu_back"></div>
+
+		<!-- //gnb끝 -->
+	</div>
+
+	<div class="location-wrap">
+		<div class="location">
+			<span class="home"><img src="../../../images/web/sub/icon_home.gif" alt="홈" /></span>
+			<span>Driver’s Manual</span>
+			<span class="current">Safe Driving on Expresswayr</span>
+		</div>
+	</div>
+	<!-- // 로케이션 영역 -->
+	<div class="subwrap"  id="subcont">
+			<div class="subpage-toprapper">
+				<div class="sub-top sub04">
+					<h2>Safe Driving on Expressway</h2>
+					<!-- <p>Traffic AccidentStatistical DataBase</p> -->
+				</div>
+			</div>
+			<!-- //네비긑 -->
+		<div class="sub-cont">	
+			
+			<h4 class="subpage-tit mt-20">Safe Driving On Expressway</h4>
+
+			<p class="sub-tit02">A. Status of Traffic Accident on Expressway</p>
+			<p class="sub-txt mt-10">In 2010, the total number of traffic accident occurred on expressway was 3,924 cases, and the death from the accident was shown to be 389 persons. Among the entire accident of 3,924 cases, 870 cases (22.2%) were the by cargo vehicles.</p>
+
+			<p class="tbl-tit mt-20">[Status of accidents on expressway in 2010 / National Police Agency]</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+					<caption>[Status of accidents on 
+					expressway in 2010] Data: National Police Agency, 2010</caption>
+					  <thead>
+					  <tr>
+						<th>Classification</th>
+						<th>Overall</th>
+						<th class="last">Cargo vehicle</th>
+					  </tr>
+					  </thead>
+					  <tbody>
+					  <tr>
+						<td>Number of traffic 
+						  accident</td>
+						<td>3,924 cases</td>
+						<td class="last">870 cases(22.2%)</td></tr>
+					  <tr>
+						<td>Persons killed</td>
+						<td>389 persons</td>
+						<td class="last">148 persons(38.0%)</td></tr>
+					  <tr>
+						<td>Persons Injuried</td>
+						<td>9,669 persons</td>
+						<td class="last">1,915 persons(19.8%)</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
+
+			<p class="sub-tit02 mt-20">B. Preparation before driving on Expressway</p>
+			<p class="sub-tit03 mt-10">(1) Set the relaxed operation plan</p>
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Cars using the expressway are usually driving the long distance that the route has to be selected in advance and the travel plan should be set with the place and time for resting while on the road.</li>
+			 <li><span>•</span> Find out the climate condition, traffic jam, accident and others via radio or TV.</li>
+		   </ul>
+
+			<div class="clear mt-10">
+				<div class="l-list-txt">
+	
+					<p class="sub-tit03 mt-10">(2) Advance inspection of car</p>
+					<ul class="yakguan-list2">
+					 <li><span>•</span> Completely check thoroughly for fuel, coolant, engine oil, tire and others in advance not to have breakdown or accident while on the road.</li>
+					 <li><span>•</span>In order to prevent the cargo from tumbling on to the road, check the loading condition and check for binding condition for it might loosen up by driving thus it must be reconfirmed on regular bases like during the resting time along with the cargo cover.</li>
+				   </ul>
+
+				</div>
+				<div class="r-list-img">
+					<div class="trafic-img"><img src="../../../images/eng/img4-4-3.gif"  alt="" /></div>
+					<p class="tbl-tit">[Confirm the loading condition of 
+cargo prior to driving on expressway]</p>
+				</div>
+			</div>
+
+			<div class="clear mt-20">
+				<div class="l-list-txt">	
+						<p class="sub-tit02 mt-20">C. Driving on Expressway</p>
+						<p class="sub-tit03 mt-10">(1) Caution on entering into the expressway</p>
+						<ul class="yakguan-list2">
+						 <li><span>•</span> Cars other than emergency vehicle shall not interfere with the emergency cars for entering into the expressway.</li>
+						 <li><span>•</span>When entering into the expressway, slow down or stop to find out the flow of other cars and enter slowly after confirming the safety, sudden entry with acute angle would be dangerous.</li>
+						 <li><span>•</span>Turn on the light to clarify the intent of ‘entering into the expressway’ and leave the signal on until the car is completely on the driving lane.</li>
+						 <li><span>•</span>Once entered into the driving lane, control the driving speed to merge into the flow of other cars.</li>
+						 <li><span>•</span>In the event of entering into the expressway, cars other than emergency car, have the right-of-way that the entering cars must yield without interfering.</li>
+					   </ul>
+				</div>
+				<div class="r-list-img">
+					<div class="trafic-img"><img src="../../../images/eng/img4-4-4.gif"  alt="" /></div>
+					<p class="tbl-tit">[When entering into the expressway, it is dangerous to enter with acute angle]</p>
+				</div>
+			</div>
+
+			<p class="sub-tit03 mt-20">(2) Caution on driving on the expressway</p>
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Due to high speed of the cars on the expressway, a moment of negligence or lack of attention may cause serious accident.</li>
+			 <li><span>•</span>The road condition is better than the general road that it may cause speeding or sleepiness due to simplicity.</li>
+			 <li><span>•</span>When sudden steering or braking was applied in high speed the car can slide off to the side or swerve in to other lane.</li>
+			 <li><span>•</span>Due to high speed obstacle can be reached quickly and with longer stopping distance cars are prone to have collision.</li>
+		   </ul>
+
+			<p class="sub-tit03 mt-20">(3) Tips for handling the break down of vehicles</p>
+			<ul class="yakguan-list2">
+			 <li><span>•</span> Stop on the most right edge of the road or move to the place other than expressway.</li>
+			 <li><span>•</span> The emergency action cannot be done on the road thus either report to the patrolling officer or use emergency phone installed on the shoulder or mobile phone to notify the official.</li>
+			 <li><span>•</span> Turn on the emergency light and inform others of temporary stop for break down or other reasons</li>
+			 <li><span>•</span> The breakdown sign is to be set on the road for 100m or farther back from the car in the day time and for 200m behind from the broken car and additionally set the red flashing light, electric light and flamed signal to identify from 500m of all directions.</li>
+		   </ul>
+			<p class="tbl-tit mt-20">[On the expressway, the breakdown sign is set on 100m behind to prevent the subsequent accident]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img46.gif"  alt="" /></div>
+
+			<p class="sub-tit03 mt-20">(4) Warnings on leaving the expressway</p>
+			<ul class="yakguan-list2">
+			 <li><span>•</span>When leaving the expressway, make sure to read the information signs for exit and others in advance and change the lane at least 1 km in advance.</li>
+			 <li><span>•</span>When approached to the exit and making the sudden lane change, there may be the risk of collision with other cars.</li>
+			 <li><span>•</span>When approaching an exit, make sure to check the odometer without reducing the speed relying on own sense. Apply the brake lightly for several times to slow down in safe speed.</li>
+			 <li><span>•</span>When entering into the general road, take caution to adapt to the general road quickly.</li>
+		   </ul>
+ 	 	 	<p class="tbl-tit mt-20">[When leaving the expressway, change the lane at least 1 km in advance and be prepare]</p>
+			<div class="trafic-img"><img src="../../../images/eng/manual_img47.gif"  alt="" /></div>
+
+		<p class="sub-tit02 mt-20">D. Compliance on Expressway</p>
+ 	 	<p class="tbl-tit mt-10">[On the expressway, all passengers must wear the seat belt]</p>
+			<div class="trafic-img"><img src="../../../images/eng/img4-4-7.gif"  alt="" /></div>
+
+			<p class="sub-tit03 mt-20">(1) Special compliance for driver and passenger</p>
+ 	 	 	<p class="sub-txt">The drivers of cars on the expressway must have their passengers to wear seatbelt. However, there are exceptions for having illness or cause determined under the decree of the Ministry of Government Administration and Home Affairs.</p>
+
+			<div class="clear mt-20">
+				<div class="l-list-txt">	
+						<p class="sub-tit03 mt-10">(2) Prohibition of stop and park</p>
+						<ul class="yakguan-list2">
+						 <li><span>•</span> On the expressway, you may stop to comply with the laws and regulations and to follow the instruction of police or prevent the risk. However, with the following exceptions, stopping and parking are not permitted.</li>
+						 <li><span>•</span> In the event of stopping or parking for place to stop or park or bus stations</li>
+						 <li><span>•</span> In the event of stopping or parking at the side of the road (including the shoulder) for breakdown or other inevitable cause</li>
+						 <li><span>•</span> In the event of stopping to pay the toll fees</li>
+						 <li><span>•</span> In the event that the road maintenance person to stop or park for maintenance, repairing or monitoring the expressway or road</li>
+						 <li><span>•</span> In the event of stopping or parking for crime investigation, traffic search, and others by the emergency vehicle by duty executing police</li>
+					   </ul>
+				</div>
+				<div class="r-list-img">
+					<div class="trafic-img"><img src="../../../images/eng/img4-4-8.gif"  alt="" /></div>
+					<p class="tbl-tit">[It is dangerous to stop on shoulders for resting on the expressway]</p>
+				</div>
+			</div>
+
+			<p class="sub-tit03 mt-20">(3) Prohibition of crossing and others</p>
+ 	 	 	<p class="sub-txt">A driver shall not cross on expressway, make u-turn, or drive in reverse. However, it would be an exception to use for emergency action for traffic accident or prevention or removal of risk on expressway by emergency or other official vehicles.</p>
+
+			<p class="sub-tit03 mt-20">(4) Legal speed limit and designated-lane</p>
+			<p class="tbl-tit">[Legal speed limit on expressway]</p>
+			<div class="eng-tblbox">
+				<table class="table01 mt-10">
+				<caption>legal speed limit on expressway</caption>
+    			  <thead>
+				  <tr>
+					<th width="34%" >Each lane</th>
+					<th width="51%">Max. speed</th>
+					<th width="15%" class="last">Min. speed</th>
+				  </tr>
+				  </thead>
+				  <tbody>
+				  <tr>
+					<td rowspan="2">2-lane 
+					  or more<br>per each way</td>
+					<td>100km/h</td>
+					<td rowspan="2"  class="last">50km/h</td></tr>
+				  <tr>
+					<td class="last">Cargo vehicle in 
+					  excess of 1.5 tons of load weight, special cars, construction 
+					  machines: 80km/h</td></tr>
+				  <tr>
+					<td>1-lane per each 
+					way</td>
+					<td>80km/h</td>
+					<td class="last">40km/h</td></tr>
+				  <tr>
+					<td rowspan="2">Jungbu 
+					  Expressway, West coast Line, and some others</td>
+					<td>110km/h</td>
+					<td rowspan="2" class="last">60km/h</td></tr>
+				  <tr>
+					<td class="last">Cargo vehicle in 
+					  excess of 1.5 tons of load weight, special cars, construction 
+					  machines: 90km/h</td>
+				 </tr>
+				</tbody>
+			</table>
+				<p class="mt-5">※ However, the hazardous substance carrying vehicles with explosives, toxic substances or high pressure gas and others are restricted the maximum speed of 80km/h.</p>
+			</div>
+			<p class="tbl-tit mt-20">[Designated-lane on expressway]</p>
+			<div class="eng-tblbox">
+					<table class="table01 mt-10">
+			            <caption>Designated-lane on expressway</caption>
+						 <thead>
+			              <tr>
+			                <th>Road</th>
+			                <th>Lane Classification</th>
+			                <th class="last">Vehicles permitted to 
+			                  drive</th>
+						  </tr>
+						  </thead>
+			              <tbody>
+			              <tr>
+			                <td rowspan="4">4-lane 
+			                  road per each way</td>
+			                <td>1st-lane</td>
+			                <td class="last">Passing Lanes for 
+			                  cars on the 2nd lane as the main road</td></tr>
+			              <tr>
+			                <td>2nd-lane</td>
+			                <td class="last">Driving lane for 
+			                  passenger car, mid- to small passenger bus and cargo vehicle 
+			                  with the loaded weight of 1.5 tons or under</td></tr>
+			              <tr>
+			                <td>3rd-lane</td>
+			                <td class="last">Driving lane of 
+			                  large passenger bus and cargo vehicle with the loaded weight 
+			                  exceeding 1.5 tons and construction machinery</td></tr>
+			              <tr>
+			                <td>4th -lane</td>
+			                <td class="last">Driving lane for 
+			                  special vehicle and construction machinery</td></tr>
+			              <tr>
+			                <td rowspan="3">3-lane 
+			                  road per each way</td>
+			                <td>1st-lane</td>
+			                <td class="last">Passing Lane for 
+			                  passing cars with 2nd lane as driving lane</td></tr>
+			              <tr>
+			                <td>2nd-lane</td>
+			                <td class="last">Driving lane of 
+			                  passenger car, mid- to small passenger bus and cargo vehicle 
+			                  with the loaded weight of 1.5 tons or under</td></tr>
+			              <tr>
+			                <td>3rd-lane</td>
+			                <td class="last">Driving lane of 
+			                  cargo vehicle with the loaded weight exceeding 1.5 tons and 
+			                  construction machinery</td>
+							</tr>
+			              <tr>
+			                <td rowspan="2">2-laadne 
+			                  ro</td>
+			                <td>1-lane</td>
+			                <td class="last">Passing lane</td></tr>
+			              <tr>
+			                <td>2-lane</td>
+			                <td class="last">Driving lane for 
+			                  all cars</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+
+
+		</div>
+	</div>
+	<!-- //서브페이지 끝 -->
+
+	<div class="footer">
+		<div class="footer-wrap">
+			<address>
+				<p><img src="../../../images/eng/f_logo.gif" alt=""  /> Copyright © 2015 KoROAD. All rights Reserved.</p>
+			</address>
+		</div>
+	</div>
+	
+ </body>
+</html>
