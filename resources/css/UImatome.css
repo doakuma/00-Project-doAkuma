@@ -157,3 +157,66 @@
 	-o-transform: rotateY(-40deg);
 	transform: rotateY(-40deg);
 }
+
+/* Draggable */
+.wrap_drag {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.wrap_drag .box_drag {
+	position: relative;
+	margin: 1rem;
+	width: 30%;
+	border: 1px solid #666;
+	border-radius: 5px;
+	background: #eee;
+	text-align: center;
+	min-height: 10rem;
+	align-self: center;
+}
+.box_drag .btn.close {
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border: 0;
+	right: 0;
+	top: 0;
+	text-indent: -9999px;
+	background-color: transparent;
+}
+.box_drag .btn.close::before,
+.box_drag .btn.close::after {
+	content: "";
+	position: absolute;
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #666;
+}
+.box_drag .btn.close::before {
+	width: 1.75rem;
+	height: 0.1rem;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.box_drag .btn.close::after {
+	height: 1.75rem;
+	width: 0.1rem;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
