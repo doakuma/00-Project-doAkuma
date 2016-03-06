@@ -12,6 +12,44 @@ function init() {
     timeLineControl();
     // panelControl();
     radProgControl();
+    arcProgControl();
+}
+
+function arcProgControl() {
+	$('.prog_arc').each(function(){
+		var proRad = $(this),
+			proAmount = proRad.attr('data-percent'),
+			porCont = proRad.find('.prog_cont'),
+			time = parseInt((1000/proAmount)),
+			trTime = time/50,
+			minVal = 0;
+
+		var proRadial = 240*(proAmount/100);
+
+		$(this).find('.fill').css({
+			'transform': 'rotate('+proRadial+'deg)',
+			'transition-duration': trTime +'s'
+		})
+		console.log(time)
+
+		var loading = function(){
+			// value += 1;
+			minVal +=1;
+			porCont.text(minVal + '%');
+			if(minVal == proAmount) {
+				clearInterval(animate);
+			}
+
+			if(minVal >= 50) {
+				proRad.addClass('gt-50');
+			};
+		};
+		loading(this);
+		var animate = setInterval(function(){
+			 loading(this);
+		}, time);
+
+	})
 }
 
 function radProgControl() {
@@ -20,7 +58,7 @@ function radProgControl() {
 			proAmount = proRad.attr('data-percent'),
 			porCont = proRad.find('.prog_cont'),
 			time = parseInt((1000/proAmount)),
-			trTime = time/10,
+			trTime = time/50,
 			minVal = 0;
 
 		var proRadial = 360*proAmount/100;
