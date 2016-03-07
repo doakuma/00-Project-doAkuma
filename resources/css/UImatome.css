@@ -225,6 +225,7 @@
 .wrap_prog {
 	overflow: hidden;
 	height: 220px;
+	margin: 20px 0 0;
 }
 .prog_arc,
 .prog_arc .overlay {
@@ -241,56 +242,57 @@
 .prog_arc .overlay:after {
 	content: "";
 	position: absolute;
-	width: 150px;
-	height: 150px;
+	width: 300px;
+	height: 300px;
 	background: #eaeaea;
 	z-index: 0;
 }
 .prog_arc:before {
 	left: 0;
 	top: 0;
+	clip: rect(0px, 150px, 150px, 0px)
 }
 .prog_arc:after {
 	left: 0;
 	bottom: 0;
+	clip: rect(150px, 150px, 300px, 0)
 }
 .prog_arc .overlay:before {
 	right: 0;
 	top: 0;
+	clip: rect(0px, 300px, 150px, 150px)
 }
 .prog_arc .overlay:after {
 	right: 0;
 	bottom: 0;
+	clip: rect(150px, 300px, 300px, 150px)
 }
 .prog_arc .overlay {
 	overflow: hidden;
 	position: relative;
 	width: 300px;
 	height: 300px;
+	-webkit-transform: rotate(-30deg);
+		-ms-transform: rotate(-30deg);
+		-o-transform: rotate(-30deg);
+		transform: rotate(-30deg);	
 }
 .prog_arc .overlay .fill {
 	display: block;
 	position: absolute;
 	z-index: 1;
-	width: 150px;
-	height: 150px;
+	width: 300px;
+	height: 300px;
 	left: 0;
 	bottom: 0;
 	background: skyblue;
 	border-bottom-left-radius: 50%;
-	-webkit-transform-origin: right top;
-	-moz-transform-origin: right top;
-	-ms-transform-origin: right top;
-	-o-transform-origin: right top;
-	transform-origin: right top;
-	clip: rect(0, 300px, 300px, 0px);
-	border-radius: 0;
-	-webkit-transition: all 0.25s ease-out 0.15s;
-	-moz-transition: all 0.25s ease-out 0.15s;
-	-ms-transition: all 0.25s ease-out 0.15s;
-	-o-transition: all 0.25s ease-out 0.15s;
-	transition: all 0.25s ease-out 0.15s;
-	
+	-webkit-transition: all 0.25s;
+	-moz-transition: all 0.25s;
+	-ms-transition: all 0.25s;
+	-o-transition: all 0.25s;
+	transition: all 0.25s;
+	clip: rect(150px, 150px, 300px, 0px)
 }
 .prog_arc .prog_cont {
 	display: block;
@@ -306,9 +308,14 @@
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	background: darkblue;
+	background: lightblue;
 	border-radius: 50%;
 }
+.prog_arc.gt25:after,
+.prog_arc.gt50:before,
+.prog_arc.gt75 .overlay:before {
+	background: skyblue;
+} 
 /*
 .prog_rad.prog_arc .prog_cont {
 	-webkit-transform: rotate(120deg);

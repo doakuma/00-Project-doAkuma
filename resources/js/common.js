@@ -20,8 +20,8 @@ function arcProgControl() {
 		var proRad = $(this),
 			proAmount = proRad.attr('data-percent'),
 			porCont = proRad.find('.prog_cont'),
-			time = parseInt((1000/proAmount)),
-			trTime = time/50,
+			time = parseInt((500/proAmount)),
+			trTime = time/10,
 			minVal = 0;
 
 		var proRadial = 240*(proAmount/100);
@@ -30,7 +30,6 @@ function arcProgControl() {
 			'transform': 'rotate('+proRadial+'deg)',
 			'transition-duration': trTime +'s'
 		})
-		console.log(time)
 
 		var loading = function(){
 			// value += 1;
@@ -40,8 +39,14 @@ function arcProgControl() {
 				clearInterval(animate);
 			}
 
-			if(minVal >= 50) {
-				proRad.addClass('gt-50');
+			if(minVal > 25) {
+				proRad.addClass('gt25');
+			};
+			if(minVal > 50) {
+				proRad.addClass('gt50');
+			};
+			if(minVal > 75) {
+				proRad.addClass('gt75');
 			};
 		};
 		loading(this);
