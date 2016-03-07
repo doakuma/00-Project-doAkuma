@@ -29,7 +29,6 @@ function radProgControl() {
 			'transform': 'rotate('+proRadial+'deg)',
 			'transition-duration': trTime +'s'
 		})
-		console.log(time)
 
 		var loading = function(){
 			// value += 1;

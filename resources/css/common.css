@@ -1940,3 +1940,22 @@ table caption {
 	text-align: center;
 	font-weight: bold;
 }
+
+.prog_fan {
+	position: relative;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	background: #666;
+	border-radius: 50%;
+}
+.fan_shp .overlay {
+	clip: rect(0, 100px, 80px, 0);
+}
+.fan_shp .overlay .fill {
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+	clip: rect(0, 80px, 100px, 0px);
+}
+
