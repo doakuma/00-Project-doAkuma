@@ -13,6 +13,19 @@ function init() {
     // panelControl();
     radProgControl();
     arcProgControl();
+    fullPageTab();
+}
+
+function fullPageTab() {
+	$('.f-sc .nav').each(function(){
+		$(this).on('click', function(){
+			var _tar = $(this).attr('href'),
+				_tarHg = $(window).height();
+			$(this).addClass('active').siblings().removeClass('active');
+			$(_tar).addClass('active').siblings().removeClass('active').removeAttr('style');
+			$(_tar).animate('height', _tarHg);
+		})
+	})
 }
 
 function arcProgControl() {

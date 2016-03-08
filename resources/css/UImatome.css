@@ -316,21 +316,118 @@
 .prog_arc.gt75 .overlay:before {
 	background: skyblue;
 } 
-/*
-.prog_rad.prog_arc .prog_cont {
-	-webkit-transform: rotate(120deg);
-	-ms-transform: rotate(120deg);
-	-o-transform: rotate(120deg);
-	transform: rotate(120deg);
+
+/* Full Screen Nav */
+.wrap_f_sc {
+	position: fixed;
+	left: -100px;
+	top: calc(100% / 50);
+	z-index: 10;
+	padding: 1rem;
+	padding-left: 0;
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px;
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
 }
-.prog_rad.prog_arc.gt-50 .overlay {
-	
-	clip: rect(0, 150px, 300px, 0px)
+.wrap_f_sc .nav.f-sc {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
 }
-.prog_rad.prog_arc.gt-50 .overlay .fill {
-	background: #2e96db;
-	clip: rect(0, 300px, 300px, 150px)
+.f-sc .btn.nav {
+	background: #404040;
+	border-radius: 0;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #666;
 }
-.prog_rad.prog_arc.gt-50 {
-	background: #F3F4F5;
-}*/
+.f-sc .btn.nav:first-child {
+	border-top: none;
+}
+.box.f-tag {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	margin: auto;
+	z-index: -1;
+	padding: .5rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+.box.f-tag.active {
+	z-index: 100;
+	background: rgba(0,0,0,0.85);
+	width: 100%;
+	-webkit-transition: width 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) 0.35s;
+	-o-transition: width 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) 0.35s;
+	transition: width 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) 0.35s;
+	-webkit-animation: fullSc 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+	   -moz-animation: fullSc 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+	    -ms-animation: fullSc 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+	     -o-animation: fullSc 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+	        animation: fullSc 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+}
+.box.f-tag p {
+	margin: 0 0 1rem;
+	padding: 0.5rem;
+	opacity: 0;
+	font-size: 1.4rem;
+	color: #fefefe;
+	text-transform: capitalize;
+	-webkit-transition: opacity 0.35s ease-in 0.75s;
+	-o-transition: opacity 0.35s ease-in 0.75s;
+	transition: opacity 0.35s ease-in 0.75s;
+}
+.box.f-tag.active p {
+	opacity: 1;
+}
+
+@-webkit-keyframes fullSc {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+@-o-keyframes fullSc {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+@-moz-keyframes fullSc {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+@keyframes fullSc {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}

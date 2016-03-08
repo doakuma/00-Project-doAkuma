@@ -74,7 +74,7 @@ body {
 	transition: all 0.25s ease-in 0.6s;
 }
 #wrap {
-	overflow: hidden; 
+	/*overflow: hidden; */
 	min-height: 100%;
 	margin: 0 auto; 
 	width: 104rem; 
@@ -215,14 +215,14 @@ body.gnb_on #wrap  #content {
 }
 .btn_gnb_ctrl {
 	overflow: hidden;
-	position: absolute;
+	position: fixed;
 	padding: 0;
 	width: 3rem;
 	height: 2.5rem;
 	border-radius: 5px;
 	background: transparent;
 	border: none;
-	top: -5rem;
+	top: 5rem;
 	left: -5rem;
 	cursor: pointer;
 	-webkit-box-sizing: border-box;
